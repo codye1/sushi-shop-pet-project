@@ -1,0 +1,122 @@
+*{
+
+    text-align: center;
+}
+body{
+    background-color: white;
+    color: black
+}
+.top-header{
+    display: flex;
+
+}
+
+.top-container{
+    margin: auto;
+    width: 1600px;
+    height: 81px;
+    background-color:white;
+
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.main-logo{
+    width: 17%;
+    height: 51px;
+
+}
+
+.left-cont{
+    display: flex;
+    justify-content: space-between;
+    width: 17%;
+    height: 30px;
+    margin-left: 2.5%;
+
+}
+
+.city{
+    width: 25%;
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 29px;
+
+}
+.language{
+    width: 24%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.language span{
+    margin-right:3px ;
+
+}
+
+.language img{
+
+
+}
+.number{
+    width: 30%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+}
+.right-cont{
+    width: 15%;
+    height: 30px;
+    margin-right: 2.5%;
+
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 30px;
+
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    height: 30px;
+
+}
+
+.login img{
+    margin-right: 10px;
+}
+
+.basket{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 15%;
+    height: 30px;
+
+
+}
+
+.line{
+    margin: auto;
+    width: 1520px;
+    height: 1px;
+    background-color: rgba(169, 169, 169, 0.436);
+}
