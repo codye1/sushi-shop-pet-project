@@ -73,7 +73,7 @@ body{
 
 }
 .right-cont{
-    width: 15%;
+    width: 17.7%;
     height: 30px;
     margin-right: 2.5%;
 
@@ -102,7 +102,7 @@ body{
 }
 
 .login img{
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .basket{
@@ -121,4 +121,45 @@ body{
     width: 1520px;
     height: 1px;
     background-color: rgba(169, 169, 169, 0.436);
+}
+
+.down-header{
+display: flex;
+}
+.navbar-cont{
+    width: 1600px;
+
+    height: 30px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.link{
+    display: flex;
+    justify-content: space-between;
+    line-height: 20px;
+    margin: 0 2.5%;
+    height: 20px;
+
+    text-decoration: none solid rgb(123, 124, 133);
+    color:#7B7C85;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.linkact{
+    color: red;
 }

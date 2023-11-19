@@ -1,6 +1,31 @@
+import {   NavLink,  } from "react-router-dom";
 import "./Header.css"
 
+interface list{
+    site: string;
+    name: string;
+}
+
+type lis=list[];
+
 const Header = () => {
+
+    const down_list:lis=[
+        {site: '/additions',name:"Доповнення"},
+        {site: '/california',name:"Каліфорнії"},
+        {site: '/desserts',name:"Десерти"},
+        {site: '/drinks',name:"Напої"},
+        {site: '/hotsAndSalads',name:"Гаряче та салати"},
+        {site: '/philadelphia',name:"Філадельфії"},
+        {site: '/roles',name:"Роли"},
+        {site: '/sets',name:"Сети"},
+        {site: '/soups',name:"Супи"},
+        {site: '/sushi',name:"Суші"},
+    ]
+
+
+
+
     return (
             <div className="header">
             <div className="top-header">
@@ -17,7 +42,7 @@ const Header = () => {
                             982 874 443
                         </div>
                     </div>
-                    <img className="main-logo" src="https://x100-venus-sm-ua.gumlet.io/VENUS/WEB/4C25DB70-1DCE-11EB-A6EC-7B643829D650/1675018701967_%D1%81%D0%B0%D0%B9%D1%82.svg?alt=media&token=a2835928-b794-4bd1-8b2c-7e722bd31b10" alt="" />
+                    {<NavLink to={"/home"} className="main-logo"><img  src="https://x100-venus-sm-ua.gumlet.io/VENUS/WEB/4C25DB70-1DCE-11EB-A6EC-7B643829D650/1675018701967_%D1%81%D0%B0%D0%B9%D1%82.svg?alt=media&token=a2835928-b794-4bd1-8b2c-7e722bd31b10" alt="" /></NavLink>}
                     <div className="right-cont">
                         <div className="search">
                             <img src="https://uzhhorod.sushi-master.ua/img/header/search.svg" alt="" />
@@ -34,8 +59,12 @@ const Header = () => {
 
             </div>
             <div className="line"></div>
-            <div className="navbar">
-                Хуй
+            <div className="down-header">
+                <div className="navbar-cont">
+                    <div className="navbar">
+                        {down_list.map((p)=><NavLink key={p.site} to={p.site} className={({isActive})=>isActive? "link linkact" : 'link'} >{p.name}</NavLink>)}
+                    </div>
+                </div>
             </div>
         </div>
     );

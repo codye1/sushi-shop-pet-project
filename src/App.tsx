@@ -1,15 +1,15 @@
-import { RouterProvider} from 'react-router-dom';
-import router from './components/rout/routing';
+import { BrowserRouter} from 'react-router-dom';
 import Header from './pages/Header/Header';
+import Routing from './components/rout/routing';
 
 function App() {
 
 
   return (
-    <>
+    <BrowserRouter>
       <Header/>
-      <RouterProvider router={router}/>
-    </>
+      <Routing/>
+    </BrowserRouter>
   )
 }
 
