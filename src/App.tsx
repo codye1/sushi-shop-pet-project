@@ -4,7 +4,6 @@ import Routing from './components/rout/routing';
 
 function App() {
 
-
   return (
     <BrowserRouter>
       <Header/>

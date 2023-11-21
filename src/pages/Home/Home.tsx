@@ -8,6 +8,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { useGetSetStartEndQuery } from "../../API";
+import { useAppDispatch } from "../../hooks";
 
 interface img{
     img: string;
@@ -27,6 +29,10 @@ const Home = () => {
         {img:'https://x100-venus-sm-ua.gumlet.io/BANNERS/SUSHI-MASTER/FC578E21-9E42-11ED-B346-714A6D8F5A26-web.png?alt=media&token=6c4e4e14-20a0-40b6-8b76-8b6f3a109dd1&w=1280&h=600&format=png&mode=fit&q=59', key:8}
 ]
 
+
+    let {data,error,isLoading} = useGetSetStartEndQuery({start:"1",end:"5"})
+    console.log(data);
+
     return (
 
 
@@ -43,9 +49,6 @@ const Home = () => {
                     navigation
 
                     pagination={{ clickable: true }}
-
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
                     >
                     {slide.map((s)=>
                         <SwiperSlide key={s.key}><img src={s.img} alt="" /></SwiperSlide>
