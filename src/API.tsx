@@ -20,14 +20,11 @@ export interface Tovar {
     sklad:[string]
     filadelfiya:boolean
   }
-  interface params{
-    start:string,
-    end:string
-}
+
   type TovarResponse = Tovar[]
 
 export const api = createApi({
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/' }),
     tagTypes: ['Sets'],
     endpoints: (build) => ({
       getSets: build.query<TovarResponse, void>({
@@ -50,18 +47,6 @@ export const api = createApi({
         query: (id) => `rolls/${id}`,
         providesTags: (result, error, id) => [{ type: 'Sets', id }],
       }),
-
-      getSetStartEnd: build.query<TovarResponse, params>({
-        query: (params) => `sets?_start=${params.start}&_end=${params.end}`,
-        providesTags: (result) =>
-          result
-            ? [
-                ...result.map(({ id }) => ({ type: 'Sets' as const, id })),
-                { type: 'Sets', id: 'LIST' },
-              ]
-            : [{ type: 'Sets', id: 'LIST' }],
-      }),
-
     }),
   })
 
@@ -69,5 +54,4 @@ export const api = createApi({
     useGetSetQuery,
     useGetSetsQuery,
     useGetRollsQuery,
-    useGetSetStartEndQuery
   } = api

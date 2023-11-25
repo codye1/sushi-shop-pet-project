@@ -1,15 +1,14 @@
 import "./Home.css"
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { useGetSetStartEndQuery } from "../../API";
-import { useAppDispatch } from "../../hooks";
+import {  useGetSetsQuery } from "../../API";
+
+import TovarList from "../../components/UI/TovarList/TovarList";
 
 interface img{
     img: string;
@@ -30,7 +29,7 @@ const Home = () => {
 ]
 
 
-    let {data,error,isLoading} = useGetSetStartEndQuery({start:"1",end:"5"})
+    let {data,error,isLoading} = useGetSetsQuery()
     console.log(data);
 
     return (
@@ -40,15 +39,10 @@ const Home = () => {
             <div className="home-slider">
                 <div className="slider-cont">
                 <Swiper
-                    // install Swiper modules
-                    modules={[Navigation, Pagination, Scrollbar, A11y]}
                     style={{ overflow: 'visible'}}
                     loop={true}
                     spaceBetween={80}
                     slidesPerView={1}
-                    navigation
-
-                    pagination={{ clickable: true }}
                     >
                     {slide.map((s)=>
                         <SwiperSlide key={s.key}><img src={s.img} alt="" /></SwiperSlide>
@@ -56,12 +50,12 @@ const Home = () => {
                 </Swiper>
                 </div>
             </div>
-
-            <div className="container">
-                <div>
+            Доставка суші
+            <div className="tovar">
+                <div className="tovar-cont">
+                    {data?<TovarList tovars={data}/>: <div>Ничего нет</div> }
 
                 </div>
-
             </div>
         </div>
     );

@@ -17,7 +17,7 @@ const initialState: Seti = {
       squirrels:264.67,
       carbohydrates:477.89,
       dung:3569.67
-  },sklad:['ss'],filadelfiya:false}],
+  },sklad:['Skald'],filadelfiya:false}],
     isLoading : false,
     error:''
 }

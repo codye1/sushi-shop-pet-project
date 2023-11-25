@@ -9,15 +9,8 @@
   justify-content: center;
 }
 
-.container{
-  margin: auto;
- height: 10000px;
- background-color: aqua;
-}
-
-
 .home-slider{
-  margin: 50px 0px;
+  margin: 50px 0px 0px 0px;
   display: flex;
   justify-content: center;
 }
@@ -38,3 +31,29 @@
     transform: scale(1.1)!important;
     transition: all .3s ease!important;
 }
+
+
+
+.tovar{
+  display: flex;
+}
+
+.tovar-cont{
+  display: flex;
+  margin:  auto;
+  width: 1600px;
+
+}
+
+.tovar-list{
+  display: flex;
+  margin: auto;
+  width:100%;
+  margin: 0 1.5%;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+
+
