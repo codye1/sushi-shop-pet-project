@@ -6,7 +6,7 @@ export interface Tovar {
     id: string
     title: string
     action:number
-    price:number
+    price:string
     body:string
     photo:string
     shef:boolean

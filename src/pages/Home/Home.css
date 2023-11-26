@@ -10,13 +10,13 @@
 }
 
 .home-slider{
-  margin: 50px 0px 0px 0px;
+  margin: 2.5% 0px 2.5% 0;
   display: flex;
   justify-content: center;
 }
 .slider-cont{
   width: 60%;
-  height: 420px;
+  height: 30%;
 }
 
 
@@ -54,6 +54,4 @@
   flex-wrap: wrap;
 
 }
-
-
 
