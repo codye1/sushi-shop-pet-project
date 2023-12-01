@@ -1,5 +1,6 @@
 import {   NavLink,  } from "react-router-dom";
 import "./Header.css"
+import { useEffect, useState } from "react";
 
 interface list{
     site: string;
@@ -11,23 +12,46 @@ type lis=list[];
 const Header = () => {
 
     const down_list:lis=[
-        {site: '/additions',name:"Доповнення"},
+        {site: '/sets',name:"Сети"},
+        {site: '/sushi',name:"Суші"},
         {site: '/california',name:"Каліфорнії"},
-        {site: '/desserts',name:"Десерти"},
-        {site: '/drinks',name:"Напої"},
+        {site: '/promotion',name:"Акції"},
         {site: '/hotsAndSalads',name:"Гаряче та салати"},
         {site: '/philadelphia',name:"Філадельфії"},
         {site: '/roles',name:"Роли"},
-        {site: '/sets',name:"Сети"},
         {site: '/soups',name:"Супи"},
-        {site: '/sushi',name:"Суші"},
+        {site: '/gourmetschoise',name:"Вибір гурманів"},
+        {site: '/desserts',name:"Десерти"},
+        {site: '/drinks',name:"Напої"},
+        {site: '/additions',name:"Доповнення"},
     ]
 
+    const [isSticky, setSticky] = useState(false);
+    const [transform,setStransform] = useState(0);
+    useEffect(() => {
+      const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 50) {
+          setSticky(true);
+        } else {
+            setSticky(false);
+        }
+        if (offset > 300) {
+            setStransform(-110);
+          } else {
+            setStransform(0);
+          }
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
 
 
 
     return (
-            <div className="header">
+            <div style={{transform: `translateY(${transform}%)`}} className={`header ${isSticky ? 'scroled' : ''}`}>
             <div className="top-header">
             <div className="top-container">
                     <div className="left-cont">
@@ -58,7 +82,13 @@ const Header = () => {
             </div>
 
             </div>
-            <div className="line"></div>
+            <div className="line-header">
+                <div className="line-container">
+                    <div className="line">
+
+                    </div>
+                </div>
+            </div>
             <div className="down-header">
                 <div className="navbar-cont">
                     <div className="navbar">

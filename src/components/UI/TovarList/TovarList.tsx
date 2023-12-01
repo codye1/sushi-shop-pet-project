@@ -8,7 +8,7 @@ type TovarLists={
 const TovarList:React.FC<TovarLists> = ({tovars}) => {
     return (
         <div className="tovar-list">
-            {tovars.map((t)=><CardTovar key={t.key} tovar={t}/>)}
+            {tovars.map((t)=>t.key<9?<CardTovar key={t.key} tovar={t}/> : false)}
         </div>
     );
 };

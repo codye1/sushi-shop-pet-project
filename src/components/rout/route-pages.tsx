@@ -2,10 +2,12 @@ import Additions from "../../pages/Additions/Additions";
 import California from "../../pages/California/California";
 import Desserts from "../../pages/Desserts/Desserts";
 import Drinks from "../../pages/Drinks/Drinks";
+import GourmetsChoice from "../../pages/GourmetsChoice/GourmetsChoice";
 import Header from "../../pages/Header/Header";
 import Home from "../../pages/Home/Home";
 import HotsAndSalads from "../../pages/HotsAndSalads/HotsAndSalads";
 import Philadelphia from "../../pages/Philadelphia/Philadelphia";
+import Promotion from "../../pages/Promotion/Promotion";
 import Roles from "../../pages/Roles/Roles";
 import Sets from "../../pages/Sets/Sets";
 import Soups from "../../pages/Soups/Soups";
@@ -24,4 +26,6 @@ export const routPages=[
     {path: '/sets',element:Sets,exact:true},
     {path: '/soups',element:Soups,exact:true},
     {path: '/sushi',element:Sushi,exact:true},
+    {path: '/promotion',element:Promotion,exact:true},
+    {path: '/gourmetschoise',element:GourmetsChoice,exact:true},
 ]

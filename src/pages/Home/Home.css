@@ -55,3 +55,133 @@
 
 }
 
+.banner-main-page{
+  display: flex;
+}
+
+.banner-container{
+  width: 1600px;
+  margin: auto;
+  padding: 0 30px ;
+
+}
+
+.banner{
+  display: flex ;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(93.96deg,#ffeceb 2.04%,#fff4de 101.53%);
+}
+
+.banner-img{
+  width: 40%;
+  height: 337px;
+}
+
+.banner-img-cont{
+  width: 40%;
+  height: 337px;
+}
+
+@media (max-width: 850px) {
+  .banner-img{
+    width: 0;
+    height: 100%;
+  }
+}
+
+.banner-text-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 337px ;
+}
+.banner-text{
+
+  width: 60%;
+}
+
+.banner-text h1{
+  font-family: sans-serif;
+  font-size: 34px;
+  margin-bottom: 20px;
+
+  font-weight: 600;
+}
+.banner-text h2{
+  color: #7b7c85;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-family: none solid;
+
+  font-weight: 400;
+  text-decoration: none solid rgb(123, 124, 133)
+}
+.banner-text h1,h2{
+
+  text-align: start;
+}
+
+.banner-icon-cont{
+  display: flex;
+  width: 30%;
+  height: 2.5%;
+}
+
+.banner-icon-cont img{
+  height: 100%;
+  width: 100%;
+  margin: 20px;
+  margin-left: 0px;
+}
+
+.about-sushi-master{
+  display: flex;
+}
+
+.about-sushi-master-container{
+  width: 1600px;
+  margin: auto;
+  padding: 0 30px ;
+}
+
+.sushi-master{
+  border-left: 1px solid #d4d7db;
+  padding: 0 15vw;
+  margin: 56px 0;
+  width: 100%;
+  text-align: start;
+  height: 234px;
+  font-family: sans-serif;
+  transition: all .3s ease;
+  overflow: hidden;
+  box-shadow: inset 0px -90px 57px -4px rgb(255, 255, 255)
+}
+
+.aboutOpen{
+  overflow:visible
+}
+
+.sushi-master h1{
+  text-align: start;
+  font-size: 32px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+}
+.sushi-master p{
+  color: rgba(29,29,29,.5);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: start;
+
+}
+
+.sushi-master h1,h2{
+  z-index: -1;
+  margin: 30px 0;
+}

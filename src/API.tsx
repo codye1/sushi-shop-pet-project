@@ -9,7 +9,9 @@ export interface Tovar {
     price:string
     body:string
     photo:string
-    shef:boolean
+    gurman:boolean
+    rollFree:boolean
+    promotion:boolean
     harch:{
         weight:number,
         fats:number,
@@ -24,7 +26,7 @@ export interface Tovar {
   type TovarResponse = Tovar[]
 
 export const api = createApi({
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
     tagTypes: ['Sets'],
     endpoints: (build) => ({
       getSets: build.query<TovarResponse, void>({
