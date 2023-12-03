@@ -62,23 +62,22 @@ const Home = () => {
                 <div className="banner-main-page">
                     <div className="banner-container">
                         <div className="banner">
-                            <img className="banner-img" src="https://kyiv.sushi-master.ua/img/get-mobile-app/phones-on-home-uk.png" alt="" />
-                            <div className="banner-text-container">
-                                <div className="banner-text">
-                                    <h1>Швидке замовлення улюбленої їжі зі зручним додатком!</h1>
-                                    <h2>Завантажуйте наш додаток, оформляйте замовлення в один клік і відстежуйте його статус у реальному часі.</h2>
-                                    <div className="banner-icon-cont">
-                                        <img src="https://kyiv.sushi-master.ua/img/get-mobile-app/app-store.svg" alt="" />
-                                        <img src="https://kyiv.sushi-master.ua/img/get-mobile-app/google-play.svg" alt="" />
-                                    </div>
-                                </div>
+                            <div className="banner-img">
+                                <img src="https://uzhhorod.sushi-master.ua/img/get-mobile-app/phones-on-home-uk.png" alt="" />
+                            </div>
+                            <div className="banner-text">
+                                <h1>Швидке замовлення улюбленої їжі зі зручним додатком!</h1>
+                                <h2>Завантажуйте наш додаток, оформляйте замовлення в один клік і відстежуйте його статус у реальному часі.</h2>
+                               <img src="https://uzhhorod.sushi-master.ua/img/get-mobile-app/app-store.svg" alt="" />
+                                <img src="https://uzhhorod.sushi-master.ua/img/get-mobile-app/google-play.svg" alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="about-sushi-master">
                     <div className="about-sushi-master-container">
-                        <div className={`sushi-master ${aboutOpen?"aboutOpen":""}`}>
+                        <div className="centered-cont">
+                        <div className={`sushi-master ${aboutOpen?"aboutOpen":"aboutScroped"}`}>
                        <h1>Замовити суші від Sushi Master із доставкою додому в Києві</h1>
                        <p>Мережа ресторанів Sushi Master - це ваш путівник у світ паназіатської кухні. Ми пропонуємо велике меню суші, супів, локшини та інших японських страв, приготованих кращими майстрами-сушистами Києва. А завдяки швидкій і безкоштовній доставці (при замовленні на певну суму) в усі мікрорайони міста вам не доведеться довго чекати. Лише один дзвінок або кілька кліків на сайті чи в застосунку, і замовлення вже везуть до вас.</p>
 
@@ -117,11 +116,15 @@ Sushi Master - це ще й вигідно!</p>
 <p>Наша мережа ресторанів - це чудовий вибір як для досвідчених любителів японської кухні, так і для тих, хто тільки хоче долучитися до світу паназіатської кухні. Багатий асортимент, висока якість страв, оперативна доставка, доступні ціни - наші клієнти можуть розраховувати на ці та багато інших переваг. А головне, ми робимо все з душею, тому наші роли й виходять такими смачними. Оформляйте замовлення онлайн або телефоном просто зараз, і вже скоро зможете переконатися в цьому!</p>
 
                         </div>
-<div onClick={()=>{aboutOpen?SetAboutOpen(false):SetAboutOpen(true)}}>
-    Детальніше
-</div>
+                    <p className="sushi-master-button" onClick={()=>{aboutOpen?SetAboutOpen(false):SetAboutOpen(true)}}>
+                        {aboutOpen? "Приховати" : "Детальніше"}
+                    </p>
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
     );
 };

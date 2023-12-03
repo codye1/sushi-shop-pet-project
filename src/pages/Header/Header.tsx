@@ -26,32 +26,33 @@ const Header = () => {
         {site: '/additions',name:"Доповнення"},
     ]
 
-    const [isSticky, setSticky] = useState(false);
+    const [isScroled, setScroled] = useState(false);
     const [transform,setStransform] = useState(0);
     useEffect(() => {
-      const handleScroll = () => {
-        const offset = window.scrollY;
-        if (offset > 50) {
-          setSticky(true);
-        } else {
-            setSticky(false);
+      const handleScroll = (e:number) => {
+        if (window.scrollY>100) {
+            setScroled(true)
+        }else setScroled(false)
+        if(e<0){
+
+            setStransform(0)
+        }else{
+
+            setStransform(-110)
         }
-        if (offset > 300) {
-            setStransform(-110);
-          } else {
-            setStransform(0);
-          }
       };
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('wheel', (e)=>{handleScroll(e.deltaY)
+      });
       return () => {
-        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('wheel', (e)=>{handleScroll(e.deltaY);
+        });
       };
     }, []);
 
 
 
     return (
-            <div style={{transform: `translateY(${transform}%)`}} className={`header ${isSticky ? 'scroled' : ''}`}>
+            <div style={{transform: `translateY(${transform}%)`}} className={`header ${isScroled ? 'scroled' : ''}`}>
             <div className="top-header">
             <div className="top-container">
                     <div className="left-cont">

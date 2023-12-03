@@ -3,7 +3,6 @@
 
 *{
 
-    text-align: center;
 }
 body{
     overflow-x:hidden;
@@ -179,7 +178,7 @@ display: flex;
     margin: 0 0;
     height: 20px;
 
-    text-decoration: none solid rgb(123, 124, 133);
+    text-decoration: none;
     color:#7B7C85;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
