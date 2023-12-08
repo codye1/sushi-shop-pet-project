@@ -1,42 +1,43 @@
-import { Tovar } from "../../../API";
-import "./CardTovar.css"
+import { NavLink } from "react-router-dom";
+import { Product } from "../../../API";
+import "./CardProduct.css"
 
 type Card={
-    tovar:Tovar
+    product:Product
 }
 
-const CardTovar:React.FC<Card>= ({tovar}) => {
-    let price:number = Number(tovar.price.replace(/[^0-9]/g,""));
-    price -= Math.floor(price*(tovar.action/100));
+const CardProduct:React.FC<Card>= ({product}) => {
+    let price:number = Number(product.price.replace(/[^0-9]/g,""));
+    price -= Math.floor(price*(product.action/100));
 
     return (
-        <div className="card-tovar">
+        <div className="card-product">
             <div className="top-cont">
-                <img className="card-photo" src={tovar.photo} alt="" />
+                {<NavLink to={`/product/${product.id}`}> <img className="card-photo" src={product.photo} alt="" /></NavLink>}
             </div>
             <div className="product-labels">
-                {tovar.gurman?
+                {product.gurman?
                     <div className="gourmetsChoice">
                         Вибір гурманів
                     </div>
                     :
                     false
                 }
-                {tovar.promotion?
+                {product.promotion?
                     <div className="promotion">
                         Акція
                     </div>
                     :
                     false
                 }
-                {tovar.action>0?
+                {product.action>0?
                     <div className="discount">
-                        Знижка -{Math.round(tovar.action)}%
+                        Знижка -{Math.round(product.action)}%
                     </div>
                     :
                     false
                 }
-                {tovar.rollFree?
+                {product.rollFree?
                     <div className="rollGift">
                        Рол у подарунок
                     </div>
@@ -44,17 +45,17 @@ const CardTovar:React.FC<Card>= ({tovar}) => {
             </div>
             <div className="down-cont">
                 <div className="cont-weight">
-                    {tovar.harch.weight} Г
+                    {product.harch.weight} Г
                 </div>
                 <div className="cont-name">
-                    {tovar.title}
+                    {product.title}
                 </div>
                 <div className="cont-description">
-                    {tovar.body}
+                    {product.body}
                 </div>
                 <div className="cont-priceAndButton">
                     <div className="price">
-                        {tovar.action>0? <div className="action">{price} грн&nbsp;<span>{tovar.price}</span></div> : <span>{tovar.price}</span>}
+                        {product.action>0? <div className="action">{price} грн&nbsp;<span>{product.price}</span></div> : <span>{product.price}</span>}
                     </div>
                     <div className="cont-button">
                         <div className="button">
@@ -67,4 +68,4 @@ const CardTovar:React.FC<Card>= ({tovar}) => {
     );
 };
 
-export default CardTovar;
+export default CardProduct;

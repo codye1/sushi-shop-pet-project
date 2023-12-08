@@ -1,40 +1,49 @@
+footer{
+    display: flex;
+}
+
 
 .container{
     display: flex;
-}
-
-.poll-container{
-    display: flex;
+    flex-direction: column;
     width: 1600px;
     margin: auto;
-    padding: 0 30px ;
+    padding: 0 30px;
+}
 
-
-    padding: 40px;
+.poll-text{
+    display: flex;
+    flex-direction: column;
+    max-width: 345px;
 }
 
 .poll{
+    margin: 50px 0;
+    padding: 40px;
     display: flex ;
     width: 100%;
     border-radius: 8px;
-    min-height: 193px;
     background:linear-gradient(90.83deg,#f3f9ff,#fff5ec 99.89%);
-    padding: 0 40px;
     justify-content: space-between;
     align-items: center ;
 
     box-shadow: rgba(117, 118, 132, 0.15) 8px 8px 16px 0px
 }
 
+
 .poll h1{
+
+    max-width: 345px;
     font-family: sans-serif;
     font-size: 24px;
 }
 
 .poll h2{
+
     font-family: sans-serif;
     font-size: 24px;
     font-weight: 300;
+    z-index: 11;
 }
 
 .poll-button{
@@ -53,22 +62,12 @@
 }
 
 
-
-.footer-links{
-    display: flex;
-    width: 1600px;
-    margin: auto;
-    padding: 0 30px ;
-    margin-top: 20px;
-}
-
 .links{
+    margin: 25px 0;
     width: 100%;
-
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
 }
 
 .links-block{
@@ -115,16 +114,10 @@
     margin-bottom: 25px;
 }
 
-.footer-icons{
-    display: flex;
-    width: 1600px;
-    margin: auto;
-    padding: 0 30px ;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+
 
 .icons{
+    margin: 20px 0 50px 0;
     width: 100%;
 }
 
@@ -132,13 +125,7 @@
     margin: 0 40px 0 0;
 }
 
-.footer-line{
-    display: flex;
-    width: 1600px;
-    margin: auto;
-    padding: 0 30px ;
-    margin-bottom: 30px;
-}
+
 
 .footer-down-block{
     display: flex;
@@ -148,16 +135,18 @@
 }
 
 .down-block{
+    margin: 30px 0 100px 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
+    flex-wrap: wrap;
 }
 
 .left-block{
     display: flex;
     line-height: 21px;
-    width: 380px;
+    min-width: 380px;
     justify-content: space-between;
 }
 .right-block{
@@ -196,3 +185,12 @@
     color: black;
     font-weight: 300;
 }
+
+@media (max-width: 520px) {
+    .poll{
+     flex-direction: column;
+    }
+    .left-block{
+        min-width: 320px;
+    }
+   }

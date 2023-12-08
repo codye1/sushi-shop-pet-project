@@ -6,6 +6,7 @@ import GourmetsChoice from "../../pages/GourmetsChoice/GourmetsChoice";
 import Header from "../../pages/Header/Header";
 import Home from "../../pages/Home/Home";
 import HotsAndSalads from "../../pages/HotsAndSalads/HotsAndSalads";
+import PageByIdProduct from "../../pages/PageByIdProduct/PageByIdProduct";
 import Philadelphia from "../../pages/Philadelphia/Philadelphia";
 import Promotion from "../../pages/Promotion/Promotion";
 import Roles from "../../pages/Roles/Roles";
@@ -28,4 +29,5 @@ export const routPages=[
     {path: '/sushi',element:Sushi,exact:true},
     {path: '/promotion',element:Promotion,exact:true},
     {path: '/gourmetschoise',element:GourmetsChoice,exact:true},
+    {path: '/product/:id',element:PageByIdProduct,exact:true},
 ]

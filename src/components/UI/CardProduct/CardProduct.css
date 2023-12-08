@@ -1,6 +1,6 @@
-.card-tovar{
+.card-product{
     width:  24%;
-    margin: 0 0.5% 1% 0.5%;
+    margin-bottom: 20px;
     height: 465px;
 
     border-radius: 10px;
@@ -14,12 +14,12 @@
   }
 
   @media (max-width: 1350px) {
-    .card-tovar{
+    .card-product{
       width: 32%;
     }
   }
   @media (max-width: 950px) {
-    .card-tovar{
+    .card-product{
       width: 48%;
     }
     .banner-text{
@@ -27,8 +27,8 @@
     }
   }
   @media (max-width: 800px) {
-    .card-tovar{
-      width: 80%;
+    .card-product{
+      width: 100%;
     }
   }
 
@@ -42,6 +42,7 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   height: 220px;
+  overflow: hidden;
 }
 
 .card-photo{

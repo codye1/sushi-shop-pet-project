@@ -81,7 +81,6 @@ const Header = () => {
                         </div>
                     </div>
             </div>
-
             </div>
             <div className="line-header">
                 <div className="line-container">

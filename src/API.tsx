@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 
-export interface Tovar {
+export interface Product {
     key:number
+    type:string
     id: string
     title: string
     action:number
@@ -23,14 +24,14 @@ export interface Tovar {
     filadelfiya:boolean
   }
 
-  type TovarResponse = Tovar[]
+  type ProductResponse = Product[]
 
 export const api = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
     tagTypes: ['Sets'],
     endpoints: (build) => ({
-      getSets: build.query<TovarResponse, void>({
-        query: () => 'sets',
+      getSets: build.query<ProductResponse, void>({
+        query: () => 'product',
         providesTags: (result) =>
           result
             ? [
@@ -40,14 +41,19 @@ export const api = createApi({
             : [{ type: 'Sets', id: 'LIST' }],
       }),
 
-      getSet: build.query<Tovar, string>({
-        query: (id) => `sets/${id}`,
+      getSet: build.query<Product, string>({
+        query: (id) => `product/${id}`,
         providesTags: (result, error, id) => [{ type: 'Sets', id }],
       }),
-
-      getRolls: build.query<Tovar, string>({
-        query: (id) => `rolls/${id}`,
-        providesTags: (result, error, id) => [{ type: 'Sets', id }],
+      getSetsByIds: build.query<ProductResponse, string[]>({
+        query: (ids) => `product?id=${ids.join('&id=')}`,
+        providesTags: (result) =>
+          result
+            ? [
+                ...result.map(({ id }) => ({ type: 'Sets' as const, id })),
+                { type: 'Sets', id: 'LIST' },
+              ]
+            : [{ type: 'Sets', id: 'LIST' }],
       }),
     }),
   })
@@ -55,5 +61,5 @@ export const api = createApi({
   export const {
     useGetSetQuery,
     useGetSetsQuery,
-    useGetRollsQuery,
+    useGetSetsByIdsQuery
   } = api
