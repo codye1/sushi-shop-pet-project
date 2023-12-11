@@ -8,9 +8,11 @@
     width: 1600px;
     margin: auto;
     padding: 0 30px;
+
 }
 
 .main-product-view{
+
     width: 100%;
     display: flex;
 
@@ -19,26 +21,51 @@
 .back{
     line-height: 30px;
     display: flex;
-    margin-top: 30px;
+    margin: 30px 0;
+
+    font-size: 32px;
+    font-weight: bold;
+
 }
 
 .img-product-view{
-
-    min-width: 700px;
-    height: 360px;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
     margin-right: 30px;
+    border-radius: 8px 8px 0 0;
+}
 
-    border-radius: 8px;
+.lables{
+    color: aliceblue;
+    font-size: 14px;
+    top: 0px;
+    right: 0px;
+    margin: 5px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.discount,.gourmetsChoice,.promotion,.rollGift{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-product-view img{
-    width: 100%;
-    height: 100%;
-
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 8px;
 }
 
-
+.container-img{
+    position: relative;
+    width: 100%;
+    height: 360px;
+    margin: 0;
+    justify-content: start;
+}
 
 .information-product-view{
     word-break: break-all;
@@ -48,7 +75,7 @@
 }
 .product-name{
     margin: 10px 0;
-
+    min-width: 0px;
     font-weight: 700;
     font-size: 32px;
 }
@@ -60,12 +87,25 @@
 .product-price{
     margin-right: 10px;
   height: 100%;
-    min-width: 300px;
+    min-width: 0px;
   text-align: start;
+    display: flex;
+    justify-content: space-between;
 
   font-size: 35px;
   font-weight: 700;
 }
+
+.product-price .action span{
+    font-size: 24px;
+    text-decoration: line-through;
+    color: black;
+  }
+.product-price .action{
+    text-align: start;
+    color: red;
+  }
+
 .product-price-button{
     margin: 30px 0;
     display: flex;
@@ -73,7 +113,7 @@
 .product-button{
     min-width: 277px;
     height: 48px;
-    background-color: red;
+    background-color: #E30613;
     border-radius: 8px;
 
     color: white;
@@ -109,7 +149,7 @@
         flex-direction: column;
     }
     .img-product-view {
-        height: 100%;
+        height: auto;
         margin-right: 0px;
     }
 
@@ -127,12 +167,6 @@
 }
 
 @media (max-width: 770px) {
-    .img-product-view {
-        height: 48vw;
-        width: 90vw;
-    }
-
-
 }
 
 
@@ -141,7 +175,6 @@
 }
 .product-bonus a{
     text-decoration: none;
-    color: #333333;
     font-weight: 600;
     font-size: 16px;
     margin-left: 30px;
@@ -175,11 +208,16 @@
   line-height: 24px;
   font-size: 14px;
 }
+
 .pageByIdProduct-swiper{
     overflow: visible;
 }
 .pageByIdProduct-swiper .swiper-slide{
-    background-color: #333333;
-    width: auto;
-    height: auto;
+
+    width: 24.1%;
+    height: 100%;
 }
+.pageByIdProduct-swiper .card-product{
+   width: 100%;
+}
+

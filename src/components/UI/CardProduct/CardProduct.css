@@ -30,6 +30,9 @@
     .card-product{
       width: 100%;
     }
+    .card-photo{
+      min-height: 220px;
+    }
   }
 
 .top-cont{

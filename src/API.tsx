@@ -55,11 +55,22 @@ export const api = createApi({
               ]
             : [{ type: 'Sets', id: 'LIST' }],
       }),
+      getSearchProduct: build.query<ProductResponse, string>({
+        query: (input) => `product?title_like=${input}`,
+        providesTags: (result) =>
+          result
+            ? [
+                ...result.map(({ id }) => ({ type: 'Sets' as const, id })),
+                { type: 'Sets', id: 'LIST' },
+              ]
+            : [{ type: 'Sets', id: 'LIST' }],
+      }),
     }),
   })
 
   export const {
     useGetSetQuery,
     useGetSetsQuery,
-    useGetSetsByIdsQuery
+    useGetSetsByIdsQuery,
+    useGetSearchProductQuery
   } = api

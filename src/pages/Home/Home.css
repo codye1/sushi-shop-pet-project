@@ -9,26 +9,15 @@
   justify-content: center;
 }
 
-.home-slider{
-  margin: 2.5% 0px 2.5% 0;
+.down-header{
   display: flex;
-  justify-content: center;
-}
-.slider-cont{
-  width: 60%;
-  height: 30%;
-}
+  }
 
-
-.home-swiper .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
+.page-title{
+  width: 1600px;
+  margin: auto;
+  padding: 30px 30px;
+  line-height: 44px;
+  font-size: 32px;
+  font-weight: bold;
 }
-
-.home-swiper .swiper-slide-active {
-    transform: scale(1.1)!important;
-    transition: all .3s ease!important;
-}
-

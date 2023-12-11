@@ -29,5 +29,5 @@ export const routPages=[
     {path: '/sushi',element:Sushi,exact:true},
     {path: '/promotion',element:Promotion,exact:true},
     {path: '/gourmetschoise',element:GourmetsChoice,exact:true},
-    {path: '/product/:id',element:PageByIdProduct,exact:true},
+    {path: '/:type/:id',element:PageByIdProduct,exact:true},
 ]

@@ -1,7 +1,7 @@
 import { Product } from "../../../API";
 import CardProduct from "../CardProduct/CardProduct";
 import "./ProductList.css"
-import { useState, useEffect } from 'react';
+//import { useState, useEffect } from 'react';
 type ProductLists={
     product:Product[]
 }
@@ -9,7 +9,7 @@ type ProductLists={
 
 
 const ProductList:React.FC<ProductLists> = ({product}) => {
-    const [numberOfElements,setNumberOfElements] = useState(9)
+/*  const [numberOfElements,setNumberOfElements] = useState(9)
     useEffect(()=>{
         window.addEventListener('resize', (e) => {
             console.log(e);
@@ -21,13 +21,14 @@ const ProductList:React.FC<ProductLists> = ({product}) => {
           });
 
     })
+*/
     return (
         <div className="product">
                 <div className="product-cont">
                     <div className="product-list">
-                        {product.map((p)=>p.key<numberOfElements?
+                        {product.map((p)=>
                         <CardProduct key={p.key} product={p}/>
-                        :false)
+                        )
                         }
 
                     </div>

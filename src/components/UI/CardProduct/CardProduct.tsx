@@ -13,44 +13,44 @@ const CardProduct:React.FC<Card>= ({product}) => {
     return (
         <div className="card-product">
             <div className="top-cont">
-                {<NavLink to={`/product/${product.id}`}> <img className="card-photo" src={product.photo} alt="" /></NavLink>}
+                {<NavLink to={`/${product.type}/${product.id}`}> <img title={`Страва ${product.title} меню SUSHI MASTER`} className="card-photo" src={product.photo} alt="" /></NavLink>}
             </div>
-            <div className="product-labels">
-                {product.gurman?
-                    <div className="gourmetsChoice">
-                        Вибір гурманів
-                    </div>
-                    :
-                    false
-                }
-                {product.promotion?
-                    <div className="promotion">
-                        Акція
-                    </div>
-                    :
-                    false
-                }
-                {product.action>0?
-                    <div className="discount">
-                        Знижка -{Math.round(product.action)}%
-                    </div>
-                    :
-                    false
-                }
-                {product.rollFree?
-                    <div className="rollGift">
-                       Рол у подарунок
-                    </div>
-                : false}
-            </div>
+            <div className="lables">
+                            {product.action>0?
+                                <div className="discount">
+                                    Знижка -{Math.round(product.action)}%
+                                </div>
+                                :
+                                false
+                            }
+                             {product.gurman?
+                                <div className="gourmetsChoice">
+                                    Вибір гурманів
+                                </div>
+                                :
+                                false
+                            }
+                            {product.promotion?
+                                <div className="promotion">
+                                    Акція
+                                </div>
+                                :
+                                false
+                            }
+                            {product.rollFree?
+                                <div className="rollGift">
+                                Рол у подарунок
+                                </div>
+                            : false}
+                        </div>
             <div className="down-cont">
                 <div className="cont-weight">
                     {product.harch.weight} Г
                 </div>
-                <div className="cont-name">
+                <div title={`${product.title}`}  className="cont-name">
                     {product.title}
                 </div>
-                <div className="cont-description">
+                <div title={`${product.body}`} className="cont-description">
                     {product.body}
                 </div>
                 <div className="cont-priceAndButton">

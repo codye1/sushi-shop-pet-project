@@ -260,7 +260,7 @@
 ,
         {
             "key":12,
-            "type":"rolls",
+            "type":"roles",
             "id": "rol-filadelfiya-z-lososem",
             "title": "ФІЛАДЕЛЬФІЯ З ЛОСОСЕМ",
             "body":"Склад: Рис, лосось, крем сир, авокадо, огірок, норі",
@@ -326,7 +326,7 @@
         }
   ,
         {   "key":15,
-            "type":"deserti",
+            "type":"desserts",
             "id": "tart-vishnevij",
             "title": "ТАРТ ВИШНЕВИЙ",
             "body":"Склад: Тарт вишневий",
@@ -348,7 +348,7 @@
         }
     ,
         {   "key":16,
-            "type":"panaziya",
+            "type":"hotsAndSalads",
             "id": "lokshyna_udon_z_kurkoyu",
             "title": "ЛОКШИНА УДОН З КУРКОЮ",
             "body":"Склад: Локшина удон, філе куряче, спаржа, морква, капуста броколі, перець болгарський, гриби шиїтаке, соус устричний, цибуля ріпчаста",
@@ -370,7 +370,7 @@
         }
    ,
         {   "key":17,
-            "type":"sups",
+            "type":"hotsAndSalads",
             "id": "miso_sup_z_lososem",
             "title": "МІСО СУП З ЛОСОСЕМ",
             "body":"Склад: Місо бульйон, лосось, вакаме, кунжут, зелена цибуля, гриби шиїтаке",
@@ -390,7 +390,7 @@
         }
     ,
         {   "key":18,
-            "type":"drink",
+            "type":"drinks",
             "id": "pepsi-1-l",
             "title": "ПЕПСІ 1Л",
             "body":"",
@@ -412,7 +412,7 @@
         }
    ,
         {   "key":19,
-            "type":"dops",
+            "type":"additions",
             "id": "soyevyy_sous_brend_40_ml_dopovnennya",
             "title": "СОЄВИЙ СОУС 50 МЛ",
             "body":"Склад: Соєвий соус",

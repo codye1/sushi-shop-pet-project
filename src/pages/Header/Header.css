@@ -1,19 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-
-*{
-
-}
 body{
     overflow-x:hidden;
-    background-color: white;
     color: black
 }
 .header{
     transition: all .3s ease;
     z-index: 111;
-    height: 125px;
-    background-color: white;
+    max-height: 1125px;
 
     position: sticky;
     top: 0;
@@ -25,14 +19,15 @@ body{
 .top-header{
     display: flex;
 
+    background-color: white;
 }
 
 .top-container{
     margin: auto;
     width: 1600px;
     height: 81px;
-    background-color:white;
 
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
 
@@ -52,19 +47,23 @@ body{
 .left-cont{
     display: flex;
     justify-content: space-between;
-    width: 17%;
+    width: 18%;
     height: 30px;
-    margin-left: 2.5%;
-
 }
 
 .city{
-    width: 25%;
+    width: 60px;
     line-height: 29px;
+
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 1px black dashed;
 
 }
 .language{
-    width: 24%;
+    width: 60px;
 
     display: flex;
     justify-content: center;
@@ -78,18 +77,21 @@ body{
 }
 
 .number{
-    width: 30%;
+    width: 100px;
     align-items: center;
     display: flex;
     justify-content: center;
 
 }
+
+.number a{
+    font-weight: SemiBold;
+  text-decoration: none;
+    color: #1D1D1D;
+}
 .right-cont{
     width: 17.7%;
     height: 30px;
-    margin-right: 2.5%;
-
-
     display: flex;
     justify-content: space-between;
 }
@@ -98,17 +100,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15%;
+    width: 40px;
     height: 30px;
 
 }
+
+
 
 .login{
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 40%;
+    width: 100px;
     height: 30px;
 
 }
@@ -119,10 +123,11 @@ body{
 
 .basket{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 
-    width: 15%;
+
+    width: 40px;
     height: 30px;
 
 
@@ -130,6 +135,7 @@ body{
 
 .line-header{
     display: flex;
+    background-color: white;
 }
 
 .line-container{
@@ -142,6 +148,8 @@ body{
 .line{
     width: 100%;
     height: 1px;
+
+    z-index: 1;
     background-color: rgba(169, 169, 169, 0.436);
 }
 
@@ -149,13 +157,15 @@ body{
 
 .down-header{
 display: flex;
+
+background-color: white;
 }
 .navbar-cont{
     width: 1600px;
 
-    height: 30px;
+    height: 40px;
     margin: auto;
-
+    padding: 20px 30px;
     display: flex;
     justify-content: space-between;
 
@@ -164,12 +174,13 @@ display: flex;
 
 .navbar{
     width: 100%;
-    margin: 0 2.5%;
     display: flex;
     justify-content: space-between;
 
     align-items: center;
 }
+
+
 
 .link{
     display: flex;
