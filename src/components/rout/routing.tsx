@@ -7,7 +7,7 @@ const Routing = () => {
         {routPages.map((route, index) => <Route key = {index} path = {route.path} element={<route.element />}/>
             )}
         <Route path = "*" element = {<Navigate to = "/home" replace/>}/>
-      </Routes>
+    </Routes>
   );
 };
 

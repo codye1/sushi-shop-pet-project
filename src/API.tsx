@@ -4,6 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export interface Product {
     key:number
     type:string
+    additions:string[]
     id: string
     title: string
     action:number
@@ -24,7 +25,7 @@ export interface Product {
     filadelfiya:boolean
   }
 
-  type ProductResponse = Product[]
+  export type ProductResponse = Product[]
 
 export const api = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
@@ -40,9 +41,24 @@ export const api = createApi({
               ]
             : [{ type: 'Sets', id: 'LIST' }],
       }),
+      getAdditions: build.query<ProductResponse, void>({
+        query: () => 'additions-by-type',
+        providesTags: (result) =>
+          result
+            ? [
+                ...result.map(({ id }) => ({ type: 'Sets' as const, id })),
+                { type: 'Sets', id: 'LIST' },
+              ]
+            : [{ type: 'Sets', id: 'LIST' }],
+      }),
+
 
       getSet: build.query<Product, string>({
         query: (id) => `product/${id}`,
+        providesTags: (result, error, id) => [{ type: 'Sets', id }],
+      }),
+      getAddition: build.query<Product, string>({
+        query: (id) => `additions-by-type/${id}`,
         providesTags: (result, error, id) => [{ type: 'Sets', id }],
       }),
       getSetsByIds: build.query<ProductResponse, string[]>({
@@ -55,6 +71,17 @@ export const api = createApi({
               ]
             : [{ type: 'Sets', id: 'LIST' }],
       }),
+      getAdditionsByIds: build.query<ProductResponse, string[]>({
+        query: (ids) => `additions-by-type?id=${ids.join('&id=')}`,
+        providesTags: (result) =>
+          result
+            ? [
+                ...result.map(({ id }) => ({ type: 'Sets' as const, id })),
+                { type: 'Sets', id: 'LIST' },
+              ]
+            : [{ type: 'Sets', id: 'LIST' }],
+      }),
+
       getSearchProduct: build.query<ProductResponse, string>({
         query: (input) => `product?title_like=${input}`,
         providesTags: (result) =>
@@ -72,5 +99,8 @@ export const api = createApi({
     useGetSetQuery,
     useGetSetsQuery,
     useGetSetsByIdsQuery,
-    useGetSearchProductQuery
+    useGetSearchProductQuery,
+    useGetAdditionsQuery,
+    useGetAdditionQuery,
+    useGetAdditionsByIdsQuery
   } = api

@@ -9,30 +9,20 @@ function App() {
   const searchActive = useAppSelector((state)=>state.searchActive.searchActive);
   const searchInput = useAppSelector((state)=>state.searchActive.searchInput);
   const {data,error,isLoading} = useGetSearchProductQuery(searchInput)
+  data? console.log(data):null;
 
   return (
     <BrowserRouter>
       <Header/>
-
       {searchActive?
-      error?
-      <div>
-        Ошибка
-      </div>
-      :
-      isLoading?
-      <div>
-        Загрузка
-      </div>
-      :
-      data?
-      <div>
-        {<ProductList product={data}/>}
-      </div>
-      :
-      null
-      :
-      <Routing/>
+       error?
+       <div>Ошибка</div>
+       :isLoading?
+       <div>Загрузка</div>
+       :data?
+       <div>{<ProductList product={data}/>}</div>
+       :null
+       :<Routing/>
     }
       <Footer/>
     </BrowserRouter>

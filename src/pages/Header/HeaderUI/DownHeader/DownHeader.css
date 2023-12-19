@@ -1,0 +1,45 @@
+.down-header{
+    display: flex;
+
+    background-color: white;
+    }
+    .navbar-cont{
+        width: 1600px;
+
+        height: 40px;
+        margin: auto;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+
+        align-items: center;
+    }
+
+    .navbar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        align-items: center;
+    }
+
+
+
+    .link{
+        display: flex;
+        justify-content: space-between;
+        line-height: 20px;
+        margin: 0 0;
+        height: 20px;
+
+        text-decoration: none;
+        color:#7B7C85;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .linkact{
+        color: red;
+    }
+

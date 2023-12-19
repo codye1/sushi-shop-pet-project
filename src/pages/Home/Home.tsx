@@ -5,8 +5,11 @@ import {  useGetSetsQuery } from "../../API";
 import ProductList from "../../components/UI/ProductList/ProductList";
 import Banner from "../../components/UI/Banner/Banner";
 import AboutSushiMaster from "../../components/UI/AboutSushiMaster/AboutSushiMaster";
+/*
 import HomeSlider from "../../components/UI/HomeSlider/HomeSlider";
-//import { useAppSelector } from "../../hooks";
+import { useState } from "react";
+import { useAppSelector } from "../../hooks";
+*/
 
 
 
@@ -17,10 +20,7 @@ const Home = () => {
 
 
     return (
-
-
         <div>
-            <HomeSlider/>
             <div className="page-title">
                 Доставка суші
             </div>

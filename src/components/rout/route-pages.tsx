@@ -1,4 +1,5 @@
 import Additions from "../../pages/Additions/Additions";
+import BasketPage from "../../pages/BasketPage/BasketPage";
 import California from "../../pages/California/California";
 import Desserts from "../../pages/Desserts/Desserts";
 import Drinks from "../../pages/Drinks/Drinks";
@@ -30,4 +31,5 @@ export const routPages=[
     {path: '/promotion',element:Promotion,exact:true},
     {path: '/gourmetschoise',element:GourmetsChoice,exact:true},
     {path: '/:type/:id',element:PageByIdProduct,exact:true},
+    {path: '/basket',element:BasketPage,exact:true},
 ]

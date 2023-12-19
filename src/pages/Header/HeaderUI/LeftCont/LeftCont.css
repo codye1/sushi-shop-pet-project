@@ -1,0 +1,45 @@
+.left-cont{
+    display: flex;
+    justify-content: space-between;
+    width: 18%;
+    height: 30px;
+}
+
+.city{
+    width: 60px;
+    line-height: 29px;
+
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 1px black dashed;
+
+}
+.language{
+    width: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.language span{
+    margin-right:3px ;
+
+}
+
+.number{
+    width: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.number a{
+    font-weight: SemiBold;
+  text-decoration: none;
+    color: #1D1D1D;
+}

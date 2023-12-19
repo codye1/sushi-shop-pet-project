@@ -156,9 +156,34 @@
   border-radius: 10px;
   font-weight: 600;
   background-color: red;
-
+  cursor: pointer;
   text-align: center;
 }
+.button-after-click{
+  padding: 0 5px;
+  color: red;
+  width: 100%;
+  font-size: 16px;
+  height: 100%;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: #F9C9CF;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add,.remove{
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .product-labels{
   position: absolute;
