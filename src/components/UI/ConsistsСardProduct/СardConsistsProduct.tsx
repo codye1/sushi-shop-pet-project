@@ -8,8 +8,6 @@ type Cards={
 
 
 const ConsistsСardProduct:React.FC<Cards> = ({product}) => {
-
-
     return (
         <div className='card-container'>
             <div className='card-consists-img'>
@@ -17,7 +15,7 @@ const ConsistsСardProduct:React.FC<Cards> = ({product}) => {
             </div>
             <div className='card-consists-down-block'>
                 <div className='price-consists'>
-                    {product.price}
+                    {product.harch.weight} г
                 </div>
                 <div className='name-consists'>
                     {product.title}

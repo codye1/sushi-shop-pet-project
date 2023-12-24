@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 const RightCont = () => {
     const dispatch = useDispatch()
     const basket = useAppSelector((state)=>state.basket.basket)
-    useState
     const [isAnimated,setIsAtimated]=useState(false);
     useEffect(()=>{
         function setAnimatedWitchTimeout() {

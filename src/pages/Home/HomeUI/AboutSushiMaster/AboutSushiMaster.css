@@ -28,11 +28,11 @@
     margin-top: 20px;
     text-align: start;
     font-family:sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  color: #7b7c85;
-  word-spacing: 0px
-
+    font-size: 16px;
+    line-height: 24px;
+    color: #7b7c85;
+    word-spacing: 0px;
+    cursor: pointer;
 
   }
 
@@ -57,12 +57,25 @@
   }
   .sushi-master p{
     color: rgba(29,29,29,.5);
-    font-size: 14px;
+    font-size: 16px;
     line-height: 21px;
     text-align: start;
-
   }
 
+  ul{
+    list-style: none;
+  }
+  li{
+    font-size: 16px;
+    line-height: 21px;
+    color: rgba(29,29,29,.5);
+    list-style: disc;
+    padding-left: 16px;
+    margin: 15px 0 15px 16px;
+  }
+  li::marker{
+    color: #202228;
+  }
   .sushi-master h1,h2{
     z-index: -1;
     margin: 30px 0;

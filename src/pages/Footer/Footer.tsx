@@ -31,8 +31,9 @@ const Footer = () => {
                     </div>
                     <div className="links-block">
                         <h3>Підтримка</h3>
-                        <h4>0 800 330 333</h4>
-                        <h4>ZABOTA@SUSHI-MASTER.UA</h4>
+
+                        <h4><a href="tel:0 800 330 333">0 800 330 333</a></h4>
+                        <h4><a href="mailto:ZABOTA@SUSHI-MASTER.UA">ZABOTA@SUSHI-MASTER.UA</a></h4>
                     </div>
                     </div>
                 <div className="icons">

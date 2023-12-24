@@ -4,14 +4,6 @@
     padding: 0;
   }
 
-.home{
-  display: flex;
-  justify-content: center;
-}
-
-.down-header{
-  display: flex;
-  }
 
 .page-title{
   width: 1600px;

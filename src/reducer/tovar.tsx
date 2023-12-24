@@ -1,29 +1,27 @@
-
 import { createSlice } from '@reduxjs/toolkit'
-import { Product } from '../API';
+import { IProduct } from '../Interfaces';
 
 
 interface ProductDefault {
-    posti:Product[]
+    product:IProduct[]
     isLoading:boolean
     error:string
 }
 
 
 const initialState: ProductDefault = {
-    posti:
+    product:
     [{
       key:1,
       type:"sets",
+      additions:[],
       title:'5',
       id:'s',
       body:'4',
       action:0,
       price:'1',
       photo:'ss',
-      gurman:false,
-      rollFree:false,
-      promotion:true,
+      labels:[],
       harch:{
         weight:1370,
         fats:137.19,
@@ -40,7 +38,7 @@ const initialState: ProductDefault = {
 }
 
 export const productSlice = createSlice({
-  name: 'set',
+  name: 'product',
   initialState,
   reducers: {
     increment: (state) => {

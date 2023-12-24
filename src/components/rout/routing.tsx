@@ -4,8 +4,7 @@ import { routPages } from './route-pages';
 const Routing = () => {
   return (
     <Routes >
-        {routPages.map((route, index) => <Route key = {index} path = {route.path} element={<route.element />}/>
-            )}
+        {routPages.map((route, index) => <Route key = {index} path = {route.path} element={<route.element />}/>)}
         <Route path = "*" element = {<Navigate to = "/home" replace/>}/>
     </Routes>
   );

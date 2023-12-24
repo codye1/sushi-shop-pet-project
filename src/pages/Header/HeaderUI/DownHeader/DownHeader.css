@@ -8,7 +8,7 @@
 
         height: 40px;
         margin: auto;
-        padding: 20px 30px;
+        padding: 0px 30px;
         display: flex;
         justify-content: space-between;
 
@@ -17,6 +17,7 @@
 
     .navbar{
         width: 100%;
+        height: 40px;
         display: flex;
         justify-content: space-between;
 
@@ -30,16 +31,20 @@
         justify-content: space-between;
         line-height: 20px;
         margin: 0 0;
-        height: 20px;
-
+        height: 40px;
+        align-items: center;
         text-decoration: none;
         color:#7B7C85;
         font-family: 'Open Sans', sans-serif;
         font-size: 14px;
         font-weight: 600;
+
+        text-decoration: none;
     }
 
-    .linkact{
+    .selected{
         color: red;
+        border-bottom: 2px solid rgb(227, 6, 19);
+
     }
 

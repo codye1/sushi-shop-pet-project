@@ -6,6 +6,10 @@
     margin: 30px 0;
     padding: 24px;
 
+}
+
+.card-product-basket-container{
+
     display: flex;
     justify-content: space-between;
 }
@@ -46,6 +50,7 @@
     display: flex;
     align-items: center;
     width: 35%;
+    min-width: 260px;
     justify-content: space-between;
 }
 .card-product-basket-add-delete-button-cont{
@@ -101,4 +106,22 @@
 
 .card-product-basket-delete-button-cont:hover svg path{
     fill:white;
+}
+
+
+@media (max-width: 800px) {
+    .card-product-basket{
+
+        display: inherit;
+        height: inherit;
+    }
+    .card-product-basket-container{
+        display: block;
+    }
+    .card-product-basket-right-cont{
+        width: 100%;
+    }
+    .card-product-basket-left-cont{
+        justify-content: center;
+    }
 }

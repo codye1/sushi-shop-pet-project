@@ -17,18 +17,18 @@ type Tlist=Ilist[];
 const DownHeader:React.FC<IDownHeader> = ({isScroled}) => {
 
     const down_list:Tlist=[
-        {site: '/sets',name:"Сети"},
-        {site: '/roles',name:"Роли"},
-        {site: '/promotion',name:"🔥Акції"},
-        {site: '/sushi',name:"Суші"},
-        {site: '/california',name:"Каліфорнії"},
-        {site: '/gourmetschoise',name:"🍣Вибір гурманів"},
-        {site: '/hotsAndSalads',name:"Гаряче та салати"},
-        {site: '/philadelphia',name:"Філадельфії"},
-        {site: '/soups',name:"Супи"},
-        {site: '/desserts',name:"Десерти"},
-        {site: '/drinks',name:"Напої"},
-        {site: '/additions',name:"Доповнення"},
+        {site: 'menu/sets',name:"Сети"},
+        {site: 'menu/roles',name:"Роли"},
+        {site: 'menu/promotion',name:"🔥Акції"},
+        {site: 'menu/sushi',name:"Суші"},
+        {site: 'menu/california',name:"Каліфорнії"},
+        {site: 'menu/gourmetschoise',name:"🍣Вибір гурманів"},
+        {site: 'menu/hotsAndSalads',name:"Гаряче та салати"},
+        {site: 'menu/philadelphia',name:"Філадельфії"},
+        {site: 'menu/soups',name:"Супи"},
+        {site: 'menu/desserts',name:"Десерти"},
+        {site: 'menu/drinks',name:"Напої"},
+        {site: 'menu/addition',name:"Доповнення"},
     ]
     const searchActive = useAppSelector((state)=>state.searchActive.searchActive);
     return (
@@ -41,7 +41,7 @@ const DownHeader:React.FC<IDownHeader> = ({isScroled}) => {
             <div  className={`down-header ${isScroled ? 'scroled' : ''}`}>
                 <div className="navbar-cont">
                     <div className="navbar">
-                        {down_list.map((p)=><NavLink key={p.site} to={p.site} className={({isActive})=>isActive? "link linkact" : 'link'} >{p.name}</NavLink>)}
+                        {down_list.map((p)=><NavLink key={p.site} to={p.site} className={({isActive})=>isActive? "link selected" : 'link'} >{p.name}</NavLink>)}
                     </div>
                 </div>
             </div>

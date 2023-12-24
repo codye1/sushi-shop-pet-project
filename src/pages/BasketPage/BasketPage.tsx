@@ -1,10 +1,14 @@
 import { useState } from "react";
 import "./BasketPage.css"
 import { useAppSelector } from "../../hooks";
-import { ProductResponse, useGetSetsByIdsQuery } from '../../API';
-import CardProductBasket from "../../components/UI/CardProductBasket/CardProductBasket";
+import { useGetSetsByIdsQuery } from '../../API';
+import CardProductBasket from "./BasketPageUI/CardProductBasket/CardProductBasket";
 import { useDispatch } from "react-redux";
 import { deleteAllElementsFromBasket } from "../../reducer/basket";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import CardRecommendationSlider from "../../components/UI/CardRecommendationSlider/CardRecommendationSlider";
+import { IProductResponse } from "../../Interfaces";
 
 const BasketPage = () => {
     const [input,setInput]=useState('');
@@ -12,13 +16,14 @@ const BasketPage = () => {
     const basketAdditons=useAppSelector((state)=>state.basket.basketAdditions)
     const {data,error,isLoading}=useGetSetsByIdsQuery(basketAdditons)
     const dispatch = useDispatch()
-    const makeUniq = (arr:ProductResponse| undefined) => {
+    const makeUniq = (arr:  IProductResponse | undefined) => {
         const uniqSet = new Set(arr);
         return [...uniqSet];
       }
     const products =  makeUniq(basket)
 
     return (
+    <div>
         <div className="basket-page">
             <div className="basket-page-cont">
                 <div className="down-block">
@@ -38,7 +43,6 @@ const BasketPage = () => {
                         data.map((p)=><CardProductBasket key={p.key} product={p} />):
                         null
                     }
-
                     </div>
                     <div className="basket-page-right-cont">
                         <div className="right-block-basket-page">
@@ -78,6 +82,25 @@ const BasketPage = () => {
                 </div>
             </div>
         </div>
+        <div>
+            <div className="container-product-view">
+                <div className="back">
+                    Рекомендуємо спробувати
+                </div>
+                <div className="pageByIdProduct-swiper-cont">
+                    <Swiper
+                        slidesPerView={4}
+                        spaceBetween={10}
+                        style={{ overflow: 'visible'}}
+                        modules={[Pagination]}
+                        className="pageByIdProduct-swiper"
+                    >
+                        {products?.map((p)=><SwiperSlide key={p.key}><CardRecommendationSlider product={p}/> </SwiperSlide>)}
+                    </Swiper>
+                </div>
+            </div>
+        </div>
+    </div>
     );
 };
 

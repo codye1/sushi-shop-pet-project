@@ -1,13 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { Product } from '../API'
+import { IProduct } from '../Interfaces';
 
 interface IBasket{
-  basket: Product[]
+  basket: IProduct[]
   basketAdditions:string[]
   basketOpen:boolean
   quantityProduct:{ [key: string]: number }
-
   quantityOverNormAdditions:{ [key: string]: number }
 }
 
@@ -23,7 +22,7 @@ const  basketSlice = createSlice({
   name: 'basket',
   initialState,
   reducers: {
-    addProductInBasket(state, action: PayloadAction<Product>) {
+    addProductInBasket(state, action: PayloadAction<IProduct>) {
       if (action.payload.type!="addition") {
         state.basket.push(action.payload)
         state.quantityProduct[action.payload.id]>0? state.quantityProduct[action.payload.id]++ : state.quantityProduct[action.payload.id] = 1
@@ -37,7 +36,7 @@ const  basketSlice = createSlice({
         state.quantityOverNormAdditions[action.payload.id]? state.quantityOverNormAdditions[action.payload.id]++ : state.quantityOverNormAdditions[action.payload.id] = 1
       }
     },
-    deleteById(state, action: PayloadAction<Product>) {
+    deleteById(state, action: PayloadAction<IProduct>) {
       if (action.payload.type!="addition") {
         state.quantityProduct[action.payload.id]--
         state.basket.splice(state.basket.indexOf(action.payload), 1);
@@ -54,7 +53,7 @@ const  basketSlice = createSlice({
     setBasketPageStatus(state, action: PayloadAction<boolean>) {
       state.basketOpen = action.payload
     },
-    deleteAllElementsByIdFromBasket(state, action: PayloadAction<Product>) {
+    deleteAllElementsByIdFromBasket(state, action: PayloadAction<IProduct>) {
       if (action.payload.type=="addition") {
        state.basketAdditions = state.basketAdditions.filter((p)=>p != action.payload.id)
 
@@ -62,11 +61,13 @@ const  basketSlice = createSlice({
        state.quantityOverNormAdditions[action.payload.id] = 0
       }else{
         state.basket = state.basket.filter((p)=>p.id != action.payload.id)
-        state.quantityProduct[action.payload.id] = 0
-        for (let i = 0; i < action.payload.additions.length; i++) {
-          state.quantityProduct[action.payload.additions[i]]--
-          state.basketAdditions.splice(state.basketAdditions.indexOf(action.payload.additions[i]), 1);
+        for (let k = 0; k < state.quantityProduct[action.payload.id]; k++) {
+          for (let i = 0; i < action.payload.additions.length; i++) {
+            state.quantityProduct[action.payload.additions[i]]--
+            state.basketAdditions.splice(state.basketAdditions.indexOf(action.payload.additions[i]), 1);
+          }
         }
+        state.quantityProduct[action.payload.id] = 0
       }
     },
     deleteAllElementsFromBasket(state) {
