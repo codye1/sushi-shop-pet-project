@@ -1,35 +1,36 @@
 import { useState } from "react";
 import "./BasketPage.css"
 import { useAppSelector } from "../../hooks";
-import { useGetSetsByIdsQuery } from '../../API';
 import CardProductBasket from "./BasketPageUI/CardProductBasket/CardProductBasket";
 import { useDispatch } from "react-redux";
-import { deleteAllElementsFromBasket } from "../../reducer/basket";
+import { deleteAllElementsFromBasket, setBasketPageStatus  } from "../../reducer/basket";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import CardRecommendationSlider from "../../components/UI/CardRecommendationSlider/CardRecommendationSlider";
 import { IProductResponse } from '../../interfaces';
+import { useGetProductsByIdsQuery } from "../../API";
+import { NavLink } from "react-router-dom";
 
 
 const BasketPage = () => {
     const [input,setInput]=useState('');
     const basket = useAppSelector((state)=>state.basket.basket);
     const basketAdditons=useAppSelector((state)=>state.basket.basketAdditions)
-    const {data,error,isLoading}=useGetSetsByIdsQuery(basketAdditons)
+    const {data,error,isLoading}=useGetProductsByIdsQuery(basketAdditons)
     const dispatch = useDispatch()
     const makeUniq = (arr:  IProductResponse | undefined) => {
         const uniqSet = new Set(arr);
         return [...uniqSet];
       }
     const products =  makeUniq(basket)
-
     return (
     <div>
-        <div className="basket-page">
-            <div className="basket-page-cont">
+        <div className="d-flex">
+            <div className="container">
+                {products.length>0?
                 <div className="down-block">
                     <div className="basket-page-left-cont">
-                        <div className="top-block">
+                        <div className="top-block ">
                             Мої замовлення
                             <h1 onClick={()=>{
                                 dispatch(deleteAllElementsFromBasket())
@@ -80,10 +81,18 @@ const BasketPage = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>:
+
+                        <div className="basket-empty d-flex column center">
+                            <img src="https://kyiv.sushi-master.ua/img/products/cart-empty.svg" alt="" />
+                            <p>Кошик порожній, додайте що-небудь з меню</p>
+                            <NavLink onClick={()=>{dispatch(setBasketPageStatus(false))}} to={"*"}>В меню</NavLink>
+                        </div>
+                }
             </div>
         </div>
         <div>
+            {products.length>0?
             <div className="container-product-view">
                 <div className="back">
                     Рекомендуємо спробувати
@@ -96,10 +105,12 @@ const BasketPage = () => {
                         modules={[Pagination]}
                         className="pageByIdProduct-swiper"
                     >
-                        {products?.map((p)=><SwiperSlide key={p.key}><CardRecommendationSlider product={p}/> </SwiperSlide>)}
+                        {products.map((p)=><SwiperSlide key={p.key}><CardRecommendationSlider product={p}/> </SwiperSlide>)}
                     </Swiper>
                 </div>
-            </div>
+            </div>:
+            null
+        }
         </div>
     </div>
     );

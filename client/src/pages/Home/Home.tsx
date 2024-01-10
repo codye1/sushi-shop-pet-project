@@ -1,31 +1,29 @@
 import "./Home.css"
-
-import {  useGetSetsQuery } from "../../API";
-
 import ProductList from "../../components/UI/ProductList/ProductList";
 import Banner from "./HomeUI/Banner/Banner";
 import AboutSushiMaster from "./HomeUI/AboutSushiMaster/AboutSushiMaster";
-/*
-import HomeSlider from "../../components/UI/HomeSlider/HomeSlider";
-import { useState } from "react";
-import { useAppSelector } from "../../hooks";
-*/
+import { useGetAllProductsQuery } from "../../API";
 
 
 
 
 const Home = () => {
-    const {data,error,isLoading} = useGetSetsQuery()
-    //const searchActive = useAppSelector((state)=>state.searchActive.searchActive);
+    const {data:products,error:errorProducts,isLoading:productsLoading} = useGetAllProductsQuery()
+
     return (
         <div>
-            <div className="page-title">
-                Доставка суші
+            <div className="d-flex">
+                <div className="container">
+                    <div className="page-title">
+                        Доставка суші
+                    </div>
+                </div>
             </div>
-            {error?<div>Помилка</div>:
-            isLoading?<div>Загрузка...</div>
-            :data?<ProductList products={data}/>
+            {errorProducts?<div>Помилка</div>:
+            productsLoading?<div>Загрузка...</div>
+            :products?<ProductList products={products}/>
             :<div>Ничего нет</div> }
+
             <Banner/>
             <AboutSushiMaster/>
         </div>

@@ -2,8 +2,9 @@ import React from 'react';
 import "./CardProductBasket.css"
 import { useAppSelector } from '../../../../hooks';
 import { useDispatch } from 'react-redux';
-import { addProductInBasket, deleteAllElementsByIdFromBasket, deleteById } from '../../../../reducer/basket';
-import { IProductInXEelement } from '../../../../Interfaces';
+import { addProductInBasket, deleteAllElementsByIdFromBasket, deleteById, setBasketPageStatus } from '../../../../reducer/basket';
+import { IProductInXEelement } from '../../../../interfaces';
+import { NavLink } from 'react-router-dom';
 
 
 const CardProductBasket:React.FC<IProductInXEelement> = ({product}) => {
@@ -13,17 +14,16 @@ const CardProductBasket:React.FC<IProductInXEelement> = ({product}) => {
     const overNormAdditions = useAppSelector((state)=>state.basket.quantityOverNormAdditions)
 
     const dispatch = useDispatch()
-
     return (
     <div className='card-product-basket'>
         <div className='card-product-basket-container'>
             <div className='card-product-basket-left-cont'>
                 <div className='card-product-basket-img-cont'>
-                    <img src={product.photo} alt="" />
+                {<NavLink onClick={()=>{dispatch(setBasketPageStatus(false))}} to={`/menu/${product.type}/${product.id}`}> <img title={`Страва ${product.title} меню SUSHI MASTER`} src={product.img} alt="" /></NavLink>}
                 </div>
                 <div className='card-product-basket-info-cont'>
-                    <h1>{product.title}</h1>
-                    <span>{product.harch.weight} г</span>
+                {<NavLink onClick={()=>{dispatch(setBasketPageStatus(false))}} to={`/menu/${product.type}/${product.id}`}><h1>{product.title}</h1></NavLink>}
+                    <span>{product?.harch?.weight} г</span>
                 </div>
             </div>
             <div className='card-product-basket-right-cont'>

@@ -7,7 +7,7 @@ const PromotionsCard:React.FC<IPromotionInXEelement> = ({promotion}) => {
             <a className="promotion-card-img" href={`/promotions/${promotion.id}`}><img src={promotion.img} alt="" /></a>
             <div className="promotion-text">
                 <div className="promotion-title">
-                    {promotion.title}
+                    <a href={`/promotions/${promotion.id}`}>{promotion.title}</a>
                 </div>
                 <div className="promotion-description">
                     {promotion.description}

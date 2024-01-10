@@ -1,12 +1,8 @@
-
 import { api } from './../../src/API';
 import { configureStore } from '@reduxjs/toolkit'
 import { productSlice } from './tovar';
 import basketSlice from './basket';
 import searchActiveSlice from './search';
-
-
-
 
 
 export const store = configureStore({

@@ -1,6 +1,5 @@
 .card-product{
     width:  100%;
-    margin-bottom: 20px;
     height: 465px;
 
     border-radius: 10px;
@@ -54,15 +53,21 @@
   font-weight: 600;
   font-family: sans-serif;
   text-transform: uppercase;
-
+  cursor: pointer;
   line-height: 24px;
+
+}
+
+.cont-name a{
+  color: black;
+  text-decoration: none;
 }
 
 .cont-description{
   text-align: start;
   margin: auto;
   margin-bottom: 20px;
-
+  color: #7b7c85;
   width: 90%;
   height: 42px;
   -webkit-line-clamp: 2;

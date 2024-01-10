@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import "./ButtonInCardProduct.css"
 import { useAppSelector } from "../../../hooks";
 import { addProductInBasket, deleteById } from "../../../reducer/basket";
-import { IProductInXEelement } from '../../../Interfaces';
+import { IProductInXEelement } from '../../../interfaces';
 
 
 

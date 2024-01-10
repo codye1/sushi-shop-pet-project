@@ -1,12 +1,3 @@
-.about-sushi-master{
-    display: flex;
-  }
-
-  .about-sushi-master-container{
-    width: 1600px;
-    margin: auto;
-    padding: 0 30px ;
-  }
 
   .centered-cont{
     border-left: 1px solid #d4d7db;
@@ -22,6 +13,8 @@
     font-family: sans-serif;
     transition: all .3s ease;
 
+
+    position: relative;
   }
 
   .sushi-master-button{
@@ -33,7 +26,7 @@
     color: #7b7c85;
     word-spacing: 0px;
     cursor: pointer;
-
+    justify-content: start;
   }
 
   .aboutScroped{
@@ -57,9 +50,11 @@
   }
   .sushi-master p{
     color: rgba(29,29,29,.5);
-    font-size: 16px;
+    font-size: 14px;
     line-height: 21px;
     text-align: start;
+
+    margin: 15px 0;
   }
 
   ul{
@@ -76,10 +71,7 @@
   li::marker{
     color: #202228;
   }
-  .sushi-master h1,h2{
-    z-index: -1;
-    margin: 30px 0;
-  }
+
   @media (max-width: 800px){
     .centered-cont{
         padding: 0;
@@ -91,3 +83,30 @@
     line-height: 21px;
   }
   }
+
+  .details-backdrop {
+    background: linear-gradient(hsla(0,0%,100%,0),#fff);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.no-data{
+  height: 500px;
+}
+
+.no-data>div p {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(29,29,29,.5);
+  max-width: 260px;
+  margin: 24px auto;
+}
+.no-data img {
+  margin: 15px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 150px;
+}

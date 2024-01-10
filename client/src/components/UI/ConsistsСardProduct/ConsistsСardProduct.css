@@ -25,6 +25,11 @@
     padding: 10px;
 }
 
+.name-consists a{
+    text-decoration: none;
+    color: black;
+}
+
 .description-consists{
 
     text-align: start;

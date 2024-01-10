@@ -87,8 +87,8 @@ const Header = () => {
                 null
                 :
                 <div>
-                <div className="line-header">
-                    <div className="line-container">
+                <div style={{backgroundColor:"white"}} className="d-flex">
+                    <div className="container">
                         <div className="line">
 
                         </div>

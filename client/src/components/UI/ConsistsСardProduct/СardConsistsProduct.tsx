@@ -1,24 +1,22 @@
 
-import { Product } from '../../../API';
+import { IProductInXEelement } from "../../../interfaces";
 import "./ConsistsСardProduct.css"
-
-type Cards={
-    product:Product
-}
+import { NavLink } from 'react-router-dom';
 
 
-const ConsistsСardProduct:React.FC<Cards> = ({product}) => {
+
+const ConsistsСardProduct:React.FC<IProductInXEelement> = ({product}) => {
     return (
         <div className='card-container'>
             <div className='card-consists-img'>
-                <img src={product.photo} alt="" />
+            <NavLink to={`/menu/${product.type}/${product.id}`}> <img title={`Страва ${product.title} меню SUSHI MASTER`}  src={product.img} alt="" /></NavLink>
             </div>
             <div className='card-consists-down-block'>
                 <div className='price-consists'>
-                    {product.harch.weight} г
+                    {product?.harch?.weight} г
                 </div>
                 <div className='name-consists'>
-                    {product.title}
+                {<NavLink to={`/menu/${product.type}/${product.id}`}>{product.title}</NavLink>}
                 </div>
                 <div className='description-consists'>
                     {product.body}

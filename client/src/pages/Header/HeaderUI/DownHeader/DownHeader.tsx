@@ -38,8 +38,8 @@ const DownHeader:React.FC<IDownHeader> = ({isScroled}) => {
                 <SearchBlock/>
             </div>
             :
-            <div  className={`down-header ${isScroled ? 'scroled' : ''}`}>
-                <div className="navbar-cont">
+            <div  className={`d-flex ${isScroled ? 'scroled' : ''}`}>
+                <div className="container">
                     <div className="navbar">
                         {down_list.map((p)=><NavLink key={p.site} to={p.site} className={({isActive})=>isActive? "link selected" : 'link'} >{p.name}</NavLink>)}
                     </div>

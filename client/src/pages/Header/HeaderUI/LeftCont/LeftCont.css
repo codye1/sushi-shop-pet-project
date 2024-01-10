@@ -9,6 +9,7 @@
     width: 60px;
     line-height: 29px;
 
+    cursor: pointer;
 
     display: flex;
     justify-content: start;
@@ -17,7 +18,10 @@
 
 }
 .language{
+
     width: 60px;
+
+    cursor: pointer;
 
     display: flex;
     justify-content: center;

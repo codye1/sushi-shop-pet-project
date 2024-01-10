@@ -1,7 +1,7 @@
 import "./PagePromotionById.css"
 import { useParams } from "react-router-dom";
 import { params } from "../../../../interfaces";
-import { useGetPromotionByIdQuery, useGetSetsByIdsQuery } from "../../../../API";
+import { useGetProductsByIdsQuery, useGetPromotionByIdQuery } from "../../../../API";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import CardRecommendationSlider from '../../../../components/UI/CardRecommendationSlider/CardRecommendationSlider';
@@ -11,7 +11,7 @@ import CardRecommendationSlider from '../../../../components/UI/CardRecommendati
 const PagePromotionById = () => {
     const params:params = useParams()
     const {data:promotion,error:promotionError,isLoading:promotionLoading} = useGetPromotionByIdQuery(`${params.id? params.id : ''}`)
-    const {data:product } = useGetSetsByIdsQuery(promotion?.productInPromotion? promotion.productInPromotion : [''])
+    const {data:product } = useGetProductsByIdsQuery(promotion?.productInPromotion? promotion.productInPromotion : [''])
 
    console.log(promotion?.productInPromotion);
 

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { IProduct } from '../Interfaces';
+import { IProduct } from '../interfaces';
 
 
 interface ProductDefault {
@@ -18,9 +18,9 @@ const initialState: ProductDefault = {
       title:'5',
       id:'s',
       body:'4',
-      action:0,
+      discount:0,
       price:'1',
-      photo:'ss',
+      img:'ss',
       labels:[],
       harch:{
         weight:1370,
@@ -30,7 +30,7 @@ const initialState: ProductDefault = {
         dung:3569.67
       },
       sklad:['Skald'],
-      filadelfiya:false
+      bonus:1
     }
     ],
     isLoading : false,

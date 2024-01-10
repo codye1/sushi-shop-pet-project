@@ -39,6 +39,13 @@ body{
 
 }
 
+@media (max-width: 1000px) {
+    .top-container{
+      padding: 0 15px;
+    }
+  }
+
+
 .main-logo{
     width: 260px;
     height: 51px;

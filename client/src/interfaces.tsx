@@ -1,5 +1,5 @@
 
-export interface ILabels{
+export interface ILabel{
     title:string,
     background:string,
     color:string,
@@ -11,20 +11,20 @@ export interface IProduct {
       additions:string[]
       id: string
       title: string
-      action:number
+      discount:number
       price:string
       body:string
-      photo:string
-      labels:ILabels[]
+      img:string
+      labels:ILabel[]
+      bonus:number
       harch:{
           weight:number,
-          fats:number,
-          squirrels:number,
-          carbohydrates:number,
-          dung:number
+          fats?:number,
+          squirrels?:number,
+          carbohydrates?:number,
+          dung?:number
       }
       sklad:[string]
-      filadelfiya:boolean
     }
 export interface IPromotion{
         id:string
@@ -50,6 +50,9 @@ export interface IRestourant{
 
 export interface params{
         id?:string;
+    }
+export interface ILabelsInXElement{
+        labels:ILabel[]
     }
 
 export interface IProductsInXEelement {

@@ -1,9 +1,7 @@
-import {useNavigate, useParams } from "react-router-dom";
-import { useGetSetQuery, useGetSetsByIdsQuery } from "../../API";
+import {NavLink, useNavigate, useParams } from "react-router-dom";
 import ListCardConsistsProduct from "../../components/UI/ListCardConsistsProduct/ListCardConsistsProduct";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from "swiper/modules";
-
 import "./PageByIdProduct.css"
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -13,24 +11,29 @@ import CardProduct from "../../components/UI/CardProduct/CardProduct";
 import LabelsCard from '../../components/UI/LablesCard/LabelsCard';
 import ButtonInCardProduct from "../../components/UI/ButtonInCardProduct/ButtonInCardProduct";
 import { params } from '../../interfaces';
+import { useAppSelector } from "../../hooks";
+import { useGetProductQuery, useGetProductsByIdsQuery } from "../../API";
 
 const PageByIdProduct = () => {
     const params:params = useParams();
     console.log(params);
 
-    const {data: product,error: error1,isLoading: isLoading1} = useGetSetQuery(params.id? params.id : "none")
-    const {data: data2,error: error2,isLoading: isLoading2} = useGetSetsByIdsQuery(["palichki-dlya-yizhi","set-vigidnij-new","set-vigidnij-new","set-sakura-new","set-vse-vklyucheno-new"])
+    const {data: product,error: productError,isLoading: productLoading} = useGetProductQuery(params.id? params.id : "none")
+    const {data: products,error: productsError,isLoading: productsLoading} = useGetProductsByIdsQuery(["palichki-dlya-yizhi","set-vigidnij-new","set-vigidnij-new","set-sakura-new","set-vse-vklyucheno-new"])
 
     const navigate = useNavigate()
     let price:number = Number(product?.price.replace(/[^0-9]/g,""));
     price -= product? Math.floor(price*(product.action/100)) : 0;
+
+    console.log(useAppSelector((state)=>state.basket.basketOpen));
+
     return (
     <div>
         <div className="pageByIdTovar">
             {
-            error1?<div>Error</div>
-            :isLoading1?<div>Loading...</div>
-            :product&&data2?
+            productError?<div>Error</div>
+            :productLoading?<div>Loading...</div>
+            :product&&products?
 
             <div className="container-product-view">
                <div onClick={()=>{
@@ -44,7 +47,7 @@ const PageByIdProduct = () => {
                 <div className="main-product-view">
                     <div className="img-product-view">
                         <div className="container-img">
-                        <img src={product.photo} alt="" />
+                        <img src={product.img} alt="" />
                         {<LabelsCard labels={product.labels}/>}
                         </div>
                     </div>
@@ -54,7 +57,7 @@ const PageByIdProduct = () => {
                             {product.title}
                         </div>
                         <div className="product-food-quality">
-                            {product.harch.weight} г
+                            {product?.harch?.weight} г
                         </div>
                         <div className="product-price-button">
                             <div className="product-price">
@@ -72,7 +75,7 @@ const PageByIdProduct = () => {
                             <div className="delivery-bonus">
                                 <img src="https://uzhhorod.sushi-master.ua/img/products/delivery-time.svg" alt="" />
                                 Доставимо за 45 хв.
-                                <a href="">Карта доставки</a>
+                                <NavLink to={`/delivery`}>Карта доставки</NavLink>
                             </div>
                         </div>
                         <div className="product-storage">
@@ -86,11 +89,10 @@ const PageByIdProduct = () => {
             </div>
             :null
             }
-
         </div>
         <div>
             <div className="container-product-view">
-                {error2?<div></div>:isLoading2?<div></div>:data2?<ListCardConsistsProduct products={data2}/>:null}
+                {productsError?<div></div>:productsLoading?<div></div>:products?<ListCardConsistsProduct products={products}/>:null}
                 <div className="back">
                     Рекомендуємо спробувати
                 </div>
@@ -102,7 +104,7 @@ const PageByIdProduct = () => {
                         modules={[Pagination]}
                         className="pageByIdProduct-swiper"
                     >
-                    {data2?.map((p)=><SwiperSlide key={p.key}>{<CardProduct product={p}/>}</SwiperSlide>)}
+                    {products?.map((p)=><SwiperSlide key={p.key}>{<CardProduct product={p}/>}</SwiperSlide>)}
                     </Swiper>
                 </div>
             </div>

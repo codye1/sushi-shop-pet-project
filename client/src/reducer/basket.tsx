@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { IProduct } from '../Interfaces';
+import { IProduct } from '../interfaces';
 
 interface IBasket{
   basket: IProduct[]
@@ -73,6 +73,8 @@ const  basketSlice = createSlice({
     deleteAllElementsFromBasket(state) {
       state.basket = []
       state.basketAdditions = []
+      state.quantityProduct= {["paket"]:1}
+      state.quantityOverNormAdditions={}
     },
   },
 })

@@ -14,7 +14,7 @@ const SearchBlock = () => {
             if(input.length<=0){
                 dispatch(setSearchInput("null"));
             }else dispatch(setSearchInput(input));
-        }, 2000);
+        }, 1000);
     }
 
 

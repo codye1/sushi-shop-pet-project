@@ -8,8 +8,8 @@ const OurRestourants = () => {
     return (
         <div className="d-flex">
             <div className="container">
-                <div className="our-restourans-title">
-                    <h1>Sushi Master</h1>
+                <div className="page-title d-flex space-between">
+                    Sushi Master
                     <div className="switcher d-flex">
                         <div onClick={()=>{
                             setOnMap(true)
