@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 
 const CardProductBasket:React.FC<IProductInXEelement> = ({product}) => {
     let price:number = Number(product.price.replace(/[^0-9]/g,""));
-    price -= Math.floor(price*(product.action/100));
+    price -= Math.floor(price*(product.discount/100));
     const quantity = useAppSelector((state)=>state.basket.quantityProduct)
     const overNormAdditions = useAppSelector((state)=>state.basket.quantityOverNormAdditions)
 
@@ -22,7 +22,7 @@ const CardProductBasket:React.FC<IProductInXEelement> = ({product}) => {
                 {<NavLink onClick={()=>{dispatch(setBasketPageStatus(false))}} to={`/menu/${product.type}/${product.id}`}> <img title={`Страва ${product.title} меню SUSHI MASTER`} src={product.img} alt="" /></NavLink>}
                 </div>
                 <div className='card-product-basket-info-cont'>
-                {<NavLink onClick={()=>{dispatch(setBasketPageStatus(false))}} to={`/menu/${product.type}/${product.id}`}><h1>{product.title}</h1></NavLink>}
+                {<NavLink className="d-flex" onClick={()=>{dispatch(setBasketPageStatus(false))}} to={`/menu/${product.type}/${product.id}`}><h1>{product.title}</h1> <p>{product.attributes}</p></NavLink>}
                     <span>{product?.harch?.weight} г</span>
                 </div>
             </div>
@@ -44,7 +44,7 @@ const CardProductBasket:React.FC<IProductInXEelement> = ({product}) => {
                                 <strong style={{color:"green"}}>безкоштовно</strong>
                             }
                         </div>
-                    :product.action>0?
+                    :product.discount>0?
                         <div className="action-basket">
                         {price} грн&nbsp;<span>{product.price}</span>
                         </div>:

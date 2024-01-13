@@ -1,8 +1,10 @@
+import Breadcrumb from "../../../components/UI/Breadcrumb/Breadcrumb";
 import "./About.css"
 
 const About = () => {
     return (
     <div>
+        <Breadcrumb crumbs={["Про компанію"]}/>
         <div className="d-flex">
                 <div className="container">
                     <div className="about-img">

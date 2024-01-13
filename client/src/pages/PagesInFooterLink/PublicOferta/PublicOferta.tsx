@@ -1,7 +1,12 @@
 import "./PublicOferta.css"
+import Breadcrumb from '../../../components/UI/Breadcrumb/Breadcrumb';
 
 const PublicOferta = () => {
     return (
+    <div>
+        <div className="d-flex">
+            <Breadcrumb crumbs={["Публічна оферта"]}/>
+        </div>
         <div className="d-flex">
             <div className="container-with-text">
                 <div className="public-oferta">
@@ -146,7 +151,9 @@ const PublicOferta = () => {
                         <strong> </strong><p></p>
                 </div>
             </div>
+
         </div>
+    </div>
     );
 };
 

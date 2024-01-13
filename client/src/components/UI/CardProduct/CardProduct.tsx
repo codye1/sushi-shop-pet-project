@@ -17,8 +17,9 @@ const CardProduct:React.FC<IProductInXEelement>= ({product}) => {
             </div>
             {<LabelsCard labels={product.labels}/>}
             <div className="down-cont">
-                <div className="cont-weight">
-                    {product?.harch?.weight} Г
+                <div className="cont-weight d-flex space-between">
+                    <p>{product?.harch?.weight} Г</p>
+                    <p>{product.attributes}</p>
                 </div>
                 <div title={`${product.title}`}  className="cont-name">
                 {<NavLink to={`/menu/${product.type}/${product.id}`}>{product.title}</NavLink>}

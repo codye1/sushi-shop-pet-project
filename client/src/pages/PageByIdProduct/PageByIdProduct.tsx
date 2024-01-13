@@ -11,8 +11,8 @@ import CardProduct from "../../components/UI/CardProduct/CardProduct";
 import LabelsCard from '../../components/UI/LablesCard/LabelsCard';
 import ButtonInCardProduct from "../../components/UI/ButtonInCardProduct/ButtonInCardProduct";
 import { params } from '../../interfaces';
-import { useAppSelector } from "../../hooks";
 import { useGetProductQuery, useGetProductsByIdsQuery } from "../../API";
+import Breadcrumb from "../../components/UI/Breadcrumb/Breadcrumb";
 
 const PageByIdProduct = () => {
     const params:params = useParams();
@@ -23,10 +23,11 @@ const PageByIdProduct = () => {
 
     const navigate = useNavigate()
     let price:number = Number(product?.price.replace(/[^0-9]/g,""));
-    price -= product? Math.floor(price*(product.action/100)) : 0;
+    price -= product? Math.floor(price*(product.discount/100)) : 0;
+    console.log();
 
-    console.log(useAppSelector((state)=>state.basket.basketOpen));
 
+    params && console.log(params)
     return (
     <div>
         <div className="pageByIdTovar">
@@ -40,7 +41,7 @@ const PageByIdProduct = () => {
                     navigate(-1)
                }} className="back">
                     <span>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.99951 12.0001L13.5189 6.26411C13.8576 5.91212 14.4068 5.91212 14.7455 6.26411C15.0842 6.6161 15.0842 7.18679 14.7455 7.53878L10.4526 12.0001L14.7455 16.4615C15.0842 16.8135 15.0842 17.3841 14.7455 17.7361C14.4068 18.0881 13.8576 18.0881 13.5189 17.7361L7.99951 12.0001Z" fill="#e30613"></path></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M7.99951 12.0001L13.5189 6.26411C13.8576 5.91212 14.4068 5.91212 14.7455 6.26411C15.0842 6.6161 15.0842 7.18679 14.7455 7.53878L10.4526 12.0001L14.7455 16.4615C15.0842 16.8135 15.0842 17.3841 14.7455 17.7361C14.4068 18.0881 13.8576 18.0881 13.5189 17.7361L7.99951 12.0001Z" fill="#e30613"></path></svg>
                             <strong>Назад</strong>
                     </span>
                 </div>
@@ -53,15 +54,16 @@ const PageByIdProduct = () => {
                     </div>
 
                     <div className="information-product-view">
-                        <div className="product-name">
+                        <div className="product-name d-flex align-center">
                             {product.title}
+                            <p> {product.attributes}</p>
                         </div>
                         <div className="product-food-quality">
                             {product?.harch?.weight} г
                         </div>
                         <div className="product-price-button">
                             <div className="product-price">
-                            {product.action>0? <div className="action">{price} грн&nbsp;<span>{product.price}</span></div> : <span>{product.price}</span>}
+                            {product.discount>0? <div className="action">{price} грн&nbsp;<span>{product.price}</span></div> : <span>{product.price}</span>}
                             </div>
                             <div className="product-button">
                                <ButtonInCardProduct product={product}/>
@@ -109,6 +111,7 @@ const PageByIdProduct = () => {
                 </div>
             </div>
         </div>
+        {params.type && product?.title && <Breadcrumb crumbs={[product.type.split(' ')[0],product.title]} />}
     </div>
     );
 };

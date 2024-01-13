@@ -14,6 +14,7 @@
             {"title":"Вибір гурманів","background":"#c72338","color":"white"},
             {"title":"Знижка 10%","background":"red","color":"white"}
         ],
+        "attributes":"🌿",
         "harch":{
             "weight":1370,
             "fats":137.19,

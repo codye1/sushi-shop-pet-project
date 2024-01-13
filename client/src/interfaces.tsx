@@ -16,6 +16,7 @@ export interface IProduct {
       body:string
       img:string
       labels:ILabel[]
+      attributes:string
       bonus:number
       harch:{
           weight:number,
@@ -50,6 +51,7 @@ export interface IRestourant{
 
 export interface params{
         id?:string;
+        type?:string
     }
 export interface ILabelsInXElement{
         labels:ILabel[]

@@ -1,3 +1,4 @@
+import Breadcrumb from "../../../components/UI/Breadcrumb/Breadcrumb";
 import "./Delivery.css"
 
 
@@ -5,6 +6,7 @@ const Delivery = () => {
 
     return (
         <div>
+            <Breadcrumb crumbs={["Безкоштовна доставка в Києві"]}/>
             <div className="d-flex">
                 <div className="container">
                     <div className="search-address-map">

@@ -1,6 +1,11 @@
 import "./Privacy.css"
+import Breadcrumb from '../../../components/UI/Breadcrumb/Breadcrumb';
 const Privacy = () => {
     return (
+    <div>
+        <div className="d-flex">
+            <Breadcrumb crumbs={["Політика конфіденційності"]}/>
+        </div>
         <div className="d-flex">
             <div className="container-with-text" >
                 <div className="privacy">
@@ -71,6 +76,7 @@ const Privacy = () => {
                 </div>
             </div>
         </div>
+    </div>
     );
 };
 

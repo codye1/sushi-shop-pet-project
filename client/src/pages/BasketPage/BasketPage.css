@@ -199,11 +199,10 @@
     align-items: center;
 }
 
-.basket-empty a,p,img{
+.basket-empty a,.basket-empty p,img{
     display: flex;
     justify-content: center;
     text-align: center;
-
 }
 .basket-empty img{
     margin-top: 10px;

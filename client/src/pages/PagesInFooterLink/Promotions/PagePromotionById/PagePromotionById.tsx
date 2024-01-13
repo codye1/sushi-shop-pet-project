@@ -5,6 +5,7 @@ import { useGetProductsByIdsQuery, useGetPromotionByIdQuery } from "../../../../
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import CardRecommendationSlider from '../../../../components/UI/CardRecommendationSlider/CardRecommendationSlider';
+import Breadcrumb from "../../../../components/UI/Breadcrumb/Breadcrumb";
 
 
 
@@ -14,6 +15,7 @@ const PagePromotionById = () => {
     const {data:product } = useGetProductsByIdsQuery(promotion?.productInPromotion? promotion.productInPromotion : [''])
 
    console.log(promotion?.productInPromotion);
+    console.log(params);
 
     return (
         <div>
@@ -56,6 +58,7 @@ const PagePromotionById = () => {
             :
             null
             }
+            {promotion && <Breadcrumb crumbs={["promotions",promotion.title]} />}
         </div>
     );
 };

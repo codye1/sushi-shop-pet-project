@@ -2,9 +2,10 @@ import { useParams } from "react-router-dom";
 import "./PageAllProductInType.css"
 import ProductList from "../../components/UI/ProductList/ProductList";
 import { useGetProductsByTypeQuery } from "../../API";
-import { IProduct} from "../../interfaces";
+import { IProduct } from '../../interfaces';
 import { useEffect, useState } from "react";
 import FilterModal, { IformaFiltra } from "./FilterModal/FilterModal";
+import Breadcrumb from "../../components/UI/Breadcrumb/Breadcrumb";
 
 const PageAllProductInType = () => {
     const params = useParams()
@@ -95,7 +96,6 @@ const PageAllProductInType = () => {
         for (let i = 0; i < FilteredProducts.length; i++) {
             for (let k = 0; k < FilteredProducts[i].labels.length; k++) {
                 labels.add(FilteredProducts[i].labels[k].title)
-
             }
         }
         setlabels(Array.from(labels) as string[])
@@ -115,7 +115,6 @@ const PageAllProductInType = () => {
                             Сети
                             <div onClick={()=>{
                                 setModalVissible(true)
-
                                 getAlllabelsLabels(products)
                                 }}  className="button-open-modal-filter d-flex space-between pointer">
                                 <img src="https://kyiv.sushi-master.ua/img/products/filters.svg" alt="" />
@@ -125,12 +124,11 @@ const PageAllProductInType = () => {
                     </div>
                 </div>
                 {modalVissible?<FilterModal ApplyFilters={ApplyFilters} onUpdateData={updateDataArray} labels={labels} ParentFormaFiltra={formaFiltra} /> : null}
-
-
                 <ProductList products={products}/>
             </div>
             :null
             }
+            {params.type && <Breadcrumb crumbs={[params.type]}/>}
         </div>
     );
 };
