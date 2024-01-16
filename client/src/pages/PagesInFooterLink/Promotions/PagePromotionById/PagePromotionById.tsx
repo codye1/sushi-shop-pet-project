@@ -2,17 +2,15 @@ import "./PagePromotionById.css"
 import { useParams } from "react-router-dom";
 import { params } from "../../../../interfaces";
 import { useGetProductsByIdsQuery, useGetPromotionByIdQuery } from "../../../../API";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import CardRecommendationSlider from '../../../../components/UI/CardRecommendationSlider/CardRecommendationSlider';
 import Breadcrumb from "../../../../components/UI/Breadcrumb/Breadcrumb";
+import RecommendationSlider from "../../../../components/UI/RecommendationSlider/RecommendationSlider";
 
 
 
 const PagePromotionById = () => {
     const params:params = useParams()
     const {data:promotion,error:promotionError,isLoading:promotionLoading} = useGetPromotionByIdQuery(`${params.id? params.id : ''}`)
-    const {data:product } = useGetProductsByIdsQuery(promotion?.productInPromotion? promotion.productInPromotion : [''])
+    const {data:products } = useGetProductsByIdsQuery(promotion?.productInPromotion? promotion.productInPromotion : [''])
 
    console.log(promotion?.productInPromotion);
     console.log(params);
@@ -40,16 +38,7 @@ const PagePromotionById = () => {
                         <div className="promotion-html">
                             {promotion.productInPromotion.length==0?
                                     <a className="promotion-button" href=""><span>Перейти</span></a>:
-                                    <div>
-                                        <Swiper
-                                            slidesPerView={2}
-                                            spaceBetween={10}
-                                            modules={[Pagination]}
-                                            className="pagePromotion-swiper"
-                                        >
-                                            {product?.map((p)=><SwiperSlide key={p.key}><CardRecommendationSlider product={p}/> </SwiperSlide>)}
-                                        </Swiper>
-                                    </div>
+                                    products && <RecommendationSlider products={products}/>
                             }
                         </div>
                     </div>

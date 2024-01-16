@@ -13,7 +13,7 @@ const CardProduct:React.FC<IProductInXEelement>= ({product}) => {
     return (
         <div className="card-product">
             <div className="top-cont">
-                {<NavLink to={`/menu/${product.type}/${product.id}`}> <img title={`Страва ${product.title} меню SUSHI MASTER`} className="card-photo" src={product.img} alt="" /></NavLink>}
+                {<NavLink to={`/menu/${product.type}/${product.id}`}> <img title={`Страва ${product.title} меню SUSHI MASTER`} className="card-img" src={product.img} alt="" /></NavLink>}
             </div>
             {<LabelsCard labels={product.labels}/>}
             <div className="down-cont">

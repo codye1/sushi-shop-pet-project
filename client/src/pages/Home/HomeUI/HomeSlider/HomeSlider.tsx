@@ -1,21 +1,25 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import './HomeSlider.css'
 import { useGetPromotionsQuery } from '../../../../API';
+import { useState } from 'react';
+import ModalSlider from '../ModalSlider/ModalSlider';
 
 
 
 const HomeSlider = () => {
     const {data:promotions,error:errorPromotions,isLoading:isLoadingPromotions}=useGetPromotionsQuery()
+
+    const [modalSliderActive,setModalSliderActive] =useState(false)
+
+    function CloseModalInModal() {
+        setModalSliderActive(false)
+    }
     return (
+        <>
             <div className="home-slider">
                 <Swiper
                     style={{ overflow: 'visible'}}
                     loop={true}
-                    lazyPreloadPrevNext={3}
                     slidesPerView={1}
                     >
                     {
@@ -24,10 +28,15 @@ const HomeSlider = () => {
                     isLoadingPromotions?
                     <div>Загрузка</div>:
                     promotions? promotions.map((p)=>
-                        <SwiperSlide key={p.key}><div className='slide'><img src={p.imgWide} alt="" /></div></SwiperSlide>
+                        <SwiperSlide key={p.key}><div onClick={()=>setModalSliderActive(true)} className='slide'><img src={p.imgWide} alt="" /></div></SwiperSlide>
                     ):null}
                 </Swiper>
+
             </div>
+
+
+            {modalSliderActive && promotions && <ModalSlider closeModal={CloseModalInModal} promotions={promotions}/>}
+        </>
     );
 };
 

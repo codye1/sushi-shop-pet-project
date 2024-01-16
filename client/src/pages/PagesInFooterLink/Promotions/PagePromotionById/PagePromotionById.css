@@ -49,10 +49,12 @@
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
+
 }
 
 .pagePromotion-swiper{
     width: 100%;
+    padding-right: 10px;
 }
 
 

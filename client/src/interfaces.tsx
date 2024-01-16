@@ -34,6 +34,7 @@ export interface IPromotion{
         key: number,
         title:string,
         description:string,
+        promotionalCode?:string,
         productInPromotion:string[],
         html:string
     }

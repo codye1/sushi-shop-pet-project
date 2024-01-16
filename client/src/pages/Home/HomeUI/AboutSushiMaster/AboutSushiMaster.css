@@ -9,7 +9,6 @@
   .sushi-master{
     width: 100%;
     text-align: start;
-
     font-family: sans-serif;
     transition: all .3s ease;
 
@@ -23,7 +22,7 @@
     font-family:sans-serif;
     font-size: 16px;
     line-height: 24px;
-    color: #7b7c85;
+    color: rgba(29,29,29,.5);
     word-spacing: 0px;
     cursor: pointer;
     justify-content: start;
@@ -37,7 +36,6 @@
   }
 
   .aboutOpen{
-
     overflow:visible;
   }
 

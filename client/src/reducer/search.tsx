@@ -13,8 +13,6 @@ const initialState: IsearchActive = {
 }
 
 
-
-
 const searchActiveSlice = createSlice({
   name: 'searchActive',
   initialState,

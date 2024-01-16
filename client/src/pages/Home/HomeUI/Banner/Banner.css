@@ -1,13 +1,3 @@
-.banner-main-page{
-    display: flex;
-  }
-
-  .banner-container{
-    width: 1600px;
-    margin: auto;
-    padding: 0 30px ;
-
-  }
 
   .banner{
     display: flex ;

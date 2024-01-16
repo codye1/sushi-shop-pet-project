@@ -1,8 +1,8 @@
 import "./Banner.css"
 const Banner = () => {
     return (
-        <div className="banner-main-page">
-            <div className="banner-container">
+        <div className="banner-main-page d-flex">
+            <div className="container">
                 <div className="banner">
                     <div className="banner-img">
                         <img src="https://uzhhorod.sushi-master.ua/img/get-mobile-app/phones-on-home-uk.png" alt="" />

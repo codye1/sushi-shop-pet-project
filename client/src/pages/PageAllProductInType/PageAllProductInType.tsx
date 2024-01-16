@@ -23,10 +23,16 @@ const PageAllProductInType = () => {
             if(formaFiltra.labels.length>0){
                 let FilteredProductsTemp:IProduct[] = []
                 for (let i = 0; i < formaFiltra.labels.length; i++) {
+                    console.log(formaFiltra.labels);
+
                         FilteredProductsTemp = [...FilteredProductsTemp , ...FilteredProducts.filter((p)=>{
                             for (let k = 0; k < p.labels.length; k++) {
-                               return p.labels[k].title==formaFiltra.labels[i]
+                                console.log(p.labels[k]);
+                               if(p.labels[k].title==formaFiltra.labels[i]){
+                                return true
+                               }
                             }
+                            return false
                         })]
                 }
                 FilteredProducts=FilteredProductsTemp
@@ -132,8 +138,5 @@ const PageAllProductInType = () => {
         </div>
     );
 };
-
-
-
 
 export default PageAllProductInType;

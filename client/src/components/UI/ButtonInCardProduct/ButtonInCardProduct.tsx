@@ -16,13 +16,12 @@ const ButtonInCardProduct:React.FC<IProductInXEelement> = ({product}) => {
              {!quantity[product.id]?
                         <div onClick={()=>{
                             dispatch(addProductInBasket(product))
-                        }} className="button">
+                        }} className="button d-flex align-center">
                         В КОШИК
                         </div>
                         :
                         <div className="button-after-click">
                             <div onClick={()=>{
-
                                 dispatch(deleteById(product))
                             }} className="add">
                             <svg width="13" height="2" viewBox="0 0 13 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H12V2H0V0Z" fill="red"></path></svg>

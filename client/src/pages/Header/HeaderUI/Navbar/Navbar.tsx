@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import SearchBlock from "../../../../components/UI/SearchBlock/SearchBlock";
 import { useAppSelector } from "../../../../hooks";
-import "./DownHeader.css"
-interface IDownHeader{
+import "./Navbar.css"
+interface INavbar{
     isScroled:boolean
 }
 
@@ -14,7 +14,7 @@ interface Ilist{
 
 type Tlist=Ilist[];
 
-const DownHeader:React.FC<IDownHeader> = ({isScroled}) => {
+const Navbar:React.FC<INavbar> = ({isScroled}) => {
 
     const down_list:Tlist=[
         {site: 'menu/sets',name:"Сети"},
@@ -32,24 +32,24 @@ const DownHeader:React.FC<IDownHeader> = ({isScroled}) => {
     ]
     const searchActive = useAppSelector((state)=>state.searchActive.searchActive);
     return (
-        <div>
+        <>
             {searchActive?
             <div>
                 <SearchBlock/>
             </div>
             :
-            <div  className={`d-flex ${isScroled ? 'scroled' : ''}`}>
+            <div  className={`navbar d-flex ${isScroled ? 'scroled' : ''}`}>
                 <div className="container">
-                    <div className="navbar">
+                    <div className="navbar-block">
                         {down_list.map((p)=><NavLink key={p.site} to={p.site} className={({isActive})=>isActive? "link selected" : 'link'} >{p.name}</NavLink>)}
                     </div>
                 </div>
             </div>
         }
-        </div>
+        </>
 
 
     );
 };
 
-export default DownHeader;
+export default Navbar;

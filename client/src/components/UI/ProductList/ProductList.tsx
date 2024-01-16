@@ -4,7 +4,7 @@ import "./ProductList.css"
 
 const ProductList:React.FC<IProductsInXEelement> = ({products}) => {
     return (
-        <div className="d-flex">
+        <div className="products-list d-flex">
                 <div className="container">
                     <div>
                         {

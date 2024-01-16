@@ -29,6 +29,7 @@ const initialState: ProductDefault = {
         carbohydrates:477.89,
         dung:3569.67
       },
+      attributes:'ss',
       sklad:['Skald'],
       bonus:1
     }

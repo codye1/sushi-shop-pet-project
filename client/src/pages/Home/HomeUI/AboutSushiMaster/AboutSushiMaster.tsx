@@ -4,7 +4,7 @@ import "./AboutSushiMaster.css"
 const AboutSushiMaster = () => {
     const [aboutOpen,SetAboutOpen ]=useState(false)
     return (
-        <div className="d-flex">
+        <div className="about-banner d-flex">
         <div className="container">
             <div className="centered-cont">
             <div className={`sushi-master ${aboutOpen?"aboutOpen":"aboutScroped"}`}>

@@ -3,6 +3,9 @@
     height: 183px;
     border-radius: 8px;
     padding: 20px;
+    margin: 20px 0;
+    margin-left: 10px;
+    z-index: 99999;
 }
 
 .card-recommendation-top-cont{
@@ -13,6 +16,8 @@
     align-items: center;
     justify-content: space-between;
 }
+
+
 
 .card-recommendation-title{
     height: 100%;
