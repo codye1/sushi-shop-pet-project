@@ -26,7 +26,7 @@
 
     },
     {   "key":2,
-        "type":"sets",
+        "type":"sets promotion ",
         "additions":["nabir-imbir-vasabi-1-porc","palichki-dlya-yizhi","soyevyy_sous_brend_40_ml_dopovnennya","nabir-imbir-vasabi-1-porc","palichki-dlya-yizhi","soyevyy_sous_brend_40_ml_dopovnennya"],
         "id": "set-vigidnij-new",
         "title": "СЕТ ВИГІДНИЙ",
@@ -436,7 +436,7 @@
         }
 
     ],
-    "restourants":[
+    "restaurants":[
         {
             "id":"kyiv-36",
             "name":"Київ-36",

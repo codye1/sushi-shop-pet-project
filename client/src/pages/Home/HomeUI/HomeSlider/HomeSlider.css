@@ -1,12 +1,16 @@
 .home-slider{
-  width: 67vw;
+  width: 53vw;
   margin: auto;
   height: inherit;
+  height: 20vw;
   overflow: visible;
+
+  margin: 20px auto;
 }
 
 .home-slider .swiper-slide div img{
-  width: 100%;
+  width: 53vw;
+  height: 20vw;
   border-radius: 8px;
 }
 
@@ -17,4 +21,83 @@
 .home-slider .swiper-slide-active {
   filter: brightness(1)!important;
   transform: scale(1)!important;
+}
+
+
+
+.prev-button{
+
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translateY(-50%);
+  transition: all .3s ease;
+  opacity: 1;
+  box-shadow: -1px 1px 16px hsla(0,0%,55%,.15);
+  border-radius: 8px;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  left: -100px;
+}
+
+@media (min-width: 1533px){
+  .prev-button{
+      left: calc(((1533px -100vw)/2)*-1);
+  }
+}
+
+.next-button{
+
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translateY(-50%);
+  transition: all .3s ease;
+  opacity: 1;
+  background: var(--white);
+  box-shadow: -1px 1px 16px hsla(0,0%,55%,.15);
+  border-radius: 8px;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  right: -100px;
+}
+
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 4px;
+
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 6px;
+  background: 0 0;
+  border: 2px solid white;
+  border-radius: 10px;
+  opacity: 1;
+  cursor: pointer;
+  position: relative;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active:after{
+  content: "";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  background: white;
+  border-radius: 10px;
+
 }

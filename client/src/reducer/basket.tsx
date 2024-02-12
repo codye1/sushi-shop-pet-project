@@ -8,6 +8,7 @@ interface IBasket{
   basketOpen:boolean
   quantityProduct:{ [key: string]: number }
   quantityOverNormAdditions:{ [key: string]: number }
+  priceAllProductInBasket:number
 }
 
 const initialState: IBasket = {
@@ -15,7 +16,8 @@ const initialState: IBasket = {
     basketAdditions:["paket"],
     basketOpen:false,
     quantityProduct: {["paket"]:1},
-    quantityOverNormAdditions:{}
+    quantityOverNormAdditions:{},
+    priceAllProductInBasket:0
 }
 
 const  basketSlice = createSlice({
@@ -76,9 +78,26 @@ const  basketSlice = createSlice({
       state.quantityProduct= {["paket"]:1}
       state.quantityOverNormAdditions={}
     },
+    getAllPriceInProduct(state, action: PayloadAction<IProduct[]>) {
+      let tempPrice = 0
+      state.basket.forEach((p)=>{
+        let price:number = Number(p.price.replace(/[^0-9]/g,""));
+        price -= Math.floor(price*(p.discount/100));
+        tempPrice = tempPrice + price
+      })
+      action.payload.forEach((p)=>{
+        let price:number = Number(p.price.replace(/[^0-9]/g,""));
+        price -= Math.floor(price*(p.discount/100));
+       if(state.quantityOverNormAdditions[p.id]){
+        tempPrice = tempPrice + (price*state.quantityOverNormAdditions[p.id])
+       }
+
+      })
+      state.priceAllProductInBasket = tempPrice
+    }
   },
 })
-export const {  addProductInBasket,deleteById,setBasketPageStatus,deleteAllElementsByIdFromBasket,deleteAllElementsFromBasket} =  basketSlice.actions
+export const {  addProductInBasket,deleteById,setBasketPageStatus,deleteAllElementsByIdFromBasket,deleteAllElementsFromBasket,getAllPriceInProduct} =  basketSlice.actions
 
 
 export default  basketSlice;

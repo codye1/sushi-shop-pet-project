@@ -1,11 +1,13 @@
 import { useState } from "react";
-import "./OurRestourants.css"
-import RestouransItem from "./OurRestourantsUI/RestouransItem/RestouransItem";
-import { useGetRestourantsQuery } from "../../../API";
+import "./OurRestaurants.css"
+
+import { useGetRestaurantsQuery } from "../../../API";
 import Breadcrumb from "../../../components/UI/Breadcrumb/Breadcrumb";
-const OurRestourants = () => {
+import RestaurantsItem from "./OurRestourantsUI/RestouransItem/RestaurantsItem";
+
+const OurRestaurants = () => {
     const [onMap,setOnMap]=useState(true)
-    const {data:restourants,error:restourantsError,isLoading:restourantsLoading}=useGetRestourantsQuery()
+    const {data:restourants,error:restourantsError,isLoading:restourantsLoading}=useGetRestaurantsQuery()
     return (
     <div>
         <Breadcrumb crumbs={["Наші ресторани | Sushi Master, Ужгород"]}/>
@@ -40,11 +42,11 @@ const OurRestourants = () => {
                                     11111111111111111111111111
                         </div>
                         <div className="restourans-list">
-                            {restourants.map((r)=><RestouransItem  restourant={r} key={restourants.indexOf(r)}/>)}
+                            {restourants.map((r)=><RestaurantsItem  restourant={r} key={restourants.indexOf(r)}/>)}
                         </div>
                     </div>:
                     <div className="our-restourans-list">
-                        {restourants.map((r)=><RestouransItem restourant={r} key={restourants.indexOf(r)}/>)}
+                        {restourants.map((r)=><RestaurantsItem restourant={r} key={restourants.indexOf(r)}/>)}
                     </div>
                     :
                 null
@@ -55,4 +57,4 @@ const OurRestourants = () => {
     );
 };
 
-export default OurRestourants;
+export default OurRestaurants;

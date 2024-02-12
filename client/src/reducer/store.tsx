@@ -3,12 +3,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import { productSlice } from './tovar';
 import basketSlice from './basket';
 import searchActiveSlice from './search';
+import authSlice from './auth';
 
 
 export const store = configureStore({
   reducer: {
     searchActive: searchActiveSlice.reducer,
     basket:basketSlice.reducer,
+    auth:authSlice.reducer,
     product: productSlice.reducer,
     [api.reducerPath]:api.reducer
   },

@@ -1,0 +1,27 @@
+
+.prev-button-basket,.next-button-basket{
+    width: 44px;
+    height: 44px;
+    box-shadow: -1px 1px 16px hsla(0,0%,55%,.15);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev-button-basket,.next-button-basket svg{
+    z-index: 999;
+}
+
+.next-button-basket{
+    margin-left: 20px;
+}
+
+
+
+.swiper-button-disabled {
+    opacity: .5!important;
+    transition: all .3s ease!important;
+    cursor: not-allowed!important;
+}

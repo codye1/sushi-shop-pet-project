@@ -22,7 +22,7 @@ const SearchBlock = () => {
             <div className="search-page">
                 <div className="search-input-button">
                     <div className="search-input">
-                        <input onChange={(event)=>{changeInput(event.target.value)}} type="text" placeholder="Пошук"/>
+                        <input onChange={(event)=>{changeInput(event.target.value)}} type="text" defaultValue={""} placeholder="Пошук"/>
                     </div>
                     <button onClick={()=>{dispatch(setSearchActive(false))} }>
                         <img src="https://uzhhorod.sushi-master.ua/img/header/close-white.svg" alt="" />

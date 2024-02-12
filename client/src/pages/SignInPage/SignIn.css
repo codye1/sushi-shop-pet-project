@@ -1,0 +1,243 @@
+.sign-in-main-block{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 100%;
+    min-height: 82vh;
+    max-height: 82vh;
+    margin: 24px 0;
+
+    border-radius: 8px;
+
+    box-shadow: -4px -4px 8px hsla(236,6%,49%,.04), 8px 8px 16px hsla(236,6%,49%,.08);
+}
+
+.sign-in-left-block{
+    height: 100%;
+    background: linear-gradient(135.31deg,#fff7f7 -0.78%,#fff8f8 -0.77%,#f9faff 100.85%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.sign-in-list-of-benefits{
+
+    height: max-content;
+    flex-direction: column;
+}
+
+
+.benefits-list-item{
+    display: flex;
+    align-items: center;
+
+
+}
+
+.benefits-list-item img{
+    width: 49px;
+    height: 49px;
+}
+
+.benefits-list-item p{
+    color: #333333;
+    line-height: 21px;
+    font-size: 16px;
+}
+
+.sign-in-right-block{
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+}
+
+.sign-in-form{
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-title{
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+
+
+.form-agree{
+    display: flex;
+    align-items: start;
+    margin-top: 24px;
+
+}
+
+.form-agree .span-input{
+    margin-right: 15px;
+
+    height: 24px;
+    width: 28px;
+    position: relative;
+    color: black;
+}
+
+.form-agree .span-input input{
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: inherit;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    z-index: 1;
+    position: absolute;
+}
+
+
+
+.form-agree input:checked {
+    background-color: #ff0000;
+  }
+
+.form-agree span svg{
+    width: 18px;
+    height: 18px;
+}
+
+.form-agree label{
+   font-size: 12px;
+   position: relative;
+}
+
+
+
+.form-agree a{
+    color: black;
+    font-weight: 600;
+
+    position: relative;
+}
+
+
+
+.form-error{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    text-decoration: underline dotted;
+    font-weight: bold;
+}
+
+.form-input{
+
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    outline: none;
+    height: 56px;
+    padding: 18.5px 14px 18.5px 42px;
+    border-radius: 8px;
+    background: 0 0;
+}
+
+
+.form-input input{
+    font-size: var(--p-font-size);
+    width: 100%;
+    border: 1px solid #dbdddd;
+    height: 56px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+
+
+    outline: none;
+    height: 56px;
+    padding: 18.5px 14px 18.5px 42px;
+    padding-left: 70px;
+    border-radius: 8px;
+    background: 0 0;
+}
+
+.form-input input:disabled{
+    background: #efefef;
+    cursor: not-allowed;
+    opacity: .7;
+}
+
+
+.flag-drop-down{
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 5px;
+    padding: 0;
+    border-radius: 0;
+    outline: none;
+    border: 0;
+    border-right: 1px solid #dbdddd;
+    background: 0 0!important;
+}
+
+.selected-flag{
+    width: 50px;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+    height: 100%;
+    padding: 0 0 0 8px;
+    border-radius: 3px 0 0 3px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.flag{
+
+
+    width: 16px;
+    height: 11px;
+    background-image: url(https://kyiv.sushi-master.ua/img/custom/flags.png);
+}
+
+.selected-flag .flag{
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+}
+
+
+
+.arrow{
+    left: 25px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid #202228;
+
+    position: relative;
+    top: 50%;
+    margin-top: -2px;
+    width: 0;
+    height: 0;
+}
+
+.up{
+    border-top: none;
+    border-bottom: 4px solid #555;
+}
+
+
+.code-repeat span{
+    font-weight: bold;
+}
+
+

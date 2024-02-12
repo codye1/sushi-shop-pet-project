@@ -1,9 +1,11 @@
 
 .right-cont{
-    width: 17.7%;
-    height: 30px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+
+
 }
 
 .search{
@@ -13,16 +15,29 @@
     width: 40px;
     height: 30px;
     cursor: pointer;
+    margin: 10px;
 }
 
 .login{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    cursor: pointer;
     width: 100px;
-    height: 30px;
+    height: 48px;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+}
 
+
+.unlloged:hover{
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+}
+
+.logged{
+    font-size: 14px;
 }
 
 .login img{

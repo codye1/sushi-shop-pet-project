@@ -40,7 +40,7 @@ const CardProductBasket:React.FC<IProductInXEelement> = ({product}) => {
                     {product.type=="addition"?
                         <div>
                             {overNormAdditions[product.id]>0?
-                                <strong>{price*overNormAdditions[product.id]}</strong>:
+                                <strong>{price}</strong>:
                                 <strong style={{color:"green"}}>безкоштовно</strong>
                             }
                         </div>

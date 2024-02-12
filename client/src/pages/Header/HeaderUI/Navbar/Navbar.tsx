@@ -34,9 +34,7 @@ const Navbar:React.FC<INavbar> = ({isScroled}) => {
     return (
         <>
             {searchActive?
-            <div>
-                <SearchBlock/>
-            </div>
+            <SearchBlock/>
             :
             <div  className={`navbar d-flex ${isScroled ? 'scroled' : ''}`}>
                 <div className="container">

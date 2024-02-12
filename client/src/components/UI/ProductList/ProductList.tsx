@@ -1,5 +1,5 @@
 import { IProductsInXEelement } from "../../../interfaces";
-import CardProduct from "../CardProduct/CardProduct";
+import CardProduct from "./CardProduct/CardProduct";
 import "./ProductList.css"
 
 const ProductList:React.FC<IProductsInXEelement> = ({products}) => {

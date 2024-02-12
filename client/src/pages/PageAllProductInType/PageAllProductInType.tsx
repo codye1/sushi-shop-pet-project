@@ -13,9 +13,11 @@ const PageAllProductInType = () => {
     const [products,setProducts] = useState(data && [...data])
     const [labels,setlabels]=useState<string[]>([''])
     const [modalVissible,setModalVissible] = useState(false)
-    const [formaFiltra,setFormaFiltra] = useState<IformaFiltra>({price:'1',
-    weight:'4',
-    labels:[]})
+    const [formaFiltra,setFormaFiltra] = useState<IformaFiltra>({
+        price:'1',
+        weight:'4',
+        labels:[]
+    })
     const ApplyFilters = ()=>{
         setModalVissible(false)
         if(data && products){

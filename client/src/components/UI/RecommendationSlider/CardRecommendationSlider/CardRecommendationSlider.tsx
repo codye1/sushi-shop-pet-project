@@ -1,6 +1,6 @@
-import ButtonInCardProduct from "../ButtonInCardProduct/ButtonInCardProduct";
+import AddProductInBasketButton from "../../AddProductInBasketButton/AddProductInBasketButton";
 import "./CardRecommendationSlider.css"
-import { IProductInXEelement } from '../../../interfaces';
+import { IProductInXEelement } from '../../../../interfaces';
 import { NavLink } from 'react-router-dom';
 
 
@@ -18,7 +18,7 @@ const CardRecommendationSlider:React.FC<IProductInXEelement> = ({product}) => {
                 </div>
             </div>
             <div className="card-recommendation-title">
-                {<NavLink  to={`/menu/${product.type}/${product.id}`}><a className="card-recommendation-title" href="">{product.title}</a></NavLink>}
+                {<NavLink  to={`/menu/${product.type}/${product.id}`}>{product.title}</NavLink>}
                 <h2>{product?.harch?.weight}г</h2>
             </div>
         </div>
@@ -27,7 +27,7 @@ const CardRecommendationSlider:React.FC<IProductInXEelement> = ({product}) => {
                 {product.discount>0? <div className="action">{price} грн&nbsp;<span>{product.price}</span></div> : <span>{product.price}</span>}
             </div>
             <div className="card-recommendation-button">
-                    <ButtonInCardProduct product={product}/>
+                    <AddProductInBasketButton product={product}/>
             </div>
         </div>
     </div>

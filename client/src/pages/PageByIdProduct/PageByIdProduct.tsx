@@ -1,5 +1,4 @@
 import {NavLink, useNavigate, useParams } from "react-router-dom";
-import ListCardConsistsProduct from "../../components/UI/ListCardConsistsProduct/ListCardConsistsProduct";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from "swiper/modules";
 import "./PageByIdProduct.css"
@@ -7,12 +6,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import CardProduct from "../../components/UI/CardProduct/CardProduct";
+import CardProduct from "../../components/UI/ProductList/CardProduct/CardProduct";
 import LabelsCard from '../../components/UI/LablesCard/LabelsCard';
-import ButtonInCardProduct from "../../components/UI/ButtonInCardProduct/ButtonInCardProduct";
+import AddProductInBasketButton from "../../components/UI/AddProductInBasketButton/AddProductInBasketButton";
 import { params } from '../../interfaces';
 import { useGetProductQuery, useGetProductsByIdsQuery } from "../../API";
 import Breadcrumb from "../../components/UI/Breadcrumb/Breadcrumb";
+import ListCardConsistsProduct from "./UI/ListCardConsistsProduct/ListCardConsistsProduct";
 
 const PageByIdProduct = () => {
     const params:params = useParams();
@@ -35,7 +35,6 @@ const PageByIdProduct = () => {
             productError?<div>Error</div>
             :productLoading?<div>Loading...</div>
             :product&&products?
-
             <div className="container-product-view">
                <div onClick={()=>{
                     navigate(-1)
@@ -49,7 +48,7 @@ const PageByIdProduct = () => {
                     <div className="img-product-view">
                         <div className="container-img">
                         <img src={product.img} alt="" />
-                        {<LabelsCard labels={product.labels}/>}
+                        <LabelsCard labels={product.labels}/>
                         </div>
                     </div>
 
@@ -66,7 +65,7 @@ const PageByIdProduct = () => {
                             {product.discount>0? <div className="action">{price} грн&nbsp;<span>{product.price}</span></div> : <span>{product.price}</span>}
                             </div>
                             <div className="product-button">
-                               <ButtonInCardProduct product={product}/>
+                               <AddProductInBasketButton product={product}/>
                             </div>
                         </div>
                         <div className="product-bonus">

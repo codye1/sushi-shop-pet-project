@@ -1,18 +1,19 @@
 import { useDispatch } from "react-redux";
 import CardProductBasket from "../CardProductBasket/CardProductBasket";
-import {deleteAllElementsFromBasket } from "../../../../reducer/basket";
-import { IProductsInXEelement } from "../../../../interfaces";
-import { useAppSelector } from "../../../../hooks";
-import { useGetProductsByIdsQuery } from "../../../../API";
+import {deleteAllElementsFromBasket, getAllPriceInProduct } from "../../../../reducer/basket";
+import { IProduct, IProductsInXEelement } from "../../../../interfaces";
 import "./LeftBlock.css"
 
+interface ILeftBlock extends IProductsInXEelement{
+    additions:IProduct[]
+}
 
 
-const LeftBlock:React.FC<IProductsInXEelement> = ({products}) => {
-
-    const basketAdditons=useAppSelector((state)=>state.basket.basketAdditions)
-    const {data:additions,error,isLoading}=useGetProductsByIdsQuery(basketAdditons)
+const LeftBlock:React.FC<ILeftBlock> = ({products,additions}) => {
     const dispatch = useDispatch()
+    dispatch(getAllPriceInProduct(additions))
+
+
     return (
         <>
         <div className="basket-page-left-cont">
@@ -21,7 +22,7 @@ const LeftBlock:React.FC<IProductsInXEelement> = ({products}) => {
                 <h1 onClick={()=>{dispatch(deleteAllElementsFromBasket())}}>Очистити кошик</h1>
             </div>
             {products.map((p)=><CardProductBasket key={p.key} product={p} />)}
-            {error?<div></div>:isLoading?<div></div>:additions?additions.map((a)=><CardProductBasket key={a.key} product={a} />):null}
+            {additions.map((a)=><CardProductBasket key={a.key} product={a} />)}
         </div>
         </>
     );

@@ -1,7 +1,7 @@
 import { IRestourantInXEelement } from "../../../../../interfaces";
-import "./RestouransItem.css"
+import "./RestaurantsItem.css"
 
-const RestouransItem:React.FC<IRestourantInXEelement> = ({restourant}) => {
+const Restaurants:React.FC<IRestourantInXEelement> = ({restourant}) => {
     return (
     <div className="restourans-item">
         <div className="restourans-title">
@@ -28,4 +28,4 @@ const RestouransItem:React.FC<IRestourantInXEelement> = ({restourant}) => {
     );
 };
 
-export default RestouransItem;
+export default Restaurants;

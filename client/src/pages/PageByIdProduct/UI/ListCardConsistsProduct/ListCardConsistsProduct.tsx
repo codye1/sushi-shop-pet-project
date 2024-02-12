@@ -1,11 +1,8 @@
-import { Product } from '../../../API';
-import ConsistsСardProduct from '../ConsistsСardProduct/СardConsistsProduct';
+import { IProductsInXEelement } from '../../../../interfaces';
+import ConsistsСardProduct from './ConsistsСardProduct/СardConsistsProduct';
 import "./ListCardConsistsProduct.css"
-type ProductLists={
-    products:Product[]
-}
-const ListCardConsistsProduct:React.FC<ProductLists> = ({products}) => {
 
+const ListCardConsistsProduct:React.FC<IProductsInXEelement> = ({products}) => {
     return (
         <div className='list-consists-container'>
             {products.map((p)=><ConsistsСardProduct key={p.key} product={p}/>)}

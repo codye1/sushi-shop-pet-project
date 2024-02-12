@@ -1,11 +1,12 @@
-import {   NavLink,  } from "react-router-dom";
+import {   NavLink, useLocation } from "react-router-dom";
 import "./Header.css"
 import { useEffect, useState } from "react";
-import { useAppSelector } from "../../hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 import LeftCont from "./HeaderUI/LeftCont/LeftCont";
 import RightCont from "./HeaderUI/RightCont/RightCont";
 import Navbar from "./HeaderUI/Navbar/Navbar";
 import BasketHeader from "./HeaderUI/BasketHeader/BasketHeader";
+import { setBasketPageStatus } from "../../reducer/basket";
 // import { addProductInBasket, deleteById } from "../../reducer/basket";
 
 
@@ -14,11 +15,20 @@ const Header = () => {
 
     const [isScroled, setScroled] = useState(false);
     const [transform,setStransform] = useState(0);
-
     const searchActive = useAppSelector((state)=>state.searchActive.searchActive);
     const basketStatus = useAppSelector((state)=>state.basket.basketOpen);
-    useEffect(() => {
+    const dispatch = useAppDispatch()
+    const location = useLocation()
 
+    if (location.pathname=="/basket") {
+        dispatch(setBasketPageStatus(true))
+    }else{
+        dispatch(setBasketPageStatus(false))
+    }
+
+
+
+    useEffect(() => {
       const handleScroll = (e:number) => {
         if (window.scrollY>100 || basketStatus) {
             setScroled(true)
@@ -38,7 +48,9 @@ const Header = () => {
 
       window.addEventListener('wheel', (e)=>{handleScroll(e.deltaY)});
 
-    }, [searchActive]);
+
+    });
+
 
     function windowReload() {
         window.location.reload()
@@ -58,7 +70,8 @@ const Header = () => {
                     </div>
                 }
             </div>
-            {basketStatus?null:
+            {basketStatus?
+                null:
                 <>
                     <div style={{backgroundColor:"white"}} className="d-flex">
                         <div className="container">
@@ -67,7 +80,7 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-                    {<Navbar isScroled={isScroled}/>}
+                    <Navbar isScroled={isScroled}/>
                 </>
             }
 

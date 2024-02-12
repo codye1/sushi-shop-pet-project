@@ -1,8 +1,7 @@
 
-import { IProductInXEelement } from "../../../interfaces";
 import "./ConsistsСardProduct.css"
 import { NavLink } from 'react-router-dom';
-
+import { IProductInXEelement } from '../../../../../interfaces';
 
 
 const ConsistsСardProduct:React.FC<IProductInXEelement> = ({product}) => {

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "./RightCart.css"
+import { useAppSelector } from "../../../../hooks";
 
 const RightCart = () => {
     const [input,setInput]=useState('');
+    const priceAllProduct = useAppSelector((state)=>state.basket.priceAllProductInBasket)
+
     return (
     <div className="basket-page-right-cont">
         <div className="right-block-basket-page">
@@ -19,7 +22,8 @@ const RightCart = () => {
                     <h1>Товари</h1>
                 </div>
                 <div className="cart-card-sum-2">
-                    <h1>Разом</h1>
+                    <h1>РАЗОМ {priceAllProduct} грн</h1>
+
                 </div>
                 <div className="cart-card-buttons">
                     <button className="button-self-removal">
