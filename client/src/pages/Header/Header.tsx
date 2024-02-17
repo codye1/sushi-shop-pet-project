@@ -73,12 +73,8 @@ const Header = () => {
             {basketStatus?
                 null:
                 <>
-                    <div style={{backgroundColor:"white"}} className="d-flex">
-                        <div className="container">
-                            <div className="line">
-
-                            </div>
-                        </div>
+                    <div className="line">
+                        <div></div>
                     </div>
                     <Navbar isScroled={isScroled}/>
                 </>

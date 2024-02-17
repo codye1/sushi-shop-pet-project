@@ -166,11 +166,21 @@ body{
 }
 
 .line{
+    display: flex;
+    max-width: 1600px;
     width: 100%;
-    height: 1px;
+    margin: auto;
+    padding: 0 30px;
+    background-color: white;
 
     z-index: 1;
+
+}
+
+.line div{
     background-color: rgba(169, 169, 169, 0.436);
+    width: 100%;
+    height: 1px;
 }
 
 

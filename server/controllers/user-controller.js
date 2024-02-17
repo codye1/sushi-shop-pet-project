@@ -64,7 +64,7 @@ class UserController {
             console.log("refresh 1",userData);
             return res.json(userData)
         }catch (e){
-            return res.json("Не сработало((")
+            return res.json({error:"Error"})
         }
     }
 

@@ -14,6 +14,7 @@ export type AuthResponce = {
     id:string,
     number:string
   }
+  error?:string
 }
 
 interface user{

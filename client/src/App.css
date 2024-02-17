@@ -26,10 +26,11 @@
 
 .container{
   display: flex;
-  width: 1600px;
+  max-width: 1600px;
+  width: 100%;
   margin: auto;
   padding: 0 30px;
-
+  margin-bottom: 30px;
   background-color: white;
 }
 
@@ -77,6 +78,11 @@
   font-weight: 700;
 
 
+}
+
+.sticky{
+  position: sticky;
+  top: 180px;
 }
 
 .btn{

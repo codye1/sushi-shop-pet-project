@@ -28,6 +28,9 @@
     margin: 10px;
     text-decoration: none;
     color: black;
+
+    font-family: SemiBold;
+    font-weight: 400;
 }
 
 
@@ -38,6 +41,8 @@
 
 .logged{
     font-size: 14px;
+
+    margin: 40px;
 }
 
 .login img{

@@ -7,7 +7,7 @@ import DownBlock from "./UI/DownBlock/DownBlock";
 const Footer = () => {
     return (
         <footer>
-            <div className="container">
+            <div className="container column">
                 <PoolFooter/>
                 <LinksFooter/>
                 <div className="icons">

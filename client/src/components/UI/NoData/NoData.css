@@ -1,0 +1,7 @@
+
+.no-data p{
+    line-height: 20px;
+    color: rgba(29,29,29,.5);
+    max-width: 260px;
+    margin: 24px auto;
+  }

@@ -3,13 +3,6 @@ footer{
 }
 
 
-.container{
-    display: flex;
-    flex-direction: column;
-    width: 1600px;
-    margin: auto;
-    padding: 0 30px;
-}
 
 .icons{
     margin: 20px 0 50px 0;

@@ -24,7 +24,9 @@ const RightCont = () => {
     },[basket])
 
     useEffect(()=>{
-        if (user) {
+        if (user && !user.error) {
+
+
             dispatch(authUser(user.user.number))
         }
     })

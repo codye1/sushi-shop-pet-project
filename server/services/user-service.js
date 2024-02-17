@@ -74,6 +74,7 @@ class UserService{
         }
         const userData = tokenService.validateRefreshToken(refreshToken)
         const tokenFromDB= await tokenService.findToken(refreshToken)
+        await tokenService.removeToken(refreshToken)
         if(!userData || !tokenFromDB){
             throw new Error("In refresh !userData || !tokenFromDB undefine")
         }

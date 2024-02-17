@@ -1,0 +1,37 @@
+.bonuses-container{
+    grid-template-columns: repeat(2,1fr);
+    display: grid;
+    grid-gap: 37px;
+    padding-top: 0;
+    padding-bottom: 36px;
+}
+
+.bonuses-card{
+    background: linear-gradient(90.83deg,#f3f9ff,#fff5ec 99.89%);
+    box-shadow: 8px 8px 16px hsla(236,6%,49%,.15);
+    border-radius: 8px;
+    width: 100%;
+    padding: 24px;
+}
+
+.bonuses-card p{
+    font-size: 48px;
+    line-height: 48px;
+    margin-top: 34px;
+    font-weight: bold;
+    color: #333333;
+    width: 100%;
+}
+
+.bonuses-card span{
+    color: red;
+}
+
+.bonuses-card a{
+    font-size: 16px;
+    width: 100%;
+    line-height: 16px;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #333333;
+}

@@ -1,4 +1,5 @@
 import { IProductsInXEelement } from "../../../interfaces";
+import NoData from "../NoData/NoData";
 import CardProduct from "./CardProduct/CardProduct";
 import "./ProductList.css"
 
@@ -14,10 +15,7 @@ const ProductList:React.FC<IProductsInXEelement> = ({products}) => {
                         <CardProduct key={p.key} product={p}/>)}
                         </div>
                         :
-                        <div className="no-data d-flex center wrap column">
-                            <img src="https://kyiv.sushi-master.ua/img/products/empty.svg" alt="" />
-                            <p>Тут поки немає даних</p>
-                        </div>
+                        <NoData/>
                         }
                     </div>
                 </div>

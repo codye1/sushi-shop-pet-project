@@ -7,7 +7,7 @@ const BasketReccomendationSlider:React.FC<IProductsInXEelement> = ({products}) =
 
     return (
         <div className="d-flex">
-            <div className="container">
+            <div className="container column">
                 <div className="page-title d-flex space-between">
                     Рекомендуємо спробувати
                     <div className="d-flex" >
