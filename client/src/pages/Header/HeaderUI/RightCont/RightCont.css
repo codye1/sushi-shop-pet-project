@@ -34,20 +34,30 @@
 }
 
 
-.unlloged:hover{
+.unloged:hover{
     background-color: rgba(0, 0, 0, 0.04);
     border-radius: 8px;
+
 }
 
-.logged{
+.loged{
     font-size: 14px;
 
+    border: 0;
+    background-color: white;
     margin: 40px;
 }
 
 .login img{
     margin-right: 20px;
 }
+
+.right-cont .css-3bmhjh-MuiPaper-root-MuiPopover-paper{
+    margin-top: 30px;
+    min-width: 300px;
+    max-width: 300px;
+}
+
 
 .basket{
     display: flex;

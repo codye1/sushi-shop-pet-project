@@ -6,6 +6,8 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useCheckAuthQuery } from "../../../../API";
 import { authUser } from "../../../../reducer/auth";
+import {  Popover, Typography } from "@mui/material";
+import Menu from "../../../Account/Menu/Menu";
 
 const RightCont = () => {
     const dispatch = useDispatch()
@@ -31,6 +33,21 @@ const RightCont = () => {
         }
     })
 
+    const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
+
+
+
     return (
         <div  className="right-cont">
             <div  onClick={()=>{
@@ -38,10 +55,31 @@ const RightCont = () => {
                 } } className="search">
                 <img src="https://uzhhorod.sushi-master.ua/img/header/search.svg" alt="" />
             </div>
-            <NavLink className={`login ${isAuth?"logged":"unlloged"}`} to={"/sign-in"}>
-                <img src="https://uzhhorod.sushi-master.ua/img/header/user.svg" alt="" />
-                {isAuth? number : "Увійти"}
-            </NavLink>
+            {isAuth?
+                <>
+                    <button onClick={(event)=>{handleClick(event)}} className="login loged">
+                        <img src="https://uzhhorod.sushi-master.ua/img/header/user.svg" alt="" />
+                        {number}
+                    </button>
+                    <Popover
+                        id={id}
+                        open={open}
+                        anchorEl={anchorEl}
+                        onClose={handleClose}
+                        anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                        }}
+                    >
+                        <Typography><Menu/></Typography>
+                    </Popover>
+                </>
+                :
+                <NavLink className="login unloged"to={"/sign-in"}>
+                    <img src="https://uzhhorod.sushi-master.ua/img/header/user.svg" alt="" />
+                    Увійти
+                </NavLink>
+            }
             <NavLink className="basket" to={"/basket"} >
                 <img src="https://uzhhorod.sushi-master.ua/img/header/cart.svg" alt="" />
                 {basket.length>0?

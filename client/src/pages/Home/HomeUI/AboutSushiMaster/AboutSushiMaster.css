@@ -55,10 +55,10 @@
     margin: 15px 0;
   }
 
-  ul{
+  .sushi-master ul{
     list-style: none;
   }
-  li{
+  .sushi-master li{
     font-size: 16px;
     line-height: 21px;
     color: rgba(29,29,29,.5);
@@ -66,7 +66,7 @@
     padding-left: 16px;
     margin: 15px 0 15px 16px;
   }
-  li::marker{
+  .sushi-master li::marker{
     color: #202228;
   }
 

@@ -14,11 +14,13 @@
     padding: 24px;
 }
 
-.bonuses-card p{
+.bonuses-card p,.bonuses-card span{
     font-size: 48px;
     line-height: 48px;
     margin-top: 34px;
-    font-weight: bold;
+    border: 0;
+    font-family: Bold;
+    margin-bottom: 0;
     color: #333333;
     width: 100%;
 }

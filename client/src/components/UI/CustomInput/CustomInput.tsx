@@ -5,11 +5,12 @@ interface ICustomInput{
     placeholder:string,
     value:string
     required:boolean
+    buttons?:boolean
     setValue:React.Dispatch<React.SetStateAction<string>>
 }
 
 
-const CustomInput:React.FC<ICustomInput> = ({placeholder,value,setValue,required}) => {
+const CustomInput:React.FC<ICustomInput> = ({placeholder,value,setValue,required,buttons}) => {
     const [isFocused, setIsFocused] = useState(false);
 
     const handleFocus = () => {
@@ -30,7 +31,7 @@ const CustomInput:React.FC<ICustomInput> = ({placeholder,value,setValue,required
                 value={value}
                 onChange={(event)=>{setValue(event.target.value)}}
                 />
-            {value.length<2 && isFocused?<p>Це обовязкове поле</p>:value.length==2?<p>Це поле введено не правильно</p>: value.length>2 && <><div className="apply">Зберегти</div><div className="cancel">Скасувати</div></> }
+            {value.length<2 && isFocused && required?<p>Це обовязкове поле</p>:value.length==2?<p>Це поле введено не правильно</p>:  value.length>2 && buttons && <><div className="apply">Зберегти</div><div className="cancel">Скасувати</div></> }
         </label>
     );
 };

@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { country } from '../CountryList/CountryList';
 import CountryList from '../CountryList/CountryList';
 import { useSendMutation } from "../../../../API";
-
+import "./SigninSlideWriteNumber.css"
+import { Tooltip } from "@mui/material";
 interface SigninSlideWriteNumber{
     setNumber: React.Dispatch<React.SetStateAction<string>>,
     number:string
@@ -10,7 +11,6 @@ interface SigninSlideWriteNumber{
 }
 
 const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,setNumber,number}) => {
-
 
     const [checkBox,setCheckBox]=useState(false)
     const [arrowUp,setArrowUp]=useState(false)
@@ -51,34 +51,36 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
             <div className="form-title">
                 Введіть номер телефону, на цей номер надійде дзвінок або SMS:
             </div>
-            <div className="form-input">
-                <input
-                    type="tel"
-                    onChange={(event)=>{
+            <Tooltip  title="На даний номер телефону надійде дзвінок або SMS" arrow>
+                <div className="form-input">
+                    <input
+                        type="tel"
+                        onChange={(event)=>{
 
-                        if (event.target.value.length == (9+pickedCountry.dialCode.length) ) {
-                           sendSMSCode()
-                        }else{
-                            setNumber(event.target.value.replace(/[^0-9+()-]/g, ''))
-                        }
-                    }}
-                    value={number}
-                    maxLength={9+pickedCountry.dialCode.length}
-                    disabled={!checkBox}
-                    />
-                <div onClick={(event)=>{
-                    setArrowUp(!arrowUp)
-                    ignoreCloseCountryList(event)
-                }} className="flag-drop-down pointer">
-                    <div className="selected-flag">
-                        <div className={`flag ${pickedCountry.flag}`}>
-                            <div className={arrowUp? "arrow up" : "arrow"}>
+                            if (event.target.value.length == (9+pickedCountry.dialCode.length) ) {
+                            sendSMSCode()
+                            }else{
+                                setNumber(event.target.value.replace(/[^0-9+()-]/g, ''))
+                            }
+                        }}
+                        value={number}
+                        maxLength={9+pickedCountry.dialCode.length}
+                        disabled={!checkBox}
+                        />
+                    <div onClick={(event)=>{
+                        setArrowUp(!arrowUp)
+                        ignoreCloseCountryList(event)
+                    }} className="flag-drop-down pointer">
+                        <div className="selected-flag">
+                            <div className={`flag ${pickedCountry.flag}`}>
+                                <div className={arrowUp? "arrow up" : "arrow"}>
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Tooltip>
             {arrowUp &&
                 <CountryList pickCountry={pickCountry}/>
             }
@@ -95,7 +97,7 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
                 </span>
                 <label  className="form-agree-text pointer" htmlFor="checkbox">
                     Я погоджуюсь з <a href="">політикою конфіденційності,<br/> призначеною для користувача угодою</a> і даю дозвіл на <br/> обробку персональних даних.
-                    {!checkBox && <span className="form-error">Це поле введено невірно</span>}
+                    {!checkBox && <span className="form-error">Це обов'язкове поле</span>}
                 </label>
 
             </div>

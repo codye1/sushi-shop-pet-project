@@ -1,0 +1,37 @@
+.account-menu{
+    width: 300px;
+    padding-top: 40px;
+}
+
+.menu{
+    border-bottom: 1px solid #efefef;
+    padding: 15px 20px 10px;
+}
+
+
+.menu-item{
+    text-decoration: none;
+    transition: all .3s ease;
+    padding: 15px 0;
+    line-height: 24px;
+    color: rgba(29,29,29,.5);
+    display: flex;
+}
+
+.menu-item:hover{
+    color: #202228;
+}
+
+.menu-item img{
+    margin-right: 15px;
+    width: 24px;
+    height: 24px;
+}
+
+.active{
+    color: #202228;
+}
+
+.logout{
+    border-bottom: 0;
+}
