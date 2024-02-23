@@ -77,6 +77,28 @@ class UserController {
             console.log(e);
         }
     }
+
+    async addresses(req,res,next) {
+        try{
+            const address = req.body
+            console.log("req");
+            console.log("req");
+            console.log("req");
+            console.log("req");
+            const accesToken = req.headers.authorization.split(' ')[1]
+            const userData = tokenService.validateAccessToken(accesToken)
+            console.log(userData);
+            userService.addAddress(userData.number,address)
+
+            console.log("req");
+            console.log("req");
+            console.log("req");
+            console.log("req");
+            console.log("req");
+        }catch (e){
+            console.log(e);
+        }
+    }
 }
 
 module.exports = new UserController()

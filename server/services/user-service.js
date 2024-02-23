@@ -95,6 +95,13 @@ class UserService{
         console.log("Get all users");
         return users
     }
+
+    async addAddress(number,address){
+        const user = await userModel.findOne({number})
+        user.deliveryAddresses.push(address)
+        console.log(user);
+        user.save()
+    }
 }
 
 

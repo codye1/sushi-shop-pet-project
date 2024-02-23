@@ -31,7 +31,15 @@ const CustomInput:React.FC<ICustomInput> = ({placeholder,value,setValue,required
                 value={value}
                 onChange={(event)=>{setValue(event.target.value)}}
                 />
-            {value.length<2 && isFocused && required?<p>Це обовязкове поле</p>:value.length==2?<p>Це поле введено не правильно</p>:  value.length>2 && buttons && <><div className="apply">Зберегти</div><div className="cancel">Скасувати</div></> }
+            {value.length<2 && isFocused && required?
+                <p>Це обовязкове поле</p>
+            :value.length==2 && required?
+                <p>Це поле введено не правильно</p>
+            :value.length>2 && buttons?
+                <><div className="apply">Зберегти</div><div className="cancel">Скасувати</div></>
+            :value.length>1 && <svg className="field-is-valid" width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.00548 15.8998L4.64083 11.6998L3.51929 13.0998L8.00548 18.6998L17.6187 6.6998L16.4972 5.2998L8.00548 15.8998Z" fill="#008B59"></path></svg>
+
+            }
         </label>
     );
 };

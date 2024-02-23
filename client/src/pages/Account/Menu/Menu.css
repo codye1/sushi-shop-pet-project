@@ -1,5 +1,5 @@
 .account-menu{
-    width: 300px;
+    max-width: 300px;
     padding-top: 40px;
 }
 
@@ -34,4 +34,11 @@
 
 .logout{
     border-bottom: 0;
+}
+
+
+@media (max-width: 1200px) {
+    .sticky .menu p{
+        display: none;
+    }
 }

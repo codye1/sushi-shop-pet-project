@@ -12,5 +12,6 @@ router.get('/refresh', UserController.refresh)
 router.post('/logout', UserController.logout)
 router.post('/refreshsmscode', UserController.refreshSMSToken)
 router.get('/users',authMiddleware,UserController.getAllUsers)
+router.post('/addresses',authMiddleware,UserController.addresses)
 
 module.exports = router

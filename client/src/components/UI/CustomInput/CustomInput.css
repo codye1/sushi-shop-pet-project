@@ -83,3 +83,9 @@ input:focus{
     background-color: rgba(0, 0, 0, 0.04);
     border-radius: 4px;
 }
+
+.field-is-valid{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}

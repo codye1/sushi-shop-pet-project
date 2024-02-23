@@ -52,10 +52,13 @@
     margin-right: 20px;
 }
 
-.right-cont .css-3bmhjh-MuiPaper-root-MuiPopover-paper{
-    margin-top: 30px;
+.css-3bmhjh-MuiPaper-root-MuiPopover-paper{
+    margin-top: 60px;
+}
+.MuiTypography-root{
     min-width: 300px;
     max-width: 300px;
+    flex-direction: column;
 }
 
 

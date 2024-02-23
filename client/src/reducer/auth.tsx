@@ -1,14 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { user } from "../API";
 
 interface IAuth{
     isAuth:boolean
-    number:string
+    user:user
 }
 
 const initialState: IAuth = {
     isAuth:false,
-    number:""
+    user:{
+        id:"",
+        number:"",
+        deliveryAddresses:[]
+
+    }
 }
 
 
@@ -17,9 +23,9 @@ const authSlice = createSlice({
     name: 'searchActive',
     initialState,
     reducers: {
-        authUser(state, action: PayloadAction<string>) {
+        authUser(state, action: PayloadAction<user>) {
                 state.isAuth = true
-                state.number=action.payload
+                state.user = action.payload
           },
 
     },

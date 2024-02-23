@@ -14,7 +14,7 @@ const RightCont = () => {
     const basket = useAppSelector((state)=>state.basket.basket)
     const [isAnimated,setIsAtimated]=useState(false);
     const isAuth=useAppSelector(state=>state.auth.isAuth)
-    const number=useAppSelector(state=>state.auth.number)
+    const number=useAppSelector(state=>state.auth.user.number)
     const {data:user}=useCheckAuthQuery()
 
     useEffect(()=>{
@@ -29,7 +29,7 @@ const RightCont = () => {
         if (user && !user.error) {
 
 
-            dispatch(authUser(user.user.number))
+            dispatch(authUser(user.user))
         }
     })
 

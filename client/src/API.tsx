@@ -7,19 +7,32 @@ import type {
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/query'
 
+export interface deliveryAddresses{
+
+    street: string,
+    house:string,
+    intercom:string,
+    apartment:string,
+    entrance:string,
+    floor:string,
+    name:string
+
+}
+
+export interface user{
+  id:string,
+  number:string
+  deliveryAddresses:deliveryAddresses[]
+}
+
 export type AuthResponce = {
   refreshToken:string,
   accessToken:string,
-  user:{
-    id:string,
-    number:string
-  }
+  user:user
   error?:string
 }
 
-interface user{
-  number:string
-}
+
 
 export interface send{
   number:string
@@ -116,6 +129,13 @@ export const api = createApi({
           body:{number}
         })
       }),
+      anddresses: build.mutation<user[], deliveryAddresses>({
+        query: (deliveryAddresses) => ({
+          url:'auth/addresses',
+          body: deliveryAddresses,
+          method:"POST"
+        })
+      }),
     }),
   })
 
@@ -134,5 +154,6 @@ export const api = createApi({
     useLoginMutation,
     useLogoutMutation,
     useRefreshSMSCodeMutation,
-    useCheckAuthQuery
+    useCheckAuthQuery,
+    useAnddressesMutation
   } = api

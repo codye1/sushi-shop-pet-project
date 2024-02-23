@@ -1,0 +1,42 @@
+.address{
+    height: 72px;
+    border: 1px solid #dbdddd;
+    width: 100%;
+    padding: 0 16px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    position: relative;
+}
+.address-content h1{
+    font-size: 16px;
+    line-height: 24px;
+    font-family: Bold;
+}
+
+.address-content p{
+    color: rgba(29,29,29,.5);
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.address-buttons svg{
+    margin-left: 15px;
+    cursor: pointer;
+    width: 25px;
+    height: 32px;
+
+}
+
+.address-buttons svg path , .address-buttons svg path rect{
+    transition: all .3s ease;
+
+}
+.address-buttons svg:hover path{
+    fill: red;
+    fill-opacity: 1;
+}
+
+.address-buttons svg:hover rect{
+    fill:red;
+    fill-opacity: 1;
+}

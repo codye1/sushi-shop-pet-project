@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CustomInput from "../../../../../components/UI/CustomInput/CustomInput";
 import "./FormNewAddress.css"
+import { useAnddressesMutation, useGetUsersQuery } from "../../../../../API";
 
 const FormNewAddress = () => {
     const [street,setStreet]=useState("")
@@ -10,6 +11,13 @@ const FormNewAddress = () => {
     const [entrance,setEntrance]=useState("")
     const [floor,setFloor]=useState("")
     const [name,setName]=useState("")
+    const [addresses]=useAnddressesMutation()
+    const {data:user}=useGetUsersQuery()
+    function saveAddresses() {
+        addresses({street,house,intercom,apartment,entrance,floor,name})
+    }
+    console.log(user);
+
     return (
         <>
             <form className="add-new-address" action="">
@@ -60,13 +68,13 @@ const FormNewAddress = () => {
                 />
                 </div>
                 <div className="names d-flex">
-                    <div className="name" >
+                    <div onClick={()=>{setName("Дім")}} className={`name ${name=="Дім"? "selected" : ''}`} >
                         Дім
                     </div>
-                    <div className="name" >
+                    <div onClick={()=>{setName("Робота")}} className={`name ${name=="Робота"? "selected" : ''}`} >
                         Робота
                     </div>
-                    <div className="name" >
+                    <div onClick={()=>{setName("Друзі")}} className={`name ${name=="Друзі"? "selected" : ''}`} >
                         Друзі
                     </div>
                 </div>
@@ -74,7 +82,7 @@ const FormNewAddress = () => {
                     <button className="button-self-removal pointer">
                         Скасувати
                     </button>
-                    <button className="button-delivery pointer">
+                    <button onClick={saveAddresses} className="button-delivery pointer">
                         Зберегти
                     </button>
                 </div>

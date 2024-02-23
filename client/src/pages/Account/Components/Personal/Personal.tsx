@@ -8,15 +8,15 @@ import { useAppSelector } from "../../../../hooks";
 const Personal = () => {
     const [name,setName]=useState("")
     const [email,setEmail]=useState("")
-    const [anchorEl, setAnchorEl] = useState<HTMLButtonElement>(false);
+    const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
     const [openBirthWarn2, setOpenBirthWarn2] = useState(false);
-    const number = useAppSelector(state=>state.auth.number)
+    const number = useAppSelector(state=>state.auth.user.number)
     const handleClickCalendar = (event: React.MouseEvent<HTMLButtonElement>) => {
       setAnchorEl(event.currentTarget);
     };
     const handleCloseCalendar = () => {
 
-        setAnchorEl(false);
+        setAnchorEl(null);
     };
 
     const OpenBirthWarn2 = () => {
