@@ -64,6 +64,8 @@ const RightCont = () => {
                     <Popover
                         id={id}
                         open={open}
+                        className="header-menu"
+
                         anchorEl={anchorEl}
                         onClose={handleClose}
                         anchorOrigin={{
@@ -71,7 +73,7 @@ const RightCont = () => {
                         horizontal: 'left',
                         }}
                     >
-                        <Typography><Menu/></Typography>
+                        <Typography ><Menu/></Typography>
                     </Popover>
                 </>
                 :

@@ -1,11 +1,18 @@
 import { useState } from "react";
 import "./Delivery.css"
-import FormNewAddress from "./FormNewAddress/FormNewAddress";
+import FormAddress from "./FormAddress/FormAddress";
 import { useAppSelector } from "../../../../hooks";
 import Address from "./Address/Address";
+import { deliveryAddresses, useAddAddressMutation,  } from "../../../../API";
 const Delivery = () => {
     const [formVisible,setFormVisible] = useState(false)
     const user = useAppSelector(state => state.auth.user)
+    const [addresses]=useAddAddressMutation()
+
+    function saveAddresses(props:deliveryAddresses) {
+        addresses(props)
+    }
+
     return (
         <>
             {formVisible?
@@ -17,12 +24,13 @@ const Delivery = () => {
             <h1 className="top-title">Адрес доставки</h1>
             }
             {user.deliveryAddresses.map(address => <Address key={user.deliveryAddresses.indexOf(address)} address={address} /> )}
-            {formVisible? <FormNewAddress/> :
+            {formVisible? <FormAddress onClose={()=>{setFormVisible(false)}} onApply={saveAddresses}/> :
             <div onClick={()=>{setFormVisible(true)}} className="add-new-delivery-address d-flex align-center pointer">
                 <img src="https://uzhhorod.sushi-master.ua/img/account/delivery/add.svg" alt="" />
                 Додати нову адресу
             </div>
             }
+
         </>
     );
 };

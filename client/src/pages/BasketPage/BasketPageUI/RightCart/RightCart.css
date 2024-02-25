@@ -112,12 +112,14 @@
 
 .button-delivery{
     background-color: #E30613;
+    font-family: Bold;
     color: white;
     border: none;
 }
 
 .button-self-removal{
     background-color: white;
+    font-family: Bold;
     border:1px solid #DBDDDD;
 }
 

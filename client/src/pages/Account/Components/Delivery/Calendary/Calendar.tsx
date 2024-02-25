@@ -22,7 +22,7 @@ const Calendar:FC<Calendar>= ({handleDataAccept,closeCalendar}) => {
           <List>
             <ListItem key={"Скасувати"} disablePadding>
                 <ListItemButton onClick={closeCalendar}>
-                  <ListItemText className="item" primary={"Скасувати"} />
+                  <ListItemText className="item align-center" primary={"Скасувати"} />
                 </ListItemButton>
               </ListItem>
             <ListItem key={"Обрати"} disablePadding>
@@ -52,7 +52,7 @@ const Calendar:FC<Calendar>= ({handleDataAccept,closeCalendar}) => {
                                     backgroundColor: "red",
                                   },
                                 },
-                                "& .MuiList-root":{display:"flex", gridColumn:"1/4",gridRow:"3"},
+                                "& .MuiList-root":{display:"flex", gridColumn:"1/3",gridRow:"3"},
                             }
                             }
                             className={"MuiPickersToolbar-toolbar"}

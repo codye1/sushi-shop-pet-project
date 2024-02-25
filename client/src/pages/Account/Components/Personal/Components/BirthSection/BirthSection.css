@@ -1,0 +1,38 @@
+
+.birth-date-section{
+    position: relative;
+}
+
+.pick-birth{
+    height: 56px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 5px 14px;
+    cursor: pointer;
+    position: relative;
+    max-width: 600px;
+    margin: 30px 0;
+
+}
+
+.pick-birth .comps{
+    width: 100%;
+
+    border: 0;
+    background-color: white;
+}
+
+.pick-birth:hover{
+    outline: rgba(0, 0, 0, 0.658) solid 2px;
+    border-color: rgba(0, 0, 0, 0.658);
+}
+
+.birth-warn{
+    font-size: 10px;
+    line-height: 24px;
+    color: rgba(29,29,29,.5);
+    margin: 10px 0;
+}
+.birth-warn img{
+    margin-right: 10px;
+}

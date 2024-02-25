@@ -78,27 +78,58 @@ class UserController {
         }
     }
 
-    async addresses(req,res,next) {
+    async addAddress(req,res,next) {
         try{
             const address = req.body
-            console.log("req");
-            console.log("req");
-            console.log("req");
-            console.log("req");
             const accesToken = req.headers.authorization.split(' ')[1]
             const userData = tokenService.validateAccessToken(accesToken)
             console.log(userData);
             userService.addAddress(userData.number,address)
-
-            console.log("req");
-            console.log("req");
-            console.log("req");
-            console.log("req");
-            console.log("req");
         }catch (e){
             console.log(e);
         }
     }
+
+    async deleteAddress(req,res,next) {
+        try{
+            const address = req.body
+            const accesToken = req.headers.authorization.split(' ')[1]
+            const userData = tokenService.validateAccessToken(accesToken)
+            console.log(userData);
+            const newAddresses= await userService.deleteAddress(userData.number,address)
+            return res.json(newAddresses)
+        }catch (e){
+            console.log(e);
+        }
+    }
+
+    async putAddress(req,res,next) {
+        try{
+            const address = req.body
+            const accesToken = req.headers.authorization.split(' ')[1]
+            const userData = tokenService.validateAccessToken(accesToken)
+
+            const newAddresses = await  userService.putAddress(userData.number,address)
+            console.log("321231",newAddresses);
+            return res.json(newAddresses)
+        }catch (e){
+            console.log(e);
+        }
+    }
+
+    async getAddresses(req,res,next) {
+        try{
+            const accesToken = req.headers.authorization.split(' ')[1]
+            const userData = tokenService.validateAccessToken(accesToken)
+            for (let i = 0; i < userData.deliveryAddresses.length; i++) {
+                console.log(userData.deliveryAddresses[i].name);
+            }
+            return res.json(userData.deliveryAddresses)
+        }catch (e){
+            console.log(e);
+        }
+    }
+
 }
 
 module.exports = new UserController()

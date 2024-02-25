@@ -57,34 +57,6 @@
 
 
 
-.birth-date-section{
-    position: relative;
-}
-
-.pick-birth{
-    height: 56px;
-    width: 100%;
-    border-radius: 8px;
-    padding: 5px 14px;
-    cursor: pointer;
-    position: relative;
-    max-width: 600px;
-    margin: 30px 0;
-
-}
-
-.pick-birth .comps{
-    width: 100%;
-
-    border: 0;
-    background-color: white;
-}
-
-.pick-birth:hover{
-    outline: rgba(0, 0, 0, 0.658) solid 2px;
-    border-color: rgba(0, 0, 0, 0.658);
-}
-
 
 .menu-content{
     background: white;
@@ -103,40 +75,8 @@
 }
 
 
-.custom-modal .title{
-    font-size: 24px;
-    line-height: 34px;
-    color: #202228;
-    margin-bottom: 24px;
-    font-family: Bold;
 
-}
 
-.custom-modal .description{
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(29,29,29,.5);
-
-    text-align: center;
-}
-
-.custom-modal img{
-    position: absolute;
-    top: 0;
-    right: -40px;
-    width: 15px;
-    height: 15px;
-}
-
-.birth-warn{
-    font-size: 10px;
-    line-height: 24px;
-    color: rgba(29,29,29,.5);
-    margin: 10px 0;
-}
-.birth-warn img{
-    margin-right: 10px;
-}
 
 .placeholder{
     color: rgba(29,29,29,.5);

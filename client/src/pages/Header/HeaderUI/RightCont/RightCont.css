@@ -52,10 +52,10 @@
     margin-right: 20px;
 }
 
-.css-3bmhjh-MuiPaper-root-MuiPopover-paper{
+.header-menu .css-3bmhjh-MuiPaper-root-MuiPopover-paper{
     margin-top: 60px;
 }
-.MuiTypography-root{
+.header-menu .MuiTypography-root{
     min-width: 300px;
     max-width: 300px;
     flex-direction: column;

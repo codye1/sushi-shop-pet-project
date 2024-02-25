@@ -111,7 +111,8 @@
     font-family: Bold;
 }
 .last{
-    color:#e30613
+    color:#e30613;
+    align-items: center;
 }
 
 .css-tlelie-MuiListItemText-root{

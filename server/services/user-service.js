@@ -102,6 +102,22 @@ class UserService{
         console.log(user);
         user.save()
     }
+
+    async deleteAddress(number,address){
+        const user = await userModel.findOne({number})
+        user.deliveryAddresses.remove(address)
+        console.log(user);
+        user.save()
+        return user.deliveryAddresses
+    }
+
+    async putAddress(number,address){
+        const user = await userModel.findOne({number})
+        const indexOldAddress = user.deliveryAddresses.findIndex(obj => obj._id == address._id)
+        user.deliveryAddresses[indexOldAddress] = address
+        user.save()
+        return user.deliveryAddresses
+    }
 }
 
 

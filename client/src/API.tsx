@@ -15,9 +15,10 @@ export interface deliveryAddresses{
     apartment:string,
     entrance:string,
     floor:string,
-    name:string
-
+    name:string,
+    _id?:string
 }
+
 
 export interface user{
   id:string,
@@ -60,7 +61,6 @@ const baseQueryWithReauth: BaseQueryFn<
     const refreshResult = await baseQuery('auth/refresh', api, extraOptions)
     if (refreshResult.data) {
       console.log("cработало");
-
       localStorage.setItem("token",refreshResult.data.accessToken)
       result = await baseQuery(args, api, extraOptions)
     }
@@ -129,12 +129,30 @@ export const api = createApi({
           body:{number}
         })
       }),
-      anddresses: build.mutation<user[], deliveryAddresses>({
+      addAddress: build.mutation<user[], deliveryAddresses>({
         query: (deliveryAddresses) => ({
           url:'auth/addresses',
           body: deliveryAddresses,
           method:"POST"
         })
+      }),
+      deleteAddress: build.mutation<deliveryAddresses[], deliveryAddresses>({
+        query: (deliveryAddresses) => ({
+          url:'auth/addresses',
+          body: deliveryAddresses,
+          method:"DELETE"
+        })
+      }),
+      putAddress: build.mutation<deliveryAddresses[],deliveryAddresses>({
+        query: (deliveryAddresses) => ({
+          url:'auth/addresses',
+          body: deliveryAddresses,
+          method:"PUT"
+
+        })
+      }),
+      getAddresses: build.query<deliveryAddresses[], void>({
+        query: () => 'auth/addresses',
       }),
     }),
   })
@@ -155,5 +173,8 @@ export const api = createApi({
     useLogoutMutation,
     useRefreshSMSCodeMutation,
     useCheckAuthQuery,
-    useAnddressesMutation
+    useAddAddressMutation,
+    useDeleteAddressMutation,
+    usePutAddressMutation,
+    useGetAddressesQuery
   } = api

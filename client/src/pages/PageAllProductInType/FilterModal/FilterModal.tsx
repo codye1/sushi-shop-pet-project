@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./FilterModal.css"
+import TwoButtons from "../../../components/UI/TwoButtons/TwoButtons";
 
 interface FilterModal {
     onUpdateData: (newData: IformaFiltra) => void;
@@ -34,7 +35,28 @@ const FilterModal:React.FC<FilterModal> = ({onUpdateData,labels,ParentFormaFiltr
         onUpdateData(childFormaFiltra)
     };
 
+    function onCancel() {
+        formaFiltra.price="1"
+        formaFiltra.weight="4"
+        setChildFormaFiltra(formaFiltra)
+        setModalTransition(false)
 
+        formaFiltra.labels=[]
+        setTimeout(() => {
+            sendDataToParent();
+            ApplyFilters()
+        }, 300)
+    }
+
+    function onApply() {
+        setModalTransition(false)
+        formaFiltra.labels=selectLabels
+        setTimeout(() => {
+            sendDataToParent();
+            ApplyFilters()
+        }, 300)
+
+    }
     return (
         <div onClick={(event)=>{
                 if((window.innerWidth-515)>event.clientX){
@@ -160,34 +182,12 @@ const FilterModal:React.FC<FilterModal> = ({onUpdateData,labels,ParentFormaFiltr
                             </div>
                         </div>
                     </div>
-                    <div className="modal-submit-buttons d-flex space-between">
-                         <div onClick={()=>{
-                            formaFiltra.price="1"
-                            formaFiltra.weight="4"
-                            setChildFormaFiltra(formaFiltra)
-                            setModalTransition(false)
-
-                            formaFiltra.labels=[]
-                            setTimeout(() => {
-                                sendDataToParent();
-                                ApplyFilters()
-                            }, 300)
-                        }
-                        } className="button-cancel pointer btn align-center">
-                            скинути
-                         </div>
-                         <div onClick={()=>{
-                            setModalTransition(false)
-                            formaFiltra.labels=selectLabels
-                            setTimeout(() => {
-                                sendDataToParent();
-                                ApplyFilters()
-                            }, 300)
-                            }
-                         } className="button-apply pointer btn">
-                            застосувати
-                         </div>
-                    </div>
+                    <TwoButtons
+                        applyTitle="ЗАСТОСУВАТИ"
+                        cancelTitle="СКИНУТИ"
+                        onApply={onApply}
+                        onCancel={onCancel}
+                    />
             </div>
         </div>
     );

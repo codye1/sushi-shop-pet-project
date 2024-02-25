@@ -1,22 +1,21 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import CustomInput from "../../../../../components/UI/CustomInput/CustomInput";
-import "./FormNewAddress.css"
-import { useAnddressesMutation, useGetUsersQuery } from "../../../../../API";
+import "./FormAddress.css"
+import { deliveryAddresses } from '../../../../../API';
+interface IFormAddress{
+    onApply:(props:deliveryAddresses)=>void
+    onClose:()=>void
+    defaultValue?:deliveryAddresses
+}
 
-const FormNewAddress = () => {
-    const [street,setStreet]=useState("")
-    const [house,setHouse]=useState("")
-    const [intercom,setIntercom]=useState("")
-    const [apartment,setApartment]=useState("")
-    const [entrance,setEntrance]=useState("")
-    const [floor,setFloor]=useState("")
-    const [name,setName]=useState("")
-    const [addresses]=useAnddressesMutation()
-    const {data:user}=useGetUsersQuery()
-    function saveAddresses() {
-        addresses({street,house,intercom,apartment,entrance,floor,name})
-    }
-    console.log(user);
+const FormAddress:FC<IFormAddress> = ({onApply,defaultValue,onClose}) => {
+    const [street,setStreet]=useState(defaultValue? defaultValue.street : "" )
+    const [house,setHouse]=useState(defaultValue? defaultValue.house : "" )
+    const [intercom,setIntercom]=useState(defaultValue? defaultValue.intercom : "" )
+    const [apartment,setApartment]=useState(defaultValue? defaultValue.apartment : "" )
+    const [entrance,setEntrance]=useState(defaultValue? defaultValue.entrance : "" )
+    const [floor,setFloor]=useState(defaultValue? defaultValue.floor : "" )
+    const [name,setName]=useState(defaultValue? defaultValue.name : "" )
 
     return (
         <>
@@ -79,10 +78,10 @@ const FormNewAddress = () => {
                     </div>
                 </div>
                 <div className="cart-card-buttons">
-                    <button className="button-self-removal pointer">
+                    <button onClick={onClose} className="button-self-removal pointer">
                         Скасувати
                     </button>
-                    <button onClick={saveAddresses} className="button-delivery pointer">
+                    <button onClick={()=>{onApply({street,house,intercom,apartment,entrance,floor,name})}} className="button-delivery pointer">
                         Зберегти
                     </button>
                 </div>
@@ -91,4 +90,4 @@ const FormNewAddress = () => {
     );
 };
 
-export default FormNewAddress;
+export default FormAddress;

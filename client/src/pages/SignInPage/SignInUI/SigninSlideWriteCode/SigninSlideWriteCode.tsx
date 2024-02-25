@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./SigninSlideWriteCode.css"
 import ReactCodeInput from "react-code-input";
-import { useLoginMutation, useRefreshSMSCodeMutation } from "../../../../API";
+import { AuthResponce, useLoginMutation, useRefreshSMSCodeMutation } from "../../../../API";
 import ModalError from "../ModalError/ModalError";
 import { useAppDispatch } from "../../../../hooks";
 import { authUser } from "../../../../reducer/auth";
@@ -21,14 +21,18 @@ const SigninSlideWriteCode:React.FC<SigninSlideWriteCode> = ({setSmsSent,number}
 
     async function handleLogin(number:string,code:string) {
         const result  = await login({number,code})
-        if (result.data == "Error") {
-            setModalError(true)
-            setPinCode("")
-        }else{
-            dispath(authUser(result.data.user.number))
-            result && localStorage.setItem("token",result.data.accessToken)
-        }
+        if ('data' in result) {
 
+
+            if (typeof result.data == "string") {
+                setModalError(true)
+                setPinCode("")
+            }else{
+                const data: AuthResponce = result.data
+                dispath(authUser(data.user))
+                result && localStorage.setItem("token",result.data.accessToken)
+            }
+          }
     }
 
     const handlePinChange = (pinCode:string) => {

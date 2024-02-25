@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { user } from "../API";
+import { deliveryAddresses, user } from "../API";
 
 interface IAuth{
     isAuth:boolean
@@ -27,10 +27,13 @@ const authSlice = createSlice({
                 state.isAuth = true
                 state.user = action.payload
           },
+        updAddresses(state, action: PayloadAction<deliveryAddresses[]>){
+            state.user.deliveryAddresses=action.payload
+        }
 
     },
   })
 
-  export const {  authUser } = authSlice.actions
+  export const {  authUser , updAddresses} = authSlice.actions
 
   export default authSlice;
