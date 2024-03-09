@@ -118,6 +118,31 @@ class UserService{
         user.save()
         return user.deliveryAddresses
     }
+
+    async saveBirthDate(number,birthDate){
+        const user = await userModel.findOne({number})
+        if (user.birthDate.length == 0) {
+            console.log(birthDate);
+            user.birthDate=birthDate
+            user.save()
+        }else{
+            console.log("Уже є дата");
+        }
+    }
+
+    async saveName(number,name){
+        const user = await userModel.findOne({number})
+        user.name=name
+        user.save()
+    }
+
+    async saveEmail(number,email){
+        const user = await userModel.findOne({number})
+        user.email = email
+        user.save()
+
+    }
+
 }
 
 

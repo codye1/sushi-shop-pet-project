@@ -12,8 +12,10 @@ const initialState: IAuth = {
     user:{
         id:"",
         number:"",
-        deliveryAddresses:[]
-
+        deliveryAddresses:[],
+        name:"",
+        birthDate:[],
+        email:""
     }
 }
 
@@ -29,11 +31,20 @@ const authSlice = createSlice({
           },
         updAddresses(state, action: PayloadAction<deliveryAddresses[]>){
             state.user.deliveryAddresses=action.payload
+        },
+        updName(state, action: PayloadAction<string>){
+            state.user.name=action.payload
+        },
+        updEmail(state, action: PayloadAction<string>){
+            state.user.email=action.payload
+        },
+        updBirthDate(state, action: PayloadAction<number[]>){
+            state.user.birthDate=action.payload
         }
 
     },
   })
 
-  export const {  authUser , updAddresses} = authSlice.actions
+  export const {  authUser , updAddresses,updBirthDate,updEmail,updName} = authSlice.actions
 
   export default authSlice;

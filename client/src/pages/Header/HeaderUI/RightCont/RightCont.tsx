@@ -15,6 +15,7 @@ const RightCont = () => {
     const [isAnimated,setIsAtimated]=useState(false);
     const isAuth=useAppSelector(state=>state.auth.isAuth)
     const number=useAppSelector(state=>state.auth.user.number)
+    const name=useAppSelector(state=>state.auth.user.name)
     const {data:user}=useCheckAuthQuery()
 
     useEffect(()=>{
@@ -27,7 +28,7 @@ const RightCont = () => {
 
     useEffect(()=>{
         if (user && !user.error) {
-
+            console.log(user.user);
 
             dispatch(authUser(user.user))
         }
@@ -59,7 +60,7 @@ const RightCont = () => {
                 <>
                     <button onClick={(event)=>{handleClick(event)}} className="login loged">
                         <img src="https://uzhhorod.sushi-master.ua/img/header/user.svg" alt="" />
-                        {number}
+                        {name && name.length>0? name : number}
                     </button>
                     <Popover
                         id={id}

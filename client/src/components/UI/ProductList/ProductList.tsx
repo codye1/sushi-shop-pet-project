@@ -7,7 +7,6 @@ const ProductList:React.FC<IProductsInXEelement> = ({products}) => {
     return (
         <div className="products-list d-flex">
                 <div className="container">
-                    <div>
                         {
                         products.length>0?
                         <div  className="product-list">
@@ -17,7 +16,6 @@ const ProductList:React.FC<IProductsInXEelement> = ({products}) => {
                         :
                         <NoData/>
                         }
-                    </div>
                 </div>
             </div>
 

@@ -4,7 +4,7 @@
     color: #202228;
     margin-bottom: 24px;
     font-family: Bold;
-
+    text-align: center;
 }
 
 .custom-modal .description{
@@ -15,7 +15,7 @@
     text-align: center;
 }
 
-.custom-modal img{
+.close-modal{
     position: absolute;
     top: 0;
     right: -40px;

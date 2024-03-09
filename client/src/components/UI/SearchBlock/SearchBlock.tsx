@@ -21,7 +21,10 @@ const SearchBlock = () => {
     return (
             <div className="search-page">
                 <div className="search-input-button">
+
                     <div className="search-input">
+
+                        <img src="https://lviv.sushi-master.ua/img/header/search.svg" alt="" />
                         <input onChange={(event)=>{changeInput(event.target.value)}} type="text" defaultValue={""} placeholder="Пошук"/>
                     </div>
                     <button onClick={()=>{dispatch(setSearchActive(false))} }>

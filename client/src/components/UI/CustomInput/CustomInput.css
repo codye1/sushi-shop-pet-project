@@ -63,14 +63,16 @@ input:focus{
 
 .apply , .cancel{
     position: absolute;
-    top: -10px;
+    top: -5px;
+    font-family: Bold;
+    font-weight: 400;
     padding: 6px 8px;
-    font-weight: bold;
     line-height: 24px;
+    cursor: pointer;
 }
 
 .cancel{
-    right: -100px;
+    right: -110px;
 
 }
 

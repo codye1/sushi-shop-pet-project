@@ -14,6 +14,8 @@ router.post('/refreshsmscode', UserController.refreshSMSToken)
 router.get('/users',authMiddleware,UserController.getAllUsers)
 router.post('/addresses',authMiddleware,UserController.addAddress)
 router.delete('/addresses',authMiddleware,UserController.deleteAddress)
-router.put('/addresses',authMiddleware,UserController.putAddress)
-router.get('/addresses',authMiddleware,UserController.getAddresses)
+router.put('/addresses',authMiddleware,UserController.putAddress),
+router.post('/save/birth-date',authMiddleware,UserController.saveBirthDate)
+router.post('/save/name',authMiddleware,UserController.saveName)
+router.post('/save/email',authMiddleware,UserController.saveEmail)
 module.exports = router

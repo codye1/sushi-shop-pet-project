@@ -26,7 +26,10 @@ const Menu = () => {
                     <p>Адреси доставки</p>
                 </NavLink >
             </div>
-            <div onClick={()=>{logout()}} className="menu logout pointer">
+            <div onClick={()=>{
+                logout()
+                window.location.reload()
+                }} className="menu logout pointer">
                 <div className="menu-item">
                     <img src="https://lviv.sushi-master.ua/img/menu/log-out.svg" alt="" />
                     <p>Вийти</p>

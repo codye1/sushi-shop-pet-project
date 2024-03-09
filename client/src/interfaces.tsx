@@ -85,3 +85,41 @@ export type IProductResponse = IProduct[]
 export type IPromotionResponse = IPromotion[]
 
 export type IRestourantResponse = IRestourant[]
+
+
+
+export interface deliveryAddresses{
+
+    street: string,
+    house:string,
+    intercom:string,
+    apartment:string,
+    entrance:string,
+    floor:string,
+    name:string,
+    _id?:string
+}
+
+
+export interface user{
+  id:string,
+  number:string
+  deliveryAddresses:deliveryAddresses[],
+  name:string,
+  email:string,
+  birthDate:number[]
+}
+
+export type AuthResponce = {
+  refreshToken:string,
+  accessToken:string,
+  user:user
+  error?:string
+}
+
+
+
+export interface send{
+  number:string
+  code:number | string
+}

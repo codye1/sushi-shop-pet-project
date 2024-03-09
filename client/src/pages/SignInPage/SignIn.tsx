@@ -9,7 +9,7 @@ import SigninSlideWriteCode from "./SignInUI/SigninSlideWriteCode/SigninSlideWri
 const SignIn = () => {
     const [smsSent,setSmsSent] = useState(false)
     const [number,setNumber]=useState<string>("")
-    console.log(smsSent);
+
 
 
     return (

@@ -12,7 +12,6 @@ import Privacy from "../../pages/PagesInFooterLink/Privacy/Privacy";
 import PagePromotionById from "../../pages/PagesInFooterLink/Promotions/PagePromotionById/PagePromotionById";
 import Promotions from "../../pages/PagesInFooterLink/Promotions/Promotions";
 import PublicOferta from '../../pages/PagesInFooterLink/PublicOferta/PublicOferta';
-import SignIn from "../../pages/SignInPage/SignIn";
 
 export const routPages=[
     {path: '/home',element:Home,exact:true},
@@ -26,7 +25,6 @@ export const routPages=[
     {path:'/privacy',element:Privacy,exact:true},
     {path:'/public-oferta',element:PublicOferta,exact:true},
     {path:'/delivery',element:Delivery,exact:true},
-    {path:'/our-restourants',element:OurRestaurants,exact:true},
-    {path:'/sign-in',element:SignIn,exact:true},
-    {path:'/account/:element',element:Account,exact:true}
+    {path:'/our-restourants',element:OurRestaurants,exact:true}
 ]
+

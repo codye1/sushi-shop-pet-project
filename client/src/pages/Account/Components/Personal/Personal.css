@@ -1,17 +1,44 @@
 
-.contacts{
+.section-content{
     margin: 30px 0;
 }
-.contacts-content{
-    margin-left: 24px;
+
+.section-info{
+    max-width: 600px;
 }
 
-.contacts-content p{
-    padding-top: 5px;
-    cursor: help;
+.section-info-content h3{
+    font-size: 16px ;
+    line-height: 24px;
+    font-family: Bold;
+    font-weight: 400;
+}
+
+.section-info-content p{
     color: rgba(29,29,29,.5);
     line-height: 24px;
     font-size: 16px;
+    padding-top: 5px;
+}
+
+.section-info-content{
+    margin-left: 24px;
+}
+
+.section-info-content img{
+    width: 18px;
+}
+
+.section-contacts,.section-birth,.section-email{
+    margin: 30px 0;
+}
+
+.section-info svg{
+    width: 25px;
+}
+
+.section-info svg:hover path{
+    fill: red;
 }
 
 .sub-title{

@@ -1,3 +1,4 @@
+const UserDto = require('../dtos/user-dto');
 const userModel = require('../models/user-model');
 const UserModal = require('../models/user-model');
 const tokenService = require('../services/token-service');
@@ -117,18 +118,40 @@ class UserController {
         }
     }
 
-    async getAddresses(req,res,next) {
+    async saveBirthDate(req,res,next) {
         try{
+            const result = req.body
             const accesToken = req.headers.authorization.split(' ')[1]
             const userData = tokenService.validateAccessToken(accesToken)
-            for (let i = 0; i < userData.deliveryAddresses.length; i++) {
-                console.log(userData.deliveryAddresses[i].name);
-            }
-            return res.json(userData.deliveryAddresses)
+            userService.saveBirthDate(userData.number,result.birthDate)
         }catch (e){
             console.log(e);
         }
     }
+
+    async saveName(req,res,next) {
+        try{
+            const result = req.body
+            const accesToken = req.headers.authorization.split(' ')[1]
+            const userData = tokenService.validateAccessToken(accesToken)
+            userService.saveName(userData.number,result.name)
+        }catch (e){
+            console.log(e);
+        }
+    }
+
+    async saveEmail(req,res,next) {
+        try{
+            const result = req.body
+            const accesToken = req.headers.authorization.split(' ')[1]
+            const userData = tokenService.validateAccessToken(accesToken)
+            console.log(result);
+            userService.saveEmail(userData.number,result.email)
+        }catch (e){
+            console.log(e);
+        }
+    }
+
 
 }
 

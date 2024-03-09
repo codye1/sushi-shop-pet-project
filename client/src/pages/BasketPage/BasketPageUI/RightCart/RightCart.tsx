@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./RightCart.css"
 import { useAppSelector } from "../../../../hooks";
+import TwoButtons from "../../../../components/UI/TwoButtons/TwoButtons";
 
 const RightCart = () => {
     const [input,setInput]=useState('');
@@ -25,14 +26,12 @@ const RightCart = () => {
                     <h1>РАЗОМ {priceAllProduct} грн</h1>
 
                 </div>
-                <div className="cart-card-buttons">
-                    <button className="button-self-removal">
-                        самовиніс
-                    </button>
-                    <button className="button-delivery">
-                        доставка
-                    </button>
-                </div>
+                <TwoButtons
+                    applyTitle="ДОСТАВКА"
+                    cancelTitle="САМОВИНІС"
+                    onApply={()=>{}}
+                    onCancel={()=>{}}
+                />
             </div>
             <div className="bonus">
                 <img src="https://uzhhorod.sushi-master.ua/img/cart/bonus.svg" alt="" />

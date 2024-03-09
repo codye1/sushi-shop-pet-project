@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import "./SigninSlideWriteCode.css"
 import ReactCodeInput from "react-code-input";
-import { AuthResponce, useLoginMutation, useRefreshSMSCodeMutation } from "../../../../API";
-import ModalError from "../ModalError/ModalError";
+import {  useLoginMutation, useRefreshSMSCodeMutation } from "../../../../API";
 import { useAppDispatch } from "../../../../hooks";
 import { authUser } from "../../../../reducer/auth";
+import CustomModal from "../../../../components/UI/CustomModal/CustomModal";
+import { AuthResponce } from "../../../../interfaces";
 
 interface SigninSlideWriteCode{
     number:string,
@@ -91,7 +92,14 @@ const SigninSlideWriteCode:React.FC<SigninSlideWriteCode> = ({setSmsSent,number}
             </div>
 
         </div>
-        {modalError && <ModalError closeModal={setModalError}/>}
+        <CustomModal
+                customModal={modalError}
+                closeModal={()=>{setModalError(false)}}
+            >
+                <img style={{width:"60px",margin:"0 auto 30px"}} src="https://lviv.sushi-master.ua/img/header/cancel.svg" alt="" />
+                <div className="title">Вибачте</div>
+                <div className="description">Введено недійсний код</div>
+        </CustomModal>
     </div>
     );
 };

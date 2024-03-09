@@ -14,7 +14,10 @@ const UserSchema = new Schema({
         entrance:{type: String},
         floor:{type: String},
         name:{type: String}
-    }]
+    }],
+    name:{type:String},
+    birthDate:[{type:Number}],
+    email:{type:String}
 
 })
 

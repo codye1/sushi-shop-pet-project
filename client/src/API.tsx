@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IProductResponse, IProduct,  IPromotionResponse, IPromotion, IRestourantResponse } from './interfaces';
+import { IProductResponse, IProduct,  IPromotionResponse, IPromotion, IRestourantResponse, deliveryAddresses, user, AuthResponce, send } from './interfaces';
 
 import type {
   BaseQueryFn,
@@ -7,38 +7,6 @@ import type {
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/query'
 
-export interface deliveryAddresses{
-
-    street: string,
-    house:string,
-    intercom:string,
-    apartment:string,
-    entrance:string,
-    floor:string,
-    name:string,
-    _id?:string
-}
-
-
-export interface user{
-  id:string,
-  number:string
-  deliveryAddresses:deliveryAddresses[]
-}
-
-export type AuthResponce = {
-  refreshToken:string,
-  accessToken:string,
-  user:user
-  error?:string
-}
-
-
-
-export interface send{
-  number:string
-  code:number | string
-}
 
 
 const baseQuery = fetchBaseQuery({
@@ -148,11 +116,28 @@ export const api = createApi({
           url:'auth/addresses',
           body: deliveryAddresses,
           method:"PUT"
-
         })
       }),
-      getAddresses: build.query<deliveryAddresses[], void>({
-        query: () => 'auth/addresses',
+      saveName: build.mutation<user[], string>({
+        query: (name) => ({
+          url:'auth/save/name',
+          method:"POST",
+          body:{name}
+        })
+      }),
+      saveEmail: build.mutation<user[], string>({
+        query: (email) => ({
+          url:'auth/save/email',
+          method:"POST",
+          body:{email}
+        })
+      }),
+      saveBirthDate: build.mutation<user[], number[]>({
+        query: (birthDate) => ({
+          url:'auth/save/birth-date',
+          method:"POST",
+          body:{birthDate}
+        })
       }),
     }),
   })
@@ -176,5 +161,7 @@ export const api = createApi({
     useAddAddressMutation,
     useDeleteAddressMutation,
     usePutAddressMutation,
-    useGetAddressesQuery
+    useSaveBirthDateMutation,
+    useSaveEmailMutation,
+    useSaveNameMutation
   } = api

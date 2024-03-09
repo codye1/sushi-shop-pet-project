@@ -43,11 +43,15 @@
 .card-product-basket-info-cont a{
     text-decoration: none;
     color: #000000;
+
+    font-family: Bold;
 }
 
 .card-product-basket-info-cont h1{
     font-size: 16px;
     line-height: 24px;
+
+    font-family: Bold;
 }
 
 .card-product-basket-right-cont{
@@ -76,12 +80,17 @@
 }
 
 
+strong{
+    font-family: Bold;
+}
+
 .action-basket span{
     display: flex;
 
     font-size: 14px;
     text-decoration: line-through;
-    color: black;
+    color: rgba(29,29,29,.5);
+
   }
   .action-basket{
     font-size: 16px;
@@ -89,6 +98,7 @@
     line-height: 24px;
     text-align: start;
     color: red;
+    font-family: Bold;
   }
 
 .card-product-basket-delete-button-cont{

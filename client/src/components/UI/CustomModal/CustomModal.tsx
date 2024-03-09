@@ -10,9 +10,6 @@ interface ICustomModal{
 }
 
 const CustomModal:FC<ICustomModal> = ({customModal,closeModal,children}) => {
-
-
-
     return (
         <Dialog
             open={customModal}
@@ -22,7 +19,7 @@ const CustomModal:FC<ICustomModal> = ({customModal,closeModal,children}) => {
         >
                 <div className="custom-modal d-flex column center">
                     {children}
-                    <img onClick={closeModal}  className="pointer" src="https://kyiv.sushi-master.ua/img/header/close-white.svg" alt="" />
+                    <img onClick={closeModal}  className="close-modal pointer" src="https://kyiv.sushi-master.ua/img/header/close-white.svg" alt="" />
                 </div>
         </Dialog>
     );

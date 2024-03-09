@@ -22,6 +22,7 @@
     color: #E30613;
     height: 32px;
     cursor: pointer;
+    font-family: Bold;
 }
 
 @media (max-width: 1000px) {

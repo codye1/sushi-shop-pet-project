@@ -7,7 +7,7 @@ import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 
 
 interface Calendar{
-    handleDataAccept: () => void
+    handleDataAccept: (date:number[]) => void
     closeCalendar:()=>void
 }
 
@@ -18,7 +18,6 @@ const Calendar:FC<Calendar>= ({handleDataAccept,closeCalendar}) => {
     function ActionList() {
 
         return (
-          // Propagate the className such that CSS selectors can be applied
           <List>
             <ListItem key={"Скасувати"} disablePadding>
                 <ListItemButton onClick={closeCalendar}>
@@ -26,7 +25,7 @@ const Calendar:FC<Calendar>= ({handleDataAccept,closeCalendar}) => {
                 </ListItemButton>
               </ListItem>
             <ListItem key={"Обрати"} disablePadding>
-                <ListItemButton onClick={ handleDataAccept}>
+                <ListItemButton onClick={()=>handleDataAccept(date)}>
                   <ListItemText className="item last" primary={"Обрати"} />
                 </ListItemButton>
               </ListItem>
@@ -40,7 +39,7 @@ const Calendar:FC<Calendar>= ({handleDataAccept,closeCalendar}) => {
             <div className="calendar-container">
                         <StaticDatePicker
                             localeText={{toolbarTitle:`${date[0]}`, okButtonLabel:"Обрати", cancelButtonLabel:"Скасувати"} }
-                            onAccept={()=>{handleDataAccept()}}
+                            onAccept={()=>handleDataAccept(date)}
 
                             slots={{
                                 actionBar: ActionList,

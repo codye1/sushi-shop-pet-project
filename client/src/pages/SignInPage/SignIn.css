@@ -11,6 +11,13 @@
     box-shadow: -4px -4px 8px hsla(236,6%,49%,.04), 8px 8px 16px hsla(236,6%,49%,.08);
 }
 
+@media (max-width: 767px){
+    .sign-in-main-block{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .sign-in-left-block{
     height: 100%;
     background: linear-gradient(135.31deg,#fff7f7 -0.78%,#fff8f8 -0.77%,#f9faff 100.85%);

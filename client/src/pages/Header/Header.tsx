@@ -5,9 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import LeftCont from "./HeaderUI/LeftCont/LeftCont";
 import RightCont from "./HeaderUI/RightCont/RightCont";
 import Navbar from "./HeaderUI/Navbar/Navbar";
-import BasketHeader from "./HeaderUI/BasketHeader/BasketHeader";
 import { setBasketPageStatus } from "../../reducer/basket";
-// import { addProductInBasket, deleteById } from "../../reducer/basket";
 
 
 const Header = () => {
@@ -16,7 +14,6 @@ const Header = () => {
     const [isScroled, setScroled] = useState(false);
     const [transform,setStransform] = useState(0);
     const searchActive = useAppSelector((state)=>state.searchActive.searchActive);
-    const basketStatus = useAppSelector((state)=>state.basket.basketOpen);
     const dispatch = useAppDispatch()
     const location = useLocation()
 
@@ -30,7 +27,7 @@ const Header = () => {
 
     useEffect(() => {
       const handleScroll = (e:number) => {
-        if (window.scrollY>100 || basketStatus) {
+        if (window.scrollY>100) {
             setScroled(true)
             if(e<0){
                 setStransform(0)
@@ -56,30 +53,20 @@ const Header = () => {
         window.location.reload()
     }
     return (
-            <div style={{transform: `translateY(${transform}%)`}} className={`header ${isScroled&&basketStatus? 'scroled' : ''}`}>
+            <div style={{transform: `translateY(${transform}%)`}} className={`header ${isScroled? 'scroled' : ''}`}>
             <div className="top-header">
-                {basketStatus?
-                    <BasketHeader/>
-                    :
-                    <div className="top-container">
-                        <LeftCont/>
-                        <NavLink onClick={()=>{setTimeout(windowReload,100) }}to={"/home"} className="main-logo">
-                            <img  src="https://x100-venus-sm-ua.gumlet.io/VENUS/WEB/4C25DB70-1DCE-11EB-A6EC-7B643829D650/1675018701967_%D1%81%D0%B0%D0%B9%D1%82.svg?alt=media&token=a2835928-b794-4bd1-8b2c-7e722bd31b10" alt=""/>
-                        </NavLink>
-                        <RightCont/>
-                    </div>
-                }
+            <div className="top-container">
+                <LeftCont/>
+                <NavLink onClick={()=>{setTimeout(windowReload,100) }}to={"/home"} className="main-logo">
+                    <img  src="https://x100-venus-sm-ua.gumlet.io/VENUS/WEB/4C25DB70-1DCE-11EB-A6EC-7B643829D650/1675018701967_%D1%81%D0%B0%D0%B9%D1%82.svg?alt=media&token=a2835928-b794-4bd1-8b2c-7e722bd31b10" alt=""/>
+                </NavLink>
+                <RightCont/>
             </div>
-            {basketStatus?
-                null:
-                <>
-                    <div className="line">
-                        <div></div>
-                    </div>
-                    <Navbar isScroled={isScroled}/>
-                </>
-            }
-
+            </div>
+            <div className="line">
+                <div></div>
+            </div>
+            <Navbar isScroled={isScroled}/>
         </div>
     );
 };

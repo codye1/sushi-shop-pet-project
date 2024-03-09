@@ -30,9 +30,8 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
         event.stopPropagation();
       };
 
-    function sendSMSCode() {
+    function sendSMSCode(number:string) {
         if (checkBox) {
-            console.log(number.length);
             sendCode(number)
             setSMSSent(true)
         }else{
@@ -56,11 +55,9 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
                     <input
                         type="tel"
                         onChange={(event)=>{
-
-                            if (event.target.value.length == (9+pickedCountry.dialCode.length) ) {
-                            sendSMSCode()
-                            }else{
-                                setNumber(event.target.value.replace(/[^0-9+()-]/g, ''))
+                            setNumber(event.target.value.replace(/[^0-9+()-]/g, ''))
+                            if (event.target.value.replace(/[^0-9+()-]/g, '').length == (9+pickedCountry.dialCode.length) ) {
+                                sendSMSCode(event.target.value.replace(/[^0-9+()-]/g, ''))
                             }
                         }}
                         value={number}
