@@ -1,4 +1,6 @@
 import "./LeftCont.css"
+import arrowDown from "../../../../icons/headerIcon/arrow-down.png"
+
 const LeftCont = () => {
     return (
         <div className="left-cont">
@@ -7,7 +9,7 @@ const LeftCont = () => {
             </div>
             <div className="language">
                 <span>UA</span>
-                <img src="https://uzhhorod.sushi-master.ua/img/header/arrow-down.svg" alt="" />
+                <img src={arrowDown} alt="" />
             </div>
             <div className="number">
                 <a href="tel:0 800 330 333">0 800 330 333</a>

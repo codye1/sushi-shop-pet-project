@@ -1,7 +1,8 @@
 import { FC, useState } from "react";
 import CustomInput from "../../../../../components/UI/CustomInput/CustomInput";
 import "./FormAddress.css"
-import { deliveryAddresses } from '../../../../../API';
+import { deliveryAddresses } from '../../../../../interfaces';
+import TwoButtons from "../../../../../components/UI/TwoButtons/TwoButtons";
 interface IFormAddress{
     onApply:(props:deliveryAddresses)=>void
     onClose:()=>void
@@ -19,7 +20,7 @@ const FormAddress:FC<IFormAddress> = ({onApply,defaultValue,onClose}) => {
 
     return (
         <>
-            <form className="add-new-address" action="">
+            <div className="add-new-address" >
                 <div className="form-inputs">
                 <CustomInput
                     required={true}
@@ -77,15 +78,16 @@ const FormAddress:FC<IFormAddress> = ({onApply,defaultValue,onClose}) => {
                         Друзі
                     </div>
                 </div>
-                <div className="cart-card-buttons">
-                    <button onClick={onClose} className="button-self-removal pointer">
-                        Скасувати
-                    </button>
-                    <button onClick={()=>{onApply({street,house,intercom,apartment,entrance,floor,name})}} className="button-delivery pointer">
-                        Зберегти
-                    </button>
-                </div>
-            </form>
+                <TwoButtons
+                    onCancel={onClose}
+                    onApply={()=>{
+                        onApply({street,house,intercom,apartment,entrance,floor,name})
+                        onClose()
+                    }}
+                    cancelTitle="СКАСУВАТИ"
+                    applyTitle="ЗБЕРЕГТИ"
+                />
+            </div>
         </>
     );
 };

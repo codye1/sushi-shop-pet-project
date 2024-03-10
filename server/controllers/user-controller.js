@@ -84,8 +84,8 @@ class UserController {
             const address = req.body
             const accesToken = req.headers.authorization.split(' ')[1]
             const userData = tokenService.validateAccessToken(accesToken)
-            console.log(userData);
-            userService.addAddress(userData.number,address)
+            const newAddresses= await userService.addAddress(userData.number,address)
+            return res.json(newAddresses)
         }catch (e){
             console.log(e);
         }

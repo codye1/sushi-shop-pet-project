@@ -97,7 +97,7 @@ export const api = createApi({
           body:{number}
         })
       }),
-      addAddress: build.mutation<user[], deliveryAddresses>({
+      addAddress: build.mutation<deliveryAddresses[], deliveryAddresses>({
         query: (deliveryAddresses) => ({
           url:'auth/addresses',
           body: deliveryAddresses,

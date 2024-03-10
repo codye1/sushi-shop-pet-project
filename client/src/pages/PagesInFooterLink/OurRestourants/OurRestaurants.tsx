@@ -12,8 +12,9 @@ const OurRestaurants = () => {
     <div>
         <Breadcrumb crumbs={["Наші ресторани | Sushi Master, Ужгород"]}/>
         <div className="d-flex">
-            <div className="container">
-                <div className="page-title d-flex space-between">
+
+            <div className="container column">
+                <div className="page-title our-restaurants d-flex space-between">
                     Sushi Master
                     <div className="switcher d-flex">
                         <div onClick={()=>{

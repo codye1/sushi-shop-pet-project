@@ -1,17 +1,28 @@
 import { useState } from "react";
 import "./Delivery.css"
 import FormAddress from "./FormAddress/FormAddress";
-import { useAppSelector } from "../../../../hooks";
+import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import Address from "./Address/Address";
-import { deliveryAddresses, useAddAddressMutation,  } from "../../../../API";
+import { useAddAddressMutation,   } from "../../../../API";
+import { deliveryAddresses, } from '../../../../interfaces';
+import { updAddresses } from "../../../../reducer/auth";
+
+
 const Delivery = () => {
     const [formVisible,setFormVisible] = useState(false)
+    const [addAddress]=useAddAddressMutation()
     const user = useAppSelector(state => state.auth.user)
-    const [addresses]=useAddAddressMutation()
+    const dispatch = useAppDispatch()
 
-    function saveAddresses(props:deliveryAddresses) {
-        addresses(props)
+    async function onSaveAddresses(temp:deliveryAddresses) {
+        const addresses = await addAddress(temp)
+
+        if ('data' in addresses) {
+            const deliveryAddressesArray: deliveryAddresses[] = addresses.data;
+            dispatch(updAddresses(deliveryAddressesArray))
+          }
     }
+
 
     return (
         <>
@@ -24,7 +35,13 @@ const Delivery = () => {
             <h1 className="top-title">Адрес доставки</h1>
             }
             {user.deliveryAddresses.map(address => <Address key={user.deliveryAddresses.indexOf(address)} address={address} /> )}
-            {formVisible? <FormAddress onClose={()=>{setFormVisible(false)}} onApply={saveAddresses}/> :
+            {formVisible?
+            <FormAddress
+                onClose={()=>{setFormVisible(false)}}
+                onApply={(event)=>{
+                    onSaveAddresses(event)
+                }}/>
+            :
             <div onClick={()=>{setFormVisible(true)}} className="add-new-delivery-address d-flex align-center pointer">
                 <img src="https://uzhhorod.sushi-master.ua/img/account/delivery/add.svg" alt="" />
                 Додати нову адресу

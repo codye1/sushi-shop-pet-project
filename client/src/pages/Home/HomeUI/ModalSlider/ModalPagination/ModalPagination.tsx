@@ -1,5 +1,7 @@
 import { useSwiper } from "swiper/react";
 import "./ModalPagination.css"
+import arrowRight from "../../../../../icons/arrow-right.png"
+import arrowLeft from "../../../../../icons/arrow-left.png"
 
 interface IModalPagination {
     idActiveSlide:number
@@ -9,7 +11,7 @@ const ModalPagination:React.FC<IModalPagination> = ({idActiveSlide}) => {
     const swiper = useSwiper();
         return(
             <div  className='modal-pagination'>
-                <img onClick={()=>swiper.slidePrev()} src="https://kyiv.sushi-master.ua/img/custom/arrow-left.svg" alt="Arrow left" className="pointer"/>
+                <img onClick={()=>swiper.slidePrev()} src={arrowLeft} alt="Arrow left" className="pointer"/>
                 <div className='current'>
                     {idActiveSlide}
                     {" "}
@@ -17,7 +19,7 @@ const ModalPagination:React.FC<IModalPagination> = ({idActiveSlide}) => {
                     {" "}
                     {swiper.slides.length}
                 </div>
-                <img onClick={()=>swiper.slideNext()} src="https://kyiv.sushi-master.ua/img/custom/arrow-right.svg" alt="Arrow right" className="pointer"></img>
+                <img onClick={()=>swiper.slideNext()} src={arrowRight} alt="Arrow right" className="pointer"></img>
             </div>
         );
 };

@@ -99,14 +99,13 @@ class UserService{
     async addAddress(number,address){
         const user = await userModel.findOne({number})
         user.deliveryAddresses.push(address)
-        console.log(user);
         user.save()
+        return user.deliveryAddresses
     }
 
     async deleteAddress(number,address){
         const user = await userModel.findOne({number})
         user.deliveryAddresses.remove(address)
-        console.log(user);
         user.save()
         return user.deliveryAddresses
     }

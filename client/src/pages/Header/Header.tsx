@@ -6,8 +6,8 @@ import LeftCont from "./HeaderUI/LeftCont/LeftCont";
 import RightCont from "./HeaderUI/RightCont/RightCont";
 import Navbar from "./HeaderUI/Navbar/Navbar";
 import { setBasketPageStatus } from "../../reducer/basket";
-
-
+import Separator from "../../components/UI/Separator/Separator";
+import mainLogoPNG from "../../icons/headerIcon/main-logo.png"
 const Header = () => {
 
 
@@ -48,7 +48,6 @@ const Header = () => {
 
     });
 
-
     function windowReload() {
         window.location.reload()
     }
@@ -58,13 +57,13 @@ const Header = () => {
             <div className="top-container">
                 <LeftCont/>
                 <NavLink onClick={()=>{setTimeout(windowReload,100) }}to={"/home"} className="main-logo">
-                    <img  src="https://x100-venus-sm-ua.gumlet.io/VENUS/WEB/4C25DB70-1DCE-11EB-A6EC-7B643829D650/1675018701967_%D1%81%D0%B0%D0%B9%D1%82.svg?alt=media&token=a2835928-b794-4bd1-8b2c-7e722bd31b10" alt=""/>
+                    <img src={mainLogoPNG} alt="лод" />
                 </NavLink>
                 <RightCont/>
             </div>
             </div>
-            <div className="line">
-                <div></div>
+            <div style={{marginBottom:"0"}} className="container">
+                <Separator/>
             </div>
             <Navbar isScroled={isScroled}/>
         </div>

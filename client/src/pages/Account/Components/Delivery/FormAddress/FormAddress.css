@@ -5,21 +5,6 @@
 }
 
 
-.back p{
-    color: #202228;
-    font-size: 12px;
-    line-height: 18px;
-
-    font-weight: bold;
-}
-
-.back svg{
-    margin-right: 12px;
-}
-
-.back {
-    margin: 0;
-}
 
 .form-inputs{
     margin: 0;
@@ -74,4 +59,8 @@
 
 .cart-card-buttons{
     max-width: 444px;
+}
+
+.add-new-address .two-buttons{
+    max-width: 60%;
 }

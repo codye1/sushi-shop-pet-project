@@ -55,7 +55,7 @@
 .header-menu .css-3bmhjh-MuiPaper-root-MuiPopover-paper{
     margin-top: 60px;
 }
-.header-menu .MuiTypography-root{
+.header-menu .MuiPaper-root{
     min-width: 300px;
     max-width: 300px;
     flex-direction: column;

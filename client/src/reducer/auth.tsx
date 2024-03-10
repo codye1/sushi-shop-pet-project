@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { deliveryAddresses, user } from "../API";
+import { deliveryAddresses, user } from '../interfaces';
+
 
 interface IAuth{
     isAuth:boolean

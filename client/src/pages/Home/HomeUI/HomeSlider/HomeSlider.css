@@ -52,6 +52,10 @@
   }
 }
 
+.prev-button svg{
+  transform: rotate(180deg);
+}
+
 .next-button{
 
   top: 50%;

@@ -3,6 +3,7 @@ import "./Personal.css"
 import NameSection from "./Components/NameSection/NameSection";
 import EmailSection from "./Components/EmailSection/EmailSection";
 import BirthSection from "./Components/BirthSection/BirthSection";
+import Separator from "../../../../components/UI/Separator/Separator";
 
 const Personal = () => {
 
@@ -11,17 +12,11 @@ const Personal = () => {
         <>
             <h1 className="top-title">Профіль</h1>
             <NameSection/>
-            <div style={{padding:"0"}} className="line">
-                <div></div>
-            </div>
+            <Separator/>
             <EmailSection/>
-            <div style={{padding:"0"}} className="line">
-                <div></div>
-            </div>
+            <Separator/>
             <BirthSection/>
-            <div style={{padding:"0"}} className="line">
-                <div></div>
-            </div>
+            <Separator/>
             <div className="photo-section d-flex align-center">
                 <img src="https://lviv.sushi-master.ua/img/account/personal/picture.svg" alt="" />
                 <button>Додати фото</button>

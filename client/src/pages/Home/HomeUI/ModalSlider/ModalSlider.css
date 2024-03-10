@@ -84,6 +84,10 @@
     margin-right: 900px;
 }
 
+.prev-button-modal svg{
+    rotate: 180deg;
+}
+
 .main-modal-slider button{
     right: 0;
     top: 0;

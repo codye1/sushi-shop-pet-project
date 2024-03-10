@@ -1,9 +1,11 @@
-
 import "./Footer.css"
 import LinksFooter from "./UI/LinksFooter/LinksFooter";
 import PoolFooter from "./UI/PoolFooter/PoolFooter";
 import DownBlock from "./UI/DownBlock/DownBlock";
-
+import Separator from "../../components/UI/Separator/Separator";
+import facebook from "../../icons/footerIcon/facebook.png"
+import instagram from "../../icons/footerIcon/instagram.png"
+import tiktok from "../../icons/footerIcon/tiktok.png"
 const Footer = () => {
     return (
         <footer>
@@ -11,11 +13,11 @@ const Footer = () => {
                 <PoolFooter/>
                 <LinksFooter/>
                 <div className="icons">
-                    <img src="https://uzhhorod.sushi-master.ua/img/footer/facebook.svg" alt="" />
-                    <img src="https://uzhhorod.sushi-master.ua/img/footer/instagram.svg" alt="" />
-                    <img src="https://uzhhorod.sushi-master.ua/img/footer/tiktok.svg" alt="" />
+                    <img src={facebook} alt="" />
+                    <img src={instagram} alt="" />
+                    <img src={tiktok} alt="" />
                 </div>
-                <div className="line"></div>
+                <Separator/>
                 <DownBlock/>
             </div>
         </footer>

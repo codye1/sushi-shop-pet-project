@@ -6,7 +6,7 @@ const About = () => {
     <div>
         <Breadcrumb crumbs={["Про компанію"]}/>
         <div className="d-flex">
-                <div className="container">
+                <div className="container column">
                     <div className="about-img">
                         <div className="about-container">
                             <div className="about-img-content">

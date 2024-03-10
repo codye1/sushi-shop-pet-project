@@ -8,7 +8,7 @@ const Delivery = () => {
         <div>
             <Breadcrumb crumbs={["Безкоштовна доставка в Києві"]}/>
             <div className="d-flex">
-                <div className="container">
+                <div className="container column">
                     <div className="search-address-map">
                         <div className="search-address">
                             <h3>Умови доставки</h3>
@@ -46,7 +46,7 @@ const Delivery = () => {
                 </div>
             </div>
             <div className="d-flex">
-                <div className="container">
+                <div className="container column">
                     <h1>Як оплатити замовлення?</h1>
                     <div className="delivery-info">
                         <div className="info-card">
@@ -76,7 +76,7 @@ const Delivery = () => {
                 </div>
             </div>
             <div className="d-flex">
-                <div className="container">
+                <div className="container column">
                     <h1>Як отримати своє замовлення?</h1>
                     <div className="delivery-info">
                         <div className="info-card">

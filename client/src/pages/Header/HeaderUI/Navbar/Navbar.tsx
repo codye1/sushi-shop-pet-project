@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import SearchBlock from "../../../../components/UI/SearchBlock/SearchBlock";
 import { useAppSelector } from "../../../../hooks";
 import "./Navbar.css"
+import Chevron from "../../../../icons/Chevron";
 interface INavbar{
     isScroled:boolean
 }
@@ -37,9 +38,31 @@ const Navbar:React.FC<INavbar> = ({isScroled}) => {
             <SearchBlock/>
             :
             <div  className={`navbar d-flex ${isScroled ? 'scroled' : ''}`}>
-                <div className="container">
+                <div style={{position:"relative"}} className="container">
+                    <div onClick={()=>{
+                        const element = document.getElementsByClassName("navbar-block")[0];
+                        if (element) {
+                            console.log(element.scrollLeft);
+
+                            element.scrollLeft -= 200;
+                        }
+                    }} className="chevron-left">
+                        <Chevron/>
+                    </div>
                     <div className="navbar-block">
+
                         {down_list.map((p)=><NavLink key={p.site} to={p.site} className={({isActive})=>isActive? "link selected" : 'link'} >{p.name}</NavLink>)}
+
+                    </div>
+                    <div onClick={()=>{
+                        const element = document.getElementsByClassName("navbar-block")[0];
+                        if (element) {
+                            console.log(element.scrollLeft);
+
+                            element.scrollLeft += 300;
+                        }
+                    }} className="chevron-right">
+                        <Chevron/>
                     </div>
                 </div>
             </div>

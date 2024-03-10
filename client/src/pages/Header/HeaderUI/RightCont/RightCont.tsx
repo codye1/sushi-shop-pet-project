@@ -4,11 +4,11 @@ import { setSearchActive } from "../../../../reducer/search";
 import "./RightCont.css"
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useCheckAuthQuery } from "../../../../API";
-import { authUser } from "../../../../reducer/auth";
-import {  Popover, Typography } from "@mui/material";
+import {  Popover,} from "@mui/material";
 import Menu from "../../../Account/Menu/Menu";
-
+import searchPNG from "../../../../icons/headerIcon/search.png"
+import userPNG from "../../../../icons/headerIcon/user.png"
+import basketPNG from "../../../../icons/headerIcon/basket.png"
 const RightCont = () => {
     const dispatch = useDispatch()
     const basket = useAppSelector((state)=>state.basket.basket)
@@ -16,7 +16,6 @@ const RightCont = () => {
     const isAuth=useAppSelector(state=>state.auth.isAuth)
     const number=useAppSelector(state=>state.auth.user.number)
     const name=useAppSelector(state=>state.auth.user.name)
-    const {data:user}=useCheckAuthQuery()
 
     useEffect(()=>{
         function setAnimatedWitchTimeout() {
@@ -26,13 +25,7 @@ const RightCont = () => {
         setTimeout(setAnimatedWitchTimeout,600)
     },[basket])
 
-    useEffect(()=>{
-        if (user && !user.error) {
-            console.log(user.user);
 
-            dispatch(authUser(user.user))
-        }
-    })
 
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
@@ -54,12 +47,12 @@ const RightCont = () => {
             <div  onClick={()=>{
                 dispatch(setSearchActive(true))
                 } } className="search">
-                <img src="https://uzhhorod.sushi-master.ua/img/header/search.svg" alt="" />
+                <img src={searchPNG} alt="" />
             </div>
             {isAuth?
                 <>
                     <button onClick={(event)=>{handleClick(event)}} className="login loged">
-                        <img src="https://uzhhorod.sushi-master.ua/img/header/user.svg" alt="" />
+                        <img src={userPNG} alt="" />
                         {name && name.length>0? name : number}
                     </button>
                     <Popover
@@ -74,17 +67,17 @@ const RightCont = () => {
                         horizontal: 'left',
                         }}
                     >
-                        <Typography ><Menu/></Typography>
+                        <Menu/>
                     </Popover>
                 </>
                 :
                 <NavLink className="login unloged"to={"/sign-in"}>
-                    <img src="https://uzhhorod.sushi-master.ua/img/header/user.svg" alt="" />
+                    <img src={userPNG} alt="" />
                     Увійти
                 </NavLink>
             }
             <NavLink className="basket" to={"/basket"} >
-                <img src="https://uzhhorod.sushi-master.ua/img/header/cart.svg" alt="" />
+                <img src={basketPNG} alt="" />
                 {basket.length>0?
                 <span className="number-product-in-basket-cont">
                     <span className={`number-product-in-basket ${isAnimated? 'animated': ''}`}>
