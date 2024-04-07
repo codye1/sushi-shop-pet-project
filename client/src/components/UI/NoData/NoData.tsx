@@ -1,9 +1,10 @@
 import "./NoData.css"
+import empty from "../../../icons/empty.svg"
 
 const NoData = () => {
     return (
         <div className="no-data d-flex center wrap column">
-            <img src="https://kyiv.sushi-master.ua/img/products/empty.svg" alt="" />
+            <img src={empty} alt="" />
             <p>Тут поки немає даних</p>
         </div>
     );

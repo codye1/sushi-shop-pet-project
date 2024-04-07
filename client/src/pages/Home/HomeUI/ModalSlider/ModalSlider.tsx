@@ -5,7 +5,7 @@ import CardModalSlider from '../CardModalSlider/CardModalSlider';
 import React, { useState } from 'react';
 import { Navigation } from 'swiper/modules';
 import ModalPagination from './ModalPagination/ModalPagination';
-import Chevron from '../../../../icons/Chevron';
+import Chevron from '../../../../icons/chevron.svg';
 
 interface  IModalSlider extends IPromotionsInXEelement{
     closeModal:()=>void
@@ -49,10 +49,10 @@ const ModalSlider:React.FC<IModalSlider> = ({promotions,closeModal}) => {
                 </Swiper>
             </div>
             <div onClick={ignoreCloseModal} className='prev-button-modal pointer'>
-                <Chevron/>
+                <img src={Chevron} alt="" />
             </div>
             <div onClick={ignoreCloseModal} className='next-button-modal pointer'>
-                <Chevron/>
+                <img src={Chevron} alt="" />
             </div>
         </div>
 

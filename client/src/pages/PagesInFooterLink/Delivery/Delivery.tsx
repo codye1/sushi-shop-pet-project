@@ -1,4 +1,10 @@
+
 import Breadcrumb from "../../../components/UI/Breadcrumb/Breadcrumb";
+import Card from "../../../icons/Delivery/card.svg";
+import Cash from "../../../icons/Delivery/cash.svg";
+import DeliveryIcon from "../../../icons/Delivery/deliveryIcon.svg";
+import Store from "../../../icons/Delivery/store.svg";
+import Time from "../../../icons/Delivery/time.svg";
 import "./Delivery.css"
 
 
@@ -52,21 +58,21 @@ const Delivery = () => {
                         <div className="info-card">
                             <div className="info-head">
                                 <h1>Готівкою</h1>
-                                <img src="https://kyiv.sushi-master.ua/img/delivery/cash.svg" alt="" />
+                                <img src={Cash} alt="" />
                             </div>
                             <p> Оплата готівкою кур'єру або в ресторані при отриманні замовлення.</p>
                         </div>
                         <div className="info-card">
                             <div className="info-head">
                                 <h1>Банківською карткою онлайн</h1>
-                                <img src="https://kyiv.sushi-master.ua/img/delivery/card.svg" alt="" />
+                                <img src={Card} alt="" />
                             </div>
                             <p> При оформленні замовлення на сайті (сервіс доступний для карт: Visa, MasterCard)</p>
                         </div>
                         <div className="info-card">
                             <div className="info-head">
                                 <h1>Банківською карткою при отриманні</h1>
-                                <img src="https://kyiv.sushi-master.ua/img/delivery/card.svg" alt="" />
+                                <img src={Card} alt="" />
                             </div>
                             <p> Оплата замовлення банківською карткою при отриманні кур'єру або в ресторані. Приймаються банківські картки MasterCard, Visa.
 
@@ -82,21 +88,21 @@ const Delivery = () => {
                         <div className="info-card">
                             <div className="info-head">
                                 <h1>Доставка</h1>
-                                <img src="https://kyiv.sushi-master.ua/img/delivery/delivery.svg" alt="" />
+                                <img src={DeliveryIcon} alt="" />
                             </div>
                             <p> Замовляйте будь-яким зручним способом, отримуйте замовлення на вказану вами адресу. Здійснюємо безкоштовну доставку при замовленні понад 400 гривень. На замовлення менше ніж 400 гривень вартість доставки – 30 грн.</p>
                         </div>
                         <div className="info-card">
                             <div className="info-head">
                                 <h1>Забрати з ресторану</h1>
-                                <img src="https://kyiv.sushi-master.ua/img/delivery/store.svg" alt="" />
+                                <img src={Store} alt="" />
                             </div>
                             <p> Отримуйте замовлення в обраному ресторані в зручний для вас час (замовлення може бути оформлене не менше ніж за 30 хв. до отримання).</p>
                         </div>
                         <div className="info-card">
                             <div className="info-head">
                                 <h1>Доставка до певного часу</h1>
-                                <img src="https://kyiv.sushi-master.ua/img/delivery/time.svg" alt="" />
+                                <img src={Time} alt="" />
                             </div>
                             <p>Вибирайте “до певного часу”, отримуйте замовлення хвилина у хвилину. Замовлення можна оформити не менше ніж за 60 хв до часу доставки</p>
                         </div>

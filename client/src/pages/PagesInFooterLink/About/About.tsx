@@ -1,5 +1,12 @@
 import Breadcrumb from "../../../components/UI/Breadcrumb/Breadcrumb";
 import "./About.css"
+import manyUa from "../../../icons/About/many-ua.png"
+import chatUa from "../../../icons/About/chat-ua.png"
+import pose from "../../../icons/About/icon-pose.png"
+import finger from "../../../icons/About/icon-finger.png"
+import ok from "../../../icons/About/icon-ok.png"
+import love from "../../../icons/About/icon-love.png"
+import sushi from "../../../icons/About/sushi.png"
 
 const About = () => {
     return (
@@ -21,7 +28,7 @@ const About = () => {
                         </div>
                     </div>
                 <div className="about-many-bloks">
-                    <img src="https://lviv.sushi-master.ua/img/about/many-ua.svg" alt="" />
+                    <img src={manyUa} alt="" />
                     <div className="many-bloks-container">
                         <div className="many-block">
                             <span  className="many-block-number"  >133</span>
@@ -75,7 +82,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="reason-items-img">
-                        <img src="https://lviv.sushi-master.ua/img/about/chat-ua.svg" alt="" />
+                        <img src={chatUa} alt="" />
                     </div>
                 </div>
             </div>
@@ -89,7 +96,7 @@ const About = () => {
                                 <p className="benefits-item-title">Зручне замовлення</p>
                                 <div>
                                     <div className="benefits-item-img">
-                                        <img src="https://lviv.sushi-master.ua/img/about/icon-pose.svg" alt="" />
+                                        <img src={pose} alt="" />
                                     </div>
                                     <div>
                                         Оформити можна будь-яким способом : через додаток, на сайті, по телефону або у ресторані
@@ -100,7 +107,7 @@ const About = () => {
                                 <p className="benefits-item-title">Свіжі продукти</p>
                                 <div>
                                     <div  className="benefits-item-img">
-                                        <img src="https://lviv.sushi-master.ua/img/about/icon-finger.svg" alt="" />
+                                        <img src={finger} alt="" />
                                     </div>
                                     <div>
                                         Ми готуємо тільки зі свіжих інгредієнтів, які закуповуємо у надійних постачальників
@@ -111,7 +118,7 @@ const About = () => {
                                 <p className="benefits-item-title">Чистота і якість </p>
                                 <div>
                                     <div  className="benefits-item-img">
-                                        <img src="https://lviv.sushi-master.ua/img/about/icon-ok.svg" alt="" />
+                                        <img src={ok} alt="" />
                                     </div>
                                     <div>
                                         Всі наші співробітники суворо дотримуються санітарних норм на робочих місцях
@@ -122,7 +129,7 @@ const About = () => {
                                 <p className="benefits-item-title"> Команда професіоналів</p>
                                 <div>
                                     <div  className="benefits-item-img">
-                                        <img src="https://lviv.sushi-master.ua/img/about/icon-love.svg" alt="" />
+                                        <img src={love} alt="" />
                                     </div>
                                     <div>
                                         Для вас готують кваліфіковані майстри суші, закохані в свою справ
@@ -145,7 +152,7 @@ const About = () => {
                             <h2>ЦЕ НЕ ПРОСТО ЗАМОВЛЕННЯ , <br/> А ЩАСТЯ В КОЖНІЙ КОРОБОЧЦІ!</h2>
                     </div>
                     <div className="about-footer-img">
-                        <img src="https://lviv.sushi-master.ua/img/about/sushi.png" alt="" />
+                        <img src={sushi} alt="" />
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./RightCart.css"
 import { useAppSelector } from "../../../../hooks";
 import TwoButtons from "../../../../components/UI/TwoButtons/TwoButtons";
+import bonus from "../../../../icons/Basket/bonus.svg"
 
 const RightCart = () => {
     const [input,setInput]=useState('');
@@ -34,7 +35,7 @@ const RightCart = () => {
                 />
             </div>
             <div className="bonus">
-                <img src="https://uzhhorod.sushi-master.ua/img/cart/bonus.svg" alt="" />
+                <img src={bonus} alt="" />
                 <span>34 </span>
                 бонусів буде нараховано за замовлення
             </div>

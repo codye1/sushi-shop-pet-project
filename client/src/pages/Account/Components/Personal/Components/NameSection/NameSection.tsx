@@ -42,6 +42,7 @@ const NameSection = () => {
                         dispatch(updName(name))
                     }}
                     onCancelButtons={()=>{
+                        setName("")
                         setChangeName(false)
                     }}
                 />

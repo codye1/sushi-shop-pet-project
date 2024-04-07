@@ -5,7 +5,7 @@ import ModalSlider from '../ModalSlider/ModalSlider';
 import { Navigation, Pagination} from 'swiper/modules';
 import React from 'react';
 import {  IPromotionsInXEelement } from '../../../../interfaces';
-import Chevron from '../../../../icons/Chevron';
+import Chevron from '../../../../icons/chevron.svg';
 
 const HomeSlider:React.FC<IPromotionsInXEelement> = ({promotions}) => {
 
@@ -35,10 +35,10 @@ const HomeSlider:React.FC<IPromotionsInXEelement> = ({promotions}) => {
                         <SwiperSlide key={p.key}><div onClick={()=>setModalSliderActive(true)} className='slide'><img src={p.imgWide} alt="" /></div></SwiperSlide>
                     )}
                 <div className='prev-button pointer'>
-                    <Chevron/>
+                    <img src={Chevron} alt="" />
                 </div>
                 <div className='next-button pointer'>
-                    <Chevron/>
+                    <img src={Chevron} alt="" />
                 </div>
                 </Swiper>
             </div>

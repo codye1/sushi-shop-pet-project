@@ -56,6 +56,7 @@ const EmailSection = () => {
                             dispatch(updEmail(email))
                         }}
                         onCancelButtons={()=>{
+                            setEmail('')
                             setChangeEmail(false)
                         }}
                     />

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import SearchBlock from "../../../../components/UI/SearchBlock/SearchBlock";
 import { useAppSelector } from "../../../../hooks";
 import "./Navbar.css"
-import Chevron from "../../../../icons/Chevron";
+import chevron from "../../../../icons/chevron.svg"
 interface INavbar{
     isScroled:boolean
 }
@@ -47,7 +47,7 @@ const Navbar:React.FC<INavbar> = ({isScroled}) => {
                             element.scrollLeft -= 200;
                         }
                     }} className="chevron-left">
-                        <Chevron/>
+                        <img src={chevron} alt="" />
                     </div>
                     <div className="navbar-block">
 
@@ -62,7 +62,7 @@ const Navbar:React.FC<INavbar> = ({isScroled}) => {
                             element.scrollLeft += 300;
                         }
                     }} className="chevron-right">
-                        <Chevron/>
+                        <img src={chevron} alt="" />
                     </div>
                 </div>
             </div>

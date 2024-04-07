@@ -4,11 +4,15 @@ import Banner from "./HomeUI/Banner/Banner";
 import AboutSushiMaster from "./HomeUI/AboutSushiMaster/AboutSushiMaster";
 import { useGetAllProductsQuery,useGetPromotionsQuery, } from "../../API";
 import HomeSlider from "./HomeUI/HomeSlider/HomeSlider";
+import i18next from "../../LanguageManager/i18n";
 
 
 const Home = () => {
     const {data:products,error:errorProducts,isLoading:productsLoading} = useGetAllProductsQuery()
     const {data:promotions}= useGetPromotionsQuery()
+
+    console.log(i18next.t('title'));
+
 
     return (
         <>
@@ -16,7 +20,7 @@ const Home = () => {
             <div className="title d-flex">
                 <div className="container">
                     <div className="page-title">
-                        Доставка суші
+                        {i18next.t('title')}
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import NameSection from "./Components/NameSection/NameSection";
 import EmailSection from "./Components/EmailSection/EmailSection";
 import BirthSection from "./Components/BirthSection/BirthSection";
 import Separator from "../../../../components/UI/Separator/Separator";
+import picture from "../../../../icons/Personal/picture.svg"
 
 const Personal = () => {
 
@@ -18,7 +19,7 @@ const Personal = () => {
             <BirthSection/>
             <Separator/>
             <div className="photo-section d-flex align-center">
-                <img src="https://lviv.sushi-master.ua/img/account/personal/picture.svg" alt="" />
+                <img src={picture} alt="" />
                 <button>Додати фото</button>
             </div>
         </>

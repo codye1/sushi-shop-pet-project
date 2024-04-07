@@ -7,7 +7,7 @@
     opacity: .5;
 }
 
-.switcher-item img{
+.switcher-item svg{
     margin: 0 15px ;
 }
 .switcher-item h3{

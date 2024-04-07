@@ -1,7 +1,11 @@
 import "./Menu.css"
 import { NavLink } from 'react-router-dom';
 import { useLogoutMutation } from '../../../API';
-
+import Addresses from "../../../icons/Menu/Addresses.svg";
+import profile from "../../../icons/Menu/profile.svg";
+import bonuses from "../../../icons/Menu/bonuses.svg";
+import ordersHistory from "../../../icons/Menu/ordersHistory.svg";
+import logOut from "../../../icons/Menu/logOut.svg"
 
 const Menu = () => {
     const [logout] = useLogoutMutation()
@@ -10,19 +14,19 @@ const Menu = () => {
         <>
             <div className="menu d-flex column">
                 <NavLink className={({isActive})=>isActive? "menu-item active":"menu-item"} to={"/account/orders"}>
-                    <img src="https://lviv.sushi-master.ua/img/menu/orders-history.svg" alt="" />
+                    <img src={ordersHistory} alt="" />
                     <p>Історія замовлень</p>
                 </NavLink >
                 <NavLink className={({isActive})=>isActive? "menu-item active":"menu-item"} to={"/account/bonuses"}>
-                    <img src="https://lviv.sushi-master.ua/img/menu/bonuses.svg" alt="" />
+                    <img src={bonuses} alt="" />
                     <p>Бонусів</p>
                 </NavLink >
                 <NavLink className={({isActive})=>isActive? "menu-item active":"menu-item"} to={"/account/personal"}>
-                    <img src="https://lviv.sushi-master.ua/img/menu/profile.svg" alt="" />
+                    <img src={profile} alt="" />
                     <p>Профіль</p>
                 </NavLink >
                 <NavLink className={({isActive})=>isActive? "menu-item active":"menu-item"} to={"/account/delivery"}>
-                    <img src="https://lviv.sushi-master.ua/img/menu/addresses.svg" alt="" />
+                    <img src={Addresses} alt="" />
                     <p>Адреси доставки</p>
                 </NavLink >
             </div>
@@ -31,7 +35,7 @@ const Menu = () => {
                 window.location.reload()
                 }} className="menu logout pointer">
                 <div className="menu-item">
-                    <img src="https://lviv.sushi-master.ua/img/menu/log-out.svg" alt="" />
+                    <img src={logOut} alt="" />
                     <p>Вийти</p>
                 </div>
             </div>

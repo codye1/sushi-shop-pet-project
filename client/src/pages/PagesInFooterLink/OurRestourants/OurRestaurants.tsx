@@ -4,6 +4,8 @@ import "./OurRestaurants.css"
 import { useGetRestaurantsQuery } from "../../../API";
 import Breadcrumb from "../../../components/UI/Breadcrumb/Breadcrumb";
 import RestaurantsItem from "./OurRestourantsUI/RestouransItem/RestaurantsItem";
+import Map from "../../../icons/OurRestourants/map.svg";
+import List from "../../../icons/OurRestourants/list.svg";
 
 const OurRestaurants = () => {
     const [onMap,setOnMap]=useState(true)
@@ -20,13 +22,13 @@ const OurRestaurants = () => {
                         <div onClick={()=>{
                             setOnMap(true)
                         }} className={`switcher-item d-flex ${!onMap && "select" }`}>
-                            <img src="https://kyiv.sushi-master.ua/img/our-restourants/map.svg" alt="" />
+                            <img src={Map} alt="" />
                             <h3>На мапі</h3>
                         </div>
                         <div onClick={()=>{
                             setOnMap(false)
                         }} className={`switcher-item d-flex ${onMap && "select" }`}>
-                            <img src="https://kyiv.sushi-master.ua/img/our-restourants/list.svg" alt="" />
+                            <img src={List} alt="" />
                             <h3>Список</h3>
                         </div>
                     </div>

@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import "./SearchBlock.css"
 import { setSearchActive, setSearchInput } from "../../../reducer/search";
+import search from "../../../icons/headerIcon/search.png"
+import closeWhite from "../../../icons/close-white.svg"
 
 const SearchBlock = () => {
     const dispatch = useDispatch()
@@ -24,11 +26,11 @@ const SearchBlock = () => {
 
                     <div className="search-input">
 
-                        <img src="https://lviv.sushi-master.ua/img/header/search.svg" alt="" />
+                        <img src={search} alt="" />
                         <input onChange={(event)=>{changeInput(event.target.value)}} type="text" defaultValue={""} placeholder="Пошук"/>
                     </div>
                     <button onClick={()=>{dispatch(setSearchActive(false))} }>
-                        <img src="https://uzhhorod.sushi-master.ua/img/header/close-white.svg" alt="" />
+                        <img src={closeWhite} alt="" />
                     </button>
                 </div>
             </div>
