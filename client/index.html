@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link href="https://cdn.sushi-master.ua/VENUS%2FWEB%2F4C25DB70-1DCE-11EB-A6EC-7B643829D650%2F1643718952910_Regular.woff2?alt=media&amp;token=cd68bfe4-a8ff-43a7-b1ea-e90b64f0d305}" rel="preload" as="font" type="font/woff2" crossorigin="anonymous"/>
+    <link href="https://cdn.sushi-master.ua/VENUS%2FWEB%2F4C25DB70-1DCE-11EB-A6EC-7B643829D650%2F1643718952910_Regular.woff2?alt=media&amp;token=cd68bfe4-a8ff-43a7-b1ea-e90b64f0d305}=" rel="preload" as="font" type="font/woff2" crossorigin="anonymous"/>
     <link href="https://cdn.sushi-master.ua/VENUS%2FWEB%2F4C25DB70-1DCE-11EB-A6EC-7B643829D650%2F1643718952911_Semibold.woff2?alt=media&amp;token=eb81b990-a838-4417-93ec-5b6c99f789c1}" rel="preload" as="font" type="font/woff2" crossorigin="anonymous"/>
     <link href="https://cdn.sushi-master.ua/VENUS%2FWEB%2F4C25DB70-1DCE-11EB-A6EC-7B643829D650%2F1643718952911_Bold.woff2?alt=media&amp;token=37ce871c-9e5a-4f84-abf6-ad31b9cdc244}" rel="preload" as="font" type="font/woff2" crossorigin="anonymous"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,6 +42,20 @@
                 font-weight: normal
             }
     </style>
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
   </head>
   <body>
     <div id="root"></div>
