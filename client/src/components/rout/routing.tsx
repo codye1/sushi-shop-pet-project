@@ -15,7 +15,7 @@ const Routing = () => {
           :
           <Route  path='sign-in' element={<SignIn/>}/>
         }
-        <Route path = "*" element = {<Navigate to = "/home" replace/>}/>
+        <Route path = "*" element = {<Navigate to = "/" replace/>}/>
     </Routes>
   );
 };
