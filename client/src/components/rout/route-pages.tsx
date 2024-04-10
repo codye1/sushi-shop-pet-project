@@ -1,5 +1,3 @@
-
-import Account from "../../pages/Account/Account";
 import BasketPage from "../../pages/BasketPage/BasketPage";
 import Header from "../../pages/Header/Header";
 import Home from "../../pages/Home/Home";

@@ -9,6 +9,7 @@ import type {
 
 
 
+
 const baseQuery = fetchBaseQuery({
   baseUrl: 'http://localhost:3000',
   prepareHeaders: (headers ) => {
@@ -25,11 +26,15 @@ const baseQueryWithReauth: BaseQueryFn<
 > = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions)
 
+
+
   if (result.error && result.error.status === "PARSING_ERROR") {
     const refreshResult = await baseQuery('auth/refresh', api, extraOptions)
     if (refreshResult.data) {
       console.log("cработало");
-      localStorage.setItem("token",refreshResult.data.accessToken)
+      // Не міг дати AuthResponse для refreshResult.data, тому зробив так
+      const data:AuthResponce = JSON.parse(JSON.stringify(refreshResult.data))
+      localStorage.setItem("token",data.accessToken)
       result = await baseQuery(args, api, extraOptions)
     }
   }

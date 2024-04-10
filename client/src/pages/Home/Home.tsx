@@ -4,15 +4,14 @@ import Banner from "./HomeUI/Banner/Banner";
 import AboutSushiMaster from "./HomeUI/AboutSushiMaster/AboutSushiMaster";
 import { useGetAllProductsQuery,useGetPromotionsQuery, } from "../../API";
 import HomeSlider from "./HomeUI/HomeSlider/HomeSlider";
-import i18next from "../../LanguageManager/i18n";
+import { useTranslation } from "react-i18next";
 
 
 const Home = () => {
     const {data:products,error:errorProducts,isLoading:productsLoading} = useGetAllProductsQuery()
     const {data:promotions}= useGetPromotionsQuery()
 
-    console.log(i18next.t('title'));
-
+    const {t} = useTranslation()
 
     return (
         <>
@@ -20,7 +19,7 @@ const Home = () => {
             <div className="title d-flex">
                 <div className="container">
                     <div className="page-title">
-                        {i18next.t('title')}
+                        {t('home.tite')}
                     </div>
                 </div>
             </div>

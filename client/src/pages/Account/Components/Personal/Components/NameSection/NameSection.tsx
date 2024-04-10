@@ -40,6 +40,7 @@ const NameSection = () => {
                     onApplyButtons={()=>{
                         saveName(name)
                         dispatch(updName(name))
+                        setChangeName(false)
                     }}
                     onCancelButtons={()=>{
                         setName("")

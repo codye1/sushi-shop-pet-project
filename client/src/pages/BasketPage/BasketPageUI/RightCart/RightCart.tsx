@@ -25,7 +25,6 @@ const RightCart = () => {
                 </div>
                 <div className="cart-card-sum-2">
                     <h1>РАЗОМ {priceAllProduct} грн</h1>
-
                 </div>
                 <TwoButtons
                     applyTitle="ДОСТАВКА"

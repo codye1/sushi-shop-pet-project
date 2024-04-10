@@ -3,6 +3,7 @@ import SearchBlock from "../../../../components/UI/SearchBlock/SearchBlock";
 import { useAppSelector } from "../../../../hooks";
 import "./Navbar.css"
 import chevron from "../../../../icons/chevron.svg"
+import { useTranslation } from "react-i18next";
 interface INavbar{
     isScroled:boolean
 }
@@ -17,19 +18,21 @@ type Tlist=Ilist[];
 
 const Navbar:React.FC<INavbar> = ({isScroled}) => {
 
+    const {t}=useTranslation()
+
     const down_list:Tlist=[
-        {site: 'menu/sets',name:"Сети"},
-        {site: 'menu/roles',name:"Роли"},
-        {site: 'menu/promotion',name:"🔥Акції"},
-        {site: 'menu/sushi',name:"Суші"},
-        {site: 'menu/california',name:"Каліфорнії"},
-        {site: 'menu/gourmetschoise',name:"🍣Вибір гурманів"},
-        {site: 'menu/hotsAndSalads',name:"Гаряче та салати"},
-        {site: 'menu/philadelphia',name:"Філадельфії"},
-        {site: 'menu/soups',name:"Супи"},
-        {site: 'menu/desserts',name:"Десерти"},
-        {site: 'menu/drinks',name:"Напої"},
-        {site: 'menu/addition',name:"Доповнення"},
+        {site: 'menu/sets',name:t("header.navbar.roles")},
+        {site: 'menu/roles',name:t("header.navbar.roles")},
+        {site: 'menu/promotion',name:t("header.navbar.promotion")},
+        {site: 'menu/sushi',name:t("header.navbar.sushi")},
+        {site: 'menu/california',name:t("header.navbar.california")},
+        {site: 'menu/gourmetschoise',name:t("header.navbar.gourmetschoise")},
+        {site: 'menu/hotsAndSalads',name:t("header.navbar.hotsAndSalads")},
+        {site: 'menu/philadelphia',name:t("header.navbar.philadelphia")},
+        {site: 'menu/soups',name:t("header.navbar.soups")},
+        {site: 'menu/desserts',name:t("header.navbar.desserts")},
+        {site: 'menu/drinks',name:t("header.navbar.drinks")},
+        {site: 'menu/addition',name:t("header.navbar.addition")},
     ]
     const searchActive = useAppSelector((state)=>state.searchActive.searchActive);
     return (
