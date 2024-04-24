@@ -17,10 +17,9 @@ const CustomModal:FC<ICustomModal> = ({customModal,closeModal,children}) => {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >
-                <div className="custom-modal d-flex column center">
                     {children}
                     <img onClick={closeModal}  className="close-modal pointer" src="https://kyiv.sushi-master.ua/img/header/close-white.svg" alt="" />
-                </div>
+
         </Dialog>
     );
 };

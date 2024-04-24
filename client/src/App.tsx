@@ -16,7 +16,6 @@ function App() {
   useEffect(()=>{
     if (user && !user.error) {
         console.log("auth");
-
         dispatch(authUser(user.user))
     }
   })

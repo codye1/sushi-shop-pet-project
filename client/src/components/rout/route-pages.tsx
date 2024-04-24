@@ -12,7 +12,7 @@ import Promotions from "../../pages/PagesInFooterLink/Promotions/Promotions";
 import PublicOferta from '../../pages/PagesInFooterLink/PublicOferta/PublicOferta';
 
 export const routPages=[
-    {path: '/',element:Home,exact:true},
+    {path: '/home',element:Home,exact:true},
     {path: '/header',element:Header,exact:true},
     {path: 'menu/:type',element:PageAllProductInType,exact:true},
     {path: 'menu/:type/:id',element:PageByIdProduct,exact:true},

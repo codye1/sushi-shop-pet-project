@@ -16,7 +16,7 @@ const RightCont = () => {
     const isAuth=useAppSelector(state=>state.auth.isAuth)
     const number=useAppSelector(state=>state.auth.user.number)
     const name=useAppSelector(state=>state.auth.user.name)
-
+    const imgUser = useAppSelector(state=>state.auth.user.img)
     useEffect(()=>{
         function setAnimatedWitchTimeout() {
             setIsAtimated(false)
@@ -52,7 +52,7 @@ const RightCont = () => {
             {isAuth?
                 <>
                     <button onClick={(event)=>{handleClick(event)}} className="login loged">
-                        <img src={userPNG} alt="" />
+                        {imgUser && imgUser.length>0? <img className="user-logo" src={imgUser} alt="" />:<img src={userPNG} alt="" />}
                         {name && name.length>0? name : number}
                     </button>
                     <Popover

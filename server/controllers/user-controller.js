@@ -10,6 +10,7 @@ class UserController {
             const {number} = req.body
             const userData = await userService.sendSMSCode(number)
             return res.json("Смс отправилось")
+
         }catch (e){
             console.log(e);
         }
@@ -64,6 +65,7 @@ class UserController {
 
             console.log("refresh 1",userData);
             return res.json(userData)
+
         }catch (e){
             return res.json({error:"Error"})
         }
@@ -152,6 +154,16 @@ class UserController {
         }
     }
 
+    async uploadImg(req,res,next) {
+        try{
+            const result = req.body
+            const accesToken = req.headers.authorization.split(' ')[1]
+            const userData = tokenService.validateAccessToken(accesToken)
+            userService.saveImg(userData.number,result.img)
+        }catch (e){
+            console.log(e);
+        }
+    }
 
 }
 

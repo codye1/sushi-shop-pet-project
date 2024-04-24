@@ -47,6 +47,7 @@ export const api = createApi({
     endpoints: (build) => ({
       getAllProducts: build.query<IProductResponse, void>({
         query: () => 'product/product'
+
       }),
       getProduct: build.query<IProduct, string>({
         query: (id) => `product/product/${id}`
@@ -130,6 +131,13 @@ export const api = createApi({
           body:{name}
         })
       }),
+      saveImg: build.mutation<user[], string>({
+        query: (img) => ({
+          url:'auth/uploadimg',
+          method:"POST",
+          body:{img}
+        })
+      }),
       saveEmail: build.mutation<user[], string>({
         query: (email) => ({
           url:'auth/save/email',
@@ -168,5 +176,6 @@ export const api = createApi({
     usePutAddressMutation,
     useSaveBirthDateMutation,
     useSaveEmailMutation,
-    useSaveNameMutation
+    useSaveNameMutation,
+    useSaveImgMutation
   } = api

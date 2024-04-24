@@ -142,6 +142,13 @@ class UserService{
 
     }
 
+    async saveImg(number,img){
+        const user = await userModel.findOne({number})
+        user.img = img
+        user.save()
+
+    }
+
 }
 
 

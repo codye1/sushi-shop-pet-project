@@ -6,6 +6,7 @@ import { IProduct } from '../../interfaces';
 import { useEffect, useState } from "react";
 import FilterModal, { IformaFiltra } from "./FilterModal/FilterModal";
 import Breadcrumb from "../../components/UI/Breadcrumb/Breadcrumb";
+import SekeletonCardProduct from "../../components/UI/SkeletonCardProduct/SekeletonCardProduct";
 
 const PageAllProductInType = () => {
     const params = useParams()
@@ -114,7 +115,7 @@ const PageAllProductInType = () => {
             {productsError?
             <div></div>:
             productsLoading?
-            <div></div>:
+            <SekeletonCardProduct/>:
             products?
             <div>
                 <div className="d-flex">

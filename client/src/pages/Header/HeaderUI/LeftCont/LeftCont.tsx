@@ -22,7 +22,6 @@ const LeftCont = () => {
     function changeLanguageHandler(language:string) {
         i18next.changeLanguage(language)
     }
-    console.log(i18next.language);
 
     return (
         <div className="left-cont">

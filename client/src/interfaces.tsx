@@ -108,6 +108,7 @@ export interface user{
   name:string,
   email:string,
   birthDate:number[]
+  img:string
 }
 
 export type AuthResponce = {

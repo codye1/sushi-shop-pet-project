@@ -5,6 +5,7 @@ module.exports = class UserDto {
     name;
     birthDate;
     email;
+    img;
 
     constructor(model){
          this.number=model.number
@@ -13,5 +14,6 @@ module.exports = class UserDto {
          this.name=model.name
          this.birthDate=model.birthDate
          this.email=model.email
+         this.img=model.img
     }
 }

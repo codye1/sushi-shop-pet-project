@@ -5,6 +5,7 @@ import AboutSushiMaster from "./HomeUI/AboutSushiMaster/AboutSushiMaster";
 import { useGetAllProductsQuery,useGetPromotionsQuery, } from "../../API";
 import HomeSlider from "./HomeUI/HomeSlider/HomeSlider";
 import { useTranslation } from "react-i18next";
+import SekeletonCardProduct from "../../components/UI/SkeletonCardProduct/SekeletonCardProduct";
 
 
 const Home = () => {
@@ -25,7 +26,7 @@ const Home = () => {
             </div>
             {
                 errorProducts? <div>Помилка</div>:
-                productsLoading? <div>Загрузка...</div>
+                productsLoading? <SekeletonCardProduct/>
                 :products? <ProductList products={products}/>
                 :null
             }

@@ -17,7 +17,8 @@ const UserSchema = new Schema({
     }],
     name:{type:String},
     birthDate:[{type:Number}],
-    email:{type:String}
+    email:{type:String},
+    img:{type:String}
 
 })
 
