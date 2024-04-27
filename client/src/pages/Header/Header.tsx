@@ -35,17 +35,12 @@ const Header = () => {
                 searchActive ? setStransform(-55) : setStransform(-150)
             }
         }else setScroled(false)
-
       };
         window.addEventListener('scroll', ()=>{if(window.scrollY<100){
             setScroled(false)
             setStransform(0)
         }});
-
-
       window.addEventListener('wheel', (e)=>{handleScroll(e.deltaY)});
-
-
     });
 
     function windowReload() {

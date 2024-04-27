@@ -6,17 +6,52 @@ import { useGetAllProductsQuery,useGetPromotionsQuery, } from "../../API";
 import HomeSlider from "./HomeUI/HomeSlider/HomeSlider";
 import { useTranslation } from "react-i18next";
 import SekeletonCardProduct from "../../components/UI/SkeletonCardProduct/SekeletonCardProduct";
-
+import { IPromotion } from "../../interfaces";
+import skeletonSlidePNG from "../../icons/skeleton-slide.png"
 
 const Home = () => {
     const {data:products,error:errorProducts,isLoading:productsLoading} = useGetAllProductsQuery()
-    const {data:promotions}= useGetPromotionsQuery()
+    const {data:promotions , isLoading:promotionsLoading }= useGetPromotionsQuery()
 
     const {t} = useTranslation()
 
+    const skeletonSlide:IPromotion[] =[
+        {
+            id:"1",
+            img: skeletonSlidePNG,
+            imgWide:skeletonSlidePNG,
+            key: 1,
+            title:"",
+            description:"",
+            productInPromotion:[''],
+            html:""
+        },
+        {
+            id:"1",
+            img: "322",
+            imgWide:"322",
+            key: 1,
+            title:"",
+            description:"",
+            productInPromotion:[''],
+            html:""
+        },
+        {
+            id:"1",
+            img: "322",
+            imgWide:"322",
+            key: 1,
+            title:"",
+            description:"",
+            productInPromotion:[''],
+            html:""
+        }
+    ]
+
     return (
         <>
-            {promotions? <HomeSlider promotions={promotions}/> : null}
+            {productsLoading? <HomeSlider promotions={skeletonSlide}/>:
+                promotions&& <HomeSlider promotions={promotions}/>}
             <div className="title d-flex">
                 <div className="container">
                     <div className="page-title">

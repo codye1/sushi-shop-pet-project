@@ -81,13 +81,13 @@ class UserService{
         const user = await UserModel.findById(userData.id)
         const userDto = new UserDto(user)
 
-            const tokens = tokenService.generateTokens({...userDto})
-            await tokenService.saveToken(userDto.id,tokens.refreshToken)
+        const tokens = tokenService.generateTokens({...userDto})
+        await tokenService.saveToken(userDto.id,tokens.refreshToken)
 
-            return {
-                ...tokens,
-                user:userDto
-            }
+        return {
+            ...tokens,
+            user:userDto
+        }
     }
 
     async getAllUsers(){
@@ -145,6 +145,12 @@ class UserService{
     async saveImg(number,img){
         const user = await userModel.findOne({number})
         user.img = img
+        console.log("IMG LOADED");
+        console.log("IMG LOADED");
+        console.log("IMG LOADED");
+        console.log("IMG LOADED");
+        console.log("IMG LOADED");
+        console.log(user.img);
         user.save()
 
     }
