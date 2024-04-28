@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./CustomInput.css"
+import validationSVG from "../../../icons/CustomInput/validation.svg"
+import { useTranslation } from "react-i18next";
 
 interface ICustomInput{
     placeholder:string,
@@ -25,7 +27,7 @@ const CustomInput:React.FC<ICustomInput> = (
       setIsFocused(false);
     };
 
-
+    const {t} = useTranslation()
 
     return (
         <label className="cutom-input" htmlFor="">
@@ -38,15 +40,15 @@ const CustomInput:React.FC<ICustomInput> = (
                 onChange={(event)=>{setValue(event.target.value)}}
                 />
             {value.length<2 && isFocused && required?
-                <p>Це обовязкове поле</p>
+                <p>{t("components.CustomInput.alerts.required-field")}</p>
             :value.length==2 && required?
-                <p>Це поле введено не правильно</p>
+                <p>{t("components.CustomInput.alerts.length")}</p>
             :value.length>2 && buttons && validation?
                 <>
-                    <div onClick={onApplyButtons} className="apply">Зберегти</div>
-                    <div onClick={onCancelButtons} className="cancel">Скасувати</div>
+                    <div onClick={onApplyButtons} className="apply">{t("components.CustomInput.buttons.apply")}</div>
+                    <div onClick={onCancelButtons} className="cancel">{t("components.CustomInput.buttons.cancel")}</div>
                 </>
-            :value.length>1 && validation && <svg className="field-is-valid" width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.00548 15.8998L4.64083 11.6998L3.51929 13.0998L8.00548 18.6998L17.6187 6.6998L16.4972 5.2998L8.00548 15.8998Z" fill="#008B59"></path></svg>
+            :value.length>1 && validation && <img src={validationSVG} alt="" />
 
             }
         </label>

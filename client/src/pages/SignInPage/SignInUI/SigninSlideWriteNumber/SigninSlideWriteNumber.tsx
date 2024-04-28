@@ -4,6 +4,7 @@ import CountryList from '../CountryList/CountryList';
 import { useSendMutation } from "../../../../API";
 import "./SigninSlideWriteNumber.css"
 import { Tooltip } from "@mui/material";
+import { Trans, useTranslation } from "react-i18next";
 interface SigninSlideWriteNumber{
     setNumber: React.Dispatch<React.SetStateAction<string>>,
     number:string
@@ -11,7 +12,6 @@ interface SigninSlideWriteNumber{
 }
 
 const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,setNumber,number}) => {
-
     const [checkBox,setCheckBox]=useState(false)
     const [arrowUp,setArrowUp]=useState(false)
     const [pickedCountry,setPickedCountry] = useState<country>({flag:"ua",name:"Україна",dialCode:"+380"})
@@ -36,7 +36,6 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
             setSMSSent(true)
         }else{
             console.log("checkBox error");
-
         }
     }
 
@@ -44,13 +43,15 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
         setNumber(pickedCountry.dialCode)
     },[])
 
+    const {t} = useTranslation();
+
     return (
         <div className="sign-in-right-block d-flex">
         <div className="sign-in-form">
             <div className="form-title">
-                Введіть номер телефону, на цей номер надійде дзвінок або SMS:
+                {t("sign-in.write-number.form-title")}
             </div>
-            <Tooltip  title="На даний номер телефону надійде дзвінок або SMS" arrow>
+            <Tooltip  title={t("sign-in.write-number.form-title")} arrow>
                 <div className="form-input">
                     <input
                         type="tel"
@@ -93,8 +94,12 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
                     </svg>
                 </span>
                 <label  className="form-agree-text pointer" htmlFor="checkbox">
-                    Я погоджуюсь з <a href="">політикою конфіденційності,<br/> призначеною для користувача угодою</a> і даю дозвіл на <br/> обробку персональних даних.
-                    {!checkBox && <span className="form-error">Це обов'язкове поле</span>}
+                    {t("sign-in.write-number.form-agree1")}
+                    <a href="">
+                        <Trans i18nKey={"sign-in.write-number.form-agree2"} components={{1:<br/>}}/>
+                    </a>
+                    <Trans i18nKey={"sign-in.write-number.form-agree3"} components={{1:<br/>}}/>
+                    {!checkBox && <span className="form-error">{t("sign-in.write-number.form-agree-alert")}</span>}
                 </label>
 
             </div>

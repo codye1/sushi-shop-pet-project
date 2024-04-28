@@ -1,6 +1,8 @@
 import { Dialog } from "@mui/material";
 import "./CustomModal.css"
 import {  FC, ReactNode, } from "react";
+import closeSVG from "../../../icons/close-white.svg"
+
 
 interface ICustomModal{
     customModal:boolean,
@@ -18,7 +20,7 @@ const CustomModal:FC<ICustomModal> = ({customModal,closeModal,children}) => {
             aria-describedby="alert-dialog-description"
         >
                     {children}
-                    <img onClick={closeModal}  className="close-modal pointer" src="https://kyiv.sushi-master.ua/img/header/close-white.svg" alt="" />
+                    <img onClick={closeModal}  className="close-modal pointer" src={closeSVG} alt="" />
 
         </Dialog>
     );

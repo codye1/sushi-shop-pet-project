@@ -12,6 +12,7 @@ import { useAppDispatch, useAppSelector } from "../../../../../../hooks";
 import {  updImg } from "../../../../../../reducer/auth";
 import UploadFile from "./components/UploadFile/UploadFile";
 import CropContainer from "./components/CropContainer/CropContainer";
+import { useTranslation } from "react-i18next";
 
 
 const ImageSection = () => {
@@ -21,6 +22,8 @@ const ImageSection = () => {
     const [saveImg] = useSaveImgMutation()
     const dispatch = useAppDispatch()
     const imgUser = useAppSelector(state=>state.auth.user.img)
+
+    const {t} = useTranslation()
 
     const croppAndSaveImg = useCallback(async () => {
         try {
@@ -57,7 +60,7 @@ const ImageSection = () => {
             >
                     <div className="modal-file-upload">
                         <div className="title d-flex space-between" >
-                                Фото профиля
+                                {t("account.personal.sections.image.title")}
                                 {imgUser && imgUser.length>0 &&
                                     <div onClick={()=>{
                                         saveImg("")
@@ -65,7 +68,7 @@ const ImageSection = () => {
                                         onCloseModal()
                                     }} className="delete-button d-flex space-between align-center">
                                         <img src={deleteIcon} alt="" />
-                                        Видалити
+                                        {t("account.personal.sections.image.delete-button")}
                                     </div>
                                     }
                         </div>
@@ -77,8 +80,8 @@ const ImageSection = () => {
                                 img={img}
                             />
                             <TwoButtons
-                                applyTitle="Зберегти"
-                                cancelTitle="Скасувати"
+                                applyTitle={t("account.personal.sections.image.two-buttons-crop.applyTitle")}
+                                cancelTitle={t("account.personal.sections.image.two-buttons-crop.cancelTitle")}
                                 onApply={()=>{
                                     croppAndSaveImg();
                                     onCloseModal()

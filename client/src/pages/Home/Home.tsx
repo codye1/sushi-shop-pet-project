@@ -11,7 +11,7 @@ import skeletonSlidePNG from "../../icons/skeleton-slide.png"
 
 const Home = () => {
     const {data:products,error:errorProducts,isLoading:productsLoading} = useGetAllProductsQuery()
-    const {data:promotions , isLoading:promotionsLoading }= useGetPromotionsQuery()
+    const {data:promotions ,}= useGetPromotionsQuery()
 
     const {t} = useTranslation()
 
@@ -30,7 +30,7 @@ const Home = () => {
             id:"1",
             img: "322",
             imgWide:"322",
-            key: 1,
+            key: 2,
             title:"",
             description:"",
             productInPromotion:[''],
@@ -40,7 +40,7 @@ const Home = () => {
             id:"1",
             img: "322",
             imgWide:"322",
-            key: 1,
+            key: 3,
             title:"",
             description:"",
             productInPromotion:[''],

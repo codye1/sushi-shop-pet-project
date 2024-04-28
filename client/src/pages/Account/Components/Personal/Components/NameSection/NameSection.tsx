@@ -5,6 +5,7 @@ import "./NameSection.css"
 import { useSaveNameMutation } from '../../../../../../API';
 import { updName } from '../../../../../../reducer/auth';
 import { Tooltip } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 const NameSection = () => {
     const number = useAppSelector(state=>state.auth.user.number)
     const [name,setName]=useState("")
@@ -13,6 +14,9 @@ const NameSection = () => {
     const [saveName]=useSaveNameMutation()
     const dispatch = useAppDispatch()
     const userName = useAppSelector(state=>state.auth.user.name)
+
+    const {t} = useTranslation()
+
     return (
         <>
             {
@@ -21,7 +25,7 @@ const NameSection = () => {
                     <div className='d-flex align-center'>
                         <img src="https://uzhhorod.sushi-master.ua/img/account/personal/account.svg" alt="" />
                         <div className="section-info-content">
-                            <h3>Ім'я</h3>
+                            <h3>{t("account.personal.sections.name.title")}</h3>
                             <p>{userName}</p>
                         </div>
                     </div>
@@ -51,8 +55,8 @@ const NameSection = () => {
             <div className="section-info section-contacts d-flex">
                 <img src="https://lviv.sushi-master.ua/img/account/personal/phone.svg" alt="" />
                 <div className="section-info-content">
-                    <h3>Контакти</h3>
-                    <Tooltip title="Для зміни контактних даних зверніться в колл-центр" arrow>
+                    <h3>{t("account.personal.sections.name.contacts")}</h3>
+                    <Tooltip title={t("account.personal.sections.name.tooltip-title")} arrow>
                         <p style={{cursor:"help"}}>{number}</p>
                     </Tooltip>
                 </div>

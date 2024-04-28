@@ -6,6 +6,7 @@ import { useAppDispatch } from "../../../../hooks";
 import { authUser } from "../../../../reducer/auth";
 import CustomModal from "../../../../components/UI/CustomModal/CustomModal";
 import { AuthResponce } from "../../../../interfaces";
+import {useTranslation } from "react-i18next";
 
 interface SigninSlideWriteCode{
     number:string,
@@ -19,6 +20,8 @@ const SigninSlideWriteCode:React.FC<SigninSlideWriteCode> = ({setSmsSent,number}
     const [refreshSMSCode]=useRefreshSMSCodeMutation()
     const [modalError,setModalError]=useState(false)
     const dispath = useAppDispatch()
+
+    const {t} = useTranslation()
 
     async function handleLogin(number:string,code:string) {
         const result  = await login({number,code})
@@ -67,13 +70,12 @@ const SigninSlideWriteCode:React.FC<SigninSlideWriteCode> = ({setSmsSent,number}
     <div className="sign-in-right-block d-flex">
         <div className="sign-in-form">
             <div className="form-title">
-                Введіть останні 4 цифри вхідного номера або код із SMS:
+                {t("sign-in.write-code.form-title")}
             </div>
             <div className="write-code-descriptions">
-                На ваш номер {number} відправлено код <br/> підтвердження. Термін дії вашого коду 3 хвилини. <br/>
-                <br/>
-                <span>На ваш номер відправлено код підтвердження.</span>
-                {(seconds==0) && <span onClick={()=>{setSmsSent(false)}} className="change-number pointer">Змінити номер</span>}
+                <div dangerouslySetInnerHTML={{ __html: t("sign-in.write-code.description", { number }) }}/>
+                <span>{t("sign-in.write-code.span")}</span>
+                {(seconds==0) && <span onClick={()=>{setSmsSent(false)}} className="change-number pointer">{t("sign-in.write-code.change-number")}</span>}
             </div>
             <div className="write-code-input">
             <ReactCodeInput
@@ -88,7 +90,7 @@ const SigninSlideWriteCode:React.FC<SigninSlideWriteCode> = ({setSmsSent,number}
             </div>
             <div className="code-repeat">
 
-               {seconds==0?<span onClick={()=>{refreshSMSCode(number)}} className="pointer" >Повторно відправити код</span>:<span>Повторно відправити код або <br/> змінити номер можна через  {seconds} <br/>  сек</span>}
+               {seconds==0?<span onClick={()=>{refreshSMSCode(number)}} className="pointer" >{t("sign-in.write-code.code-repeat1")}</span>:<span dangerouslySetInnerHTML={{ __html: t("sign-in.write-code.code-repeat2", { seconds }) }} />}
             </div>
 
         </div>

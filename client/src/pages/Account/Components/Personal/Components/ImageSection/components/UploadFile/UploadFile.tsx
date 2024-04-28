@@ -1,5 +1,6 @@
 import React, { FC  } from 'react';
 import "./UploadFile.css"
+import { useTranslation } from 'react-i18next';
 
 interface UploadFile{
     setImg: (value: React.SetStateAction<string | undefined>) => void;
@@ -22,13 +23,15 @@ const UploadFile:FC<UploadFile> = ({setImg}) => {
 
     }
 
+    const {t} = useTranslation()
+
     return (
         <div className="file-upload d-flex space-between column">
             <img src="https://uzhhorod.sushi-master.ua/img/account/personal/add-photo.svg" alt="" />
-            <p>Перетащити фотографию сюда</p>
-            <p>или</p>
+            <p>{t("account.personal.sections.image.upload-file.title1")}</p>
+            <p>{t("account.personal.sections.image.upload-file.title2")}</p>
             <div className="file-upload-button">
-                ВЫБЕРИТЕ ФАЙЛ НА КОМПЬЮТЕРЕ
+                {t("account.personal.sections.image.upload-file.button-title")}
             </div>
             <input type="file" onChange={(event)=>{
                 uploadFileHandler(event)}}/>

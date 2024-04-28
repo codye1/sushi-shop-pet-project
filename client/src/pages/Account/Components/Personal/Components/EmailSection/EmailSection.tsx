@@ -3,6 +3,7 @@ import CustomInput from "../../../../../../components/UI/CustomInput/CustomInput
 import { useAppDispatch, useAppSelector } from "../../../../../../hooks";
 import { useSaveEmailMutation } from "../../../../../../API";
 import { updEmail } from "../../../../../../reducer/auth";
+import { useTranslation } from "react-i18next";
 
 
 const EmailSection = () => {
@@ -20,6 +21,8 @@ const EmailSection = () => {
 
     },[email])
 
+    const {t} = useTranslation()
+
     return (
         <div className="email-section">
             {
@@ -28,7 +31,7 @@ const EmailSection = () => {
                     <div className="d-flex align-center">
                         <img src="https://uzhhorod.sushi-master.ua/img/account/personal/email.svg" alt="" />
                         <div className="section-info-content">
-                            <h3>Email</h3>
+                            <h3>{t("account.personal.sections.email.title")}</h3>
                             <p>{userEmail}</p>
                         </div>
                     </div>
@@ -40,7 +43,7 @@ const EmailSection = () => {
                 :
                 <>
                 <h2 className="sub-title">
-                    Вкажіть вашу електронну адресу, куди ми будемо надсилати інформацію про акції, індивідуальні промокоди та подарунки
+                    {t("account.personal.sections.email.sub-title")}
                 </h2>
                 <div className="email-input">
                     <CustomInput
