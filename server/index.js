@@ -6,7 +6,9 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 
-//const jsonRouter = require('json-server').router("db.json")
+const db = JSON.parse(fs.readFileSync(path.join(__dirname, 'db.json')))
+
+const jsonRouter = require('json-server').router(db)
 
 const PORT = process.env.PORT || 5000
 
@@ -19,7 +21,7 @@ server.use(cors({
 }))
 
 
-//server.use("/product",jsonRouter)
+server.use("/product",jsonRouter)
 server.use(router)
 
 
