@@ -20,7 +20,7 @@ server.use(cors({
 
 
 //server.use("/product",jsonRouter)
-server.use("/auth",router)
+server.use(router)
 
 
 const start = async ()=>{
