@@ -3,7 +3,7 @@ import "./UploadFile.css"
 import { useTranslation } from 'react-i18next';
 
 interface UploadFile{
-    setImg: (value: React.SetStateAction<string | undefined>) => void;
+    setImg: (value: React.SetStateAction<string >) => void;
 }
 
 const UploadFile:FC<UploadFile> = ({setImg}) => {

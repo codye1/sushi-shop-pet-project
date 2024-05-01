@@ -1,4 +1,4 @@
-import {NavLink, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from "swiper/modules";
 import "./PageByIdProduct.css"
@@ -19,7 +19,7 @@ const PageByIdProduct = () => {
     const params:params = useParams();
 
     const {data: product,error: productError,isLoading: productLoading} = useGetProductQuery(params.id? params.id : "none")
-    const {data: composedProduct,error: composedProductError,isLoading: composedProductLoading} = useGetProductsByIdsQuery(product?  product.sklad : ["none"] )
+    const {data: composedProduct} = useGetProductsByIdsQuery(product?  product.sklad : ["none"] )
 
     const navigate = useNavigate()
 

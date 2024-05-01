@@ -1,4 +1,6 @@
-export const createImage = (url) =>
+import { Area } from "react-easy-crop";
+
+export const createImage = (url:string) =>
   new Promise((resolve, reject) => {
     const image = new Image();
     image.addEventListener("load", () => resolve(image));
@@ -7,11 +9,11 @@ export const createImage = (url) =>
     image.src = url;
   });
 
-export function getRadianAngle(degreeValue) {
+export function getRadianAngle(degreeValue:number) {
   return (degreeValue * Math.PI) / 180;
 }
 
-export function rotateSize(width, height, rotation) {
+export function rotateSize(width:number, height:number, rotation:number) {
   const rotRad = getRadianAngle(rotation);
 
   return {
@@ -23,12 +25,12 @@ export function rotateSize(width, height, rotation) {
 }
 
 export default async function getCroppedImg(
-  imageSrc,
-  pixelCrop,
+  imageSrc:string,
+  pixelCrop:Area | undefined,
   rotation = 0,
   flip = { horizontal: false, vertical: false }
 ) {
-  const image = await createImage(imageSrc);
+  const image = await createImage(imageSrc) as HTMLImageElement;
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
 
@@ -55,6 +57,7 @@ export default async function getCroppedImg(
 
   ctx.drawImage(image, 0, 0);
 
+ if (pixelCrop) {
   const data = ctx.getImageData(
     pixelCrop.x,
     pixelCrop.y,
@@ -67,8 +70,11 @@ export default async function getCroppedImg(
   canvas.height = pixelCrop.height;
 
   ctx.putImageData(data, 0, 0);
+ }
 
-  return new Promise((resolve, reject) => {
+
+
+  return new Promise((resolve, ) => {
     resolve(canvas.toDataURL())
 
   });

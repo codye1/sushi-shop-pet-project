@@ -17,7 +17,7 @@ import { useTranslation } from "react-i18next";
 
 const ImageSection = () => {
     const [modalUploadImgVissible,setModalUploadImgVissible] = useState(false)
-    const [img,setImg] = useState<string>()
+    const [img,setImg] = useState<string>("")
     const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area>();
     const [saveImg] = useSaveImgMutation()
     const dispatch = useAppDispatch()

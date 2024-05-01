@@ -11,6 +11,8 @@ interface CropContainer{
 const CropContainer:FC<CropContainer> = ({img,setCroppedAreaPixels}) => {
 
     const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
+        console.log(croppedArea);
+
         setCroppedAreaPixels(croppedAreaPixels);
       }, []);
 
@@ -43,7 +45,7 @@ const CropContainer:FC<CropContainer> = ({img,setCroppedAreaPixels}) => {
                 max={5}
                 step={0.1}
                 value={zoom}
-                onChange={(value,newvalue)=>{if (typeof newvalue == "number") {
+                onChange={(_,newvalue)=>{if (typeof newvalue == "number") {
                     setZoom(newvalue)
                 }
                 }}
