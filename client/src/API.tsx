@@ -53,13 +53,13 @@ export const api = createApi({
         query: (id) => `products/${id}`
       }),
       getProductsByIds: build.query<IProductResponse, string[]>({
-        query: (ids) => `/product?id=${ids.join('&id=')}`,
+        query: (ids) => `/products?id=${ids.join('&id=')}`,
       }),
       getProductsByInput: build.query<IProductResponse, string>({
-        query: (input) => `/product?title_like=${input}`,
+        query: (input) => `/products?title_like=${input}`,
       }),
       getProductsByType: build.query<IProductResponse, string>({
-        query: (input) => `/product?type_like=${input}`,
+        query: (input) => `/products?type_like=${input}`,
       }),
       getPromotions: build.query<IPromotionResponse, void>({
         query: () => '/actions',
