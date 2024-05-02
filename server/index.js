@@ -1,4 +1,5 @@
 require('dotenv').config()
+const fs = require('fs')
 const express = require('express')
 const server = express()
 const router = require("./router/index")
@@ -6,11 +7,6 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 
-const fs = require('fs')
-
-const db = JSON.parse(fs.readFileSync(path.join(__dirname, 'db.json')))
-
-const jsonRouter = require('json-server').router(db)
 
 const PORT = process.env.PORT || 5000
 
@@ -23,8 +19,7 @@ server.use(cors({
 }))
 
 
-server.use("/product",jsonRouter)
-server.use("auth",router)
+server.use(router)
 
 
 const start = async ()=>{

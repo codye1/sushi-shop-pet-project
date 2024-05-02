@@ -1,6 +1,4 @@
 const UserDto = require('../dtos/user-dto');
-const userModel = require('../models/user-model');
-const UserModal = require('../models/user-model');
 const tokenService = require('../services/token-service');
 const userService = require('../services/user-service');
 

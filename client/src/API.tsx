@@ -11,7 +11,7 @@ import type {
 
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://sushi-shop-pet-project-m7t7.vercel.app',
   prepareHeaders: (headers ) => {
       headers.set('Authorization', `Barer ${localStorage.getItem('token')}`);
     return headers;
@@ -46,32 +46,32 @@ export const api = createApi({
     tagTypes: ['Get'],
     endpoints: (build) => ({
       getAllProducts: build.query<IProductResponse, void>({
-        query: () => 'product/product'
+        query: () => '/products'
 
       }),
       getProduct: build.query<IProduct, string>({
-        query: (id) => `product/product/${id}`
+        query: (id) => `products/${id}`
       }),
       getProductsByIds: build.query<IProductResponse, string[]>({
-        query: (ids) => `product/product?id=${ids.join('&id=')}`,
+        query: (ids) => `/product?id=${ids.join('&id=')}`,
       }),
       getProductsByInput: build.query<IProductResponse, string>({
-        query: (input) => `product/product?title_like=${input}`,
+        query: (input) => `/product?title_like=${input}`,
       }),
       getProductsByType: build.query<IProductResponse, string>({
-        query: (input) => `product/product?type_like=${input}`,
+        query: (input) => `/product?type_like=${input}`,
       }),
       getPromotions: build.query<IPromotionResponse, void>({
-        query: () => 'product/promotions',
+        query: () => '/promotions',
       }),
       getPromotionById: build.query<IPromotion, string>({
-        query: (id) => `product/promotions/${id}`,
+        query: (id) => `/promotions/${id}`,
       }),
       getRestaurants: build.query<IRestourantResponse, void>({
-        query: () => 'product//restaurants',
+        query: () => '/restaurants',
       }),
       checkAuth: build.query<AuthResponce, void>({
-        query: () => 'auth/refresh',
+        query: () => '/auth/refresh',
       }),
       send: build.mutation<AuthResponce,string>({
         query: (number) =>({
