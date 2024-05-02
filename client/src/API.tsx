@@ -29,7 +29,7 @@ const baseQueryWithReauth: BaseQueryFn<
 
 
   if (result.error && result.error.status === "PARSING_ERROR") {
-    const refreshResult = await baseQuery('auth/refresh', api, extraOptions)
+    const refreshResult = await baseQuery('refresh', api, extraOptions)
     if (refreshResult.data) {
       console.log("cработало");
       // Не міг дати AuthResponse для refreshResult.data, тому зробив так
@@ -62,92 +62,92 @@ export const api = createApi({
         query: (input) => `/product?type_like=${input}`,
       }),
       getPromotions: build.query<IPromotionResponse, void>({
-        query: () => '/promotions',
+        query: () => '/actions',
       }),
       getPromotionById: build.query<IPromotion, string>({
-        query: (id) => `/promotions/${id}`,
+        query: (id) => `/actions/${id}`,
       }),
       getRestaurants: build.query<IRestourantResponse, void>({
         query: () => '/restaurants',
       }),
       checkAuth: build.query<AuthResponce, void>({
-        query: () => '/auth/refresh',
+        query: () => '/refresh',
       }),
       send: build.mutation<AuthResponce,string>({
         query: (number) =>({
-          url:"auth/send",
+          url:"send",
           method:'POST',
           body:{number}
         })
       }),
       login: build.mutation<AuthResponce,send>({
         query: (NumberAndCode) =>({
-          url:"auth/login",
+          url:"login",
           method:'POST',
           body:{...NumberAndCode}
         })
       }),
       getUsers: build.query<user[], void>({
-        query: () => 'auth/users'
+        query: () => 'users'
         }),
       logout: build.mutation<user[], void>({
         query: () => ({
-          url:'auth/logout',
+          url:'logout',
           method:"POST"
         })
       }),
       refreshSMSCode: build.mutation<user[], string>({
         query: (number) => ({
-          url:'auth/refreshSMSCode',
+          url:'refreshSMSCode',
           method:"POST",
           body:{number}
         })
       }),
       addAddress: build.mutation<deliveryAddresses[], deliveryAddresses>({
         query: (deliveryAddresses) => ({
-          url:'auth/addresses',
+          url:'addresses',
           body: deliveryAddresses,
           method:"POST"
         })
       }),
       deleteAddress: build.mutation<deliveryAddresses[], deliveryAddresses>({
         query: (deliveryAddresses) => ({
-          url:'auth/addresses',
+          url:'addresses',
           body: deliveryAddresses,
           method:"DELETE"
         })
       }),
       putAddress: build.mutation<deliveryAddresses[],deliveryAddresses>({
         query: (deliveryAddresses) => ({
-          url:'auth/addresses',
+          url:'addresses',
           body: deliveryAddresses,
           method:"PUT"
         })
       }),
       saveName: build.mutation<user[], string>({
         query: (name) => ({
-          url:'auth/save/name',
+          url:'save/name',
           method:"POST",
           body:{name}
         })
       }),
       saveImg: build.mutation<user[], string>({
         query: (img) => ({
-          url:'auth/uploadimg',
+          url:'uploadimg',
           method:"POST",
           body:{img}
         })
       }),
       saveEmail: build.mutation<user[], string>({
         query: (email) => ({
-          url:'auth/save/email',
+          url:'save/email',
           method:"POST",
           body:{email}
         })
       }),
       saveBirthDate: build.mutation<user[], number[]>({
         query: (birthDate) => ({
-          url:'auth/save/birth-date',
+          url:'save/birth-date',
           method:"POST",
           body:{birthDate}
         })
