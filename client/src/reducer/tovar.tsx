@@ -19,7 +19,7 @@ const initialState: ProductDefault = {
       id:'s',
       body:'4',
       discount:0,
-      price:'1',
+      price:0,
       img:'ss',
       labels:[],
       harch:{
