@@ -12,7 +12,7 @@ export interface IProduct {
       id: string
       title: string
       discount:number
-      price:string
+      price:number
       body:string
       img:string
       labels:ILabel[]
