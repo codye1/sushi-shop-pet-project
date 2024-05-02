@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 
+const fs = require('fs')
+
 const db = JSON.parse(fs.readFileSync(path.join(__dirname, 'db.json')))
 
 const jsonRouter = require('json-server').router(db)
