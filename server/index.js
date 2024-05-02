@@ -14,7 +14,7 @@ server.use(express.json())
 server.use(cookieParser())
 
 server.use(cors({
-  origin: 'https://sushi-shop-pet-project.vercel.app',
+  origin: 'https://sushi-shop-pet-project-j99wuixq1-codye1s-projects.vercel.app',
   credentials: true,
 }))
 
