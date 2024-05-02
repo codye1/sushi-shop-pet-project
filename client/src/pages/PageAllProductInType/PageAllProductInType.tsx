@@ -57,9 +57,9 @@ const PageAllProductInType = () => {
                 console.log(FilteredProducts);
 
                 FilteredProducts.sort((a, b) =>{
-                    let aprice:number = Number(a.price.replace(/[^0-9]/g,""));
+                    let aprice:number = a.price;
                     aprice -= Math.floor(aprice*(a.discount/100))
-                    let bprice:number = Number(b.price.replace(/[^0-9]/g,""));
+                    let bprice:number = b.price;
                     bprice -= Math.floor(bprice*(b.discount/100))
                     if(formaFiltra.price=="2"){
                         console.log("фільтрую за меншою ціною");
