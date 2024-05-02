@@ -13,7 +13,7 @@ import ProductInfo from './ProductInfo/ProductInfo';
 
 const MainProductView:FC<IProductInXEelement> = ({product}) => {
 
-    let price:number = Number(product?.price.replace(/[^0-9]/g,""));
+    let price:number = product.price;
     price -= product? Math.floor(price*(product.discount/100)) : 0;
 
 

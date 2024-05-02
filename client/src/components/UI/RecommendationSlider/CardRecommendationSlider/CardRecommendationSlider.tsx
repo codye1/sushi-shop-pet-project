@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const CardRecommendationSlider:React.FC<IProductInXEelement> = ({product}) => {
-    let price:number = Number(product.price.replace(/[^0-9]/g,""));
+    let price:number = product.price;
     price -= Math.floor(price*(product.discount/100));
 
     return (
