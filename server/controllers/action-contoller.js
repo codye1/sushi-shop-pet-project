@@ -14,6 +14,11 @@ class ActionController{
     async getActions(req,res,next){
         try{
             const actions = await actionService.getActions()
+            const {titleLike}= req.query
+            if (titleLike) {
+
+                return res.json(actions.filter(item=>item.title.includes(titleLike)))
+            }
 
             return res.json(actions)
         }catch(err){
