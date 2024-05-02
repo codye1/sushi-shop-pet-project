@@ -10,7 +10,7 @@ import plus from '../../../../icons/Basket/plus.svg'
 import Remove from '../../../../icons/Basket/Remove';
 
 const CardProductBasket:React.FC<IProductInXEelement> = ({product}) => {
-    let price:number = Number(product.price.replace(/[^0-9]/g,""));
+    let price:number = product.price;
     price -= Math.floor(price*(product.discount/100));
     const quantity = useAppSelector((state)=>state.basket.quantityProduct)
     const overNormAdditions = useAppSelector((state)=>state.basket.quantityOverNormAdditions)
