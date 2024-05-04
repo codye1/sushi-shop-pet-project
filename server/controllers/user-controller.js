@@ -66,6 +66,7 @@ class UserController {
             return res.json(userData)
 
         }catch (e){
+
             return res.json({error:"Error"})
         }
     }
