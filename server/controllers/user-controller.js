@@ -30,7 +30,7 @@ class UserController {
             const {number,code} = req.body
             const userData = await userService.login(number,code)
 
-            res.cookie('refreshToken',userData.refreshToken,{maxAge:30*24*60*60*1000,httpOnly:true})
+            res.cookie('refreshToken',userData.refreshToken,{maxAge:30*24*60*60*1000,httpOnly:true, sameSite: 'None', secure: true})
             if (userData) {
                 return res.json(userData)
             }else{
