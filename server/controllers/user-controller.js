@@ -68,7 +68,7 @@ class UserController {
 
         }catch (e){
 
-            return res.json({error:"Error",e,req})
+            return res.json({error:"Error",error2:e,req1:req})
         }
     }
 
