@@ -15,11 +15,19 @@ class ProductController{
         try{
             const products = await productService.getProducts()
 
-            const {titleLike}= req.query
-            if (titleLike) {
-
-                return res.json(products.filter(item=>item.title.includes(titleLike)))
+            const {title} = req.query
+            if (title) {
+                console.log(title);
+                const filteredProd = products.filter(item=>item.title.toLocaleLowerCase().includes(title.toLocaleLowerCase()))
+                return res.json(filteredProd)
             }
+            const {type} = req.query
+            if (type) {
+                console.log(type);
+                const filteredProd = products.filter(item=>item.type.toLocaleLowerCase().includes(title.toLocaleLowerCase()))
+                return res.json(filteredProd)
+            }
+
 
             return res.json(products)
         }catch(err){

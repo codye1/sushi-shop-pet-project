@@ -14,10 +14,11 @@ class ActionController{
     async getActions(req,res,next){
         try{
             const actions = await actionService.getActions()
-            const {titleLike}= req.query
-            if (titleLike) {
+            const {title}= req.query
 
-                return res.json(actions.filter(item=>item.title.includes(titleLike)))
+            if(title){
+                const filteredProd = products.filter(item=>item.title.toLocaleLowerCase().includes(title.toLocaleLowerCase()))
+                return res.json(filteredProd)
             }
 
             return res.json(actions)

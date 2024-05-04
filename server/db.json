@@ -18,9 +18,9 @@
         "harch":{
             "weight":1370,
             "fats":137.19,
-            "squirrels":264.67,
+            "protein":264.67,
             "carbohydrates":477.89,
-            "dung":3569.67
+            "calories":3569.67
         },
         "sklad":["set-same-te-new","set-vigidnij-new","set-simejnij-new","set-sakura-new"]
 
@@ -40,9 +40,9 @@
         "harch":{
             "weight":1760,
             "fats":140.52,
-            "squirrels":331.7,
+            "protein":331.7,
             "carbohydrates":523.5,
-            "dung":3869.49
+            "calories":3869.49
         },
         "sklad":["rol-filadelfiya-z-krevetkoyu-new","rol-filadelfiya-z-lososem-v-kunzhuti","rol-filadelfiya-z-tuncem-v-kunzhuti","rol-kaliforniya-z-krabovim-miksom-v-ikri-new","rol-futomaki-z-lososem-gostr","rol-maki-z-lososem-new","rol-maki-z-tuncem","rol-kaliforniya-z-krabovim-miksom-v-kunzhuti-new"]
 
@@ -63,9 +63,9 @@
         "harch":{
             "weight":2050,
             "fats":172.52,
-            "squirrels":381.4,
+            "protein":381.4,
             "carbohydrates":658.27,
-            "dung":4792.43
+            "calories":4792.43
         },
         "sklad":["rol-filadelfiya-z-lososem","rol-filadelfiya-z-krevetkoyu-new","rol-filadelfiya-z-tuncem-v-kunzhuti","rol-kaliforniya-z-lososem-v-kunzhuti-new","rol-kaliforniya-tempura-new","rol-kranch-z-krevetkoyu-new","rol-maki-z-lososem-new","rol-maki-z-krevetkoyu-new","rol-maki-z-krevetkoyu-new","rol-feliks-z-tuncem","rol-nizhnij-z-lososem-new"]
 
@@ -85,9 +85,9 @@
         "harch":{
             "weight":990,
             "fats":74.74,
-            "squirrels":177.26,
+            "protein":177.26,
             "carbohydrates":281.93,
-            "dung":2080.97
+            "calories":2080.97
         },
         "sklad":["rol-filadelfiya-z-lososem","rol-filadelfiya-z-vugrem-v-kunzhuti","rol-feliks-z-tuncem","rol-kaliforniya-z-krabovim-miksom-v-kunzhuti-new"]
 
@@ -108,9 +108,9 @@
         "harch":{
             "weight":1470,
             "fats":145.29,
-            "squirrels":264.3,
+            "protein":264.3,
             "carbohydrates":435.35,
-            "dung":3449.34
+            "calories":3449.34
         },
         "sklad":["rol-filadelfiya-z-lososem","rol-filadelfiya-z-vugrem-v-kunzhuti","rol-kaliforniya-z-krabovim-miksom-v-kunzhuti-new","rol-filadelfiya-z-kopchenim-lososem-v-kunzhuti"]
 
@@ -128,9 +128,9 @@
         "harch":{
             "weight":1760,
             "fats":140.52,
-            "squirrels":331.7,
+            "protein":331.7,
             "carbohydrates":523.5,
-            "dung":3869.49
+            "calories":3869.49
         },
         "sklad":["rol-filadelfiya-z-krevetkoyu-new","rol-filadelfiya-z-lososem-v-kunzhuti","rol-filadelfiya-z-tuncem-v-kunzhuti","rol-kaliforniya-z-krabovim-miksom-v-ikri-new","rol-futomaki-z-lososem-gostr","rol-maki-z-lososem-new","rol-maki-z-tuncem","rol-kaliforniya-z-krabovim-miksom-v-kunzhuti-new"]
 
@@ -150,9 +150,9 @@
         "harch":{
             "weight":2050,
             "fats":172.52,
-            "squirrels":381.4,
+            "protein":381.4,
             "carbohydrates":658.27,
-            "dung":4792.43
+            "calories":4792.43
         },
         "sklad":["rol-filadelfiya-z-lososem","rol-filadelfiya-z-krevetkoyu-new","rol-filadelfiya-z-tuncem-v-kunzhuti","rol-kaliforniya-z-lososem-v-kunzhuti-new","rol-kaliforniya-tempura-new","rol-kranch-z-krevetkoyu-new","rol-maki-z-lososem-new","rol-maki-z-krevetkoyu-new","rol-maki-z-krevetkoyu-new","rol-feliks-z-tuncem","rol-nizhnij-z-lososem-new"]
 
@@ -172,9 +172,9 @@
         "harch":{
             "weight":990,
             "fats":74.74,
-            "squirrels":177.26,
+            "protein":177.26,
             "carbohydrates":281.93,
-            "dung":2080.97
+            "calories":2080.97
         },
         "sklad":["rol-filadelfiya-z-lososem","rol-filadelfiya-z-vugrem-v-kunzhuti","rol-feliks-z-tuncem","rol-kaliforniya-z-krabovim-miksom-v-kunzhuti-new"],
         "filadelfiya":true
@@ -196,9 +196,9 @@
             "harch":{
                 "weight":990,
                 "fats":74.74,
-                "squirrels":177.26,
+                "protein":177.26,
                 "carbohydrates":281.93,
-                "dung":2080.97
+                "calories":2080.97
             },
             "sklad":[""]
         }
@@ -217,9 +217,9 @@
             "harch":{
                 "weight":990,
                 "fats":74.74,
-                "squirrels":177.26,
+                "protein":177.26,
                 "carbohydrates":281.93,
-                "dung":2080.97
+                "calories":2080.97
             },
             "sklad":[""]
         }
@@ -237,9 +237,9 @@
             "harch":{
                 "weight":80,
                 "fats":15.34,
-                "squirrels":18.05,
+                "protein":18.05,
                 "carbohydrates":27.26,
-                "dung":288.02
+                "calories":288.02
             },
             "sklad":[""]
         }
@@ -257,9 +257,9 @@
             "harch":{
                 "weight":125,
                 "fats":227,
-                "squirrels":0,
+                "protein":0,
                 "carbohydrates":0,
-                "dung":0
+                "calories":0
             },
             "sklad":[""]
         }
@@ -277,9 +277,9 @@
             "harch":{
                 "weight":270,
                 "fats":11.56,
-                "squirrels":17.55,
+                "protein":17.55,
                 "carbohydrates":33.48,
-                "dung":402.89
+                "calories":402.89
             },
             "sklad":[""]
         }
@@ -297,9 +297,9 @@
             "harch":{
                 "weight":270,
                 "fats":11.56,
-                "squirrels":17.55,
+                "protein":17.55,
                 "carbohydrates":33.48,
-                "dung":402.89
+                "calories":402.89
             },
             "sklad":[""]
         }
@@ -317,9 +317,9 @@
             "harch":{
                 "weight":1000,
                 "fats":0,
-                "squirrels":0,
+                "protein":0,
                 "carbohydrates":0,
-                "dung":0
+                "calories":0
             },
             "sklad":[""]
         }
@@ -336,9 +336,9 @@
             "harch":{
                 "weight":50,
                 "fats":0,
-                "squirrels":0,
+                "protein":0,
                 "carbohydrates":0,
-                "dung":0
+                "calories":0
             },
             "sklad":[""]
         }
@@ -355,9 +355,9 @@
             "harch":{
                 "weight":0,
                 "fats":0,
-                "squirrels":0,
+                "protein":0,
                 "carbohydrates":0,
-                "dung":0
+                "calories":0
             },
             "sklad":[""]
         }
@@ -374,9 +374,9 @@
             "harch":{
                 "weight":15,
                 "fats":0,
-                "squirrels":0,
+                "protein":0,
                 "carbohydrates":0,
-                "dung":0
+                "calories":0
             },
             "sklad":[""]
         }
@@ -393,9 +393,9 @@
             "harch":{
                 "weight":0,
                 "fats":0,
-                "squirrels":0,
+                "protein":0,
                 "carbohydrates":0,
-                "dung":0
+                "calories":0
             },
             "sklad":[""]
         }

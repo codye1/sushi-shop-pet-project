@@ -21,9 +21,9 @@ export interface IProduct {
       harch:{
           weight:number,
           fats?:number,
-          squirrels?:number,
+          protein?:number,
           carbohydrates?:number,
-          dung?:number
+          calories?:number
       }
       sklad:[string]
     }

@@ -11,7 +11,7 @@ import type {
 
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://sushi-shop-pet-project-m7t7.vercel.app',
+  baseUrl: 'http://localhost:3000',
   prepareHeaders: (headers ) => {
       headers.set('Authorization', `Barer ${localStorage.getItem('token')}`);
     return headers;
