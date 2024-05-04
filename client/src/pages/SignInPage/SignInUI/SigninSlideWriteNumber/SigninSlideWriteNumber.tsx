@@ -16,10 +16,12 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
     const [arrowUp,setArrowUp]=useState(false)
     const [pickedCountry,setPickedCountry] = useState<country>({flag:"ua",name:"Україна",dialCode:"+380"})
     const [sendCode]=useSendMutation()
+
     function pickCountry(country:country) {
         setPickedCountry(country)
         setNumber(country.dialCode)
     }
+
     function closeCountryList() {
         setArrowUp(false)
     }

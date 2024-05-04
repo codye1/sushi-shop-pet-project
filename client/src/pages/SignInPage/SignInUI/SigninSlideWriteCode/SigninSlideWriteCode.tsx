@@ -24,10 +24,11 @@ const SigninSlideWriteCode:React.FC<SigninSlideWriteCode> = ({setSmsSent,number}
     const {t} = useTranslation()
 
     async function handleLogin(number:string,code:string) {
+
+        console.log("login");
+
         const result  = await login({number,code})
         if ('data' in result) {
-
-
             if (typeof result.data == "string") {
                 setModalError(true)
                 setPinCode("")

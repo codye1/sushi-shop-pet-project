@@ -23,13 +23,35 @@ class ProductController{
             }
             const {type} = req.query
             if (type) {
-                console.log(type);
-                const filteredProd = products.filter(item=>item.type.toLocaleLowerCase().includes(title.toLocaleLowerCase()))
+
+                const filteredProd = products.filter(item=>item.type.toLocaleLowerCase().includes(type.toLocaleLowerCase()))
+
                 return res.json(filteredProd)
             }
+            const {id} = req.query
+            if (id) {
+                let filteredProd  = []
+                console.log(id);
+                for (let i = 0; i < id.length; i++) {
+                    filteredProd = filteredProd.concat(products.filter(item=>item.id.toLocaleLowerCase().includes(id[i].toLocaleLowerCase())))
 
-
+                }
+                return res.json(filteredProd)
+            }
             return res.json(products)
+        }catch(err){
+            console.log(err);
+        }
+    }
+
+    async getProductsById(req,res,next){
+        try{
+            const products = await productService.getProducts()
+            const {id} = req.params
+
+            const filteredProd = products.filter(item=>item.id.toLocaleLowerCase().includes(id.toLocaleLowerCase()))
+
+            return res.json(filteredProd[0])
         }catch(err){
             console.log(err);
         }

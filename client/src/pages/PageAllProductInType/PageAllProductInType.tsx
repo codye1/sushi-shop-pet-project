@@ -62,7 +62,6 @@ const PageAllProductInType = () => {
                     let bprice:number = b.price;
                     bprice -= Math.floor(bprice*(b.discount/100))
                     if(formaFiltra.price=="2"){
-                        console.log("фільтрую за меншою ціною");
                         return aprice > bprice ? 1 : -1;
                     }
                     else
@@ -89,14 +88,11 @@ const PageAllProductInType = () => {
     const updateDataArray = (newData: IformaFiltra) => {
         setFormaFiltra(newData);
         setModalVissible(false)
-
     };
 
 
     useEffect(()=>{
         setProducts(data && [...data])
-        console.log("ss");
-
     },[data])
 
     function getAlllabelsLabels(products:IProduct[]){

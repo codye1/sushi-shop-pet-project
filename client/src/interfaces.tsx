@@ -25,7 +25,7 @@ export interface IProduct {
           carbohydrates?:number,
           calories?:number
       }
-      sklad:[string]
+      sklad:string[]
     }
 export interface IPromotion{
         id:string

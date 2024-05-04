@@ -30,8 +30,8 @@ const CustomInput:React.FC<ICustomInput> = (
     const {t} = useTranslation()
 
     return (
-        <label className="cutom-input" htmlFor="">
-            <label className={isFocused || value.length>0?"input-focused":"input-notfocused"} htmlFor="">{required? <>{placeholder}<span> *</span></>:placeholder}</label>
+        <label className="cutom-input" >
+            <label className={isFocused || value.length>0?"input-focused":"input-notfocused"} >{required? <>{placeholder}<span> *</span></>:placeholder}</label>
             <input
                 type="text"
                 onFocus={handleFocus}

@@ -21,7 +21,7 @@ const Navbar:React.FC<INavbar> = ({isScroled}) => {
     const {t}=useTranslation()
 
     const down_list:Tlist=[
-        {site: 'menu/sets',name:t("header.navbar.roles")},
+        {site: 'menu/sets',name:t("header.navbar.sets")},
         {site: 'menu/roles',name:t("header.navbar.roles")},
         {site: 'menu/promotion',name:t("header.navbar.promotion")},
         {site: 'menu/sushi',name:t("header.navbar.sushi")},

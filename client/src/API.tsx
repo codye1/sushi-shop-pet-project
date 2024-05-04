@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IProductResponse, IProduct,  IPromotionResponse, IPromotion, IRestourantResponse, deliveryAddresses, user, AuthResponce, send } from './interfaces';
+import { IProductResponse,   IPromotionResponse, IPromotion, IRestourantResponse, deliveryAddresses, user, AuthResponce, send, IProduct } from './interfaces';
 
 import type {
   BaseQueryFn,
@@ -11,7 +11,9 @@ import type {
 
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://localhost:3000',
+  //https://sushi-shop-pet-project-m7t7.vercel.app/
+  //http://localhost:3000
+  baseUrl: 'https://sushi-shop-pet-project-m7t7.vercel.app',
   prepareHeaders: (headers ) => {
       headers.set('Authorization', `Barer ${localStorage.getItem('token')}`);
     return headers;
@@ -31,7 +33,6 @@ const baseQueryWithReauth: BaseQueryFn<
   if (result.error && result.error.status === "PARSING_ERROR") {
     const refreshResult = await baseQuery('refresh', api, extraOptions)
     if (refreshResult.data) {
-      console.log("cработало");
       // Не міг дати AuthResponse для refreshResult.data, тому зробив так
       const data:AuthResponce = JSON.parse(JSON.stringify(refreshResult.data))
       localStorage.setItem("token",data.accessToken)
@@ -56,10 +57,10 @@ export const api = createApi({
         query: (ids) => `/products?id=${ids.join('&id=')}`,
       }),
       getProductsByInput: build.query<IProductResponse, string>({
-        query: (input) => `/products?title_like=${input}`,
+        query: (input) => `/products?title=${input}`,
       }),
       getProductsByType: build.query<IProductResponse, string>({
-        query: (input) => `/products?type_like=${input}`,
+        query: (input) => `/products?type=${input}`,
       }),
       getPromotions: build.query<IPromotionResponse, void>({
         query: () => '/actions',
