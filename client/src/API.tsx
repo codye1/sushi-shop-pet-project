@@ -77,7 +77,11 @@ export const api = createApi({
 
       }),
       checkAuth: build.query<AuthResponce, void>({
-        query: () => '/refresh',
+        query: () => ({
+          url:'/refresh',
+          credentials:"include"
+        }),
+
       }),
       send: build.mutation<AuthResponce,string>({
         query: (number) =>({
@@ -90,7 +94,9 @@ export const api = createApi({
         query: (NumberAndCode) =>({
           url:"login",
           method:'POST',
+
           body:{...NumberAndCode}
+
         })
       }),
       getUsers: build.query<user[], void>({
