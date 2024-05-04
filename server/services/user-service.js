@@ -80,7 +80,8 @@ class UserService{
         }
         const user = await UserModel.findById(userData.id)
         const userDto = new UserDto(user)
-
+        console.log("refresh Token");
+        console.log(refreshToken);
         const tokens = tokenService.generateTokens({...userDto})
         await tokenService.saveToken(userDto.id,tokens.refreshToken)
 
