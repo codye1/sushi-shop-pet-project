@@ -56,6 +56,7 @@ class UserController {
 
     async refresh(req,res,next){
         try{
+            console.log("refreshed");
             const {refreshToken} = req.cookies
             console.log(req.cookies);
             const userData = await userService.refresh(refreshToken)
@@ -67,7 +68,7 @@ class UserController {
 
         }catch (e){
 
-            return res.json({error:"Error"})
+            return res.json({error:"Error",e,req})
         }
     }
 
