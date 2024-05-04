@@ -67,7 +67,8 @@ class UserController {
             return res.json(userData)
 
         }catch (e){
-            console.log(req);
+            console.log(req.cookies.get("refreshToken"));
+            console.log(req.cookies.get("refreshToken").value);
             return res.json({error:"Error",error2:e})
         }
     }
