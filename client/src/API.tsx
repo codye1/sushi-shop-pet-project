@@ -74,6 +74,7 @@ export const api = createApi({
       }),
       getRestaurants: build.query<IRestourantResponse, void>({
         query: () => '/restaurants',
+
       }),
       checkAuth: build.query<AuthResponce, void>({
         query: () => '/refresh',
