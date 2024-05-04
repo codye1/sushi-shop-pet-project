@@ -26,6 +26,9 @@ const baseQueryWithReauth: BaseQueryFn<
   unknown,
   FetchBaseQueryError
 > = async (args, api, extraOptions) => {
+  console.log("запрос");
+  console.log(document.cookie);
+
   let result = await baseQuery(args, api, extraOptions)
 
 
@@ -43,6 +46,7 @@ const baseQueryWithReauth: BaseQueryFn<
       result = await baseQuery(args, api, extraOptions)
     }
   }
+
   return result
 }
 
