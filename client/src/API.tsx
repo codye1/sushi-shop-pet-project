@@ -36,6 +36,9 @@ const baseQueryWithReauth: BaseQueryFn<
       // Не міг дати AuthResponse для refreshResult.data, тому зробив так
       const data:AuthResponce = JSON.parse(JSON.stringify(refreshResult.data))
       document.cookie = `refreshToken=${data.refreshToken}; SameSite=Strict; Secure; max-age=${30 * 24 * 60 * 60 * 1000}`;
+      console.log(data.refreshToken);
+      console.log("test");
+
       localStorage.setItem("token",data.accessToken)
       result = await baseQuery(args, api, extraOptions)
     }
