@@ -17,10 +17,10 @@ const ProductInfo:FC<IProductInXEelement> = ({product}) => {
                     <h3>{product.harch.fats}</h3>
                 </div>
             }
-            {product.harch.squirrels &&
+            {product.harch.protein &&
                 <div className="info-element d-flex space-between">
                     <h2>Білки,г </h2>
-                    <h3>{product.harch.squirrels}</h3>
+                    <h3>{product.harch.protein}</h3>
                 </div>
             }
             {product.harch.carbohydrates &&
@@ -29,10 +29,10 @@ const ProductInfo:FC<IProductInXEelement> = ({product}) => {
                     <h3>{product.harch.carbohydrates}</h3>
                 </div>
             }
-            {product.harch.dung &&
+            {product.harch.calories &&
                 <div className="info-element d-flex space-between">
                     <h2>Кал,г </h2>
-                    <h3>{product.harch.dung}</h3>
+                    <h3>{product.harch.calories}</h3>
                 </div>
             }
         </div>

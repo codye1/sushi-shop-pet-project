@@ -25,9 +25,9 @@ const initialState: ProductDefault = {
       harch:{
         weight:1370,
         fats:137.19,
-        squirrels:264.67,
+        protein:264.67,
         carbohydrates:477.89,
-        dung:3569.67
+        calories:3569.67
       },
       attributes:'ss',
       sklad:['Skald'],
