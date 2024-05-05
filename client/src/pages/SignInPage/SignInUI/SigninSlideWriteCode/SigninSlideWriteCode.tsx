@@ -34,7 +34,7 @@ const SigninSlideWriteCode:React.FC<SigninSlideWriteCode> = ({setSmsSent,number}
                 setPinCode("")
             }else{
                 const data: AuthResponce = result.data
-                document.cookie = `refreshToken=${data.refreshToken}; SameSite=None; Secure; max-age=${30 * 24 * 60 * 60 * 1000}`;
+                document.cookie = `refreshToken=${data.refreshToken}; SameSite=None; max-age=${30 * 24 * 60 * 60 * 1000}`;
                 dispath(authUser(data.user))
                 result && localStorage.setItem("token",result.data.accessToken)
             }

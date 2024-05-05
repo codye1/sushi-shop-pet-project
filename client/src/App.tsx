@@ -17,7 +17,7 @@ function App() {
     if (user && !user.error) {
         console.log("auth");
 
-        document.cookie = `refreshToken=${user.refreshToken}; SameSite=None; Secure; max-age=${30 * 24 * 60 * 60 * 1000}`
+        document.cookie = `refreshToken=${user.refreshToken}; SameSite=None;  max-age=${30 * 24 * 60 * 60 * 1000}`
         dispatch(authUser(user.user))
     }
     console.log("np auth");
