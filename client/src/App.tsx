@@ -17,7 +17,7 @@ function App() {
     if (user && !user.error) {
         console.log("auth");
 
-        document.cookie = `refreshToken=${user.refreshToken}; SameSite=None;  max-age=${30 * 24 * 60 * 60 * 1000}`
+        document.cookie = `refreshToken=${user.refreshToken}; SameSite=None; Secure; max-age=${30 * 24 * 60 * 60 * 1000}; path=https://sushi-shop-pet-project-m7t7.vercel.app`
         dispatch(authUser(user.user))
     }
     console.log("np auth");
