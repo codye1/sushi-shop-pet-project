@@ -13,7 +13,7 @@ import type {
 const baseQuery = fetchBaseQuery({
   //https://sushi-shop-pet-project-m7t7.vercel.app/
   //http://localhost:3000
-  baseUrl: 'https://sushi-shop-pet-project-m7t7.vercel.app',
+  baseUrl: 'http://localhost:3000',
   prepareHeaders: (headers ) => {
       headers.set('Authorization', `Barer ${localStorage.getItem('token')}`);
     return headers;
@@ -38,10 +38,7 @@ const baseQueryWithReauth: BaseQueryFn<
     if (refreshResult.data) {
       // Не міг дати AuthResponse для refreshResult.data, тому зробив так
       const data:AuthResponce = JSON.parse(JSON.stringify(refreshResult.data))
-      document.cookie = `refreshToken=${data.refreshToken}; SameSite=None; max-age=${30 * 24 * 60 * 60 * 1000}`;
-      console.log(data.refreshToken);
-      console.log("test");
-
+      //document.cookie = `refreshToken=${data.refreshToken}; domain=sushi-shop-pet-project-m7t7.vercel.app; path=/; SameSite=None; Secure; max-age=${30 * 24 * 60 * 60 * 1000}; `;
       localStorage.setItem("token",data.accessToken)
       result = await baseQuery(args, api, extraOptions)
     }

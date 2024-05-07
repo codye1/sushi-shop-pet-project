@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
-import "./FilterModal.css"
+import "./FilterAndSortModal.css"
 import TwoButtons from "../../../components/UI/TwoButtons/TwoButtons";
 import close from "../../../icons/close.png"
 import Inner from "../../../icons/Inner";
 import Outer from "../../../icons/Outer";
-interface FilterModal {
-    onUpdateData: (newData: IformaFiltra) => void;
-    ApplyFilters: () => void;
-    ParentFormaFiltra:IformaFiltra
+interface FilterAndSortModal {
+    onUpdateData: (newData: IFormFilterAndSort) => void;
+    ApplyForm: () => void;
+    ParentFormaFiltra:IFormFilterAndSort
     labels:string[]
   }
-export interface IformaFiltra{
+export interface IFormFilterAndSort{
     price:string
     weight:string
     labels:string[]
 }
 
-const FilterModal:React.FC<FilterModal> = ({onUpdateData,labels,ParentFormaFiltra,ApplyFilters}) => {
+const FilterAndSortModal:React.FC<FilterAndSortModal> = ({onUpdateData,labels,ParentFormaFiltra,ApplyForm}) => {
     const [modalTransition,setModalTransition] = useState(false)
 
     const [selectLabels,setSelectLabels]=useState<string[]>(ParentFormaFiltra.labels)
 
-    const [formaFiltra] = useState<IformaFiltra>(ParentFormaFiltra)
+    const [formaFiltra] = useState<IFormFilterAndSort>(ParentFormaFiltra)
 
-    const [childFormaFiltra, setChildFormaFiltra] = useState<IformaFiltra>(ParentFormaFiltra);
+    const [childFormaFiltra, setChildFormaFiltra] = useState<IFormFilterAndSort>(ParentFormaFiltra);
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
@@ -38,7 +38,7 @@ const FilterModal:React.FC<FilterModal> = ({onUpdateData,labels,ParentFormaFiltr
     };
 
     function onCancel() {
-        formaFiltra.price="1"
+        formaFiltra.price="1" //default value radio buttons
         formaFiltra.weight="4"
         setChildFormaFiltra(formaFiltra)
         setModalTransition(false)
@@ -46,7 +46,7 @@ const FilterModal:React.FC<FilterModal> = ({onUpdateData,labels,ParentFormaFiltr
         formaFiltra.labels=[]
         setTimeout(() => {
             sendDataToParent();
-            ApplyFilters()
+            ApplyForm()
         }, 300)
     }
 
@@ -55,7 +55,7 @@ const FilterModal:React.FC<FilterModal> = ({onUpdateData,labels,ParentFormaFiltr
         formaFiltra.labels=selectLabels
         setTimeout(() => {
             sendDataToParent();
-            ApplyFilters()
+            ApplyForm()
         }, 300)
 
     }
@@ -68,7 +68,7 @@ const FilterModal:React.FC<FilterModal> = ({onUpdateData,labels,ParentFormaFiltr
                 }, 300)
                 }
 
-        }} className="FilterModal">
+        }} className="FilterAndSortModal">
             <div style={{transform:`${modalTransition? "none" : ""}`}} className="modal">
                     <div className="modal-form">
                             <div style={{margin:"0"}} className="modal-title d-flex space-between">
@@ -195,4 +195,4 @@ const FilterModal:React.FC<FilterModal> = ({onUpdateData,labels,ParentFormaFiltr
     );
 };
 
-export default FilterModal;
+export default FilterAndSortModal;
