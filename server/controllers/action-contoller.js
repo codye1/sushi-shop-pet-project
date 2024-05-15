@@ -26,6 +26,21 @@ class ActionController{
             console.log(err);
         }
     }
+
+    async getActionsById(req,res,next){
+        try{
+            const actions = await actionService.getActions()
+            const {id} = req.params
+
+            const filteredAction = actions.filter(item=>item.id.toLocaleLowerCase().includes(id.toLocaleLowerCase()))
+            console.log(id);
+            console.log(actions);
+            return res.json(filteredAction[0])
+
+        }catch(err){
+            console.log(err);
+        }
+    }
 }
 
 module.exports = new ActionController()

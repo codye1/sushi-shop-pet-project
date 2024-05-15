@@ -24,7 +24,7 @@ const PagePromotionById = () => {
             promotion?
             <div className="promotion-id">
                 <div className="d-flex">
-                    <div className="container">
+                    <div className="container column">
                         <div className="promotion-img"><img src={promotion.imgWide} alt="" /></div>
                         <div className="promotion-html">
                                 <h1>{promotion.title}</h1>

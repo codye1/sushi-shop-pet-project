@@ -72,16 +72,20 @@ class UserService{
         if (!refreshToken) {
             throw new Error("refreshToken undefine")
         }
+
         const userData = tokenService.validateRefreshToken(refreshToken)
+
         const tokenFromDB= await tokenService.findToken(refreshToken)
+
         await tokenService.removeToken(refreshToken)
+
         if(!userData || !tokenFromDB){
             throw new Error("In refresh !userData || !tokenFromDB undefine")
         }
         const user = await UserModel.findById(userData.id)
+
         const userDto = new UserDto(user)
-        console.log("refresh Token");
-        console.log(refreshToken);
+
         const tokens = tokenService.generateTokens({...userDto})
         await tokenService.saveToken(userDto.id,tokens.refreshToken)
 

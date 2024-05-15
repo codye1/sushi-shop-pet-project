@@ -15,8 +15,6 @@ function filterByLabels(labels: string[],products:IProduct[]) {
     if(labels.length>0){
         let productsTemp:IProduct[] = []
         for (let i = 0; i < labels.length; i++) {
-            console.log(labels);
-
                 productsTemp = [...productsTemp , ...products.filter((p)=>{
                     for (let k = 0; k < p.labels.length; k++) {
                         console.log(p.labels[k].title + ""+ labels[i]);
@@ -30,15 +28,15 @@ function filterByLabels(labels: string[],products:IProduct[]) {
         }
         return productsTemp
     }
-    console.log(products);
+
 
     return products
 }
 
 function sortPrice(price: string,products: IProduct[]) {
+    const productsTemp: IProduct[] = JSON.parse(JSON.stringify(products))
     if(price!="1"){
-
-        products.sort((a, b) =>{
+        productsTemp.sort((a, b) =>{
             let aprice:number = a.price;
             aprice -= Math.floor(aprice*(a.discount/100))
             let bprice:number = b.price;
@@ -51,12 +49,14 @@ function sortPrice(price: string,products: IProduct[]) {
         } )
 
     }
-    return products
+    return productsTemp
 }
 
 function sortWeight(weight: string,products: IProduct[]) {
+
+    const productsTemp: IProduct[] = JSON.parse(JSON.stringify(products))
     if(weight !='4'){
-        products.sort((a, b) =>{
+        productsTemp.sort((a, b) =>{
             if(weight=='5')
                 return a.harch.weight > b.harch.weight ? 1 : -1
             else
@@ -65,5 +65,6 @@ function sortWeight(weight: string,products: IProduct[]) {
 
     }
 
-    return products
+
+    return productsTemp
 }
