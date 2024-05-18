@@ -12,12 +12,10 @@ import Remove from '../../../../icons/Basket/Remove';
 const CardProductBasket:React.FC<IProductInXEelement> = ({product}) => {
     let price:number = product.price;
     price -= Math.floor(price*(product.discount/100));
+    const quantity = useAppSelector((state)=>state.basket.quantityProduct)
+    const overNormAdditions = useAppSelector((state)=>state.basket.quantityOverNormAdditions)
 
-
-    const basket = useAppSelector(state => state.basket.basket)
-    const additionsIds = useAppSelector(state => state.basket.additionsIds)
     const dispatch = useDispatch()
-
     return (
     <div className='card-product-basket'>
         <div className='card-product-basket-container'>
@@ -35,7 +33,7 @@ const CardProductBasket:React.FC<IProductInXEelement> = ({product}) => {
                     <div onClick={()=>{dispatch(deleteById(product))}} className='remove'>
                         <img src={minus} alt="" />
                     </div>
-                    <strong>{basket[product.id]?.length + additionsIds[product.id] || basket[product.id]?.length || additionsIds[product.id]} шт</strong>
+                    <strong>{quantity[product.id]} шт</strong>
                     <div onClick={()=>{dispatch(addProductInBasket(product))}} className='add'>
                         <img src={plus} alt="" />
                     </div>
@@ -43,7 +41,7 @@ const CardProductBasket:React.FC<IProductInXEelement> = ({product}) => {
                 <div className='card-product-basket-price-cont'>
                     {product.type=="addition"?
                         <>
-                            {basket[product.id] && basket[product.id].length>0?
+                            {overNormAdditions[product.id]>0?
                                 <strong>{price}</strong>:
                                 <strong style={{color:"green"}}>безкоштовно</strong>
                             }

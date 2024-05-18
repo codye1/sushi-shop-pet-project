@@ -3,15 +3,21 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { IProduct } from '../interfaces';
 
 interface IBasket{
-  basket: {[key: string]: {product: IProduct, length: number }}
-  additionsIds: {[key: string]: number}
-  basketOpen: boolean
+  basket: IProduct[]
+  basketAdditions:string[]
+  basketOpen:boolean
+  quantityProduct:{ [key: string]: number }
+  quantityOverNormAdditions:{ [key: string]: number }
+  priceAllProductInBasket:number
 }
 
 const initialState: IBasket = {
-    basket: {},
-    additionsIds:{},
-    basketOpen: false
+    basket: [],
+    basketAdditions:["paket"],
+    basketOpen:false,
+    quantityProduct: {["paket"]:1},
+    quantityOverNormAdditions:{},
+    priceAllProductInBasket:0
 }
 
 const  basketSlice = createSlice({
@@ -19,45 +25,79 @@ const  basketSlice = createSlice({
   initialState,
   reducers: {
     addProductInBasket(state, action: PayloadAction<IProduct>) {
-      if (state.basket[action.payload.id]) {
-        state.basket[action.payload.id].length += 1
+      if (action.payload.type!="addition") {
+        state.basket.push(action.payload)
+        state.quantityProduct[action.payload.id]>0? state.quantityProduct[action.payload.id]++ : state.quantityProduct[action.payload.id] = 1
+        for (let i = 0; i < action.payload.additions.length; i++) {
+          state.quantityProduct[action.payload.additions[i]]>0? state.quantityProduct[action.payload.additions[i]]++ : state.quantityProduct[action.payload.additions[i]] = 1
+          state.basketAdditions.push(action.payload.additions[i])
+        }
       }else{
-        state.basket[action.payload.id] = {product: action.payload, length: 1}
+        state.basketAdditions.push(action.payload.id)
+        state.quantityProduct[action.payload.id]? state.quantityProduct[action.payload.id]++ : state.quantityProduct[action.payload.id] = 1
+        state.quantityOverNormAdditions[action.payload.id]? state.quantityOverNormAdditions[action.payload.id]++ : state.quantityOverNormAdditions[action.payload.id] = 1
       }
     },
     deleteById(state, action: PayloadAction<IProduct>) {
-      if (state.basket[action.payload.id]) {
-        state.basket[action.payload.id].length -= 1
+      if (action.payload.type!="addition") {
+        state.quantityProduct[action.payload.id]--
+        state.basket.splice(state.basket.indexOf(action.payload), 1);
+        for (let i = 0; i < action.payload.additions.length; i++) {
+          state.quantityProduct[action.payload.additions[i]]--
+          state.basketAdditions.splice(state.basketAdditions.indexOf(action.payload.additions[i]), 1);
+        }
+      }else{
+        state.quantityProduct[action.payload.id]--
+        state.quantityOverNormAdditions[action.payload.id]--
+        state.basketAdditions.splice(state.basketAdditions.indexOf(action.payload.id), 1);
       }
-      if (state.basket[action.payload.id]?.length<=0) delete state.basket[action.payload.id]
     },
     setBasketPageStatus(state, action: PayloadAction<boolean>) {
       state.basketOpen = action.payload
     },
     deleteAllElementsByIdFromBasket(state, action: PayloadAction<IProduct>) {
-      for (let addition of action.payload.additions) {
-        if (state.additionsIds[addition]) state.additionsIds[addition]-= state.basket[action.payload.id].length
-        if (state.additionsIds[addition]<=0) delete state.additionsIds[addition]
-      }
-      delete state.basket[action.payload.id]
-    },
-    calculateAdditions(state) {
-      state.additionsIds = {}
-      for(let product in state.basket){
-        for (let i = 0; i < state.basket[product].length; i++) {
-          for(let addition of state.basket[product].product.additions){
-            state.additionsIds[addition]? state.additionsIds[addition] +=1 : state.additionsIds[addition] = 1;
+      if (action.payload.type=="addition") {
+       state.basketAdditions = state.basketAdditions.filter((p)=>p != action.payload.id)
+
+       state.quantityProduct[action.payload.id] = 0
+       state.quantityOverNormAdditions[action.payload.id] = 0
+      }else{
+        state.basket = state.basket.filter((p)=>p.id != action.payload.id)
+        for (let k = 0; k < state.quantityProduct[action.payload.id]; k++) {
+          for (let i = 0; i < action.payload.additions.length; i++) {
+            state.quantityProduct[action.payload.additions[i]]--
+            state.basketAdditions.splice(state.basketAdditions.indexOf(action.payload.additions[i]), 1);
           }
         }
+        state.quantityProduct[action.payload.id] = 0
       }
     },
     deleteAllElementsFromBasket(state) {
-      state.additionsIds = {}
-      state.basket = {}
+      state.basket = []
+      state.basketAdditions = []
+      state.quantityProduct= {["paket"]:1}
+      state.quantityOverNormAdditions={}
+    },
+    getAllPriceInProduct(state, action: PayloadAction<IProduct[]>) {
+      let tempPrice = 0
+      state.basket.forEach((p)=>{
+        let price:number = p.price;
+        price -= Math.floor(price*(p.discount/100));
+        tempPrice = tempPrice + price
+      })
+      action.payload.forEach((p)=>{
+        let price:number = p.price;
+        price -= Math.floor(price*(p.discount/100));
+       if(state.quantityOverNormAdditions[p.id]){
+        tempPrice = tempPrice + (price*state.quantityOverNormAdditions[p.id])
+       }
+
+      })
+      state.priceAllProductInBasket = tempPrice
     }
   },
 })
-export const {  addProductInBasket,deleteById,setBasketPageStatus,deleteAllElementsByIdFromBasket,deleteAllElementsFromBasket,calculateAdditions} =  basketSlice.actions
+export const {  addProductInBasket,deleteById,setBasketPageStatus,deleteAllElementsByIdFromBasket,deleteAllElementsFromBasket,getAllPriceInProduct} =  basketSlice.actions
 
 
 export default  basketSlice;
