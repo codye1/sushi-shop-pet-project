@@ -1,6 +1,6 @@
 import "./BasketPage.css"
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { IProduct, IProductResponse } from '../../interfaces';
+import {  useAppSelector } from "../../hooks";
+import { IProduct } from '../../interfaces';
 import RightCart from "./BasketPageUI/RightCart/RightCart";
 import LeftBlock from "./BasketPageUI/LeftBlock/LeftBlock";
 import BasketEmpty from "./BasketPageUI/BasketEmpty/BasketEmpty";
@@ -19,9 +19,9 @@ const BasketPage = () => {
 
     const {data: additions } = useGetProductsByIdsQuery(Object.keys(additionsIds).length > 0? Object.keys(additionsIds) : ["null"]);
 
-    let products: IProduct[]  = []
+    const products: IProduct[]  = []
 
-    for(let key in basket){
+    for(const key in basket){
         products.push(basket[key].product)
     }
 

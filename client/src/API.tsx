@@ -13,7 +13,7 @@ import type {
 const baseQuery = fetchBaseQuery({
   //https://sushi-shop-pet-project-m7t7.vercel.app/
   //http://localhost:3000
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://sushi-shop-pet-project-m7t7.vercel.app',
   prepareHeaders: (headers ) => {
       headers.set('Authorization', `Barer ${localStorage.getItem('token')}`);
     return headers;
@@ -26,12 +26,8 @@ const baseQueryWithReauth: BaseQueryFn<
   unknown,
   FetchBaseQueryError
 > = async (args, api, extraOptions) => {
-  console.log("запрос");
-  console.log(document.cookie);
 
   let result = await baseQuery(args, api, extraOptions)
-
-
 
   if (result.error && result.error.status === "PARSING_ERROR") {
     const refreshResult = await baseQuery('refresh', api, extraOptions)

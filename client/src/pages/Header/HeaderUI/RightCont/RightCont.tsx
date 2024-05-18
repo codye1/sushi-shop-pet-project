@@ -3,7 +3,7 @@ import { useAppSelector } from "../../../../hooks";
 import { setSearchActive } from "../../../../reducer/search";
 import "./RightCont.css"
 import { NavLink } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {  Popover,} from "@mui/material";
 import Menu from "../../../Account/Menu/Menu";
 import searchPNG from "../../../../icons/headerIcon/search.png"
@@ -22,7 +22,7 @@ const RightCont = () => {
 
     useMemo(()=>{
         setLengthProduct(0)
-        for (let key in products) {
+        for (const key in products) {
             setLengthProduct(value=>value += products[key].length)
          }
         function setAnimatedWitchTimeout() {

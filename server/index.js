@@ -16,7 +16,7 @@ server.use(cookieParser())
 server.use(cors({
   //https://sushi-shop-pet-project.vercel.app
   //http://localhost:5173
-  origin: "http://localhost:5173",
+  origin: "https://sushi-shop-pet-project.vercel.app",
   credentials: true,
 }))
 
