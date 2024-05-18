@@ -1,17 +1,14 @@
-import { useDispatch } from "react-redux";
+
 import CardProductBasket from "../CardProductBasket/CardProductBasket";
-import {deleteAllElementsFromBasket, getAllPriceInProduct } from "../../../../reducer/basket";
-import { IProduct, IProductsInXEelement } from "../../../../interfaces";
+import {deleteAllElementsFromBasket, } from "../../../../reducer/basket";
+import {  IProductsInXEelement } from "../../../../interfaces";
 import "./LeftBlock.css"
-
-interface ILeftBlock extends IProductsInXEelement{
-    additions:IProduct[]
-}
+import { useAppDispatch } from "../../../../hooks";
 
 
-const LeftBlock:React.FC<ILeftBlock> = ({products,additions}) => {
-    const dispatch = useDispatch()
-    dispatch(getAllPriceInProduct(additions))
+
+const LeftBlock:React.FC<IProductsInXEelement> = ({products}) => {
+    const dispatch = useAppDispatch()
 
 
     return (
@@ -22,7 +19,6 @@ const LeftBlock:React.FC<ILeftBlock> = ({products,additions}) => {
                 <h1 onClick={()=>{dispatch(deleteAllElementsFromBasket())}}>Очистити кошик</h1>
             </div>
             {products.map((p)=><CardProductBasket key={p.key} product={p} />)}
-            {additions.map((a)=><CardProductBasket key={a.key} product={a} />)}
         </div>
         </>
     );

@@ -6,7 +6,12 @@ import bonus from "../../../../icons/Basket/bonus.svg"
 
 const RightCart = () => {
     const [input,setInput]=useState('');
-    const priceAllProduct = useAppSelector((state)=>state.basket.priceAllProductInBasket)
+    const basket = useAppSelector(state => state.basket.basket)
+    let priceAllProduct = 0
+
+    for (let key in basket) {
+       priceAllProduct += basket[key].length*basket[key].product.price-Math.floor(basket[key].product.price*(basket[key].product.discount/100))
+    }
 
     return (
     <div className="basket-page-right-cont">

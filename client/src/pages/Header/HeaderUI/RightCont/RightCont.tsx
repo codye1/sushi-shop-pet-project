@@ -3,7 +3,7 @@ import { useAppSelector } from "../../../../hooks";
 import { setSearchActive } from "../../../../reducer/search";
 import "./RightCont.css"
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {  Popover,} from "@mui/material";
 import Menu from "../../../Account/Menu/Menu";
 import searchPNG from "../../../../icons/headerIcon/search.png"
@@ -11,21 +11,27 @@ import userPNG from "../../../../icons/headerIcon/user.png"
 import basketPNG from "../../../../icons/headerIcon/basket.png"
 const RightCont = () => {
     const dispatch = useDispatch()
-    const basket = useAppSelector((state)=>state.basket.basket)
     const [isAnimated,setIsAtimated]=useState(false);
     const isAuth=useAppSelector(state=>state.auth.isAuth)
     const number=useAppSelector(state=>state.auth.user.number)
     const name=useAppSelector(state=>state.auth.user.name)
     const imgUser = useAppSelector(state=>state.auth.user.img)
-    useEffect(()=>{
+
+    const [lengthProducts,setLengthProduct] = useState(0)
+    const products = useAppSelector(state => state.basket.basket)
+
+    useMemo(()=>{
+        setLengthProduct(0)
+        for (let key in products) {
+            setLengthProduct(value=>value += products[key].length)
+         }
         function setAnimatedWitchTimeout() {
             setIsAtimated(false)
         }
+
         setIsAtimated(true)
         setTimeout(setAnimatedWitchTimeout,600)
-    },[basket])
-
-
+    },[products])
 
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
@@ -78,10 +84,10 @@ const RightCont = () => {
             }
             <NavLink className="basket" to={"/basket"} >
                 <img src={basketPNG} alt="" />
-                {basket.length>0?
+                {lengthProducts>0?
                 <span className="number-product-in-basket-cont">
                     <span className={`number-product-in-basket ${isAnimated? 'animated': ''}`}>
-                        {basket.length}
+                        {lengthProducts}
                     </span>
                 </span>
                 :null
