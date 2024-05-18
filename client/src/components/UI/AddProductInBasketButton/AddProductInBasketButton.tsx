@@ -10,32 +10,35 @@ import { useTranslation } from "react-i18next";
 
 const AddProductInBasketButton:React.FC<IProductInXEelement> = ({product}) => {
     const dispatch = useDispatch();
-    const quantity = useAppSelector((state)=>state.basket.quantityProduct)
+    const basket = useAppSelector((state)=>state.basket.basket)
+
+
 
     const {t} = useTranslation()
 
     return (
         <div className="button-container">
-             {!quantity[product.id]?
-                <div onClick={()=>{
-                    dispatch(addProductInBasket(product))
-                }} className="button d-flex align-center">
-                    {t("components.AddProductInBasketButton.title")}
-                </div>
-                :
+             {basket[product.id] && basket[product.id].length > 0  ?
                 <div className="button-after-click">
                     <div onClick={()=>{
                         dispatch(deleteById(product))
                     }} className="remove">
                         <img src={minus} alt="" />
                     </div>
-                    {quantity[product.id]} шт
+                    {basket[product.id].length} шт
                     <div onClick={()=>{
                         dispatch(addProductInBasket(product))
                     }} className="add">
                         <img src={plus} alt="" />
                     </div>
                 </div>
+                :
+                <div onClick={()=>{
+                    dispatch(addProductInBasket(product))
+                }} className="button d-flex align-center">
+                    {t("components.AddProductInBasketButton.title")}
+                </div>
+
             }
         </div>
     );
