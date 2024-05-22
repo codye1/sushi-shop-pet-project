@@ -35,15 +35,12 @@ const Header = () => {
       window.addEventListener('wheel', (e)=>{handleScroll(e.deltaY)});
     });
 
-    function windowReload() {
-        window.location.reload()
-    }
     return (
-            <div style={{transform: `translateY(${transform}%)`}} className={`header ${isScroled? 'scroled' : ''}`}>
+        <header style={{transform: `translateY(${transform}%)`}} className={`header ${isScroled? 'scroled' : ''}`}>
             <div className="top-header">
             <div className="top-container">
                 <LeftCont/>
-                <NavLink onClick={()=>{setTimeout(windowReload,100) }}to={"/home"} className="main-logo">
+                <NavLink to={"/home"} className="main-logo">
                     <img src={mainLogoPNG} alt="лод" />
                 </NavLink>
                 <RightCont/>
@@ -53,7 +50,7 @@ const Header = () => {
                 <Separator/>
             </div>
             <Navbar isScroled={isScroled}/>
-        </div>
+        </header>
     );
 };
 

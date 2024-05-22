@@ -43,7 +43,7 @@ class UserService{
                 user:userDto
             }
         }else{
-            console.log("Что то пошло не так");
+            console.log("Error login service");
             return false
         }
     }
@@ -58,7 +58,7 @@ class UserService{
             candidate.smsCode.expirationTime = expirationTime
             candidate.save()
         }else{
-            console.log("что то пошло не так");
+            console.log("Error refresh service");
         }
     }
 
@@ -70,7 +70,7 @@ class UserService{
 
     async refresh(refreshToken){
         if (!refreshToken) {
-            throw new Error("refreshToken undefine")
+            throw new Error("error !refreshToken")
         }
 
         const userData = tokenService.validateRefreshToken(refreshToken)
@@ -80,7 +80,7 @@ class UserService{
         await tokenService.removeToken(refreshToken)
 
         if(!userData || !tokenFromDB){
-            throw new Error("In refresh !userData || !tokenFromDB undefine")
+            throw new Error("error !userData || !tokenFromDB ")
         }
         const user = await UserModel.findById(userData.id)
 
@@ -130,7 +130,7 @@ class UserService{
             user.birthDate=birthDate
             user.save()
         }else{
-            console.log("Уже є дата");
+            console.log("birth error");
         }
     }
 

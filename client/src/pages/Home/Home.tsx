@@ -28,8 +28,8 @@ const Home = () => {
         },
         {
             id:"1",
-            img: "322",
-            imgWide:"322",
+            img: skeletonSlidePNG,
+            imgWide:skeletonSlidePNG,
             key: 2,
             title:"",
             description:"",
@@ -38,8 +38,8 @@ const Home = () => {
         },
         {
             id:"1",
-            img: "322",
-            imgWide:"322",
+            img: skeletonSlidePNG,
+            imgWide:skeletonSlidePNG,
             key: 3,
             title:"",
             description:"",
@@ -62,8 +62,7 @@ const Home = () => {
             {
                 errorProducts? <div>Помилка</div>:
                 productsLoading? <SekeletonCardProduct/>
-                :products? <ProductList products={products}/>
-                :null
+                :products && <ProductList products={products}/>
             }
             <Banner/>
             <AboutSushiMaster/>

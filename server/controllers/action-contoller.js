@@ -6,7 +6,7 @@ class ActionController{
             const action = req.body
             const createdAction = actionService.addAction(action)
 
-            return res.json({title:"Акцію створено", createdAction})
+            return res.json({title:"Action created", createdAction})
         }catch(err){
             console.log(err);
         }

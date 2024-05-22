@@ -45,23 +45,17 @@ const Navbar:React.FC<INavbar> = ({isScroled}) => {
                     <div onClick={()=>{
                         const element = document.getElementsByClassName("navbar-block")[0];
                         if (element) {
-                            console.log(element.scrollLeft);
-
                             element.scrollLeft -= 200;
                         }
                     }} className="chevron-left">
                         <img src={chevron} alt="" />
                     </div>
                     <div className="navbar-block">
-
                         {down_list.map((p)=><NavLink key={p.site} to={p.site} className={({isActive})=>isActive? "link selected" : 'link'} >{p.name}</NavLink>)}
-
                     </div>
                     <div onClick={()=>{
                         const element = document.getElementsByClassName("navbar-block")[0];
                         if (element) {
-                            console.log(element.scrollLeft);
-
                             element.scrollLeft += 300;
                         }
                     }} className="chevron-right">

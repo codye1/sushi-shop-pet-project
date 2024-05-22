@@ -32,12 +32,14 @@ class ProductController{
             if (id == "null") {
                 return res.json([])
             }
+            console.log(id);
             if (id) {
 
                 let filteredProd  = []
 
 
                 for (let i = 0; i < id.length; i++) {
+
                     filteredProd = filteredProd.concat(products.filter(item=>item.id.toLocaleLowerCase().includes(id[i].toLocaleLowerCase())))
 
                 }

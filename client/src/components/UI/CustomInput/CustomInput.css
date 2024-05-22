@@ -1,12 +1,13 @@
 .cutom-input{
     position: relative;
+    height: 57px;
+    display: flex;
 
 }
 
 
 .cutom-input input{
     padding: 18.5px 14px;
-    padding-right: 119px;
 
     max-width: 600px;
     width: 100%;
@@ -19,7 +20,11 @@
     border-radius: 8px;
 }
 
-
+.cutom-input img{
+    position: absolute;
+    top: 17.5px;
+    right: 10px;
+}
 
 input:focus{
     outline: 0;
@@ -56,6 +61,8 @@ input:focus{
     color: red;
 }
 .cutom-input p{
+    position: absolute;
+    top: 57px;
     margin-top: 6px;
     color: red;
     font-size: 12px;

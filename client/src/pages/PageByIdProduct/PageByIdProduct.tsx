@@ -17,16 +17,9 @@ import MainProductViewSkeleton from "./UI/MainProductViewSkeleton/MainProductVie
 
 const PageByIdProduct = () => {
     const params:params = useParams();
-
-
     const {data: product,error: productError,isLoading: productLoading} = useGetProductQuery(params.id? params.id : "none")
-    console.log(product);
-
     const {data: composedProduct} = useGetProductsByIdsQuery(product?  product.sklad : ["none"] )
-
     const navigate = useNavigate()
-
-
 
     return (
     <div>

@@ -1,4 +1,4 @@
-import { useState,  useCallback, } from "react";
+import { useState } from "react";
 import CustomModal from "../../../../../../components/UI/CustomModal/CustomModal";
 import picture from "../../../../../../icons/Personal/picture.svg"
 import deleteIcon from "../../../../../../icons/Personal/delete.svg";
@@ -6,13 +6,13 @@ import Separator from "../../../../../../components/UI/Separator/Separator";
 import "./ImageSection.css"
 import { Area }  from 'react-easy-crop'
 import TwoButtons from "../../../../../../components/UI/TwoButtons/TwoButtons";
-import getCroppedImg from "./Crop";
 import { useSaveImgMutation } from "../../../../../../API";
 import { useAppDispatch, useAppSelector } from "../../../../../../hooks";
 import {  updImg } from "../../../../../../reducer/auth";
 import UploadFile from "./components/UploadFile/UploadFile";
 import CropContainer from "./components/CropContainer/CropContainer";
 import { useTranslation } from "react-i18next";
+import { useCrop } from "./Crop";
 
 
 const ImageSection = () => {
@@ -22,26 +22,24 @@ const ImageSection = () => {
     const [saveImg] = useSaveImgMutation()
     const dispatch = useAppDispatch()
     const imgUser = useAppSelector(state=>state.auth.user.img)
-
+    const getCroppedImg = useCrop()
     const {t} = useTranslation()
 
-    const croppAndSaveImg = useCallback(async () => {
+    const croppAndSaveImg = async () => {
         try {
           const croppedImage = await getCroppedImg(
             img,
             croppedAreaPixels,
             0
           );
-          console.log("donee", { croppedImage });
           if (croppedImage) {
             saveImg(croppedImage as string)
             dispatch(updImg(croppedImage as string))
-
           }
         } catch (e) {
           console.error(e);
         }
-      }, [croppedAreaPixels, img]);
+      }
 
 
     function onCloseModal() {

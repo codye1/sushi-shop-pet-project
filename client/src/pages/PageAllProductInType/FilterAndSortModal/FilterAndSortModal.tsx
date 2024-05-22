@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import "./FilterAndSortModal.css"
 import TwoButtons from "../../../components/UI/TwoButtons/TwoButtons";
 import close from "../../../icons/close.png"
-import Inner from "../../../icons/Inner";
-import Outer from "../../../icons/Outer";
+import GroupItem from "./Components/GroupItem";
 interface FilterAndSortModal {
     onUpdateData: (newData: IFormFilterAndSort) => void;
     ApplyForm: () => void;
@@ -21,7 +20,7 @@ const FilterAndSortModal:React.FC<FilterAndSortModal> = ({onUpdateData,labels,Pa
 
     const [selectLabels,setSelectLabels]=useState<string[]>(ParentFormaFiltra.labels)
 
-    const [formaFiltra] = useState<IFormFilterAndSort>(ParentFormaFiltra)
+    const formaFiltra:IFormFilterAndSort = ParentFormaFiltra
 
     const [childFormaFiltra, setChildFormaFiltra] = useState<IFormFilterAndSort>(ParentFormaFiltra);
 
@@ -88,38 +87,21 @@ const FilterAndSortModal:React.FC<FilterAndSortModal> = ({onUpdateData,labels,Pa
                                 }}
                                 >
                                     <div className="group-input">
-                                        <label  className="input-item" htmlFor="1">
-                                                <span className="input-button">
-                                                    <input defaultChecked={formaFiltra.price=='1'}   type="radio" id="1" name="price" />
-                                                    <div className="input-inner-outer">
-                                                        <Inner/>
-                                                        <Outer/>
-                                                    </div>
-                                                </span>
-                                                <p>За замовчуванням</p>
-                                        </label>
-                                        <label  className="input-item" htmlFor="2">
-                                                <span className="input-button">
-                                                    <input defaultChecked={formaFiltra.price=='2'}   type="radio"  id="2" name="price" />
-                                                    <div className="input-inner-outer">
-                                                        <Inner/>
-                                                        <Outer/>
-                                                    </div>
-                                                </span>
-                                                <p>Спочатку дешевше</p>
-
-                                        </label>
-                                        <label  className="input-item" htmlFor="3">
-                                                <span className="input-button">
-                                                    <input defaultChecked={formaFiltra.price=='3'}     type="radio" id="3" name="price" />
-                                                    <div className="input-inner-outer">
-                                                        <Inner/>
-                                                        <Outer/>
-                                                    </div>
-                                                </span>
-                                                <p>Спочатку дорожче</p>
-
-                                        </label>
+                                        <GroupItem
+                                            name="price"
+                                            id='1'
+                                            pickedId={formaFiltra.price}
+                                            title="За замовчуванням" />
+                                        <GroupItem
+                                            name="price"
+                                            id='2'
+                                            pickedId={formaFiltra.price}
+                                            title="Спочатку дешевше" />
+                                        <GroupItem
+                                            name="price"
+                                            id='3'
+                                            pickedId={formaFiltra.price}
+                                            title="Спочатку дорожче" />
                                     </div>
                                 </fieldset>
                             </div>
@@ -132,39 +114,21 @@ const FilterAndSortModal:React.FC<FilterAndSortModal> = ({onUpdateData,labels,Pa
                                     formaFiltra.weight = target.id
                                 }}>
                                     <div className="group-input">
-                                        <label  className="input-item" htmlFor="4">
-                                                <span className="input-button">
-                                                    <input defaultChecked={formaFiltra.weight=='4'}    type="radio" id="4" name="weight" />
-                                                    <div className="input-inner-outer">
-                                                        <Inner/>
-                                                        <Outer/>
-                                                    </div>
-                                                </span>
-                                                <p>За замовчуванням</p>
-
-                                        </label>
-                                        <label  className="input-item" htmlFor="5">
-                                                <span className="input-button">
-                                                    <input defaultChecked={formaFiltra.weight=='5'}    type="radio" id="5" name="weight" />
-                                                    <div className="input-inner-outer">
-                                                        <Inner/>
-                                                        <Outer/>
-                                                    </div>
-                                                </span>
-                                                <p>Почнемо з тих, що легше</p>
-
-                                        </label>
-                                        <label  className="input-item" htmlFor="6">
-                                                <span className="input-button">
-                                                    <input defaultChecked={formaFiltra.weight=='6'}    type="radio" id="6" name="weight" />
-                                                    <div className="input-inner-outer">
-                                                        <Inner/>
-                                                        <Outer/>
-                                                    </div>
-                                                </span>
-                                                <p>Давай спочатку тi, яких бiльше</p>
-
-                                        </label>
+                                        <GroupItem
+                                            name="weight"
+                                            id='4'
+                                            pickedId={formaFiltra.weight}
+                                            title="За замовчуванням" />
+                                        <GroupItem
+                                            name="weight"
+                                            id='5'
+                                            pickedId={formaFiltra.weight}
+                                            title="Почнемо з тих, що легше" />
+                                        <GroupItem
+                                            name="weight"
+                                            id='6'
+                                            pickedId={formaFiltra.weight}
+                                            title="Давай спочатку тi, яких бiльше" />
                                     </div>
                                 </fieldset>
                             <div className="modal-labels">

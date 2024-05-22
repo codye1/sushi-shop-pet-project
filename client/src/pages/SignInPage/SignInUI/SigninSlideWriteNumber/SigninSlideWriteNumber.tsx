@@ -4,7 +4,9 @@ import CountryList from '../CountryList/CountryList';
 import { useSendMutation } from "../../../../API";
 import "./SigninSlideWriteNumber.css"
 import { Tooltip } from "@mui/material";
-import { Trans, useTranslation } from "react-i18next";
+import {  useTranslation } from "react-i18next";
+import FormAgree from "./Components/FormAgree";
+
 interface SigninSlideWriteNumber{
     setNumber: React.Dispatch<React.SetStateAction<string>>,
     number:string
@@ -17,20 +19,7 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
     const [pickedCountry,setPickedCountry] = useState<country>({flag:"ua",name:"Україна",dialCode:"+380"})
     const [sendCode]=useSendMutation()
 
-    function pickCountry(country:country) {
-        setPickedCountry(country)
-        setNumber(country.dialCode)
-    }
-
-    function closeCountryList() {
-        setArrowUp(false)
-    }
-
-    document.addEventListener("click",closeCountryList)
-
-    const ignoreCloseCountryList = (event: { stopPropagation: () => void; }) => {
-        event.stopPropagation();
-      };
+    document.addEventListener("click",()=>{setArrowUp(false)})
 
     function sendSMSCode(number:string) {
         if (checkBox) {
@@ -43,7 +32,7 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
 
     useEffect(()=>{
         setNumber(pickedCountry.dialCode)
-    },[])
+    },[ ])
 
     const {t} = useTranslation();
 
@@ -69,7 +58,7 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
                         />
                     <div onClick={(event)=>{
                         setArrowUp(!arrowUp)
-                        ignoreCloseCountryList(event)
+                        event.stopPropagation()
                     }} className="flag-drop-down pointer">
                         <div className="selected-flag">
                             <div className={`flag ${pickedCountry.flag}`}>
@@ -82,30 +71,12 @@ const SigninSlideWriteNumber:React.FC<SigninSlideWriteNumber> = ({setSMSSent,set
                 </div>
             </Tooltip>
             {arrowUp &&
-                <CountryList pickCountry={pickCountry}/>
+                <CountryList pickCountry={(country)=>{
+                    setPickedCountry(country)
+                    setNumber(country.dialCode)
+                }}/>
             }
-            <div className="form-agree pointer">
-                <span className="span-input">
-                    <input onChange={()=>setCheckBox(!checkBox)} id="checkbox"  type="checkbox" />
-                    <svg className="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                        {checkBox?
-                            <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
-                            :
-                            <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
-                        }
-                    </svg>
-                </span>
-                <label  className="form-agree-text pointer" htmlFor="checkbox">
-                    {t("sign-in.write-number.form-agree1")}
-                    <a href="">
-                        <Trans i18nKey={"sign-in.write-number.form-agree2"} components={{1:<br/>}}/>
-                    </a>
-                    <Trans i18nKey={"sign-in.write-number.form-agree3"} components={{1:<br/>}}/>
-                    {!checkBox && <span className="form-error">{t("sign-in.write-number.form-agree-alert")}</span>}
-                </label>
-
-            </div>
-
+            <FormAgree  checkBox={checkBox} setCheckBox={setCheckBox}/>
         </div>
     </div>
     );

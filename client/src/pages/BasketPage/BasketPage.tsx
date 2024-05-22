@@ -6,16 +6,17 @@ import LeftBlock from "./BasketPageUI/LeftBlock/LeftBlock";
 import BasketEmpty from "./BasketPageUI/BasketEmpty/BasketEmpty";
 import { useGetProductsByIdsQuery } from "../../API";
 import BasketReccomendationSlider from "./BasketPageUI/BasketReccomendationSlider/BasketReccomendationSlider";
-import { useMemo } from "react";
+import { useEffect } from "react";
 import { calculateAdditions } from "../../reducer/basket";
 import { useDispatch } from "react-redux";
 const BasketPage = () => {
     const basket = useAppSelector((state)=>state.basket.basket);
     const additionsIds =  useAppSelector((state)=>state.basket.additionsIds)
     const dispatch = useDispatch()
-    useMemo(()=>{
+
+    useEffect(()=>{
         dispatch(calculateAdditions())
-    },[basket])
+    },[basket , dispatch])
 
     const {data: additions } = useGetProductsByIdsQuery(Object.keys(additionsIds).length > 0? Object.keys(additionsIds) : ["null"]);
 
@@ -32,18 +33,6 @@ const BasketPage = () => {
 
     const concatedProductsAndAdditions =  makeUniq(products,additions)
 
-    /*
-
-    const basketAdditons = useAppSelector(state => state.basket.basketAdditions)
-    const {data:additions} = useGetProductsByIdsQuery(basketAdditons)
-
-    const makeUniq = (arr:  IProductResponse) => {
-        const uniqSet = new Set(arr);
-        return [...uniqSet];
-      }
-
-    const products =  makeUniq(basket)
-*/
     return (
     <>
         <div className="basket-page d-flex">
@@ -63,15 +52,3 @@ const BasketPage = () => {
 };
 
 export default BasketPage;
-
-
-/*
-{additions && (products.length>0 || additions.length>1)?
-    <div className="down-block">
-        <LeftBlock additions={additions} products={products}/>
-        <RightCart/>
-    </div>:
-        <BasketEmpty/>
-} */
-
-//

@@ -19,7 +19,7 @@ class UserController {
             const {number} = req.body
             console.log(req.body);
             const userData = await userService.refreshSMSCode(number)
-            return res.json("Сработало")
+            return res.json("Токен обновлен")
         }catch(e){
             console.log(e);
         }
@@ -35,7 +35,7 @@ class UserController {
                 res.cookie('refreshToken',userData.refreshToken,{maxAge:30*24*60*60*1000, httpOnly:true, sameSite: 'None', secure: true , domain: "sushi-shop-pet-project-m7t7.vercel.app"});
                 return res.json(userData)
             }else{
-                return res.json("Error")
+                return res.json("Error login")
             }
 
         }catch (e){
@@ -59,20 +59,18 @@ class UserController {
         try{
             const {refreshToken} = req.cookies
             const userData = await userService.refresh(refreshToken)
-            // domain=sushi-shop-pet-project-m7t7.vercel.app;
             res.cookie('refreshToken',userData.refreshToken,{maxAge:30*24*60*60*1000, httpOnly:true, sameSite: 'None', secure: true ,domain: "sushi-shop-pet-project-m7t7.vercel.app" });
+            // domain: "sushi-shop-pet-project-m7t7.vercel.app"
             return res.json(userData)
 
         }catch (e){
-            console.log("error");
-            console.log(req.cookies);
-            return res.json({error:"Error",error2:e})
+            return res.json({error:"Error refresh",error2:e})
         }
     }
 
     async getAllUsers(req,res,next) {
         try{
-            console.log("users");
+            console.log("Get users");
             const users = await userService.getAllUsers()
             return res.json(users)
         }catch (e){
@@ -112,7 +110,7 @@ class UserController {
             const userData = tokenService.validateAccessToken(accesToken)
 
             const newAddresses = await  userService.putAddress(userData.number,address)
-            console.log("321231",newAddresses);
+            console.log("New addresses",newAddresses);
             return res.json(newAddresses)
         }catch (e){
             console.log(e);

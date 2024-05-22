@@ -6,7 +6,7 @@ class RestaurantsController{
             const restaurants = req.body
             const createdRestaurants = restaurantsService.addRestaurants(restaurants)
 
-            return res.json({title:"ресторан створено", createdRestaurants})
+            return res.json({title:"Reastaurants created", createdRestaurants})
         }catch(err){
             console.log(err);
         }

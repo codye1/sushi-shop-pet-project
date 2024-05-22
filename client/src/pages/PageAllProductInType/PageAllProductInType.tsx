@@ -7,7 +7,8 @@ import { useEffect, useState } from "react";
 import FilterAndSortModal, { IFormFilterAndSort } from "./FilterAndSortModal/FilterAndSortModal";
 import Breadcrumb from "../../components/UI/Breadcrumb/Breadcrumb";
 import SekeletonCardProduct from "../../components/UI/SkeletonCardProduct/SekeletonCardProduct";
-import { sortAndFilterProducts } from "./filterFunctions";
+import { useFilter } from "./useFilter";
+
 
 const PageAllProductInType = () => {
     const params = useParams()
@@ -21,12 +22,16 @@ const PageAllProductInType = () => {
         weight:'4',
         labels:[]
     })
+
+    const filtrate = useFilter()
+
     const ApplyForm = ()=>{
         setModalVissible(false)
         if(dataProducts && products){
-             sortAndFilterProducts(formFiltrAndSort,dataProducts,setProducts)
+             filtrate(formFiltrAndSort,dataProducts,setProducts)
            }
     }
+
     // Функция для обновления данных в родительском компоненте
     const updateDataArray = (newData: IFormFilterAndSort) => {
         setFormaFiltra(newData);

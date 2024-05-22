@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import "./SigninSlideWriteCode.css"
 import ReactCodeInput from "react-code-input";
-import {  useLoginMutation, useRefreshSMSCodeMutation } from "../../../../API";
-import { useAppDispatch } from "../../../../hooks";
-import { authUser } from "../../../../reducer/auth";
+import {  useRefreshSMSCodeMutation } from "../../../../API";
 import CustomModal from "../../../../components/UI/CustomModal/CustomModal";
-import { AuthResponce } from "../../../../interfaces";
 import {useTranslation } from "react-i18next";
+import {useLogin} from "./useLogin";
+
 
 interface SigninSlideWriteCode{
     number:string,
@@ -14,50 +13,19 @@ interface SigninSlideWriteCode{
 }
 
 const SigninSlideWriteCode:React.FC<SigninSlideWriteCode> = ({setSmsSent,number}) => {
-    const [pinCode, setPinCode] = useState<string>("");
     const [seconds, setSeconds] = useState(60);
-    const [login]=useLoginMutation()
     const [refreshSMSCode]=useRefreshSMSCodeMutation()
     const [modalError,setModalError]=useState(false)
-    const dispath = useAppDispatch()
+    const {pinCode,handlePinChange} = useLogin(number,setModalError)
 
     const {t} = useTranslation()
-
-    async function handleLogin(number:string,code:string) {
-
-        console.log("login");
-
-        const result  = await login({number,code})
-        if ('data' in result) {
-            if (typeof result.data == "string") {
-                setModalError(true)
-                setPinCode("")
-            }else{
-                const data: AuthResponce = result.data
-                //document.cookie = `refreshToken=${data.refreshToken}; domain=sushi-shop-pet-project-m7t7.vercel.app; path=/; SameSite=None;  Secure; max-age=${30 * 24 * 60 * 60 * 1000}`;
-                dispath(authUser(data.user))
-                result && localStorage.setItem("token",result.data.accessToken)
-            }
-          }
-    }
-
-    const handlePinChange = (pinCode:string) => {
-        setPinCode(pinCode);
-        if (pinCode.length==4) {
-            handleLogin(number,pinCode)
-        }
-    };
-
-
 
     const props={
         inputStyle: {
             marginRight:"16px",
             outline:"none"
-
           },
     }
-
 
     useEffect(() => {
         if (seconds>0) {
