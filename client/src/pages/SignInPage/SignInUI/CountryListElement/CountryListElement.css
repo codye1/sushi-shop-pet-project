@@ -1,84 +1,83 @@
-.country{
-    padding: 15px;
-    position: relative;
+.country {
+  padding: 15px;
+  position: relative;
 
-
-    margin: 0;
+  margin: 0;
 }
 
-.country:hover{
-    background: linear-gradient(93.96deg,#ffe1df 2.04%,#ffc49a 101.53%);
+.country:hover {
+  background: linear-gradient(93.96deg, #ffe1df 2.04%, #ffc49a 101.53%);
 }
 
-.country-active{
-    background-color: #efefef;
+.country-active {
+  background-color: #efefef;
 }
 
-.country .flag{
-    margin-right: 7px;
-    margin-top: 2px;
+.country .flag {
+  margin-right: 7px;
+  margin-top: 2px;
 }
 
-.country-name{
-    color: #333333;
-    margin: 0 10px;
+.country-name {
+  color: #333333;
+  margin: 0 10px;
 }
-.dial-code{
-    color: #6b6b6b;
+.dial-code {
+  color: #6b6b6b;
 }
 
-.ua{
-    background-position: -80px -143px
+.ua {
+  background-position: -80px -143px;
 }
 
 .uz {
-    background-position: -144px -143px;
+  background-position: -144px -143px;
 }
 
-.hu{
-    background-position: -144px -55px;
+.hu {
+  background-position: -144px -55px;
 }
 
-.us{
-    background-position: -112px -143px;
+.us {
+  background-position: -112px -143px;
 }
 
-.sk{
-    background-position: -160px -121px;
+.sk {
+  background-position: -160px -121px;
 }
 
-.ro{
-    background-position: -224px -110px;
+.ro {
+  background-position: -224px -110px;
 }
 
-.ru{
-    background-position: 0 -121px;
+.ru {
+  background-position: 0 -121px;
 }
 
-.pt{
-    background-position: -144px -110px;
+.pt {
+  background-position: -144px -110px;
 }
 
-.pl{
-    background-position: -80px -110px;
+.pl {
+  background-position: -80px -110px;
 }
 
-.lt{
-    background-position: -128px -77px;
+.lt {
+  background-position: -128px -77px;
 }
 
-.kg{
-    background-position: -112px -66px;
+.kg {
+  background-position: -112px -66px;
 }
 
-.kz{
-    background-position: 0 -77px;
+.kz {
+  background-position: 0 -77px;
 }
 
-.by{
-    background-position: -240px -11px;
+.by {
+  background-position: -240px -11px;
 }
 
-.az{
-    background-position: -224px 0;
+.az {
+  background-position: -224px 0;
 }

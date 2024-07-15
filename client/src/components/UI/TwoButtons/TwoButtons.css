@@ -1,31 +1,28 @@
-.two-buttons{
-    margin-top: 35px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 16px;
+.two-buttons {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
 }
 
-
-.two-buttons button{
-    border-radius: 8px;
-    width: 100%;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 16px 11px 16px 16px;
+.two-buttons button {
+  border-radius: 8px;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 16px 11px 16px 16px;
 }
 
-
-.button-apply{
-    background-color: #E30613;
-    font-family: Bold;
-    color: white;
-    border: none;
+.button-apply {
+  background-color: #e30613;
+  font-family: Bold;
+  color: white;
+  border: none;
 }
 
-.button-cancel{
-    background-color: white;
-    font-family: Bold;
-    border:1px solid #DBDDDD;
+.button-cancel {
+  background-color: white;
+  font-family: Bold;
+  border: 1px solid #dbdddd;
 }
-

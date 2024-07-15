@@ -1,21 +1,20 @@
-
-.labels{
-    color: aliceblue;
-    font-size: 14px;
-    top: 0px;
-    right: 0px;
-    margin: 5px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
+.labels {
+  color: aliceblue;
+  font-size: 14px;
+  top: 0px;
+  right: 0px;
+  margin: 5px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
-.lable{
-    padding: 4px 8px;
-    font-size: 14px;
-    line-height: 21px;
-    border-radius: 4px;
-    width: fit-content;
-    margin: 3px;
+.lable {
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 21px;
+  border-radius: 4px;
+  width: fit-content;
+  margin: 3px;
 }

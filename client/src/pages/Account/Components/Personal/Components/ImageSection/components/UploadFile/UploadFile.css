@@ -1,56 +1,55 @@
 .file-upload {
-    border: 2px solid transparent;
-    border-radius: 8px;
-    color: #aaa;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 15px;
-    padding: 2em;
-    text-align: center;
-    width: 600px;
-    position: relative;
-  }
-  .file-upload p {
-    font-size: 0.87rem;
-    margin-top: 10px;
-    color: #bbcada;
-    color: rgba(29,29,29,.5);
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 15px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 15px;
+  padding: 2em;
+  text-align: center;
+  width: 600px;
+  position: relative;
+}
+.file-upload p {
+  font-size: 0.87rem;
+  margin-top: 10px;
+  color: #bbcada;
+  color: rgba(29, 29, 29, 0.5);
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+.file-upload input {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  cursor: pointer;
+}
 
-  }
-  .file-upload input {
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    cursor: pointer;}
+.file-upload img {
+  margin-bottom: 25px;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
 
-    .file-upload img{
-        margin-bottom: 25px;
-        width: 80px;
-        height: 80px;
-        margin: auto;
-    }
+.file-upload-button {
+  font-weight: 400;
+  font-family: Bold;
+  margin: 25px auto 0;
+  border: 1px solid #dbdddd;
 
-
-.file-upload-button{
-    font-weight: 400;
-    font-family: Bold;
-    margin: 25px auto 0;
-    border: 1px solid #dbdddd;
-
-    border-radius: 8px;
-    padding: 0 16px;
-    padding-bottom: 10.5px!important;
-    padding-top: 9px!important;
-    font-size: 14px;
-    color: black;
+  border-radius: 8px;
+  padding: 0 16px;
+  padding-bottom: 10.5px !important;
+  padding-top: 9px !important;
+  font-size: 14px;
+  color: black;
 }

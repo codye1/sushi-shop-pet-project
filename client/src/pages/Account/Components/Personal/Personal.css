@@ -1,121 +1,114 @@
-
-.section-content{
-    margin: 30px 0;
+.section-content {
+  margin: 30px 0;
 }
 
-.section-info{
-    max-width: 600px;
+.section-info {
+  max-width: 600px;
 }
 
-.section-info-content h3{
-    font-size: 16px ;
-    line-height: 24px;
-    font-family: Bold;
-    font-weight: 400;
+.section-info-content h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Bold;
+  font-weight: 400;
 }
 
-.section-info-content p{
-    color: rgba(29,29,29,.5);
-    line-height: 24px;
-    font-size: 16px;
-    padding-top: 5px;
+.section-info-content p {
+  color: rgba(29, 29, 29, 0.5);
+  line-height: 24px;
+  font-size: 16px;
+  padding-top: 5px;
 }
 
-.section-info-content{
-    margin-left: 24px;
+.section-info-content {
+  margin-left: 24px;
 }
 
-.section-info-content img{
-    width: 18px;
+.section-info-content img {
+  width: 18px;
 }
 
-.section-contacts,.section-birth,.section-email{
-    margin: 30px 0;
+.section-contacts,
+.section-birth,
+.section-email {
+  margin: 30px 0;
 }
 
-.section-info svg{
-    width: 25px;
+.section-info svg {
+  width: 25px;
 }
 
-.section-info svg:hover path{
-    fill: red;
+.section-info svg:hover path {
+  fill: red;
 }
 
-.sub-title{
-    margin-top: 30px;
-    line-height: 24px;
-    font-size: 16px;
-    font-family: Bold;
+.sub-title {
+  margin-top: 30px;
+  line-height: 24px;
+  font-size: 16px;
+  font-family: Bold;
 }
 
-.email-input, .birth-date-section input, .photo-section input{
-    margin: 30px 0;
-
+.email-input,
+.birth-date-section input,
+.photo-section input {
+  margin: 30px 0;
 }
 
-.photo-section{
-    margin: 30px 0;
+.photo-section {
+  margin: 30px 0;
 }
 
+.photo-section button {
+  margin-left: 24px;
 
-.photo-section button{
-    margin-left: 24px;
+  height: 48px;
 
-    height: 48px;
+  text-align: center;
 
-    text-align: center;
+  width: max-content;
+  min-width: max-content;
 
-    width: max-content;
-    min-width: max-content;
+  background-color: white;
 
-    background-color: white;
+  padding: 0 16px;
+  border-radius: 8px;
 
-    padding: 0 16px;
-    border-radius: 8px;
+  padding-top: 9px !important;
+  padding-bottom: 10.5px !important;
+  transition: all 0.3s ease;
 
-    padding-top: 9px!important;
-    padding-bottom: 10.5px!important;
-    transition: all .3s ease;
+  font-family: Bold;
 
-    font-family: Bold;
-
-    border: 1px solid #dbdddd;
+  border: 1px solid #dbdddd;
 }
 
-
-
-
-.menu-content{
-    background: white;
-    box-shadow: 8px 8px 16px hsla(236,6%,49%,.15);
-    border-radius: 8px;
-    flex: 3;
-    padding: 36px;
-    margin: 30px 0 0!important;
-    min-height: calc(100vh - 162px)
+.menu-content {
+  background: white;
+  box-shadow: 8px 8px 16px hsla(236, 6%, 49%, 0.15);
+  border-radius: 8px;
+  flex: 3;
+  padding: 36px;
+  margin: 30px 0 0 !important;
+  min-height: calc(100vh - 162px);
 }
 
 .MuiDialog-paper {
-    padding: 32px 24px 24px;
-    overflow: visible;
+  padding: 32px 24px 24px;
+  overflow: visible;
 }
 
-
-
-
-
-.placeholder{
-    color: rgba(29,29,29,.5);
-    margin: 15px 0;
+.placeholder {
+  color: rgba(29, 29, 29, 0.5);
+  margin: 15px 0;
 }
 
-.borederd{
-    border: 1px solid #dbdddd;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: 8px;
+.borederd {
+  border: 1px solid #dbdddd;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 8px;
 }
-

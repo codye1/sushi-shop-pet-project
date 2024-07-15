@@ -1,32 +1,27 @@
-footer{
-    display: flex;
+footer {
+  display: flex;
 }
 
-
-
-.icons{
-    margin: 20px 0 50px 0;
-    width: 100%;
-    cursor: pointer;
-    display: flex;
+.icons {
+  margin: 20px 0 50px 0;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
 }
 
-.icons img{
-    margin: 0 40px 0 0;
+.icons img {
+  margin: 0 40px 0 0;
 }
-
-
-
 
 @media (max-width: 520px) {
-    .poll{
-     flex-direction: column;
-    }
-    .left-block{
-        flex-direction: column;
-        min-width: 0;
-    }
-    .right-block{
-        min-width: 0;
-    }
-   }
+  .poll {
+    flex-direction: column;
+  }
+  .left-block {
+    flex-direction: column;
+    min-width: 0;
+  }
+  .right-block {
+    min-width: 0;
+  }
+}

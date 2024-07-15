@@ -6,8 +6,8 @@ class UserController {
     async sendSMSCode(req,res,next) {
         try{
             const {number} = req.body
-            const userData = await userService.sendSMSCode(number)
-            return res.json("Смс отправилось")
+            const code = await userService.sendSMSCode(number)
+            return res.json(code)
 
         }catch (e){
             console.log(e);

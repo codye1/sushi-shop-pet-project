@@ -1,67 +1,61 @@
-
-.links{
-    margin: 25px 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.links {
+  margin: 25px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.links-block{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 25px;
-
+.links-block {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 25px;
 }
 
-.links-block h1{
-    line-height: 21px;
-    font-size: 16px;
-    font-family: sans-serif;
-    margin-bottom: 25px;
+.links-block h1 {
+  line-height: 21px;
+  font-size: 16px;
+  font-family: sans-serif;
+  margin-bottom: 25px;
 }
 
-.links-block h3{
-    line-height: 21px;
-    font-size: 16px;
-    font-family: sans-serif;
-    margin-bottom: 25px;
-    z-index: 1;
+.links-block h3 {
+  line-height: 21px;
+  font-size: 16px;
+  font-family: sans-serif;
+  margin-bottom: 25px;
+  z-index: 1;
 
-    color: #7B7C85;
+  color: #7b7c85;
 }
 
-
-.links-block a{
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    text-decoration:  none solid rgb(29, 29, 29);
-    font-family: sans-serif;
-    color: #7B7C85;
-    margin-bottom: 25px;
+.links-block a {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none solid rgb(29, 29, 29);
+  font-family: sans-serif;
+  color: #7b7c85;
+  margin-bottom: 25px;
 }
 
-.links-block .open{
-    color: red;
+.links-block .open {
+  color: red;
 }
 
-.links-block h4{
-    line-height: 21px;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: sans-serif;
-    margin-bottom: 25px;
+.links-block h4 {
+  line-height: 21px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-bottom: 25px;
 }
 
-.links-block h4 a{
-    line-height: 21px;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: sans-serif;
-    margin-bottom: 25px;
-    color: black;
+.links-block h4 a {
+  line-height: 21px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-bottom: 25px;
+  color: black;
 }
-
-
-

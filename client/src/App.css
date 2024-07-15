@@ -1,31 +1,27 @@
-*{
-    margin: 0;
-    font-family: Regular,sans-serif;
+* {
+  margin: 0;
+  font-family: Regular, sans-serif;
 }
 
-#root{
-    width: 100%;
+#root {
+  width: 100%;
 }
-
-
 
 ::-webkit-scrollbar {
-    width: 15px;
-  }
-
+  width: 15px;
+}
 
 ::-webkit-scrollbar-thumb {
-
   border-radius: 8px;
   border: 4px solid #ffffff;
-  background: #c4c4c4
-  }
+  background: #c4c4c4;
+}
 
-.d-flex{
+.d-flex {
   display: flex;
 }
 
-.container{
+.container {
   display: flex;
   max-width: 1600px;
   width: 100%;
@@ -35,88 +31,83 @@
   background-color: white;
 }
 
-.container-with-text{
+.container-with-text {
   max-width: 1280px;
   margin: auto;
-  padding:  0 30px;
+  padding: 0 30px;
 }
 
-
-.column{
+.column {
   flex-direction: column;
 }
 
-.wrap{
+.wrap {
   flex-wrap: wrap;
 }
 
-.full-width{
+.full-width {
   width: 100%;
 }
-.space-between{
+.space-between {
   justify-content: space-between;
 }
-.center{
+.center {
   justify-content: center;
 }
-.align-center{
+.align-center {
   align-items: center;
 }
-.start{
+.start {
   justify-content: start;
 }
 
-.bold{
+.bold {
   font-weight: 700;
 }
 
-.page-title{
+.page-title {
   margin: 30px 0;
   color: #1d1d1d;
   font-size: 32px;
   line-height: 44px;
   flex: 2;
   font-weight: 700;
-
-
 }
 
-.sticky{
+.sticky {
   position: sticky;
   top: 180px;
 }
 
-.btn{
-    border-radius: 8px;
-    height: 48px;
-    padding: 0 16px;
-    padding-top: 9px!important;
-    padding-bottom: 10.5px!important;
-    transition: all .3s ease;
-    width: 206px;
-    text-align: center;
-    display: flex!important;
-    align-items: center;
-    justify-content: center;
-
-
+.btn {
+  border-radius: 8px;
+  height: 48px;
+  padding: 0 16px;
+  padding-top: 9px !important;
+  padding-bottom: 10.5px !important;
+  transition: all 0.3s ease;
+  width: 206px;
+  text-align: center;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
-.pointer{
+.pointer {
   cursor: pointer;
 }
 
 @media (max-width: 1000px) {
-  .container{
+  .container {
     padding: 0 15px;
   }
 }
 
 @media (max-width: 500px) {
-  .container{
+  .container {
     width: 100%;
   }
-  .container-with-text{
+  .container-with-text {
     width: 100%;
     padding: 0 15px;
   }
@@ -126,4 +117,3 @@ img {
   overflow-clip-margin: content-box;
   overflow: clip;
 }
-

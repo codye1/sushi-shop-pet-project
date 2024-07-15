@@ -1,70 +1,64 @@
-
-.search-page{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    transition: all .3s ease;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+.search-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
-
-.search-input-button{
-    transition: all .3s ease;
-    z-index: 1;
-    display: flex;
-    position: sticky;
-    top: 10px;
-    margin: 10px 10px;
+.search-input-button {
+  transition: all 0.3s ease;
+  z-index: 1;
+  display: flex;
+  position: sticky;
+  top: 10px;
+  margin: 10px 10px;
 }
 
+.search-input input {
+  display: flex;
 
-.search-input input{
-    display: flex;
+  width: 500px;
+  height: 56px;
+  padding: 20px 20px 20px 70px;
+  background-color: rgb(187, 187, 187);
 
-    width: 500px;
-    height: 56px;
-    padding: 20px 20px 20px 70px;
-    background-color: rgb(187, 187, 187);
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
 
-    text-decoration: none;
-    border: none;
-    border-radius: 8px;
+  font-size: 16px;
 
-    font-size: 16px;
-
-
-    outline: 0;
-    outline-offset: 0;
+  outline: 0;
+  outline-offset: 0;
 }
 
-
-
-.search-input img{
-    position: absolute;
-    left: 45px;
-    top: 50%;
-    transform: translateY(-50%);
-    max-height: 20px;
-    pointer-events: none;
+.search-input img {
+  position: absolute;
+  left: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-height: 20px;
+  pointer-events: none;
 }
 
-.search-page button{
-    margin: 0 0 0 24px;
-    display: flex;
-    width: 56px;
-    height: 56px;
-    text-decoration: none;
-    border: none;
-    border-radius: 8px;
-    background-color: #232323;
+.search-page button {
+  margin: 0 0 0 24px;
+  display: flex;
+  width: 56px;
+  height: 56px;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  background-color: #232323;
 
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
 
-.search-input-button{
-    margin-top: 10px;
-    padding-left: 20px;
+.search-input-button {
+  margin-top: 10px;
+  padding-left: 20px;
 }

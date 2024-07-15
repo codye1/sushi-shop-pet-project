@@ -1,26 +1,24 @@
+.down-block {
+  width: 100%;
+  height: 100%;
+  display: flex;
 
-.down-block{
-    width: 100%;
-    height: 100%;
-    display: flex;
-
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
-.bootom-block{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.bootom-block {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-
 
 @media (max-width: 1000px) {
-    .down-block{
-        flex-direction: column;
-    }
-    .basket-page-left-cont,.basket-page-right-cont{
-        width: 100%;
-    }
+  .down-block {
+    flex-direction: column;
+  }
+  .basket-page-left-cont,
+  .basket-page-right-cont {
+    width: 100%;
+  }
 }
-

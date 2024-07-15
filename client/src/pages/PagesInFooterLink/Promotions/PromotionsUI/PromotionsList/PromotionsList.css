@@ -1,22 +1,22 @@
-.promotions-list{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 16px;
-    margin: 36px 0;
+.promotions-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  margin: 36px 0;
 }
 
 @media (max-width: 1350px) {
-    .promotions-list{
-        grid-template-columns: repeat(3,1fr);
-    }
+  .promotions-list {
+    grid-template-columns: repeat(3, 1fr);
   }
-  @media (max-width: 950px) {
-    .promotions-list{
-        grid-template-columns: repeat(2,1fr);
-    }
+}
+@media (max-width: 950px) {
+  .promotions-list {
+    grid-template-columns: repeat(2, 1fr);
   }
-  @media (max-width: 800px) {
-    .promotions-list{
-        grid-template-columns: repeat(1,1fr);
-    }
+}
+@media (max-width: 800px) {
+  .promotions-list {
+    grid-template-columns: repeat(1, 1fr);
   }
+}

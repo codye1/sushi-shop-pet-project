@@ -1,41 +1,41 @@
+.button {
+  color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: #e30613;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
 
-.button{
-    color: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    font-weight: 600;
-    background-color:#e30613;
-    cursor: pointer;
-    text-align: center;
-    justify-content: center;
+  border: 1px solid #e30613;
+}
+.button-after-click {
+  padding: 0 5px;
+  color: red;
+  width: 100%;
+  font-size: 16px;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #f9c9cf;
+  cursor: pointer;
+  align-items: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
 
-    border: 1px solid #e30613;
-  }
-  .button-after-click{
-    padding: 0 5px;
-    color: red;
-    width: 100%;
-    font-size: 16px;
-    height: 100%;
-    border-radius: 10px;
-    background-color: #F9C9CF;
-    cursor: pointer;
-    align-items: center;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-  }
+.add,
+.remove {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .add,.remove{
-    width: 36px;
-    height: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-.button-container{
-    width: 100%;
-    height: 100%;
+.button-container {
+  width: 100%;
+  height: 100%;
 }

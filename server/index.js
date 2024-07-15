@@ -9,14 +9,13 @@ const mongoose = require('mongoose')
 
 
 const PORT = process.env.PORT || 5000
-
 server.use(express.json())
 server.use(cookieParser())
 
 server.use(cors({
   //https://sushi-shop-pet-project.vercel.app
   //http://localhost:5173
-  origin: "https://sushi-shop-pet-project.vercel.app",
+  origin: process.env.CORS,
   credentials: true,
 }))
 

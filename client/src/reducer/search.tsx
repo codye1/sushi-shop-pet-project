@@ -1,17 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 interface IsearchActive {
-  searchActive: boolean
-  searchInput:string
+  searchActive: boolean;
+  searchInput: string;
 }
 
 const initialState: IsearchActive = {
-    searchActive: false,
-    searchInput:"null"
-}
-
+  searchActive: false,
+  searchInput: 'null',
+};
 
 const searchActiveSlice = createSlice({
   name: 'searchActive',
@@ -21,12 +19,11 @@ const searchActiveSlice = createSlice({
       state.searchActive = action.payload;
     },
     setSearchInput(state, action: PayloadAction<string>) {
-        state.searchInput = action.payload;
-      },
-
+      state.searchInput = action.payload;
+    },
   },
-})
+});
 
-export const {  setSearchActive,setSearchInput } = searchActiveSlice.actions
+export const { setSearchActive, setSearchInput } = searchActiveSlice.actions;
 
 export default searchActiveSlice;

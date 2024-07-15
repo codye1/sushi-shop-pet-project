@@ -1,186 +1,177 @@
+.sign-in-right-block {
+  height: 100%;
 
-.sign-in-right-block{
-    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 15px;
+  padding: 15px;
 }
 
-.sign-in-form{
-    width: 100%;
-    max-width: 600px;
+.sign-in-form {
+  width: 100%;
+  max-width: 600px;
 }
 
+.form-title {
+  font-family: Bold;
+  font-size: 32px;
+  line-height: 44px;
+  margin-bottom: 24px;
 
-.form-title{
-    font-family: Bold;
-    font-size: 32px;
-    line-height: 44px;
-    margin-bottom: 24px;
-
-    color: #333333;
+  color: #333333;
 }
 
-.css-1k51tf5-MuiTooltip-tooltip{
-    padding: 16px 45px 16px 24px;
-    max-width: 405px;
-    box-shadow: 8px 8px 16px rgba(117, 118, 132, 0.15);
-    background-color: #484848;
+.css-1k51tf5-MuiTooltip-tooltip {
+  padding: 16px 45px 16px 24px;
+  max-width: 405px;
+  box-shadow: 8px 8px 16px rgba(117, 118, 132, 0.15);
+  background-color: #484848;
 
-    color: white;
-    font-size: 14px;
-    line-height: 24px;
-    font-family:  Regular, -apple-system, sans-serif;
+  color: white;
+  font-size: 14px;
+  line-height: 24px;
+  font-family:
+    Regular,
+    -apple-system,
+    sans-serif;
 }
-.css-1d3ml05-MuiPopper-root-MuiTooltip-popper[data-popper-placement*="bottom"] .MuiTooltip-arrow::before{
-    background-color: #484848;
+.css-1d3ml05-MuiPopper-root-MuiTooltip-popper[data-popper-placement*='bottom']
+  .MuiTooltip-arrow::before {
+  background-color: #484848;
 }
-.form-agree{
-    display: flex;
-    align-items: start;
-    margin-top: 24px;
-
-}
-
-.form-agree .span-input{
-    margin-right: 15px;
-
-    height: 24px;
-    width: 28px;
-    position: relative;
-    color: black;
+.form-agree {
+  display: flex;
+  align-items: start;
+  margin-top: 24px;
 }
 
-.form-agree .span-input input{
-    top: 0;
-    left: 0;
-    width: 100%;
-    cursor: inherit;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
-    padding: 0;
-    z-index: 1;
-    position: absolute;
+.form-agree .span-input {
+  margin-right: 15px;
+
+  height: 24px;
+  width: 28px;
+  position: relative;
+  color: black;
 }
 
-
+.form-agree .span-input input {
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: inherit;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  z-index: 1;
+  position: absolute;
+}
 
 .form-agree input:checked {
-    background-color: #ff0000;
-  }
-
-.form-agree span svg{
-    width: 18px;
-    height: 18px;
+  background-color: #ff0000;
 }
 
-.form-agree label{
-   font-size: 12px;
-   position: relative;
+.form-agree span svg {
+  width: 18px;
+  height: 18px;
 }
 
-
-
-.form-agree a{
-    color: black;
-    font-weight: 600;
-
-    position: relative;
+.form-agree label {
+  font-size: 12px;
+  position: relative;
 }
 
-.form-agree-text a{
-    font-family: Bold;
-    text-decoration: underline dotted;
+.form-agree a {
+  color: black;
+  font-weight: 600;
+
+  position: relative;
 }
 
-.form-error{
-    position: absolute;
-    top: 60px;
-    left: 0;
-    text-decoration: underline dotted;
-    font-family: Bold;
+.form-agree-text a {
+  font-family: Bold;
+  text-decoration: underline dotted;
 }
 
-.form-input{
-
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    outline: none;
-    height: 56px;
-    padding: 18.5px 14px 18.5px 42px;
-    border-radius: 8px;
-    background: 0 0;
+.form-error {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  text-decoration: underline dotted;
+  font-family: Bold;
 }
 
-
-.form-input input{
-    font-size: var(--p-font-size);
-    width: 100%;
-    border: 1px solid #dbdddd;
-    height: 56px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: none;
-
-
-    outline: none;
-    height: 56px;
-    padding: 18.5px 14px 18.5px 42px;
-    padding-left: 70px;
-    border-radius: 8px;
-    background: 0 0;
+.form-input {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  height: 56px;
+  padding: 18.5px 14px 18.5px 42px;
+  border-radius: 8px;
+  background: 0 0;
 }
 
-.form-input input:disabled{
-    background: #efefef;
-    cursor: not-allowed;
-    opacity: .7;
+.form-input input {
+  font-size: var(--p-font-size);
+  width: 100%;
+  border: 1px solid #dbdddd;
+  height: 56px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: none;
+
+  outline: none;
+  height: 56px;
+  padding: 18.5px 14px 18.5px 42px;
+  padding-left: 70px;
+  border-radius: 8px;
+  background: 0 0;
 }
 
-
-.flag-drop-down{
-    position: absolute;
-    top: 1px;
-    bottom: 1px;
-    left: 5px;
-    padding: 0;
-    border-radius: 0;
-    outline: none;
-    border: 0;
-    border-right: 1px solid #dbdddd;
-    background: 0 0!important;
+.form-input input:disabled {
+  background: #efefef;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
-.selected-flag{
-    width: 50px;
-    background-color: transparent;
-    outline: none;
-    position: relative;
-    height: 100%;
-    padding: 0 0 0 8px;
-    border-radius: 3px 0 0 3px;
-    box-sizing: border-box;
-
-    display: flex;
-    justify-content: space-between;
+.flag-drop-down {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: 5px;
+  padding: 0;
+  border-radius: 0;
+  outline: none;
+  border: 0;
+  border-right: 1px solid #dbdddd;
+  background: 0 0 !important;
 }
 
-.flag{
+.selected-flag {
+  width: 50px;
+  background-color: transparent;
+  outline: none;
+  position: relative;
+  height: 100%;
+  padding: 0 0 0 8px;
+  border-radius: 3px 0 0 3px;
+  box-sizing: border-box;
 
-
-    width: 16px;
-    height: 11px;
-    background-image: url(https://kyiv.sushi-master.ua/img/custom/flags.png);
+  display: flex;
+  justify-content: space-between;
 }
 
-.selected-flag .flag{
-    position: absolute;
-    top: 50%;
-    margin-top: -5px;
+.flag {
+  width: 16px;
+  height: 11px;
+  background-image: url(https://kyiv.sushi-master.ua/img/custom/flags.png);
+}
+
+.selected-flag .flag {
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
 }

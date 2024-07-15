@@ -1,82 +1,80 @@
-
-.crop-container{
-    width: 600px;
-    height: 350px;
-    position: relative;
+.crop-container {
+  width: 600px;
+  height: 350px;
+  position: relative;
 }
 
-
-.continer-slider{
-    margin-top: 6px;
-    padding: 13px 0;
-    height: 2px;
+.continer-slider {
+  margin-top: 6px;
+  padding: 13px 0;
+  height: 2px;
 }
 
-.continer-slider .MuiSlider-thumb{
-    background-color: white ;
-    height: 24px;
-    opacity: 1;
-    width: 24px;
+.continer-slider .MuiSlider-thumb {
+  background-color: white;
+  height: 24px;
+  opacity: 1;
+  width: 24px;
 
-    box-shadow: 0 3px 6px rgba(0,0,0,.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .continer-slider .MuiSlider-track {
-    border-radius: 8px;
-    color: rgba(29,29,29,.5);
-    height: 5px;
-    opacity: 1;
+  border-radius: 8px;
+  color: rgba(29, 29, 29, 0.5);
+  height: 5px;
+  opacity: 1;
 }
 
 .continer-slider .MuiSlider-rail {
-    border-radius: 8px;
-    color: rgba(29,29,29,.34);
-    height: 5px;
-    opacity: 1;
+  border-radius: 8px;
+  color: rgba(29, 29, 29, 0.34);
+  height: 5px;
+  opacity: 1;
 }
 
-.continer-slider .two-buttons{
-    border-top: 1px solid #efefef;
-    margin-top: 15px;
-    padding-top: 25px;
+.continer-slider .two-buttons {
+  border-top: 1px solid #efefef;
+  margin-top: 15px;
+  padding-top: 25px;
 }
 
 .MuiSlider-root {
-    color: #e30613;
-    width: 100%;
-    cursor: pointer;
-    height: 2px;
-    display: inline-block;
-    padding: 13px 0;
-    position: relative;
-    box-sizing: content-box;
-    touch-action: none;
-    -webkit-tap-highlight-color: transparent;
-    margin-top: 6px;
+  color: #e30613;
+  width: 100%;
+  cursor: pointer;
+  height: 2px;
+  display: inline-block;
+  padding: 13px 0;
+  position: relative;
+  box-sizing: content-box;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-top: 6px;
 }
 
-.show-img{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.show-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
-.delete-button{
-    font-family: Bold;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    padding: 6px 8px;
-    border-radius: 4px;
-    background-color: white;
-    cursor: pointer;
+.delete-button {
+  font-family: Bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
 }
 
-.delete-button:hover{
-    background-color: rgba(0, 0, 0, 0.046);
+.delete-button:hover {
+  background-color: rgba(0, 0, 0, 0.046);
 }
 
-.delete-button img{
-    margin-right: 15px;
+.delete-button img {
+  margin-right: 15px;
 }

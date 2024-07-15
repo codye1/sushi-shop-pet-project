@@ -1,16 +1,15 @@
-
-.top-title{
-    padding-bottom: 24px;
-    font-family: Bold;
+.top-title {
+  padding-bottom: 24px;
+  font-family: Bold;
 }
 
-.sticky .menu .menu-item p{
-    max-width: 300px;
-    min-width: 300px;
+.sticky .menu .menu-item p {
+  max-width: 300px;
+  min-width: 300px;
 }
 
-@media (max-width: 575px){
-    .account-menu{
-        display: none;
-    }
+@media (max-width: 575px) {
+  .account-menu {
+    display: none;
+  }
 }

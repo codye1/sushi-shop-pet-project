@@ -1,138 +1,132 @@
-.search-address-map{
-    box-shadow: rgba(117, 118, 132, 0.15) 8px 8px 16px 0px;
-    padding: 24px;
-    border-radius: 8px;
+.search-address-map {
+  box-shadow: rgba(117, 118, 132, 0.15) 8px 8px 16px 0px;
+  padding: 24px;
+  border-radius: 8px;
 
-    display: flex;
+  display: flex;
 
-
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
-.search-address{
-    flex: 1;
-    margin-right: 50px;
+.search-address {
+  flex: 1;
+  margin-right: 50px;
 }
-.delivery-map{
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
+.delivery-map {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-.map{
-    background-color: #1D1D1D;
-    height: 52vh;
+.map {
+  background-color: #1d1d1d;
+  height: 52vh;
 
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    color: white;
-}
-
-.search-address h3{
-    font-size: 20px;
-    line-height: 28px;
-    color: #1D1D1D;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
-.search-address h4{
-    margin-top: 16px;
-    margin-bottom: 16px;
-    font-size: 16px;
-    line-height: 24px;
-    color: #8B8A8A;
+.search-address h3 {
+  font-size: 20px;
+  line-height: 28px;
+  color: #1d1d1d;
 }
 
-.search-address input{
-    width: 100%;
-    border: 2px solid rgb(219, 221, 221);
-    height: 56px;
-    padding: 20px 20px 20px 50px;
-    border-radius: 8px;
+.search-address h4 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8b8a8a;
 }
 
-.legend-wrapper{
-    display: flex;
-    height: 51px;
+.search-address input {
+  width: 100%;
+  border: 2px solid rgb(219, 221, 221);
+  height: 56px;
+  padding: 20px 20px 20px 50px;
+  border-radius: 8px;
 }
 
-.legend-wrapper div{
-    display: flex;
-    align-items: center;
-    width: inherit;
-
-}
-.legend-wrapper div{
-        font-size: 14px;
-        line-height: 21px;
-        color: #333333;
-        white-space: nowrap;
-        margin-right: 15px;
-
-
+.legend-wrapper {
+  display: flex;
+  height: 51px;
 }
 
-.legend-wrapper div div{
-    height: 32px;
-    width: 32px;
+.legend-wrapper div {
+  display: flex;
+  align-items: center;
+  width: inherit;
+}
+.legend-wrapper div {
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+  white-space: nowrap;
+  margin-right: 15px;
 }
 
-.delivery-info{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 16px;
-    margin: 16px 0;
+.legend-wrapper div div {
+  height: 32px;
+  width: 32px;
 }
 
-.info-card{
-    box-shadow: rgba(117, 118, 132, 0.15) 8px 8px 16px 0px;
-    border-radius: 8px;
-    padding: 19px 16px;
+.delivery-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  margin: 16px 0;
 }
 
-.info-head{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.info-card {
+  box-shadow: rgba(117, 118, 132, 0.15) 8px 8px 16px 0px;
+  border-radius: 8px;
+  padding: 19px 16px;
 }
 
-.info-head h1{
-    display: inherit;
-    font-size: 20px;
-    line-height: 24px;
-    max-width: 80%;
-    color: #333333;
+.info-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.info-card p{
-    font-size: 14px;
-    line-height: 21px;
-    margin-top: 24px;
-    margin: 15px 0;
-    color: rgba(29,29,29,.5);
+.info-head h1 {
+  display: inherit;
+  font-size: 20px;
+  line-height: 24px;
+  max-width: 80%;
+  color: #333333;
 }
 
-.info-card svg{
-    width: 35px;
-    height: 35px;
+.info-card p {
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 24px;
+  margin: 15px 0;
+  color: rgba(29, 29, 29, 0.5);
 }
 
+.info-card svg {
+  width: 35px;
+  height: 35px;
+}
 
 @media (max-width: 900px) {
-    .delivery-info{
-        grid-template-columns: repeat(1,1fr);
-    }
-    .search-address-map{
-        flex-direction: column;
-    }
-    .search-address{
-        order: 2;
-    }
+  .delivery-info {
+    grid-template-columns: repeat(1, 1fr);
   }
+  .search-address-map {
+    flex-direction: column;
+  }
+  .search-address {
+    order: 2;
+  }
+}
 
-  @media (max-width: 1200px) {
-    .delivery-map{
-        flex: 1;
-    }
+@media (max-width: 1200px) {
+  .delivery-map {
+    flex: 1;
   }
+}

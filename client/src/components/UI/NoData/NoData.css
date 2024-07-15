@@ -1,11 +1,10 @@
+.no-data p {
+  line-height: 20px;
+  color: rgba(29, 29, 29, 0.5);
+  max-width: 260px;
+  margin: 24px auto;
+}
 
-.no-data p{
-    line-height: 20px;
-    color: rgba(29,29,29,.5);
-    max-width: 260px;
-    margin: 24px auto;
-  }
-
-.no-data{
+.no-data {
   margin: auto;
 }

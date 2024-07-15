@@ -1,40 +1,42 @@
-.breadcrumbs ol{
-    margin-top: 24px;
-    overflow: auto;
+.breadcrumbs ol {
+  margin-top: 24px;
+  overflow: auto;
 }
-.breadcrumb a{
-    font-size: 12px;
-    line-height: 18px;
-    color: rgba(29,29,29,.5);
-    margin: 0;
-    margin-right: 15px;
-    white-space: nowrap;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.breadcrumb a:after, .breadcrumb li span:after, .breadcrumb li strong:after {
-    content: " \B7 ";
-    position: relative;
-    right: -5px;
+.breadcrumb a {
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(29, 29, 29, 0.5);
+  margin: 0;
+  margin-right: 15px;
+  white-space: nowrap;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-.breadcrumbs ol,li{
-    list-style: none;
+.breadcrumb a:after,
+.breadcrumb li span:after,
+.breadcrumb li strong:after {
+  content: ' \B7 ';
+  position: relative;
+  right: -5px;
 }
 
-.breadcrumbs li{
-    margin: 0;
-    padding: 0;
-
-    color: rgba(29,29,29,.5);
+.breadcrumbs ol,
+li {
+  list-style: none;
 }
 
+.breadcrumbs li {
+  margin: 0;
+  padding: 0;
 
-.breadcrumbs strong{
-    font-size: 12px;
-    line-height: 18px;
-    color: #333333;
-    margin-right: 15px;
-    white-space: nowrap;
+  color: rgba(29, 29, 29, 0.5);
+}
+
+.breadcrumbs strong {
+  font-size: 12px;
+  line-height: 18px;
+  color: #333333;
+  margin-right: 15px;
+  white-space: nowrap;
 }

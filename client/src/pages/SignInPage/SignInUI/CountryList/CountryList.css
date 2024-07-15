@@ -1,12 +1,12 @@
-.country-list{
-    width: 402px;
-    border-radius: 8px;
-    box-shadow: 8px 8px 16px hsla(236,6%,49%,.15);
-    margin: 10px -2px 0;
-    border: 1px solid #efefef;
-    background-color: #fff;
-    z-index: 9999;
+.country-list {
+  width: 402px;
+  border-radius: 8px;
+  box-shadow: 8px 8px 16px hsla(236, 6%, 49%, 0.15);
+  margin: 10px -2px 0;
+  border: 1px solid #efefef;
+  background-color: #fff;
+  z-index: 9999;
 
-    max-height: 200px;
-    overflow-y: scroll;
+  max-height: 200px;
+  overflow-y: scroll;
 }

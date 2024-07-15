@@ -1,79 +1,73 @@
-.card-recommendation{
-    box-shadow: rgba(140, 140, 140, 0.15) -1px 1px 16px 0px;
-    height: 183px;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-    margin-left: 10px;
-    z-index: 99999;
+.card-recommendation {
+  box-shadow: rgba(140, 140, 140, 0.15) -1px 1px 16px 0px;
+  height: 183px;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  margin-left: 10px;
+  z-index: 99999;
 }
 
-.card-recommendation-top-cont{
-    width: 100%;
-    height: auto;
+.card-recommendation-top-cont {
+  width: 100%;
+  height: auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
-
-.card-recommendation-title{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+.card-recommendation-title {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-.card-recommendation-title a{
-    text-decoration: none;
-    color: #333333;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+.card-recommendation-title a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
 }
-.card-recommendation-title h2{
-    font-size: 14px;
-    line-height: 24px;
-    margin: 0;
-    z-index: 1;
-    color: rgba(29,29,29,.5);
-}
-
-.card-recommendation-bottom-cont{
-    width: 100%;
-    height: 48px;
-    margin-top: 5px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-
-
+.card-recommendation-title h2 {
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+  z-index: 1;
+  color: rgba(29, 29, 29, 0.5);
 }
 
-.card-recommendation-price{
-    font-size: 18px;
-    width: 50%;
-    align-items: center;
-    display: flex;
-    font-weight: bold;
+.card-recommendation-bottom-cont {
+  width: 100%;
+  height: 48px;
+  margin-top: 5px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-recommendation-price {
+  font-size: 18px;
+  width: 50%;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
 }
 
 .card-recommendation-img {
-    min-width: 113px;
-    height: 90px;
+  min-width: 113px;
+  height: 90px;
 }
 
-
-.card-product-basket-img-cont{
-    width: 90px;
-    height: 100%;
-    border-radius: 8px;
+.card-product-basket-img-cont {
+  width: 90px;
+  height: 100%;
+  border-radius: 8px;
 }
 
-
-.card-recommendation-button{
-    width: 40%;
+.card-recommendation-button {
+  width: 40%;
 }

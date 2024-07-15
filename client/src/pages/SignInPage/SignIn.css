@@ -1,83 +1,78 @@
-.sign-in-main-block{
-    display: grid;
-    grid-template-columns: 40% 60%;
-    width: 100%;
-    min-height: 82vh;
-    max-height: 82vh;
-    margin: 24px 0;
+.sign-in-main-block {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 100%;
+  min-height: 82vh;
+  max-height: 82vh;
+  margin: 24px 0;
 
-    border-radius: 8px;
+  border-radius: 8px;
 
-    box-shadow: -4px -4px 8px hsla(236,6%,49%,.04), 8px 8px 16px hsla(236,6%,49%,.08);
+  box-shadow:
+    -4px -4px 8px hsla(236, 6%, 49%, 0.04),
+    8px 8px 16px hsla(236, 6%, 49%, 0.08);
 }
 
-@media (max-width: 767px){
-    .sign-in-main-block{
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-.sign-in-left-block{
-    height: 100%;
-    background: linear-gradient(135.31deg,#fff7f7 -0.78%,#fff8f8 -0.77%,#f9faff 100.85%);
-
+@media (max-width: 767px) {
+  .sign-in-main-block {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-.sign-in-list-of-benefits{
-
-    height: max-content;
     flex-direction: column;
+  }
 }
 
+.sign-in-left-block {
+  height: 100%;
+  background: linear-gradient(
+    135.31deg,
+    #fff7f7 -0.78%,
+    #fff8f8 -0.77%,
+    #f9faff 100.85%
+  );
 
-.benefits-list-item{
-    display: flex;
-    align-items: center;
-
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.benefits-list-item img{
-    width: 49px;
-    height: 49px;
+.sign-in-list-of-benefits {
+  height: max-content;
+  flex-direction: column;
 }
 
-.benefits-list-item p{
-    color: #333333;
-    line-height: 21px;
-    font-size: 16px;
+.benefits-list-item {
+  display: flex;
+  align-items: center;
 }
 
-
-
-
-.arrow{
-    left: 25px;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    border-top: 4px solid #202228;
-
-    position: relative;
-    top: 50%;
-    margin-top: -2px;
-    width: 0;
-    height: 0;
+.benefits-list-item img {
+  width: 49px;
+  height: 49px;
 }
 
-.up{
-    border-top: none;
-    border-bottom: 4px solid #555;
+.benefits-list-item p {
+  color: #333333;
+  line-height: 21px;
+  font-size: 16px;
 }
 
+.arrow {
+  left: 25px;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid #202228;
 
-.code-repeat span{
-    font-weight: bold;
+  position: relative;
+  top: 50%;
+  margin-top: -2px;
+  width: 0;
+  height: 0;
 }
 
+.up {
+  border-top: none;
+  border-bottom: 4px solid #555;
+}
 
+.code-repeat span {
+  font-weight: bold;
+}

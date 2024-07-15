@@ -1,63 +1,58 @@
-
-.switcher-item{
-    align-items: center;
-    cursor: pointer;
+.switcher-item {
+  align-items: center;
+  cursor: pointer;
 }
-.select{
-    opacity: .5;
-}
-
-.switcher-item svg{
-    margin: 0 15px ;
-}
-.switcher-item h3{
-    font-size: 16px;
-    line-height: 24px;
-}
-.our-restourans-onmap{
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: auto 594px;
+.select {
+  opacity: 0.5;
 }
 
-.our-restourans-list{
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: repeat(2,1fr);
+.switcher-item svg {
+  margin: 0 15px;
+}
+.switcher-item h3 {
+  font-size: 16px;
+  line-height: 24px;
+}
+.our-restourans-onmap {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: auto 594px;
 }
 
-@media (max-width:800px) {
-    .our-restourans-list{
-        grid-template-columns: repeat(1,1fr);
-    }
+.our-restourans-list {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 800px) {
+  .our-restourans-list {
+    grid-template-columns: repeat(1, 1fr);
   }
-
-.our-restourans-list .restourans-item{
-    border: 2px solid rgba(0, 0, 0, 0);
-    box-shadow: rgba(117, 118, 132, 0.15) 8px 8px 16px 0px;
 }
 
-
-
-.map-view{
-    flex: 2;
-    border-radius: 8px;
-    height: 80vh;
-
-    background-color: coral;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.our-restourans-list .restourans-item {
+  border: 2px solid rgba(0, 0, 0, 0);
+  box-shadow: rgba(117, 118, 132, 0.15) 8px 8px 16px 0px;
 }
 
-.restourans-list{
-    height: 80vh;
-    overflow: auto;
-    border-radius: 8px;
+.map-view {
+  flex: 2;
+  border-radius: 8px;
+  height: 80vh;
 
+  background-color: coral;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.restourans-list {
+  height: 80vh;
+  overflow: auto;
+  border-radius: 8px;
 }
 
 .restourans-list::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-

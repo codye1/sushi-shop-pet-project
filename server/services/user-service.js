@@ -20,6 +20,8 @@ class UserService{
             console.log(await UserModel.findOne({number}));
         }
         console.log("Send sms to user: "+number+" parol: "+code,"  ");
+
+        return code
     }
 
     async login(number,code) {

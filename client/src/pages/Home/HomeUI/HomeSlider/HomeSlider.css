@@ -1,4 +1,4 @@
-.home-slider{
+.home-slider {
   width: 53vw;
   margin: auto;
   height: inherit;
@@ -8,32 +8,31 @@
   margin: 20px auto;
 }
 
-.home-slider .swiper-slide div img{
+.home-slider .swiper-slide div img {
   width: 53vw;
   height: 20vw;
   border-radius: 8px;
 }
 
-.home-slider .swiper-slide.swiper-slide-duplicate, .home-slider .swiper-slide.swiper-slide-next, .home-slider .swiper-slide.swiper-slide-prev {
-  transform: scale(.95,.9);
+.home-slider .swiper-slide.swiper-slide-duplicate,
+.home-slider .swiper-slide.swiper-slide-next,
+.home-slider .swiper-slide.swiper-slide-prev {
+  transform: scale(0.95, 0.9);
 }
 
 .home-slider .swiper-slide-active {
-  filter: brightness(1)!important;
-  transform: scale(1)!important;
+  filter: brightness(1) !important;
+  transform: scale(1) !important;
 }
 
-
-
-.prev-button{
-
+.prev-button {
   top: 50%;
   width: 44px;
   height: 44px;
   transform: translateY(-50%);
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   opacity: 1;
-  box-shadow: -1px 1px 16px hsla(0,0%,55%,.15);
+  box-shadow: -1px 1px 16px hsla(0, 0%, 55%, 0.15);
   border-radius: 8px;
   position: absolute;
   z-index: 1;
@@ -46,26 +45,25 @@
   left: -100px;
 }
 
-@media (min-width: 1533px){
-  .prev-button{
-      left: calc(((1533px -100vw)/2)*-1);
+@media (min-width: 1533px) {
+  .prev-button {
+    left: calc(((1533px -100vw) / 2) * -1);
   }
 }
 
-.prev-button img{
+.prev-button img {
   transform: rotate(180deg);
 }
 
-.next-button{
-
+.next-button {
   top: 50%;
   width: 44px;
   height: 44px;
   transform: translateY(-50%);
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   opacity: 1;
   background: var(--white);
-  box-shadow: -1px 1px 16px hsla(0,0%,55%,.15);
+  box-shadow: -1px 1px 16px hsla(0, 0%, 55%, 0.15);
   border-radius: 8px;
   position: absolute;
   z-index: 1;
@@ -78,8 +76,9 @@
   right: -100px;
 }
 
-
-.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
   margin: 0 4px;
 
   display: inline-block;
@@ -94,8 +93,9 @@
   position: relative;
 }
 
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active:after{
-  content: "";
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet-active:after {
+  content: '';
   width: 6px;
   height: 6px;
   position: absolute;
@@ -103,5 +103,4 @@
   top: 2px;
   background: white;
   border-radius: 10px;
-
 }
