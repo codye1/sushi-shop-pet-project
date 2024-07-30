@@ -32,7 +32,13 @@ class UserController {
 
 
             if (userData) {
-                res.cookie ( 'refreshToken' , userData.refreshToken , { maxAge : 30 * 24 * 60 * 60 * 1000 , httpOnly : true , sameSite : ' none ' , secure : true , domain : " sushi-shop-pet-project-m7t7.vercel.app " } ) ;
+                res.cookie('refreshToken', userData.refreshToken, {
+                    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+                    httpOnly: true,
+                    sameSite: 'None',
+                    secure: true,
+                    domain: "sushi-shop-pet-project-m7t7.vercel.app"
+                });
                 return res.json(userData)
             }else{
                 return res.json("Error login")
@@ -60,7 +66,13 @@ class UserController {
             const {refreshToken} = req.cookies
             const userData = await userService.refresh(refreshToken)
             // domain: "sushi-shop-pet-project-m7t7.vercel.app"
-            res.cookie ( 'refreshToken' , userData.refreshToken , { maxAge : 30 * 24 * 60 * 60 * 1000 , httpOnly : true , sameSite : ' none ' , secure : true , domain : " sushi-shop-pet-project-m7t7.vercel.app " } ) ;
+            res.cookie('refreshToken', userData.refreshToken, {
+                maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+                httpOnly: true,
+                sameSite: 'None',
+                secure: true,
+                domain: "sushi-shop-pet-project-m7t7.vercel.app"
+            });
             return res.json(userData)
 
         }catch (e){
