@@ -1,19 +1,6 @@
 {
-    "version":2,
-    "builds":[
-        {
-            "src":"*.js",
-            "use":"@vercel/node",
-            "config":{
-                "includeFiles":["db.json"]
-            }
-        }
-    ],
-    "routes":[
-        {
-            "src":"/(.*)",
-            "dest":"/"
-
-        }
-    ]
+  "version": 2,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.js" }
+  ]
 }

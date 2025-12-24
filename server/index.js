@@ -11,8 +11,6 @@ console.log(process.env.PORT);
 console.log(process.env.CORS);
 
 const PORT = process.env.PORT || 5000
-server.use(express.json())
-server.use(cookieParser())
 
 server.use(cors({
   //https://sushi-shop-pet-project.vercel.app
@@ -21,7 +19,10 @@ server.use(cors({
   credentials: true,
 }))
 
+server.options('*', cors())
 
+server.use(express.json())
+server.use(cookieParser())
 
 server.use(router)
 
