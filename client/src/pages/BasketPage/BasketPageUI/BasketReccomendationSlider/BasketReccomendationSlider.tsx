@@ -1,9 +1,9 @@
-import React from 'react';
 import RecommendationSlider from '../../../../components/UI/RecommendationSlider/RecommendationSlider';
+import type { FC } from 'react';
 import { IProductsInXEelement } from '../../../../interfaces';
 import './BasketReccomendationSlider.css';
 
-const BasketReccomendationSlider: React.FC<IProductsInXEelement> = ({
+const BasketReccomendationSlider: FC<IProductsInXEelement> = ({
   products,
 }) => {
   return (

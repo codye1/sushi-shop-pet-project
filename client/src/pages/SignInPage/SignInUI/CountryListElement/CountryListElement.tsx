@@ -1,13 +1,13 @@
-import React from 'react';
 import './CountryListElement.css';
 import { country } from '../CountryList/CountryList';
+import type { FC } from 'react';
 
 interface CountryListElement {
   country: country;
   pickCountry: (country: country) => void;
 }
 
-const CountryListElement: React.FC<CountryListElement> = ({
+const CountryListElement: FC<CountryListElement> = ({
   country,
   pickCountry,
 }) => {

@@ -1,6 +1,6 @@
-import React from 'react';
 import './CardProductBasket.css';
 import { useAppSelector } from '../../../../hooks';
+import type { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   addProductInBasket,
@@ -14,7 +14,7 @@ import minus from '../../../../icons/Basket/minus.svg';
 import plus from '../../../../icons/Basket/plus.svg';
 import Remove from '../../../../icons/Basket/Remove';
 
-const CardProductBasket: React.FC<IProductInXEelement> = ({ product }) => {
+const CardProductBasket: FC<IProductInXEelement> = ({ product }) => {
   let price: number = product.price;
   price -= Math.floor(price * (product.discount / 100));
 

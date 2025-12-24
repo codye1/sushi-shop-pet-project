@@ -1,5 +1,5 @@
 import { Popover, Tooltip } from '@mui/material';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Calendar from '../../../Delivery/Calendary/Calendar';
 import './BirthSection.css';
 import CustomModal from '../../../../../../components/UI/CustomModal/CustomModal';

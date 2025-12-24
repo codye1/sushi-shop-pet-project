@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import type { FC } from 'react';
 import './UploadFile.css';
 import { useTranslation } from 'react-i18next';
 
