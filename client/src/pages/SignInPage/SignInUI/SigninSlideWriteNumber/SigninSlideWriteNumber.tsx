@@ -44,7 +44,7 @@ const SigninSlideWriteNumber: React.FC<SigninSlideWriteNumber> = ({
 
   useEffect(() => {
     setNumber(pickedCountry.dialCode);
-  }, []);
+  }, [setNumber, pickedCountry]);
 
   const { t } = useTranslation();
 

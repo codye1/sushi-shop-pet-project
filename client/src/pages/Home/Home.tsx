@@ -52,8 +52,6 @@ const Home = () => {
 
   const { t } = useTranslation();
 
-
-
   return (
     <>
       {productsLoading ? (

@@ -9,7 +9,7 @@ const RightCart = () => {
   const basket = useAppSelector((state) => state.basket.basket);
   let priceAllProduct = 0;
 
-  for (let key in basket) {
+  for (const key in basket) {
     priceAllProduct +=
       basket[key].length * basket[key].product.price -
       Math.floor(

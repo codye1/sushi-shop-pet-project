@@ -3,9 +3,7 @@ import type { FC } from 'react';
 import { IProductsInXEelement } from '../../../../interfaces';
 import './BasketReccomendationSlider.css';
 
-const BasketReccomendationSlider: FC<IProductsInXEelement> = ({
-  products,
-}) => {
+const BasketReccomendationSlider: FC<IProductsInXEelement> = ({ products }) => {
   return (
     <div className="d-flex">
       <div className="container column">
