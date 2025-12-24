@@ -39,7 +39,7 @@ server.use(router)
 const start = async ()=>{
   try{
     // temp
-    console.log(process.env.PORT);
+    console.log("PORT",process.env.PORT);
     console.log(process.env.CORS);
     await mongoose.connect(process.env.MONGODB_URL)
 
@@ -52,5 +52,5 @@ const start = async ()=>{
 }
 
 start()
-
+console,log("Server started");
 module.exports = server;
