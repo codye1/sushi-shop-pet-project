@@ -16,7 +16,8 @@ import type {
   FetchArgs,
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/query';
-console.log(import.meta.env.VITE_API_URL);
+console.log('API_URL:', import.meta.env.VITE_API_URL);
+console.log('BASE_URL:', import.meta.env.VITE_BASE_URL);
 
 const baseQuery = fetchBaseQuery({
   //https://sushi-shop-pet-project-m7t7.vercel.app/
