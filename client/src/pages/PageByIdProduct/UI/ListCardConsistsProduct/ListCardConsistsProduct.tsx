@@ -7,8 +7,8 @@ const ListCardConsistsProduct: React.FC<IProductsInXEelement> = ({
 }) => {
   return (
     <div className="list-consists-container">
-      {products.map((p) => (
-        <ConsistsСardProduct key={p.key} product={p} />
+      {products.map((p, index) => (
+        <ConsistsСardProduct key={`${p.id}-${index}`} product={p} />
       ))}
     </div>
   );

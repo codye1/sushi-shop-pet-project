@@ -1,14 +1,14 @@
 import { useDispatch } from 'react-redux';
-import { useAppSelector } from '../../../../hooks';
-import { setSearchActive } from '../../../../reducer/search';
 import './RightCont.css';
 import { NavLink } from 'react-router-dom';
 import { useMemo, useState } from 'react';
 import { Popover } from '@mui/material';
-import Menu from '../../../Account/Menu/Menu';
-import searchPNG from '../../../../icons/headerIcon/search.png';
-import userPNG from '../../../../icons/headerIcon/user.png';
-import basketPNG from '../../../../icons/headerIcon/basket.png';
+import searchPNG from '../../../../../icons/headerIcon/search.png';
+import userPNG from '../../../../../icons/headerIcon/user.png';
+import basketPNG from '../../../../../icons/headerIcon/basket.png';
+import { useAppSelector } from '../../../../../hooks';
+import { setSearchActive } from '../../../../../reducer/search';
+import Menu from '../../../../../pages/Account/Menu/Menu';
 const RightCont = () => {
   const dispatch = useDispatch();
   const [isAnimated, setIsAtimated] = useState(false);

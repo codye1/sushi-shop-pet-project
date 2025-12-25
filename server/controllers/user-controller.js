@@ -10,7 +10,9 @@ class UserController {
             return res.json(code)
 
         }catch (e){
-            console.log(e);
+            console.log("Send SMS code error: " + e);
+
+            return res.status(500).json("Error send SMS code" + e);
         }
     }
 
@@ -21,7 +23,8 @@ class UserController {
             const userData = await userService.refreshSMSCode(number)
             return res.json("Токен обновлен")
         }catch(e){
-            console.log(e);
+            console.log("Refresh SMS token error: " + e);
+            return res.status(500).json("Error refresh SMS token" + e);
         }
     }
 
@@ -41,11 +44,12 @@ class UserController {
                 });
                 return res.json(userData)
             }else{
-                return res.json("Error login")
+                return res.status(400).json("Неверный код или истекло время действия кода")
             }
 
         }catch (e){
-            console.log(e);
+            console.log("Login error: " + e);
+            return res.status(500).json("Error login" + e);
         }
     }
 
@@ -57,7 +61,8 @@ class UserController {
             res.clearCookie("refreshToken")
             return res.json(token)
         }catch (e){
-            console.log(e);
+            console.log("Logout error: " + e);
+            return res.status(500).json("Error logout" + e);
         }
     }
 
@@ -87,6 +92,7 @@ class UserController {
             return res.json(users)
         }catch (e){
             console.log(e);
+            return res.status(500).json("Error get all users" + e);
         }
     }
 
@@ -99,6 +105,7 @@ class UserController {
             return res.json(newAddresses)
         }catch (e){
             console.log(e);
+            return res.status(500).json("Error add address" + e);
         }
     }
 
@@ -112,6 +119,7 @@ class UserController {
             return res.json(newAddresses)
         }catch (e){
             console.log(e);
+            return res.status(500).json("Error delete address" + e);
         }
     }
 
@@ -126,6 +134,7 @@ class UserController {
             return res.json(newAddresses)
         }catch (e){
             console.log(e);
+            return res.status(500).json("Error put address" + e);
         }
     }
 
@@ -137,6 +146,7 @@ class UserController {
             userService.saveBirthDate(userData.number,result.birthDate)
         }catch (e){
             console.log(e);
+            return res.status(500).json("Error save birth date" + e);
         }
     }
 
@@ -148,6 +158,7 @@ class UserController {
             userService.saveName(userData.number,result.name)
         }catch (e){
             console.log(e);
+            return res.status(500).json("Error save name" + e);
         }
     }
 
@@ -160,6 +171,7 @@ class UserController {
             userService.saveEmail(userData.number,result.email)
         }catch (e){
             console.log(e);
+            return res.status(500).json("Error save email" + e);
         }
     }
 
@@ -171,6 +183,7 @@ class UserController {
             userService.saveImg(userData.number,result.img)
         }catch (e){
             console.log(e);
+            return res.status(500).json("Error upload img" + e);
         }
     }
 

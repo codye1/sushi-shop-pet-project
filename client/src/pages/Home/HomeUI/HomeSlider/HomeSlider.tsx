@@ -31,7 +31,10 @@ const HomeSlider: FC<IPromotionsInXEelement> = ({ promotions }) => {
           {promotions.map((p) => (
             <SwiperSlide key={p.key}>
               <div onClick={() => setModalSliderActive(true)} className="slide">
-                <img src={p.imgWide} alt="" />
+                <img
+                  src={p.imgWide}
+                  alt={p.title ?? ''}
+                />
               </div>
             </SwiperSlide>
           ))}

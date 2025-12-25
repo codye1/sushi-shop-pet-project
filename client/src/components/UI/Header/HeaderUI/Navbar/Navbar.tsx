@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import SearchBlock from '../../../../components/UI/SearchBlock/SearchBlock';
-import { useAppSelector } from '../../../../hooks';
+
 import './Navbar.css';
-import chevron from '../../../../icons/chevron.svg';
+import chevron from '../../../../../icons/chevron.svg';
 import { useTranslation } from 'react-i18next';
+import { useAppSelector } from '../../../../../hooks';
+import SearchBlock from '../../../SearchBlock/SearchBlock';
 interface INavbar {
   isScroled: boolean;
 }

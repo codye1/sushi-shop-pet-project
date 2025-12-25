@@ -54,23 +54,15 @@ const Home = () => {
 
   return (
     <>
-      {productsLoading ? (
-        <HomeSlider promotions={skeletonSlide} />
-      ) : (
-        promotions && <HomeSlider promotions={promotions} />
-      )}
-      <div className="title d-flex">
-        <div className="container">
-          <div className="page-title">{t('home.tite')}</div>
-        </div>
+      <HomeSlider promotions={promotions ?? skeletonSlide} />
+
+      <div className='container'>
+        <h1 className="page-title">{t('home.title')}</h1>
       </div>
-      {errorProducts ? (
-        <div>Помилка</div>
-      ) : productsLoading ? (
-        <SekeletonCardProduct />
-      ) : (
-        products && <ProductList products={products} />
-      )}
+
+      {errorProducts && <div>Помилка</div>}
+      {productsLoading && <SekeletonCardProduct />}
+      {products && <ProductList products={products} />}
       <Banner />
       <AboutSushiMaster />
     </>

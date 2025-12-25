@@ -10,6 +10,7 @@ const CardProduct: React.FC<IProductInXEelement> = ({ product }) => {
   let price: number = product.price;
   price -= Math.floor(price * (product.discount / 100));
 
+
   const dispatch = useAppDispatch();
 
   return (
@@ -25,7 +26,7 @@ const CardProduct: React.FC<IProductInXEelement> = ({ product }) => {
               title={`Страва ${product.title} меню SUSHI MASTER`}
               className="card-img"
               src={product.img}
-              alt=""
+              alt={product.title}
             />
           </NavLink>
         }

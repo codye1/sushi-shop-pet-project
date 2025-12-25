@@ -6,4 +6,6 @@
 
 .page-title {
   font-family: Bold;
+  display: flex;
+  margin:auto;
 }

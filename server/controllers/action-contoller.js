@@ -9,6 +9,7 @@ class ActionController{
             return res.json({title:"Action created", createdAction})
         }catch(err){
             console.log(err);
+            return res.status(500).json("Error add action" + err);
         }
     }
     async getActions(req,res,next){
@@ -24,6 +25,7 @@ class ActionController{
             return res.json(actions)
         }catch(err){
             console.log(err);
+            return res.status(500).json("Error get actions" + err);
         }
     }
 
@@ -39,6 +41,7 @@ class ActionController{
 
         }catch(err){
             console.log(err);
+            return res.status(500).json("Error get actions by id" + err);
         }
     }
 }

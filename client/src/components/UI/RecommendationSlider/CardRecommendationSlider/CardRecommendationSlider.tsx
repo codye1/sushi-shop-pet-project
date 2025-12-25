@@ -13,7 +13,7 @@ const CardRecommendationSlider: React.FC<IProductInXEelement> = ({
     <div className="card-recommendation">
       <div className="card-recommendation-top-cont">
         <div className="card-recommendation-img">
-          <div className="card-product-basket-img-cont">
+          <div className="card-recommendation-img-cont">
             {
               <NavLink to={`/menu/${product.type}/${product.id}`}>
                 {' '}

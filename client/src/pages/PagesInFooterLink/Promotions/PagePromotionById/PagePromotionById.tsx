@@ -19,8 +19,6 @@ const PagePromotionById = () => {
     promotion?.productInPromotion ? promotion.productInPromotion : ['']
   );
 
-  console.log(promotion?.productInPromotion);
-  console.log(params);
 
   return (
     <div>

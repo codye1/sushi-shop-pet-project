@@ -6,6 +6,11 @@ import { store } from './reducer/store.tsx';
 import './App.css';
 import { StyledEngineProvider } from '@mui/material/styles';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
     <StrictMode>

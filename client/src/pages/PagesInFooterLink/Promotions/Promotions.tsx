@@ -17,13 +17,10 @@ const Promotions = () => {
       <div className="d-flex">
         <div className="container">
           <h1>Акції</h1>
-          {errorPromotions ? (
-            <div>Ошибка</div>
-          ) : isLoadingPromotions ? (
-            <div>Загрузка</div>
-          ) : promotions ? (
-            <PromotionsList promotions={promotions} />
-          ) : null}
+          {errorPromotions && <div>Помилка</div> }
+          {isLoadingPromotions && <div>Завантаження...</div> }
+          {promotions && <PromotionsList promotions={promotions} /> }
+
         </div>
       </div>
     </div>

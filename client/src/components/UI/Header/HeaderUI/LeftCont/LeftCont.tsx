@@ -1,8 +1,8 @@
 import './LeftCont.css';
-import arrowDown from '../../../../icons/headerIcon/arrow-down.png';
+import arrowDown from '../../../../../icons/headerIcon/arrow-down.png';
 import { Popover } from '@mui/material';
 import { useState } from 'react';
-import i18next from '../../../../LanguageManager/i18n';
+import i18next from '../../../../../LanguageManager/i18n';
 
 const LeftCont = () => {
   const [currentLanguage, setCurrentLanguage] = useState(i18next.language);

@@ -9,6 +9,7 @@ class RestaurantsController{
             return res.json({title:"Reastaurants created", createdRestaurants})
         }catch(err){
             console.log(err);
+            return res.status(500).json("Error add restaurants" + err);
         }
     }
     async getRestaurantss(req,res,next){
@@ -18,6 +19,7 @@ class RestaurantsController{
             return res.json(Restaurantss)
         }catch(err){
             console.log(err);
+            return res.status(500).json("Error get restaurants" + err);
         }
     }
 }

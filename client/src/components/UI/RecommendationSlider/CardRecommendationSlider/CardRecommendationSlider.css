@@ -62,10 +62,16 @@
   height: 90px;
 }
 
-.card-product-basket-img-cont {
+.card-recommendation-img-cont {
   width: 90px;
   height: 100%;
   border-radius: 8px;
+
+
+}
+
+.card-recommendation-img-cont img {
+  width: 100%;
 }
 
 .card-recommendation-button {
