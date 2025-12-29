@@ -17,7 +17,11 @@ const corsAllowList = (process.env.CORS || '')
   .filter(Boolean)
 
 const isAllowedOrigin = (origin) => {
-  if (!origin) return true
+  // Reject requests without origin in production for security
+  if (!origin) {
+    return process.env.NODE_ENV !== 'production'
+  }
+  
   if (corsAllowList.includes(origin)) return true
 
   try {
