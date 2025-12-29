@@ -5,8 +5,8 @@ import './ListCardConsistsProduct.css';
 const ListCardConsistsProduct = ({ products }: IProductsInXEelement) => {
   return (
     <div className="list-consists-container">
-      {products.map((p, index) => (
-        <ConsistsСardProduct key={`${p.id}-${index}`} product={p} />
+      {products.map((p) => (
+        <ConsistsСardProduct key={`${p.id}`} product={p} />
       ))}
     </div>
   );

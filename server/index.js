@@ -25,13 +25,6 @@ const isAllowedOrigin = (origin) => {
 
     if (url.hostname === 'localhost' || url.hostname === '127.0.0.1') return true
 
-
-    if (
-      url.protocol === 'https:' &&
-      url.hostname.endsWith('.vercel.app') &&
-      url.hostname.startsWith('sushi-shop-pet-project')
-    ) return true
-
     return false
   } catch {
     return false

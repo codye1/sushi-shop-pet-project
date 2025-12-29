@@ -8,6 +8,7 @@ import {
 import Breadcrumb from '../../../../components/UI/Breadcrumb/Breadcrumb';
 import RecommendationSlider from '../../../../components/UI/RecommendationSlider/RecommendationSlider';
 import { useTranslation } from 'react-i18next';
+import DOMPurify from 'dompurify';
 
 const PagePromotionById = () => {
   const { t } = useTranslation();
@@ -36,7 +37,11 @@ const PagePromotionById = () => {
                 <h1>{promotion.title}</h1>
                 <div
                   className="html"
-                  dangerouslySetInnerHTML={{ __html: promotion.html }}
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(promotion.html, {
+                      ALLOWED_TAGS: ['p'],
+                    }),
+                  }}
                 ></div>
               </div>
             </div>

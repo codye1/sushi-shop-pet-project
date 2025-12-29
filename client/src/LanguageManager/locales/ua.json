@@ -196,7 +196,8 @@
     "error": "Помилка",
     "loading": "Завантаження...",
     "actions": {
-      "go": "Перейти"
+      "go": "Перейти",
+      "back": "Назад"
     },
     "units": {
       "grams": "г",
@@ -223,6 +224,10 @@
         "delivery": "Приймаємо замовлення на доставку",
         "hours": "з {{from}} до {{to}}"
       }
+    },
+    "pageByIdProduct": {
+      "composedTitle": "СЕТ СКЛАДАЄТЬСЯ",
+      "recommendedTitle": "Рекомендуємо спробувати"
     }
   },
   "product": {

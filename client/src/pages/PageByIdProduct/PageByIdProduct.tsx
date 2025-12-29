@@ -28,7 +28,9 @@ const PageByIdProduct = () => {
   return (
     <div>
       <div className="pageByIdTovar">
-        {productError && composedProductError && <div>{t('common.error')}</div>}
+        {(productError || composedProductError) && (
+          <div>{t('common.error')}</div>
+        )}
 
         {productLoading && composedProductLoading && (
           <MainProductViewSkeleton />

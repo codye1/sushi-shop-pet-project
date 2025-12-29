@@ -126,8 +126,3 @@ img {
   overflow-clip-margin: content-box;
   overflow: clip;
 }
-
-.test2 {
-  height: 500px;
-  background-color: blue;
-}

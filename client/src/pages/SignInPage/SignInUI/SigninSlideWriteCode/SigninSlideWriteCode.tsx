@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import './SigninSlideWriteCode.css';
-import ReactCodeInput from 'react-code-input';
 import { useRefreshSMSCodeMutation } from '../../../../API';
 import CustomModal from '../../../../components/UI/CustomModal/CustomModal';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { useLogin } from './useLogin';
+import OtpCodeInput from './OtpCodeInput';
 
 interface ISigninSlideWriteCode {
   number: string;
@@ -22,13 +22,6 @@ const SigninSlideWriteCode = ({
 
   const { t } = useTranslation();
 
-  const props = {
-    inputStyle: {
-      marginRight: '16px',
-      outline: 'none',
-    },
-  };
-
   useEffect(() => {
     if (seconds > 0) {
       const timerTick = () => setSeconds((prevSeconds) => prevSeconds - 1);
@@ -42,11 +35,12 @@ const SigninSlideWriteCode = ({
       <div className="sign-in-form">
         <div className="form-title">{t('sign-in.write-code.form-title')}</div>
         <div className="write-code-descriptions">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: t('sign-in.write-code.description', { number }),
-            }}
+          <Trans
+            i18nKey="sign-in.write-code.description"
+            values={{ number }}
+            components={{ strong: <strong /> }}
           />
+
           <span>{t('sign-in.write-code.span')}</span>
           {seconds == 0 && (
             <span
@@ -60,14 +54,14 @@ const SigninSlideWriteCode = ({
           )}
         </div>
         <div className="write-code-input">
-          <ReactCodeInput
-            {...props}
+          <OtpCodeInput
             fields={4}
             onChange={handlePinChange}
             value={pinCode}
             name={'test'}
             inputMode={'tel'}
             placeholder="◦"
+            inputStyle={{ marginRight: '16px', outline: 'none' }}
           />
         </div>
         <div className="code-repeat">
@@ -81,10 +75,10 @@ const SigninSlideWriteCode = ({
               {t('sign-in.write-code.code-repeat1')}
             </span>
           ) : (
-            <span
-              dangerouslySetInnerHTML={{
-                __html: t('sign-in.write-code.code-repeat2', { seconds }),
-              }}
+            <Trans
+              i18nKey="sign-in.write-code.code-repeat2"
+              values={{ seconds }}
+              components={{ strong: <strong /> }}
             />
           )}
         </div>
