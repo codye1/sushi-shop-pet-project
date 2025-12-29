@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import {
   useDeleteAddressMutation,
   usePutAddressMutation,
@@ -10,11 +10,11 @@ import FormAddress from '../FormAddress/FormAddress';
 import { useAppDispatch } from '../../../../../hooks';
 import { updAddresses } from '../../../../../reducer/auth';
 import { deliveryAddresses } from '../../../../../interfaces';
-interface Address {
+interface IAddress {
   address: deliveryAddresses;
 }
 
-const Address: FC<Address> = ({ address }) => {
+const Address = ({ address }: IAddress) => {
   const [warnDelete, setWarnDelete] = useState(false);
   const [deleteAddress] = useDeleteAddressMutation();
   const [putAddress] = usePutAddressMutation();

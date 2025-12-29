@@ -16,7 +16,6 @@ import type {
   FetchArgs,
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/query';
-console.log(import.meta.env.VITE_API_URL);
 
 const baseQuery = fetchBaseQuery({
   //https://sushi-shop-pet-project-m7t7.vercel.app/
@@ -24,7 +23,7 @@ const baseQuery = fetchBaseQuery({
 
   baseUrl: import.meta.env.VITE_API_URL,
   prepareHeaders: (headers) => {
-    headers.set('Authorization', `Barer ${localStorage.getItem('token')}`);
+    headers.set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     return headers;
   },
   credentials: 'include',

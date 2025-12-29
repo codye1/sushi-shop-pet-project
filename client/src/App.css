@@ -1,6 +1,17 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 * {
   margin: 0;
   font-family: Regular, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
 }
 
 #root {
@@ -27,7 +38,6 @@
   width: 100%;
   margin: auto;
   padding: 0 30px;
-  margin-bottom: 30px;
   background-color: white;
 }
 
@@ -105,7 +115,6 @@
 
 @media (max-width: 500px) {
   .container {
-    width: 100%;
   }
   .container-with-text {
     width: 100%;

@@ -11,16 +11,18 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@mui/lab": "^5.0.0-alpha.165",
     "@mui/material": "^5.15.10",
     "@mui/x-date-pickers": "^6.19.4",
     "@reduxjs/toolkit": "^1.9.7",
     "dayjs": "^1.11.10",
+    "dompurify": "^3.3.1",
     "i18next": "^23.10.1",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.5.0",
     "react": "^18.2.0",
-    "react-code-input": "^3.10.1",
     "react-dom": "^18.2.0",
     "react-easy-crop": "^5.0.6",
     "react-i18next": "^14.1.0",
@@ -34,6 +36,7 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^5.1.2",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -44,16 +47,10 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   }
 }

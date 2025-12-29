@@ -9,6 +9,7 @@ class ProductController{
             return res.json({title:"Продукт створено",createdProduct})
         }catch(err){
             console.log(err);
+            return res.status(500).json("Error add product" + err);
         }
     }
     async getProducts(req,res,next){
@@ -49,6 +50,7 @@ class ProductController{
             return res.json(products)
         }catch(err){
             console.log(err);
+            return res.status(500).json("Error get products" + err);
         }
     }
 
@@ -62,6 +64,7 @@ class ProductController{
             return res.json(filteredProd[0])
         }catch(err){
             console.log(err);
+            return res.status(500).json("Error get products by id" + err);
         }
     }
 }

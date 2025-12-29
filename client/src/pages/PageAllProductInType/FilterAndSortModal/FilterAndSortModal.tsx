@@ -5,7 +5,7 @@ import close from '../../../icons/close.png';
 import GroupItem from './Components/GroupItem';
 interface FilterAndSortModal {
   onUpdateData: (newData: IFormFilterAndSort) => void;
-  ApplyForm: () => void;
+  applyForm: () => void;
   ParentFormaFiltra: IFormFilterAndSort;
   labels: string[];
 }
@@ -15,12 +15,12 @@ export interface IFormFilterAndSort {
   labels: string[];
 }
 
-const FilterAndSortModal: React.FC<FilterAndSortModal> = ({
+const FilterAndSortModal = ({
   onUpdateData,
   labels,
   ParentFormaFiltra,
-  ApplyForm,
-}) => {
+  applyForm,
+}: FilterAndSortModal) => {
   const [modalTransition, setModalTransition] = useState(false);
 
   const [selectLabels, setSelectLabels] = useState<string[]>(
@@ -53,7 +53,7 @@ const FilterAndSortModal: React.FC<FilterAndSortModal> = ({
     formaFiltra.labels = [];
     setTimeout(() => {
       sendDataToParent();
-      ApplyForm();
+      applyForm();
     }, 300);
   }
 
@@ -62,7 +62,7 @@ const FilterAndSortModal: React.FC<FilterAndSortModal> = ({
     formaFiltra.labels = selectLabels;
     setTimeout(() => {
       sendDataToParent();
-      ApplyForm();
+      applyForm();
     }, 300);
   }
   return (

@@ -4,15 +4,13 @@
         {
             "src":"*.js",
             "use":"@vercel/node",
-            "config":{
-                "includeFiles":["db.json"]
-            }
+            "config":{}
         }
     ],
     "routes":[
         {
             "src":"/(.*)",
-            "dest":"/"
+            "dest":"/index.js"
 
         }
     ]

@@ -1,8 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { routPages } from './route-pages';
 import { useAppSelector } from '../../hooks';
 import Account from '../../pages/Account/Account';
 import SignIn from '../../pages/SignInPage/SignIn';
+import { routPages } from './routePages';
+
 const Routing = () => {
   const isAuth = useAppSelector((state) => state.auth.isAuth);
 

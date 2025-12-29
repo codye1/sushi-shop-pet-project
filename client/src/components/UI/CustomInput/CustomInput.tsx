@@ -14,7 +14,7 @@ interface ICustomInput {
   setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const CustomInput: React.FC<ICustomInput> = ({
+const CustomInput = ({
   placeholder,
   value,
   setValue,
@@ -23,7 +23,7 @@ const CustomInput: React.FC<ICustomInput> = ({
   onApplyButtons,
   onCancelButtons,
   validation = true,
-}) => {
+}: ICustomInput) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {

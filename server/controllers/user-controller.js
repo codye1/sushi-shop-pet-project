@@ -10,7 +10,8 @@ class UserController {
             return res.json(code)
 
         }catch (e){
-            console.log(e);
+            console.error('Send SMS code error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -21,7 +22,8 @@ class UserController {
             const userData = await userService.refreshSMSCode(number)
             return res.json("Токен обновлен")
         }catch(e){
-            console.log(e);
+            console.error('Refresh SMS token error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -41,11 +43,12 @@ class UserController {
                 });
                 return res.json(userData)
             }else{
-                return res.json("Error login")
+                return res.status(400).json("Неверный код или истекло время действия кода")
             }
 
         }catch (e){
-            console.log(e);
+            console.error('Login error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -57,7 +60,8 @@ class UserController {
             res.clearCookie("refreshToken")
             return res.json(token)
         }catch (e){
-            console.log(e);
+            console.error('Logout error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -76,7 +80,8 @@ class UserController {
             return res.json(userData)
 
         }catch (e){
-            return res.json({error:"Error refresh",error2:e})
+            console.error('Refresh error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -86,7 +91,8 @@ class UserController {
             const users = await userService.getAllUsers()
             return res.json(users)
         }catch (e){
-            console.log(e);
+            console.error('Get all users error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -98,7 +104,8 @@ class UserController {
             const newAddresses= await userService.addAddress(userData.number,address)
             return res.json(newAddresses)
         }catch (e){
-            console.log(e);
+            console.error('Add address error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -111,7 +118,8 @@ class UserController {
             const newAddresses= await userService.deleteAddress(userData.number,address)
             return res.json(newAddresses)
         }catch (e){
-            console.log(e);
+            console.error('Delete address error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -125,7 +133,8 @@ class UserController {
             console.log("New addresses",newAddresses);
             return res.json(newAddresses)
         }catch (e){
-            console.log(e);
+            console.error('Put address error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -136,7 +145,8 @@ class UserController {
             const userData = tokenService.validateAccessToken(accesToken)
             userService.saveBirthDate(userData.number,result.birthDate)
         }catch (e){
-            console.log(e);
+            console.error('Save birth date error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -147,7 +157,8 @@ class UserController {
             const userData = tokenService.validateAccessToken(accesToken)
             userService.saveName(userData.number,result.name)
         }catch (e){
-            console.log(e);
+            console.error('Save name error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -159,7 +170,8 @@ class UserController {
             console.log(result);
             userService.saveEmail(userData.number,result.email)
         }catch (e){
-            console.log(e);
+            console.error('Save email error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 
@@ -170,7 +182,8 @@ class UserController {
             const userData = tokenService.validateAccessToken(accesToken)
             userService.saveImg(userData.number,result.img)
         }catch (e){
-            console.log(e);
+            console.error('Upload img error:', e)
+            return res.status(500).json({ message: 'Internal server error' })
         }
     }
 

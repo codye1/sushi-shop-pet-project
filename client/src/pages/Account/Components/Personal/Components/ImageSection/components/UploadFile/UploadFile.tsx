@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import { SetStateAction, ChangeEvent } from 'react';
 import './UploadFile.css';
 import { useTranslation } from 'react-i18next';
 
-interface UploadFile {
-  setImg: (value: React.SetStateAction<string>) => void;
+interface IUploadFile {
+  setImg: (value: SetStateAction<string>) => void;
 }
 
-const UploadFile: FC<UploadFile> = ({ setImg }) => {
-  function uploadFileHandler(event: React.ChangeEvent<HTMLInputElement>) {
+const UploadFile = ({ setImg }: IUploadFile) => {
+  function uploadFileHandler(event: ChangeEvent<HTMLInputElement>) {
     if (event.target.files) {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(event.target.files[0]);

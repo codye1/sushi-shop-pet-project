@@ -24,7 +24,8 @@ body {
 
 .top-container {
   margin: auto;
-  width: 1600px;
+  max-width: 1600px;
+  width: 100%;
   height: 81px;
 
   padding: 0 30px;
@@ -36,6 +37,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: 600;
+
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 @media (max-width: 1000px) {
@@ -50,8 +54,12 @@ body {
 }
 @media (max-width: 800px) {
   .main-logo {
-    width: 100%;
+    display: none;
   }
+}
+
+.separator-container {
+  background-color: white;
 }
 
 .basket-left-block {
@@ -150,7 +158,8 @@ body {
 }
 
 .line-container {
-  width: 1600px;
+  max-width: 1600px;
+  width: 100%;
   margin: auto;
   padding: 0 30px;
 }

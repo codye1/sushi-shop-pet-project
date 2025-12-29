@@ -5,33 +5,10 @@
 .container-product-view {
   display: flex;
   flex-direction: column;
-  width: 1600px;
+  max-width: 1600px;
+  width: 100%;
   margin: auto;
   padding: 0 30px;
-}
-
-.back {
-  line-height: 30px;
-  display: flex;
-  margin: 30px 0;
-  font-size: 32px;
-  font-weight: bold;
-  align-items: center;
-}
-
-.back span {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-
-  cursor: pointer;
-}
-
-.back strong {
-  font-weight: bold;
-  font-size: 12px;
-  margin-left: 10px;
-  text-transform: uppercase;
 }
 
 .pageByIdProduct-swiper .swiper-slide {

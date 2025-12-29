@@ -1,1 +1,10 @@
-{}
+{
+	"name": "sushi-shop-pet-project",
+	"private": true,
+	"scripts": {
+		"prepare": "husky install"
+	},
+	"devDependencies": {
+		"husky": "^9.0.11"
+	}
+}

@@ -1,5 +1,5 @@
 import './DownBlock.css';
-import visamastercard from '../../../../icons/footerIcon/mastercard-visa.png';
+import visamastercard from '../../../../../icons/footerIcon/mastercard-visa.png';
 import { useTranslation } from 'react-i18next';
 
 const DownBlock = () => {

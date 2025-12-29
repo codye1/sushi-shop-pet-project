@@ -2,10 +2,10 @@ import AddProductInBasketButton from '../../AddProductInBasketButton/AddProductI
 import './CardRecommendationSlider.css';
 import { IProductInXEelement } from '../../../../interfaces';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-const CardRecommendationSlider: React.FC<IProductInXEelement> = ({
-  product,
-}) => {
+const CardRecommendationSlider = ({ product }: IProductInXEelement) => {
+  const { t } = useTranslation();
   let price: number = product.price;
   price -= Math.floor(price * (product.discount / 100));
 
@@ -13,12 +13,12 @@ const CardRecommendationSlider: React.FC<IProductInXEelement> = ({
     <div className="card-recommendation">
       <div className="card-recommendation-top-cont">
         <div className="card-recommendation-img">
-          <div className="card-product-basket-img-cont">
+          <div className="card-recommendation-img-cont">
             {
               <NavLink to={`/menu/${product.type}/${product.id}`}>
                 {' '}
                 <img
-                  title={`Страва ${product.title} меню SUSHI MASTER`}
+                  title={t('product.imageTitle', { title: product.title })}
                   src={product.img}
                   alt=""
                 />
@@ -32,14 +32,18 @@ const CardRecommendationSlider: React.FC<IProductInXEelement> = ({
               {product.title}
             </NavLink>
           }
-          <h2>{product?.harch?.weight}г</h2>
+          <h2>
+            {product?.harch?.weight}
+            {t('common.units.grams')}
+          </h2>
         </div>
       </div>
       <div className="card-recommendation-bottom-cont">
         <div className="card-recommendation-price">
           {product.discount > 0 ? (
             <div className="action">
-              {price} грн&nbsp;<span>{product.price}</span>
+              {price} {t('common.units.currency')}&nbsp;
+              <span>{product.price}</span>
             </div>
           ) : (
             <span>{product.price}</span>

@@ -4,7 +4,7 @@ import { IProductsInXEelement } from '../../../../interfaces';
 import './LeftBlock.css';
 import { useAppDispatch } from '../../../../hooks';
 
-const LeftBlock: React.FC<IProductsInXEelement> = ({ products }) => {
+const LeftBlock = ({ products }: IProductsInXEelement) => {
   const dispatch = useAppDispatch();
 
   return (

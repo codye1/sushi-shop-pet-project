@@ -7,8 +7,11 @@ import {
 } from '../../../../API';
 import Breadcrumb from '../../../../components/UI/Breadcrumb/Breadcrumb';
 import RecommendationSlider from '../../../../components/UI/RecommendationSlider/RecommendationSlider';
+import { useTranslation } from 'react-i18next';
+import DOMPurify from 'dompurify';
 
 const PagePromotionById = () => {
+  const { t } = useTranslation();
   const params: params = useParams();
   const {
     data: promotion,
@@ -19,16 +22,11 @@ const PagePromotionById = () => {
     promotion?.productInPromotion ? promotion.productInPromotion : ['']
   );
 
-  console.log(promotion?.productInPromotion);
-  console.log(params);
-
   return (
     <div>
-      {promotionError ? (
-        <div>Помилка</div>
-      ) : promotionLoading ? (
-        <div>Помилка</div>
-      ) : promotion ? (
+      {promotionError && <div>{t('common.error')}</div>}
+      {promotionLoading && <div>{t('common.loading')}</div>}
+      {promotion && (
         <div className="promotion-id">
           <div className="d-flex">
             <div className="container column">
@@ -39,7 +37,11 @@ const PagePromotionById = () => {
                 <h1>{promotion.title}</h1>
                 <div
                   className="html"
-                  dangerouslySetInnerHTML={{ __html: promotion.html }}
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(promotion.html, {
+                      ALLOWED_TAGS: ['p'],
+                    }),
+                  }}
                 ></div>
               </div>
             </div>
@@ -49,7 +51,7 @@ const PagePromotionById = () => {
               <div className="promotion-html">
                 {promotion.productInPromotion.length == 0 ? (
                   <a className="promotion-button" href="">
-                    <span>Перейти</span>
+                    <span>{t('common.actions.go')}</span>
                   </a>
                 ) : (
                   products && <RecommendationSlider products={products} />
@@ -58,7 +60,7 @@ const PagePromotionById = () => {
             </div>
           </div>
         </div>
-      ) : null}
+      )}
       {promotion && <Breadcrumb crumbs={['promotions', promotion.title]} />}
     </div>
   );

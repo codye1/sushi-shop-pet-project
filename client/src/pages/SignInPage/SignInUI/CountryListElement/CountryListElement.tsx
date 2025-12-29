@@ -1,16 +1,12 @@
-import React from 'react';
 import './CountryListElement.css';
 import { country } from '../CountryList/CountryList';
 
-interface CountryListElement {
+interface ICountryListElement {
   country: country;
   pickCountry: (country: country) => void;
 }
 
-const CountryListElement: React.FC<CountryListElement> = ({
-  country,
-  pickCountry,
-}) => {
+const CountryListElement = ({ country, pickCountry }: ICountryListElement) => {
   return (
     <li
       onClick={() => pickCountry(country)}

@@ -1,5 +1,12 @@
 footer {
   display: flex;
+  max-width: 1600px;
+  width: 100%;
+  margin: auto;
+  padding: 0 30px;
+  background-color: white;
+
+  flex-direction: column;
 }
 
 .icons {

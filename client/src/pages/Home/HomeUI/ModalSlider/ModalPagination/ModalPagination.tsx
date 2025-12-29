@@ -7,7 +7,7 @@ interface IModalPagination {
   idActiveSlide: number;
 }
 
-const ModalPagination: React.FC<IModalPagination> = ({ idActiveSlide }) => {
+const ModalPagination = ({ idActiveSlide }: IModalPagination) => {
   const swiper = useSwiper();
   return (
     <div className="modal-pagination">

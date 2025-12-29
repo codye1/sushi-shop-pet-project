@@ -1,14 +1,14 @@
 import { Slider } from '@mui/material';
-import { Dispatch, FC, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import Cropper, { Area } from 'react-easy-crop';
 import './CropContainer.css';
 
-interface CropContainer {
+interface ICropContainer {
   img: string;
   setCroppedAreaPixels: Dispatch<SetStateAction<Area | undefined>>;
 }
 
-const CropContainer: FC<CropContainer> = ({ img, setCroppedAreaPixels }) => {
+const CropContainer = ({ img, setCroppedAreaPixels }: ICropContainer) => {
   const onCropComplete = (croppedArea: Area, croppedAreaPixels: Area) => {
     console.log(croppedArea);
     setCroppedAreaPixels(croppedAreaPixels);

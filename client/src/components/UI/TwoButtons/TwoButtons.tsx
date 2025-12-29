@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import './TwoButtons.css';
 
 interface ITwoButtons {
@@ -8,12 +7,12 @@ interface ITwoButtons {
   applyTitle: string;
 }
 
-const TwoButtons: FC<ITwoButtons> = ({
+const TwoButtons = ({
   onApply,
   onCancel,
   cancelTitle,
   applyTitle,
-}) => {
+}: ITwoButtons) => {
   return (
     <div className="two-buttons">
       <button onClick={onCancel} className="button-cancel pointer">

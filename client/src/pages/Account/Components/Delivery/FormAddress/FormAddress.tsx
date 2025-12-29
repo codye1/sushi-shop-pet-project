@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import CustomInput from '../../../../../components/UI/CustomInput/CustomInput';
 import './FormAddress.css';
 import { deliveryAddresses } from '../../../../../interfaces';
@@ -9,7 +9,7 @@ interface IFormAddress {
   defaultValue?: deliveryAddresses;
 }
 
-const FormAddress: FC<IFormAddress> = ({ onApply, defaultValue, onClose }) => {
+const FormAddress = ({ onApply, defaultValue, onClose }: IFormAddress) => {
   const [street, setStreet] = useState(defaultValue ? defaultValue.street : '');
   const [house, setHouse] = useState(defaultValue ? defaultValue.house : '');
   const [intercom, setIntercom] = useState(

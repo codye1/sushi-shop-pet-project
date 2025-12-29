@@ -1,19 +1,24 @@
 import { BrowserRouter } from 'react-router-dom';
-import Header from './pages/Header/Header';
+
+import Footer from './components/UI/Footer/Footer';
 import Routing from './components/rout/routing';
-import Footer from './pages/Footer/Footer';
+
 import { useAppDispatch, useAppSelector } from './hooks';
 import ProductList from './components/UI/ProductList/ProductList';
 import { useCheckAuthQuery, useGetProductsByInputQuery } from './API';
 import { useEffect } from 'react';
 import { authUser } from './reducer/auth';
+import Header from './components/UI/Header/Header';
+import { useTranslation } from 'react-i18next';
 function App() {
+  const { t } = useTranslation();
   const search = useAppSelector((state) => state.searchActive);
   const {
     data: searchedProduct,
     error: searchedProductError,
     isLoading: searchedProductLoding,
   } = useGetProductsByInputQuery(search.searchInput);
+
   const dispatch = useAppDispatch();
   const { data: user } = useCheckAuthQuery();
 
@@ -27,16 +32,16 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <div style={{ display: `${search.searchActive ? 'none' : ''}` }}>
+      <main style={{ display: `${search.searchActive ? 'none' : ''}` }}>
         <Routing />
-      </div>
-      {searchedProductError ? (
-        <div>Помилка</div>
-      ) : searchedProductLoding ? (
-        <div>Loding</div>
-      ) : search.searchActive && searchedProduct ? (
+      </main>
+      {searchedProductError && <div>{t('common.error')}</div>}
+
+      {searchedProductLoding && <div>{t('common.loading')}</div>}
+
+      {search.searchActive && searchedProduct && (
         <ProductList products={searchedProduct} />
-      ) : null}
+      )}
       <Footer />
     </BrowserRouter>
   );

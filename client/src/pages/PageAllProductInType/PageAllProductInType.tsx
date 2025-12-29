@@ -10,8 +10,24 @@ import FilterAndSortModal, {
 import Breadcrumb from '../../components/UI/Breadcrumb/Breadcrumb';
 import SekeletonCardProduct from '../../components/UI/SkeletonCardProduct/SekeletonCardProduct';
 import { useFilter } from './useFilter';
+import { useTranslation } from 'react-i18next';
+
+type NavbarKeys =
+  | 'sets'
+  | 'roles'
+  | 'promotion'
+  | 'sushi'
+  | 'california'
+  | 'gourmetschoise'
+  | 'hotsAndSalads'
+  | 'philadelphia'
+  | 'soups'
+  | 'desserts'
+  | 'drinks'
+  | 'addition';
 
 const PageAllProductInType = () => {
+  const { t } = useTranslation();
   const params = useParams();
   const {
     data: dataProducts,
@@ -30,7 +46,7 @@ const PageAllProductInType = () => {
 
   const filtrate = useFilter();
 
-  const ApplyForm = () => {
+  const applyForm = () => {
     setModalVissible(false);
     if (dataProducts && products) {
       filtrate(formFiltrAndSort, dataProducts, setProducts);
@@ -60,16 +76,16 @@ const PageAllProductInType = () => {
 
   return (
     <div>
-      {productsError ? (
-        <div></div>
-      ) : productsLoading ? (
-        <SekeletonCardProduct />
-      ) : products ? (
+      {productsError && <div>{t('common.error')}</div>}
+      {productsLoading && <SekeletonCardProduct />}
+      {products && (
         <div>
           <div className="d-flex">
             <div className="container">
               <div className="page-title d-flex space-between align-center">
-                Сети
+                {params.type
+                  ? t(`header.navbar.${params.type as NavbarKeys}`)
+                  : ''}
                 <div
                   onClick={() => {
                     setModalVissible(true);
@@ -81,22 +97,23 @@ const PageAllProductInType = () => {
                     src="https://kyiv.sushi-master.ua/img/products/filters.svg"
                     alt=""
                   />
-                  Фільтр і сортування
+                  {t('pages.menu.filterAndSort')}
                 </div>
               </div>
             </div>
           </div>
-          {modalVissible ? (
+          {modalVissible && (
             <FilterAndSortModal
-              ApplyForm={ApplyForm}
+              applyForm={applyForm}
               onUpdateData={updateDataArray}
               labels={labels}
               ParentFormaFiltra={formFiltrAndSort}
             />
-          ) : null}
+          )}
           <ProductList products={products} />
         </div>
-      ) : null}
+      )}
+
       {params.type && <Breadcrumb crumbs={[params.type]} />}
     </div>
   );

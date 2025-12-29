@@ -6,15 +6,15 @@ import {
 import './Calendar.css';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 
-interface Calendar {
+interface ICalendar {
   handleDataAccept: (date: number[]) => void;
   closeCalendar: () => void;
 }
 
-const Calendar: FC<Calendar> = ({ handleDataAccept, closeCalendar }) => {
+const Calendar = ({ handleDataAccept, closeCalendar }: ICalendar) => {
   const [date, setDate] = useState<number[]>([2022, 4, 17]);
 
   function ActionList() {

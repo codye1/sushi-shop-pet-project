@@ -19,7 +19,7 @@ class UserService{
             const user = await UserModel.create({number,smsCode:{code,expirationTime}})
             console.log(await UserModel.findOne({number}));
         }
-        console.log("Send sms to user: "+number+" parol: "+code,"  ");
+        console.log("Send sms to user: "+number+" password: "+code,"  ");
 
         return code
     }
@@ -28,10 +28,10 @@ class UserService{
         console.log(number);
         const candidate = await UserModel.findOne({number})
 
-        console.log("Login to user: "+number+" parol: "+code);
+        console.log("Login to user: "+number+" password: "+code);
 
-        console.log("candidate"+candidate);
-        console.log("date"+Date.now()<=candidate.smsCode.expirationTime);
+        console.log("Candidate"+candidate);
+        console.log("Date"+Date.now()<=candidate.smsCode.expirationTime);
         console.log("sms.code-code"+candidate.smsCode.code == code);
 
         if (candidate && Date.now()<=candidate.smsCode.expirationTime && candidate.smsCode.code == code) {
@@ -132,7 +132,7 @@ class UserService{
             user.birthDate=birthDate
             user.save()
         }else{
-            console.log("birth error");
+            console.log("Birth error");
         }
     }
 

@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import Inner from '../../../../icons/Inner';
 import Outer from '../../../../icons/Outer';
 
@@ -8,7 +7,7 @@ interface IGroupItem {
   name: string;
   title: string;
 }
-const GroupItem: FC<IGroupItem> = ({ pickedId, id, name, title }) => {
+const GroupItem = ({ pickedId, id, name, title }: IGroupItem) => {
   return (
     <label className="input-item" htmlFor="1">
       <span className="input-button">
