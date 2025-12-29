@@ -1,18 +1,14 @@
-
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAppSelector } from '../../hooks';
 import Account from '../../pages/Account/Account';
 import SignIn from '../../pages/SignInPage/SignIn';
 import { routPages } from './routePages';
 
-
-
-
 const Routing = () => {
   const isAuth = useAppSelector((state) => state.auth.isAuth);
 
   return (
-      <Routes>
+    <Routes>
       {routPages.map((route, index) => (
         <Route key={index} path={route.path} element={<route.element />} />
       ))}

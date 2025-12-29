@@ -1,15 +1,17 @@
 import RedMap from '../../../../../icons/OurRestourants/redMap.svg';
 import { IRestourantInXEelement } from '../../../../../interfaces';
 import './RestaurantsItem.css';
+import { useTranslation } from 'react-i18next';
 
-const Restaurants: React.FC<IRestourantInXEelement> = ({ restourant }) => {
+const Restaurants = ({ restourant }: IRestourantInXEelement) => {
+  const { t } = useTranslation();
   return (
     <div className="restourans-item">
       <div className="restourans-title">
         <h1>{restourant.name}</h1>
         <div className="show-on-map">
           <img src={RedMap} alt="" />
-          На мапі
+          {t('pages.ourRestaurants.item.onMap')}
         </div>
       </div>
       <div className="restourans-addres">
@@ -17,15 +19,21 @@ const Restaurants: React.FC<IRestourantInXEelement> = ({ restourant }) => {
       </div>
       <div className="services">
         <div className="service">
-          <p>Приймаємо замовлення на самовиніс</p>
+          <p>{t('pages.ourRestaurants.item.takeaway')}</p>
           <h1>
-            з {restourant.timetakeaway[0]} до {restourant.timetakeaway[1]}
+            {t('pages.ourRestaurants.item.hours', {
+              from: restourant.timetakeaway[0],
+              to: restourant.timetakeaway[1],
+            })}
           </h1>
         </div>
         <div className="service">
-          <p>Приймаємо замовлення на доставку</p>
+          <p>{t('pages.ourRestaurants.item.delivery')}</p>
           <h1>
-            з {restourant.timedelivery[0]} до {restourant.timedelivery[1]}
+            {t('pages.ourRestaurants.item.hours', {
+              from: restourant.timedelivery[0],
+              to: restourant.timedelivery[1],
+            })}
           </h1>
         </div>
       </div>

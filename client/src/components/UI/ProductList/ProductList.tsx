@@ -3,7 +3,7 @@ import NoData from '../NoData/NoData';
 import CardProduct from './CardProduct/CardProduct';
 import './ProductList.css';
 
-const ProductList: React.FC<IProductsInXEelement> = ({ products }) => {
+const ProductList = ({ products }: IProductsInXEelement) => {
   return (
     <div className="products-list d-flex">
       <div className="container">

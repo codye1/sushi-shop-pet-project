@@ -6,15 +6,15 @@ import CustomModal from '../../../../components/UI/CustomModal/CustomModal';
 import { useTranslation } from 'react-i18next';
 import { useLogin } from './useLogin';
 
-interface SigninSlideWriteCode {
+interface ISigninSlideWriteCode {
   number: string;
   setSmsSent: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SigninSlideWriteCode: React.FC<SigninSlideWriteCode> = ({
+const SigninSlideWriteCode = ({
   setSmsSent,
   number,
-}) => {
+}: ISigninSlideWriteCode) => {
   const [seconds, setSeconds] = useState(60);
   const [refreshSMSCode] = useRefreshSMSCodeMutation();
   const [modalError, setModalError] = useState(false);

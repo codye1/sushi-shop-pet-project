@@ -10,7 +10,6 @@ import OurRestaurants from '../../pages/PagesInFooterLink/OurRestourants/OurRest
 import Privacy from '../../pages/PagesInFooterLink/Privacy/Privacy';
 import PublicOferta from '../../pages/PagesInFooterLink/PublicOferta/PublicOferta';
 
-
 export const routPages = [
   { path: '/home', element: Home },
   { path: 'menu/:type', element: PageAllProductInType },

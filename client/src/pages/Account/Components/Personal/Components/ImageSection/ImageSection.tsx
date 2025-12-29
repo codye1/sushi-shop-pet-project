@@ -12,7 +12,7 @@ import { updImg } from '../../../../../../reducer/auth';
 import UploadFile from './components/UploadFile/UploadFile';
 import CropContainer from './components/CropContainer/CropContainer';
 import { useTranslation } from 'react-i18next';
-import { useCrop } from './Crop';
+import { useCrop } from './useCrop';
 
 const ImageSection = () => {
   const [modalUploadImgVissible, setModalUploadImgVissible] = useState(false);

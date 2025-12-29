@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import LabelsCard from '../../../../components/UI/LablesCard/LabelsCard';
 import AddProductInBasketButton from '../../../../components/UI/AddProductInBasketButton/AddProductInBasketButton';
 import { NavLink } from 'react-router-dom';
@@ -10,7 +9,7 @@ import './MainProductView.css';
 import { Tooltip } from '@mui/material';
 import ProductInfo from './ProductInfo/ProductInfo';
 
-const MainProductView: FC<IProductInXEelement> = ({ product }) => {
+const MainProductView = ({ product }: IProductInXEelement) => {
   let price: number = product.price;
   price -= product ? Math.floor(price * (product.discount / 100)) : 0;
 

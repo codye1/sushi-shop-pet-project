@@ -5,11 +5,12 @@ import AddProductInBasketButton from '../../AddProductInBasketButton/AddProductI
 import { IProductInXEelement } from '../../../../interfaces';
 import { useAppDispatch } from '../../../../hooks';
 import { setSearchActive } from '../../../../reducer/search';
+import { useTranslation } from 'react-i18next';
 
-const CardProduct: React.FC<IProductInXEelement> = ({ product }) => {
+const CardProduct = ({ product }: IProductInXEelement) => {
+  const { t } = useTranslation();
   let price: number = product.price;
   price -= Math.floor(price * (product.discount / 100));
-
 
   const dispatch = useAppDispatch();
 
@@ -23,7 +24,7 @@ const CardProduct: React.FC<IProductInXEelement> = ({ product }) => {
           >
             {' '}
             <img
-              title={`Страва ${product.title} меню SUSHI MASTER`}
+              title={t('product.imageTitle', { title: product.title })}
               className="card-img"
               src={product.img}
               alt={product.title}
@@ -34,7 +35,9 @@ const CardProduct: React.FC<IProductInXEelement> = ({ product }) => {
       {<LabelsCard labels={product.labels} />}
       <div className="down-cont">
         <div className="cont-weight d-flex space-between">
-          <p>{product?.harch?.weight} Г</p>
+          <p>
+            {product?.harch?.weight} {t('common.units.grams')}
+          </p>
           <p>{product.attributes}</p>
         </div>
         <div title={`${product.title}`} className="cont-name">
@@ -57,7 +60,9 @@ const CardProduct: React.FC<IProductInXEelement> = ({ product }) => {
           <div className="price">
             {product.discount > 0 ? (
               <>
-                <div className="current-price new-price">{price} грн&nbsp;</div>
+                <div className="current-price new-price">
+                  {price} {t('common.units.currency')}&nbsp;
+                </div>
                 <div className="old-price">{product.price}</div>
               </>
             ) : (

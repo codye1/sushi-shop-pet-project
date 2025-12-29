@@ -3,8 +3,10 @@ import arrowDown from '../../../../../icons/headerIcon/arrow-down.png';
 import { Popover } from '@mui/material';
 import { useState } from 'react';
 import i18next from '../../../../../LanguageManager/i18n';
+import { useTranslation } from 'react-i18next';
 
 const LeftCont = () => {
+  const { t } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(i18next.language);
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
@@ -25,7 +27,7 @@ const LeftCont = () => {
 
   return (
     <div className="left-cont">
-      <div className="city">Ужгород</div>
+      <div className="city">{t('header.city')}</div>
       <button onClick={handleClick} className="language">
         <span>{currentLanguage}</span>
         <img src={arrowDown} alt="" />

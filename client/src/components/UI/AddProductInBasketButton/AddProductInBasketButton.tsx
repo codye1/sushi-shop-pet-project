@@ -7,9 +7,7 @@ import plus from '../../../icons/AddProductInBasketButton/plus.svg';
 import minus from '../../../icons/AddProductInBasketButton/minus.svg';
 import { useTranslation } from 'react-i18next';
 
-const AddProductInBasketButton: React.FC<IProductInXEelement> = ({
-  product,
-}) => {
+const AddProductInBasketButton = ({ product }: IProductInXEelement) => {
   const dispatch = useDispatch();
   const basket = useAppSelector((state) => state.basket.basket);
 

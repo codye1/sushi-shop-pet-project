@@ -3,7 +3,6 @@ import './ModalSlider.css';
 import { IPromotionsInXEelement } from '../../../../interfaces';
 import CardModalSlider from '../CardModalSlider/CardModalSlider';
 import { useState } from 'react';
-import type { FC } from 'react';
 import { Navigation } from 'swiper/modules';
 import ModalPagination from './ModalPagination/ModalPagination';
 import Chevron from '../../../../icons/chevron.svg';
@@ -12,7 +11,7 @@ interface IModalSlider extends IPromotionsInXEelement {
   closeModal: () => void;
 }
 
-const ModalSlider: FC<IModalSlider> = ({ promotions, closeModal }) => {
+const ModalSlider = ({ promotions, closeModal }: IModalSlider) => {
   const ignoreCloseModal = (event: { stopPropagation: () => void }) => {
     event.stopPropagation();
   };

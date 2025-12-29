@@ -25,6 +25,8 @@
     }
   },
   "header": {
+    "city": "Ужгород",
+    "signIn": "Увійти",
     "navbar": {
       "sets": "Сети",
       "roles": "Роли",
@@ -189,5 +191,41 @@
     "NoData": {
       "title": "Тут поки немає даних"
     }
+  },
+  "common": {
+    "error": "Помилка",
+    "loading": "Завантаження...",
+    "actions": {
+      "go": "Перейти"
+    },
+    "units": {
+      "grams": "г",
+      "currency": "грн"
+    }
+  },
+  "pages": {
+    "promotions": {
+      "title": "Акції"
+    },
+    "menu": {
+      "filterAndSort": "Фільтр і сортування"
+    },
+    "ourRestaurants": {
+      "breadcrumb": "Наші ресторани | Sushi Master, Ужгород",
+      "title": "Sushi Master",
+      "switcher": {
+        "onMap": "На мапі",
+        "list": "Список"
+      },
+      "item": {
+        "onMap": "На мапі",
+        "takeaway": "Приймаємо замовлення на самовиніс",
+        "delivery": "Приймаємо замовлення на доставку",
+        "hours": "з {{from}} до {{to}}"
+      }
+    }
+  },
+  "product": {
+    "imageTitle": "Страва {{title}} меню SUSHI MASTER"
   }
 }

@@ -56,11 +56,11 @@ const Home = () => {
     <>
       <HomeSlider promotions={promotions ?? skeletonSlide} />
 
-      <div className='container'>
+      <div className="container">
         <h1 className="page-title">{t('home.title')}</h1>
       </div>
 
-      {errorProducts && <div>Помилка</div>}
+      {errorProducts && <div>{t('common.error')}</div>}
       {productsLoading && <SekeletonCardProduct />}
       {products && <ProductList products={products} />}
       <Banner />

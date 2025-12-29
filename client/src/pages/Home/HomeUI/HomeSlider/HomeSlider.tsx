@@ -3,11 +3,11 @@ import './HomeSlider.css';
 import { useState } from 'react';
 import ModalSlider from '../ModalSlider/ModalSlider';
 import { Navigation, Pagination } from 'swiper/modules';
-import type { FC } from 'react';
+
 import { IPromotionsInXEelement } from '../../../../interfaces';
 import Chevron from '../../../../icons/chevron.svg';
 
-const HomeSlider: FC<IPromotionsInXEelement> = ({ promotions }) => {
+const HomeSlider = ({ promotions }: IPromotionsInXEelement) => {
   const [modalSliderActive, setModalSliderActive] = useState(false);
 
   function CloseModalInModal() {
@@ -31,10 +31,7 @@ const HomeSlider: FC<IPromotionsInXEelement> = ({ promotions }) => {
           {promotions.map((p) => (
             <SwiperSlide key={p.key}>
               <div onClick={() => setModalSliderActive(true)} className="slide">
-                <img
-                  src={p.imgWide}
-                  alt={p.title ?? ''}
-                />
+                <img src={p.imgWide} alt={p.title ?? ''} />
               </div>
             </SwiperSlide>
           ))}

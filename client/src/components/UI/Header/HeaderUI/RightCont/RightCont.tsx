@@ -9,7 +9,9 @@ import basketPNG from '../../../../../icons/headerIcon/basket.png';
 import { useAppSelector } from '../../../../../hooks';
 import { setSearchActive } from '../../../../../reducer/search';
 import Menu from '../../../../../pages/Account/Menu/Menu';
+import { useTranslation } from 'react-i18next';
 const RightCont = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [isAnimated, setIsAtimated] = useState(false);
   const isAuth = useAppSelector((state) => state.auth.isAuth);
@@ -90,7 +92,7 @@ const RightCont = () => {
       ) : (
         <NavLink className="login unloged" to={'/sign-in'}>
           <img src={userPNG} alt="" />
-          Увійти
+          {t('header.signIn')}
         </NavLink>
       )}
       <NavLink className="basket" to={'/basket'}>

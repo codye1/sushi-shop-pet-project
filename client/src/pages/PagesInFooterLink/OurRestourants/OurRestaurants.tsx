@@ -6,8 +6,10 @@ import Breadcrumb from '../../../components/UI/Breadcrumb/Breadcrumb';
 import RestaurantsItem from './OurRestourantsUI/RestouransItem/RestaurantsItem';
 import Map from '../../../icons/OurRestourants/map.svg';
 import List from '../../../icons/OurRestourants/list.svg';
+import { useTranslation } from 'react-i18next';
 
 const OurRestaurants = () => {
+  const { t } = useTranslation();
   const [onMap, setOnMap] = useState(true);
   const {
     data: restourants,
@@ -16,11 +18,11 @@ const OurRestaurants = () => {
   } = useGetRestaurantsQuery();
   return (
     <div>
-      <Breadcrumb crumbs={['Наші ресторани | Sushi Master, Ужгород']} />
+      <Breadcrumb crumbs={[t('pages.ourRestaurants.breadcrumb')]} />
       <div className="d-flex">
         <div className="container column">
           <div className="page-title our-restaurants d-flex space-between">
-            Sushi Master
+            {t('pages.ourRestaurants.title')}
             <div className="switcher d-flex">
               <div
                 onClick={() => {
@@ -29,7 +31,7 @@ const OurRestaurants = () => {
                 className={`switcher-item d-flex ${!onMap && 'select'}`}
               >
                 <img src={Map} alt="" />
-                <h3>На мапі</h3>
+                <h3>{t('pages.ourRestaurants.switcher.onMap')}</h3>
               </div>
               <div
                 onClick={() => {
@@ -38,7 +40,7 @@ const OurRestaurants = () => {
                 className={`switcher-item d-flex ${onMap && 'select'}`}
               >
                 <img src={List} alt="" />
-                <h3>Список</h3>
+                <h3>{t('pages.ourRestaurants.switcher.list')}</h3>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import RecommendationSlider from '../../../../components/UI/RecommendationSlider
 import { IPromotionInXEelement } from '../../../../interfaces';
 import './CardModalSlider.css';
 
-const CardModalSlider: React.FC<IPromotionInXEelement> = ({ promotion }) => {
+const CardModalSlider = ({ promotion }: IPromotionInXEelement) => {
   const { data: products } = useGetProductsByIdsQuery(
     promotion.productInPromotion ? promotion.productInPromotion : ['']
   );

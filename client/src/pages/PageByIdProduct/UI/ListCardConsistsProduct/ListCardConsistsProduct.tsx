@@ -2,9 +2,7 @@ import { IProductsInXEelement } from '../../../../interfaces';
 import ConsistsСardProduct from './ConsistsСardProduct/СardConsistsProduct';
 import './ListCardConsistsProduct.css';
 
-const ListCardConsistsProduct: React.FC<IProductsInXEelement> = ({
-  products,
-}) => {
+const ListCardConsistsProduct = ({ products }: IProductsInXEelement) => {
   return (
     <div className="list-consists-container">
       {products.map((p, index) => (

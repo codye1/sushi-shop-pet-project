@@ -1,9 +1,9 @@
 import RecommendationSlider from '../../../../components/UI/RecommendationSlider/RecommendationSlider';
-import type { FC } from 'react';
+
 import { IProductsInXEelement } from '../../../../interfaces';
 import './BasketReccomendationSlider.css';
 
-const BasketReccomendationSlider: FC<IProductsInXEelement> = ({ products }) => {
+const BasketReccomendationSlider = ({ products }: IProductsInXEelement) => {
   return (
     <div className="d-flex">
       <div className="container column">

@@ -1,11 +1,15 @@
-import ListCardConsistsProduct from "../ListCardConsistsProduct/ListCardConsistsProduct";
-import CardProduct from "../../../../components/UI/ProductList/CardProduct/CardProduct";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-import "./ComposedList.css";
-import { IProductResponse } from "../../../../interfaces";
+import ListCardConsistsProduct from '../ListCardConsistsProduct/ListCardConsistsProduct';
+import CardProduct from '../../../../components/UI/ProductList/CardProduct/CardProduct';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import './ComposedList.css';
+import { IProductResponse } from '../../../../interfaces';
 
-const ComposedList = ({ composedProduct }: { composedProduct: IProductResponse }) => {
+const ComposedList = ({
+  composedProduct,
+}: {
+  composedProduct: IProductResponse;
+}) => {
   return (
     <>
       <div className="back">СЕТ СКЛАДАЄТЬСЯ</div>

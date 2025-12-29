@@ -56,11 +56,10 @@ body {
   .main-logo {
     display: none;
   }
-
 }
 
-.separator-container{
-  background-color:white;
+.separator-container {
+  background-color: white;
 }
 
 .basket-left-block {

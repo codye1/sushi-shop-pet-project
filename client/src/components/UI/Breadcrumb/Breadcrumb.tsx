@@ -2,11 +2,11 @@ import { useLocation } from 'react-router-dom';
 import './Breadcrumb.css';
 import { useTranslation } from 'react-i18next';
 
-interface Crumbs {
+interface IBreadcrumb {
   crumbs: string[];
 }
 
-const Breadcrumb: React.FC<Crumbs> = ({ crumbs }) => {
+const Breadcrumb = ({ crumbs }: IBreadcrumb) => {
   const location = useLocation();
 
   const { t } = useTranslation();

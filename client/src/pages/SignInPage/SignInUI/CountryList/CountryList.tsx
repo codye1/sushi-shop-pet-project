@@ -7,11 +7,11 @@ export interface country {
   dialCode: string;
 }
 
-interface CountryList {
+interface ICountryList {
   pickCountry: (country: country) => void;
 }
 
-const CountryList: React.FC<CountryList> = ({ pickCountry }) => {
+const CountryList = ({ pickCountry }: ICountryList) => {
   const { t } = useTranslation();
 
   const country: country[] = [

@@ -1,5 +1,5 @@
 import { Popover, Tooltip } from '@mui/material';
-import { useState } from 'react';
+import { useState, MouseEvent } from 'react';
 import Calendar from '../../../Delivery/Calendary/Calendar';
 import './BirthSection.css';
 import CustomModal from '../../../../../../components/UI/CustomModal/CustomModal';
@@ -16,14 +16,15 @@ const BirthSection = () => {
   const [saveDate] = useSaveBirthDateMutation();
   const dispatch = useAppDispatch();
   const birthDate = useAppSelector((state) => state.auth.user.birthDate);
-  const handleClickCalendar = (event: React.MouseEvent<HTMLButtonElement>) => {
+
+  const handleClickCalendar = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleCloseCalendar = () => {
     setAnchorEl(null);
   };
 
-  const OpenBirthWarn2 = (date: number[]) => {
+  const handleOpenBirthWarn2 = (date: number[]) => {
     setDate(date);
     setOpenBirthWarn2(true);
   };
@@ -93,7 +94,7 @@ const BirthSection = () => {
               }}
             >
               <Calendar
-                handleDataAccept={OpenBirthWarn2}
+                handleDataAccept={handleOpenBirthWarn2}
                 closeCalendar={handleCloseCalendar}
               />
             </Popover>

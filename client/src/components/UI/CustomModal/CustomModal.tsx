@@ -1,6 +1,6 @@
 import { Dialog } from '@mui/material';
 import './CustomModal.css';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import closeSVG from '../../../icons/close-white.svg';
 
 interface ICustomModal {
@@ -9,11 +9,7 @@ interface ICustomModal {
   children: ReactNode;
 }
 
-const CustomModal: FC<ICustomModal> = ({
-  customModal,
-  closeModal,
-  children,
-}) => {
+const CustomModal = ({ customModal, closeModal, children }: ICustomModal) => {
   return (
     <Dialog
       open={customModal}

@@ -1,8 +1,8 @@
-import './ConsistsСardProduct.css';
+import './CardConsistsProduct.css';
 import { NavLink } from 'react-router-dom';
 import { IProductInXEelement } from '../../../../../interfaces';
 
-const ConsistsСardProduct: React.FC<IProductInXEelement> = ({ product }) => {
+const ConsistsСardProduct = ({ product }: IProductInXEelement) => {
   return (
     <div className="card-container">
       <div className="card-consists-img">

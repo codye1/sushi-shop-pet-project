@@ -16,7 +16,7 @@ interface Ilist {
 
 type Tlist = Ilist[];
 
-const Navbar: React.FC<INavbar> = ({ isScroled }) => {
+const Navbar = ({ isScroled }: INavbar) => {
   const { t } = useTranslation();
 
   const down_list: Tlist = [

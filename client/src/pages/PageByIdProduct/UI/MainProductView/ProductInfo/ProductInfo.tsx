@@ -1,8 +1,7 @@
-import { FC } from 'react';
 import { IProductInXEelement } from '../../../../../interfaces';
 import './ProductInfo.css';
 
-const ProductInfo: FC<IProductInXEelement> = ({ product }) => {
+const ProductInfo = ({ product }: IProductInXEelement) => {
   return (
     <div className="product-info">
       <h1>Харчова цінність:</h1>

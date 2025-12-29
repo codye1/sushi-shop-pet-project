@@ -2,7 +2,7 @@ import { IPromotionsInXEelement } from '../../../../../interfaces';
 import PromotionsCard from '../PromotionsCard/PromotionsCard';
 import './PromotionsList.css';
 
-const PromotionsList: React.FC<IPromotionsInXEelement> = ({ promotions }) => {
+const PromotionsList = ({ promotions }: IPromotionsInXEelement) => {
   console.log(promotions);
 
   return (

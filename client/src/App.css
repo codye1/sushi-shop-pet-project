@@ -127,17 +127,7 @@ img {
   overflow: clip;
 }
 
-
-.TEST{
-  position: sticky;
-  top: 50px;
-  left: 0;
-  background-color: red;
-  color: white;
-  z-index: 9999;
-}
-
-.test2{
+.test2 {
   height: 500px;
   background-color: blue;
 }

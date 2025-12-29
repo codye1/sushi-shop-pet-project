@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 interface IFormAgree {
@@ -6,7 +6,7 @@ interface IFormAgree {
   checkBox: boolean;
 }
 
-const FormAgree: FC<IFormAgree> = ({ setCheckBox, checkBox }) => {
+const FormAgree = ({ setCheckBox, checkBox }: IFormAgree) => {
   const { t } = useTranslation();
 
   return (

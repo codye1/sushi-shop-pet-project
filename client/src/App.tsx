@@ -9,7 +9,9 @@ import { useCheckAuthQuery, useGetProductsByInputQuery } from './API';
 import { useEffect } from 'react';
 import { authUser } from './reducer/auth';
 import Header from './components/UI/Header/Header';
+import { useTranslation } from 'react-i18next';
 function App() {
+  const { t } = useTranslation();
   const search = useAppSelector((state) => state.searchActive);
   const {
     data: searchedProduct,
@@ -33,9 +35,9 @@ function App() {
       <main style={{ display: `${search.searchActive ? 'none' : ''}` }}>
         <Routing />
       </main>
-      {searchedProductError && <div>Помилка</div>}
+      {searchedProductError && <div>{t('common.error')}</div>}
 
-      {searchedProductLoding && <div>Loding</div>}
+      {searchedProductLoding && <div>{t('common.loading')}</div>}
 
       {search.searchActive && searchedProduct && (
         <ProductList products={searchedProduct} />

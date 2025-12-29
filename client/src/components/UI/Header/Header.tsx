@@ -16,7 +16,6 @@ const Header = () => {
       style={{ transform: `translateY(${transform}%)` }}
       className={`header ${isScroled && !searchActive ? 'scroled' : ''}`}
     >
-
       <div className="top-header">
         <div className="top-container">
           <LeftCont />

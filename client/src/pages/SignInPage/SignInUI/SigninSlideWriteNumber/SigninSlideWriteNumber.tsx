@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Dispatch, SetStateAction } from 'react';
 import { country } from '../CountryList/CountryList';
 import CountryList from '../CountryList/CountryList';
 import { useSendMutation } from '../../../../API';
@@ -7,17 +7,17 @@ import { Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import FormAgree from './Components/FormAgree';
 
-interface SigninSlideWriteNumber {
-  setNumber: React.Dispatch<React.SetStateAction<string>>;
+interface ISigninSlideWriteNumber {
+  setNumber: Dispatch<SetStateAction<string>>;
   number: string;
-  setSMSSent: React.Dispatch<React.SetStateAction<boolean>>;
+  setSMSSent: Dispatch<SetStateAction<boolean>>;
 }
 
-const SigninSlideWriteNumber: React.FC<SigninSlideWriteNumber> = ({
+const SigninSlideWriteNumber = ({
   setSMSSent,
   setNumber,
   number,
-}) => {
+}: ISigninSlideWriteNumber) => {
   const [checkBox, setCheckBox] = useState(false);
   const [arrowUp, setArrowUp] = useState(false);
   const [pickedCountry, setPickedCountry] = useState<country>({
@@ -27,9 +27,16 @@ const SigninSlideWriteNumber: React.FC<SigninSlideWriteNumber> = ({
   });
   const [sendCode] = useSendMutation();
 
-  document.addEventListener('click', () => {
-    setArrowUp(false);
-  });
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setArrowUp(false);
+    };
+
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, []);
 
   async function sendSMSCode(number: string) {
     if (checkBox) {

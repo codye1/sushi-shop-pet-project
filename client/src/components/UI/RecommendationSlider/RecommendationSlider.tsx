@@ -7,10 +7,7 @@ import CardRecommendationSlider from './CardRecommendationSlider/CardRecommendat
 interface IRecommendationSlider extends IProductsInXEelement {
   refs?: string[];
 }
-const RecommendationSlider: React.FC<IRecommendationSlider> = ({
-  products,
-  refs,
-}) => {
+const RecommendationSlider = ({ products, refs }: IRecommendationSlider) => {
   return (
     <>
       <Swiper

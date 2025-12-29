@@ -1,7 +1,7 @@
 import { ILabelsInXElement } from '../../../interfaces';
 import './LabelsCard.css';
 
-const LabelsCard: React.FC<ILabelsInXElement> = ({ labels }) => {
+const LabelsCard = ({ labels }: ILabelsInXElement) => {
   return (
     <div className="labels">
       {labels.map((p) => (
